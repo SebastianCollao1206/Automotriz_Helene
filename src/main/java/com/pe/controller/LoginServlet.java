@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
                 PrintWriter out = response.getWriter();
                 out.println("<script type='text/javascript'>");
                 out.println("alert('Correo o contraseña incorrectos.');");
-                out.println("window.location='index.html';"); // Cambia a la ruta correcta de tu página de inicio de sesión
+                out.println("window.location='index.html';");
                 out.println("</script>");
             }
         } catch (Exception e) {
@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
             PrintWriter out = response.getWriter();
             out.println("<script type='text/javascript'>");
             out.println("alert('Error al procesar la solicitud.');");
-            out.println("window.location='index.html';"); // Cambia a la ruta correcta de tu página de inicio de sesión
+            out.println("window.location='index.html';");
             out.println("</script>");
         }
     }

@@ -1,9 +1,6 @@
 package com.pe;
 
-import com.pe.controller.AgregarUsuarioServlet;
-import com.pe.controller.HeaderServlet;
-import com.pe.controller.LoginServlet;
-import com.pe.controller.LogoutServlet;
+import com.pe.controller.*;
 import com.pe.util.DBConnection;
 import com.pe.util.JettyUTP;
 
@@ -22,6 +19,7 @@ public class App {
             JettyUTP webserver = new JettyUTP(8081, path);
 
             //agregar los servlets
+            webserver.addServlet(HeaderServlet.class, "/header/usuario-info");
             webserver.addServlet(AgregarUsuarioServlet.class, "/usuario/agregar");
             webserver.addServlet(LoginServlet.class, "/login");
             webserver.addServlet(LogoutServlet.class, "/logout");

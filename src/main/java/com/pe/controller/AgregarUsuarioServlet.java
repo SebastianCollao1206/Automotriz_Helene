@@ -1,19 +1,17 @@
 package com.pe.controller;
 
-import com.pe.model.entidad.Usuario;
 import com.pe.model.service.UsuarioService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
 @WebServlet("/usuario/agregar")
-public class AgregarUsuarioServlet extends HttpServlet {
+public class AgregarUsuarioServlet extends BaseServlet{
+
     private final UsuarioService usuarioService;
 
     public AgregarUsuarioServlet() {
@@ -21,21 +19,8 @@ public class AgregarUsuarioServlet extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-
-        HttpSession session = request.getSession();
-        Usuario usuario = (Usuario) session.getAttribute("usuario");
-
-        try (PrintWriter out = response.getWriter()) {
-
-            // Incluir el header a través del HeaderServlet
-            request.getRequestDispatcher("/estatic/header.html").include(request, response);
-            // Incluir sidebar manteniendo la estructura
-            request.getRequestDispatcher("/estatic/sidebar.html").include(request, response);
-            // Incluir el contenido principal
-            request.getRequestDispatcher("/agregar_usuario.html").include(request, response);
-        }
+    protected String getContentPage() {
+        return "/agregar_usuario.html";
     }
 
     @Override
@@ -54,7 +39,7 @@ public class AgregarUsuarioServlet extends HttpServlet {
             PrintWriter out = response.getWriter();
             out.println("<script type='text/javascript'>");
             out.println("alert('Usuario agregado exitosamente!');");
-            out.println("window.location='/usuario/agregar';"); // Reemplaza con tu página
+            out.println("window.location='/usuario/agregar';");
             out.println("</script>");
         } catch (Exception e) {
             // Redirige con mensaje de error
@@ -62,7 +47,7 @@ public class AgregarUsuarioServlet extends HttpServlet {
             PrintWriter out = response.getWriter();
             out.println("<script type='text/javascript'>");
             out.println("alert('Error al agregar el usuario');");
-            out.println("window.location='/usuario/agregar';"); // Reemplaza con tu página
+            out.println("window.location='/usuario/agregar';");
             out.println("</script>");
         }
     }

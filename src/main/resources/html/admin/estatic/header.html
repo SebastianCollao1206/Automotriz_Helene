@@ -48,15 +48,16 @@
                     <!-- Perfil de usuario -->
                     <div class="d-flex align-items-center">
                         <div class="texto-admin mx-2">
-                            <div class="small fw-bold">Hola, ${usuario.nombre} </div>
-                            <div class="small text-muted">${usuario.tipoUsuario}</div>
+                            <div id="usuario-info">
+                                <!--Se agrega dinamicamente-->
+                            </div>
                         </div>
                         <img src="https://www.pngkey.com/png/full/12-123249_teacher-teacher-login.png" alt="Profile"
                              class="profile-image mx-2">
                         <div class="dropdown d-none d-lg-block">
                             <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"></button>
                             <ul class="dropdown-menu dropdown-menu-end mt-3">
-                                <li><a class="dropdown-item text-danger" href="logout"><i
+                                <li><a class="dropdown-item text-danger" href="/logout"><i
                                         class="bi bi-box-arrow-right me-2"></i>Cerrar Sesión
                                 </a>
                                 </li>
