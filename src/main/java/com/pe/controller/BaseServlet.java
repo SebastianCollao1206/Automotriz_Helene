@@ -1,6 +1,7 @@
 package com.pe.controller;
 
 import com.pe.model.entidad.Usuario;
+import com.pe.model.html.UsuarioHtml;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -10,6 +11,8 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 
 @WebServlet("/base")
@@ -26,30 +29,48 @@ public abstract class BaseServlet extends HttpServlet {
 
         // Verificar si el usuario está autenticado
         if (usuario == null) {
-            // Si el usuario no está autenticado, redirigir a la página de inicio de sesión
             response.sendRedirect("/");
             return;
         }
 
         try (PrintWriter out = response.getWriter()) {
+            // Leer el HTML del header desde el archivo
+            String headerHtml = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/estatic/header.html")));
 
-            //Incluir el header
-            request.getRequestDispatcher("/estatic/header.html").include(request, response);
+            // Reemplazar los marcadores con la información del usuario
+            headerHtml = headerHtml.replace("${usuarioNombre}", usuario.getNombre());
+            headerHtml = headerHtml.replace("${usuarioTipo}", usuario.getTipoUsuario().name());
 
-            // Inyectar script para cargar la información dinámica del usuario
-            out.println("<script>");
-            out.println("fetch('/header/usuario-info')");
-            out.println("  .then(response => response.text())");
-            out.println("  .then(data => {");
-            out.println("    document.getElementById('usuario-info').innerHTML = data;");
-            out.println("  });");
-            out.println("</script>");
+            // Escribir el HTML del header modificado en la respuesta
+            out.println(headerHtml);
 
             // Incluir el sidebar
             request.getRequestDispatcher("/estatic/sidebar.html").include(request, response);
 
-            // Incluir el contenido específico de la página
-            request.getRequestDispatcher(getContentPage()).include(request, response);
+            // Cargar el contenido específico de la página
+//            String contentPage = getContentPage();
+//            String content = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin" + contentPage)));
+
+            String contentPage = getContentPage();
+            String content = (String) request.getAttribute("content");
+
+            // Si no hay contenido establecido, cargar el HTML del archivo
+            if (content == null) {
+                content = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin" + contentPage)));
+            }
+
+            // Escribir el contenido específico de la página
+            out.println(content);
+
+            // Mostrar mensaje si existe
+            String mensaje = (String) request.getAttribute("mensaje");
+            if (mensaje != null) {
+                out.println(UsuarioHtml.generarMensajeAlerta(mensaje, (String) request.getAttribute("redirigirUrl")));
+            }
+        } catch (IOException e) {
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            response.getWriter().write("Error al cargar el contenido: " + e.getMessage());
         }
+
     }
 }

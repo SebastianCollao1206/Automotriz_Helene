@@ -7,6 +7,10 @@ import java.util.Objects;
 
 public class Usuario implements Comparable<Usuario>{
 
+    public static final Comparator<Usuario> USUARIO_COMPARATOR_NATURAL_ORDER = Comparator.comparing(Usuario::getIdUsuario).thenComparing(Usuario::getNombre)
+            .thenComparing(Usuario::getCorreo).thenComparing(Usuario::getTipoUsuario).thenComparing(Usuario::getEstado)
+            .thenComparing(Usuario::getFechaRegistro).thenComparing(Usuario::getDni);
+
     private int idUsuario;
     private String nombre;
     private String correo;
@@ -18,9 +22,8 @@ public class Usuario implements Comparable<Usuario>{
 
     @Override
     public int compareTo(Usuario o) {
-        return Comparator.comparing(Usuario::getIdUsuario).thenComparing(Usuario::getNombre)
-                .thenComparing(Usuario::getCorreo).thenComparing(Usuario::getTipoUsuario).thenComparing(Usuario::getEstado)
-                .thenComparing(Usuario::getFechaRegistro).thenComparing(Usuario::getDni).compare(this, o);
+        return USUARIO_COMPARATOR_NATURAL_ORDER
+                .compare(this, o);
     }
 
     public enum TipoUsuario {

@@ -11,12 +11,13 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     private final UsuarioService usuarioService;
 
-    public LoginServlet() {
+    public LoginServlet() throws SQLException {
         this.usuarioService = new UsuarioService();
     }
 

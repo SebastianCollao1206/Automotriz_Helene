@@ -4,18 +4,43 @@ import com.pe.model.entidad.Usuario;
 import com.pe.util.DBConnection;
 
 import java.sql.*;
+import java.util.TreeSet;
 
 public class UsuarioDAO {
+
+    private Connection connection;
+
+    // Constructor para inicializar la conexión
+    public UsuarioDAO() throws SQLException {
+        DBConnection dbConnection = new DBConnection();
+        this.connection = dbConnection.getConnection();
+    }
+
+    //Traer los usuarios de la BD
+    public void cargarUsuarios(TreeSet<Usuario> usuarios) throws SQLException {
+        String query = "SELECT * FROM usuario";
+        try (PreparedStatement stmt = connection.prepareStatement(query);
+             ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                Usuario usuario = new Usuario(
+                        rs.getInt("id_usuario"),
+                        rs.getString("nombre"),
+                        rs.getString("correo"),
+                        rs.getBytes("contrasena"),
+                        Usuario.TipoUsuario.valueOf(rs.getString("tipo_usuario")),
+                        Usuario.EstadoUsuario.valueOf(rs.getString("estado")),
+                        rs.getTimestamp("fecha_registro").toLocalDateTime().toLocalDate(),
+                        rs.getString("dni")
+                );
+                usuarios.add(usuario); // Aquí se agrega al TreeSet pasado como argumento
+            }
+        }
+    }
+
     // Metodo para agregar usuario
     public void agregarUsuario(Usuario usuario) throws SQLException {
         String sql = "INSERT INTO usuario (nombre, correo, contrasena, tipo_usuario, estado, fecha_registro, dni) VALUES (?, ?, ?, ?, ?, ?, ?)";
-        Connection connection = null;
-        PreparedStatement statement = null;
-
-        try {
-            DBConnection dbConnection = new DBConnection();
-            connection = dbConnection.getConnection();
-            statement = connection.prepareStatement(sql);
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, usuario.getNombre());
             statement.setString(2, usuario.getCorreo());
             statement.setBytes(3, usuario.getContrasena());
@@ -25,37 +50,18 @@ public class UsuarioDAO {
             statement.setString(7, usuario.getDni());
 
             statement.executeUpdate();
-        } finally {
-            if (statement != null) {
-                try {
-                    statement.close();
-                } catch (SQLException e) {
-                    System.err.println("Error al cerrar el PreparedStatement: " + e.getMessage());
-                }
-            }
-            if (connection != null) {
-                try {
-                    connection.close();
-                } catch (SQLException e) {
-                    System.err.println("Error al cerrar la conexión: " + e.getMessage());
-                }
-            }
+        } catch (SQLException e) {
+            System.err.println("Error al agregar usuario: " + e.getMessage());
+            throw e; // Propagar la excepción
         }
     }
 
     // Metodo para obtener usuario por correo
     public Usuario obtenerUsuarioPorCorreo(String correo) throws SQLException {
         String sql = "SELECT * FROM usuario WHERE correo = ?";
-        Connection connection = null;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            DBConnection dbConnection = new DBConnection();
-            connection = dbConnection.getConnection();
-            statement = connection.prepareStatement(sql);
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, correo);
-            resultSet = statement.executeQuery();
+            ResultSet resultSet = statement.executeQuery();
 
             if (resultSet.next()) {
                 Usuario usuario = new Usuario();
@@ -68,12 +74,17 @@ public class UsuarioDAO {
                 usuario.setDni(resultSet.getString("dni"));
                 return usuario;
             }
-            return null; // Usuario no encontrado
-        } finally {
-            // Cerrar recursos
-            if (resultSet != null) resultSet.close();
-            if (statement != null) statement.close();
-            if (connection != null) connection.close();
+            return null;
+        } catch (SQLException e) {
+            System.err.println("Error al obtener usuario por correo: " + e.getMessage());
+            throw e;
+        }
+    }
+
+    // Metodo para cerrar la conexión
+    public void cerrarConexion() throws SQLException {
+        if (connection != null && !connection.isClosed()) {
+            connection.close();
         }
     }
 }

@@ -19,10 +19,11 @@ public class App {
             JettyUTP webserver = new JettyUTP(8081, path);
 
             //agregar los servlets
-            webserver.addServlet(HeaderServlet.class, "/header/usuario-info");
+
             webserver.addServlet(AgregarUsuarioServlet.class, "/usuario/agregar");
             webserver.addServlet(LoginServlet.class, "/login");
             webserver.addServlet(LogoutServlet.class, "/logout");
+            webserver.addServlet(UsuariosServlet.class, "/usuario/listar");
 
             webserver.start();
             System.out.println("Servidor iniciado en http://localhost:8081");

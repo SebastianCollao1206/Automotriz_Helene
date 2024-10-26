@@ -1,5 +1,6 @@
 package com.pe.controller;
 
+import com.pe.model.html.UsuarioHtml;
 import com.pe.model.service.UsuarioService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,13 +9,14 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 
 @WebServlet("/usuario/agregar")
 public class AgregarUsuarioServlet extends BaseServlet{
 
     private final UsuarioService usuarioService;
 
-    public AgregarUsuarioServlet() {
+    public AgregarUsuarioServlet() throws SQLException {
         this.usuarioService = new UsuarioService();
     }
 
@@ -32,23 +34,21 @@ public class AgregarUsuarioServlet extends BaseServlet{
         String estado = request.getParameter("estado");
         String contrasena = request.getParameter("contrasena");
 
+        String mensaje;
+        String redirigirUrl = "/usuario/agregar";
+
         try {
             usuarioService.agregarUsuario(nombre, correo, dni, tipo, estado, contrasena);
-            // Redirige con mensaje de éxito
-            response.setContentType("text/html;charset=UTF-8");
-            PrintWriter out = response.getWriter();
-            out.println("<script type='text/javascript'>");
-            out.println("alert('Usuario agregado exitosamente!');");
-            out.println("window.location='/usuario/agregar';");
-            out.println("</script>");
+            mensaje = "Usuario agregado exitosamente!";
         } catch (Exception e) {
-            // Redirige con mensaje de error
-            response.setContentType("text/html;charset=UTF-8");
-            PrintWriter out = response.getWriter();
-            out.println("<script type='text/javascript'>");
-            out.println("alert('Error al agregar el usuario');");
-            out.println("window.location='/usuario/agregar';");
-            out.println("</script>");
+            mensaje = "Error al agregar el usuario";
         }
+
+        // Establecer el mensaje en el request
+        request.setAttribute("mensaje", mensaje);
+        request.setAttribute("redirigirUrl", redirigirUrl);
+
+        // Llamar al metodo
+        super.doGet(request, response);
     }
 }
