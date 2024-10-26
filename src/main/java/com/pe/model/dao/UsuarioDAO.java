@@ -81,6 +81,14 @@ public class UsuarioDAO {
         }
     }
 
+    public void eliminarUsuario(int id) throws SQLException {
+        String sql = "DELETE FROM usuario WHERE id_usuario = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setInt(1, id);
+            statement.executeUpdate();
+        }
+    }
+
     // Metodo para cerrar la conexión
     public void cerrarConexion() throws SQLException {
         if (connection != null && !connection.isClosed()) {

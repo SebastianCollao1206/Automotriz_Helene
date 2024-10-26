@@ -27,6 +27,11 @@ public class UsuarioService {
         usuarioDAO.cargarUsuarios(usuarios);
     }
 
+    public void eliminarUsuario(int id) throws SQLException {
+        usuarioDAO.eliminarUsuario(id);
+        cargarUsuarios();
+    }
+
     public void agregarUsuario(String nombre, String correo, String dni, String tipo, String estado, String contrasena) throws Exception {
         byte[] contrasenaEncriptada = encryptPassword(contrasena);
 
@@ -40,6 +45,7 @@ public class UsuarioService {
         usuario.setFechaRegistro(LocalDate.now());
 
         usuarioDAO.agregarUsuario(usuario);
+        cargarUsuarios();
     }
 
     //Encriptacion SHA-256

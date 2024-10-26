@@ -31,6 +31,11 @@ public class UsuariosServlet extends BaseServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Evitar que el navegador almacene en caché la respuesta
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1
+        response.setHeader("Pragma", "no-cache"); // HTTP 1.0
+        response.setDateHeader("Expires", 0); // Proxies
+
         // Cargar todos los usuarios
         TreeSet<Usuario> usuarios = usuarioService.getUsuarios();
 
@@ -56,6 +61,9 @@ public class UsuariosServlet extends BaseServlet {
         // Reemplazar las opciones de los filtros
         html = html.replace("${tiposUsuarioOptions}", UsuarioHtml.generarOpcionesTipoUsuario(usuarioService.getTiposUsuarioSet()));
         html = html.replace("${estadosOptions}", UsuarioHtml.generarOpcionesEstadoUsuario(usuarioService.getEstadosUsuarioSet()));
+
+        // Incluir el script de confirmación de eliminación
+        html = html.replace("${scriptConfirmacionEliminacion}", UsuarioHtml.generarScriptConfirmacionEliminacion());
 
         // Establecer el contenido en el request para que el BaseServlet lo maneje
         request.setAttribute("content", html);

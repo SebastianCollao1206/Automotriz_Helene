@@ -47,10 +47,6 @@ public abstract class BaseServlet extends HttpServlet {
             // Incluir el sidebar
             request.getRequestDispatcher("/estatic/sidebar.html").include(request, response);
 
-            // Cargar el contenido específico de la página
-//            String contentPage = getContentPage();
-//            String content = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin" + contentPage)));
-
             String contentPage = getContentPage();
             String content = (String) request.getAttribute("content");
 

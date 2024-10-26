@@ -15,6 +15,16 @@ public class UsuarioHtml {
         return html.toString();
     }
 
+    public static String generarScriptConfirmacionEliminacion() {
+        return "<script>" +
+                "function confirmarEliminacion(button) {" +
+                "    if (confirm('¿Estás seguro de que deseas eliminar este usuario?')) {" +
+                "        button.parentElement.submit();" +
+                "    }" +
+                "}" +
+                "</script>";
+    }
+
     /**
      * Generar opciones para el filtro de tipo de usuario
      * @param tiposUsuario
@@ -62,9 +72,15 @@ public class UsuarioHtml {
             tableRows.append("<button class='btn btn-warning btn-sm m-1'>");
             tableRows.append("<i class='bi bi-pencil'></i>");
             tableRows.append("</button>");
-            tableRows.append("<button class='btn btn-danger btn-sm m-1'>");
+
+            // Botón de eliminar
+            tableRows.append("<form action='/usuario/eliminar' method='POST' style='display:inline;'>");
+            tableRows.append("<input type='hidden' name='id' value='").append(usuario.getIdUsuario()).append("'/>");
+            tableRows.append("<button type='button' class='btn btn-danger btn-sm m-1' onclick='confirmarEliminacion(this);'>");
             tableRows.append("<i class='bi bi-trash'></i>");
             tableRows.append("</button>");
+            tableRows.append("</form>");
+
             tableRows.append("</td>");
             tableRows.append("</tr>");
         }
