@@ -21,7 +21,6 @@ public class UsuariosServlet extends BaseServlet {
 
     public UsuariosServlet() throws SQLException {
         this.usuarioService = new UsuarioService();
-        usuarioService.cargarUsuarios();
     }
 
     @Override
@@ -31,44 +30,47 @@ public class UsuariosServlet extends BaseServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Evitar que el navegador almacene en caché la respuesta
-        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1
-        response.setHeader("Pragma", "no-cache"); // HTTP 1.0
-        response.setDateHeader("Expires", 0); // Proxies
 
-        // Cargar todos los usuarios
-        TreeSet<Usuario> usuarios = usuarioService.getUsuarios();
+        try {
+            // Recargar usuarios desde la base de datos en cada petición
+            usuarioService.cargarUsuarios();
 
-        // Obtener los parámetros de búsqueda
-        String nombre = request.getParameter("nombre");
-        String dni = request.getParameter("dni");
-        String tipo = request.getParameter("tipo");
-        String estado = request.getParameter("estado");
+            // Evitar que el navegador almacene en caché la respuesta
+            response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+            response.setHeader("Pragma", "no-cache");
+            response.setDateHeader("Expires", 0);
 
-        // Filtrar los datos de los usuarios según los parámetros de búsqueda
-        TreeSet<Usuario> usuariosFiltrados = usuarioService.buscarUsuarios(nombre, dni, tipo, estado);
+            // Obtener los parámetros de búsqueda
+            String nombre = request.getParameter("nombre");
+            String dni = request.getParameter("dni");
+            String tipo = request.getParameter("tipo");
+            String estado = request.getParameter("estado");
 
-        // Leer el HTML del contenido específico
-        String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/lista_usuario.html")));
+            // Filtrar los datos de los usuarios según los parámetros de búsqueda
+            TreeSet<Usuario> usuariosFiltrados = usuarioService.buscarUsuarios(nombre, dni, tipo, estado);
 
-        // Reemplazar la parte dinámica de la tabla
-        if (usuariosFiltrados.isEmpty()) {
-            html = html.replace("${tableRows}", "<tr><td colspan='7'>No se encontraron usuarios que coincidan.</td></tr>");
-        } else {
-            html = html.replace("${tableRows}", UsuarioHtml.generarFilasTablaUsuarios(usuariosFiltrados));
+            // Leer el HTML del contenido específico
+            String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/lista_usuario.html")));
+
+            // Reemplazar la parte dinámica de la tabla
+            if (usuariosFiltrados.isEmpty()) {
+                html = html.replace("${tableRows}", "<tr><td colspan='7'>No se encontraron usuarios que coincidan.</td></tr>");
+            } else {
+                html = html.replace("${tableRows}", UsuarioHtml.generarFilasTablaUsuarios(usuariosFiltrados));
+            }
+
+            // Reemplazar las opciones de los filtros
+            html = html.replace("${tiposUsuarioOptions}", UsuarioHtml.generarOpcionesTipoUsuario(usuarioService.getTiposUsuarioSet()));
+            html = html.replace("${estadosOptions}", UsuarioHtml.generarOpcionesEstadoUsuario(usuarioService.getEstadosUsuarioSet()));
+            html = html.replace("${scriptConfirmacionEliminacion}", UsuarioHtml.generarScriptConfirmacionEliminacion());
+
+            request.setAttribute("content", html);
+            super.doGet(request, response);
+
+        } catch (SQLException e) {
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            response.getWriter().write("Error al cargar usuarios: " + e.getMessage());
         }
 
-        // Reemplazar las opciones de los filtros
-        html = html.replace("${tiposUsuarioOptions}", UsuarioHtml.generarOpcionesTipoUsuario(usuarioService.getTiposUsuarioSet()));
-        html = html.replace("${estadosOptions}", UsuarioHtml.generarOpcionesEstadoUsuario(usuarioService.getEstadosUsuarioSet()));
-
-        // Incluir el script de confirmación de eliminación
-        html = html.replace("${scriptConfirmacionEliminacion}", UsuarioHtml.generarScriptConfirmacionEliminacion());
-
-        // Establecer el contenido en el request para que el BaseServlet lo maneje
-        request.setAttribute("content", html);
-
-        // Llamar al metodo doGet del BaseServlet para manejar el flujo de respuesta
-        super.doGet(request, response);
     }
 }

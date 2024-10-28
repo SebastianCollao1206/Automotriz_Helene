@@ -21,6 +21,7 @@ public class UsuarioDAO {
         String query = "SELECT * FROM usuario";
         try (PreparedStatement stmt = connection.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
+            usuarios.clear();
             while (rs.next()) {
                 Usuario usuario = new Usuario(
                         rs.getInt("id_usuario"),

@@ -35,7 +35,7 @@ public class AgregarUsuarioServlet extends BaseServlet{
         String contrasena = request.getParameter("contrasena");
 
         String mensaje;
-        String redirigirUrl = "/usuario/listar";
+        String redirigirUrl = "/usuario/agregar";
 
         try {
             usuarioService.agregarUsuario(nombre, correo, dni, tipo, estado, contrasena);
