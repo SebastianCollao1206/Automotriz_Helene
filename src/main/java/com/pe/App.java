@@ -19,8 +19,6 @@ public class App {
             JettyUTP webserver = new JettyUTP(8081, path);
 
             //agregar los servlets
-
-
             webserver.addServlet(LoginServlet.class, "/login");
             webserver.addServlet(LogoutServlet.class, "/logout");
 
@@ -38,6 +36,10 @@ public class App {
             webserver.addServlet(TamaniosServlet.class, "/tamanio/listar");
             webserver.addServlet(EliminarTamanioServlet.class, "/tamanio/eliminar");
             webserver.addServlet(EditarTamanioServlet.class, "/tamanio/editar");
+
+            webserver.addServlet(AgregarProductoServlet.class, "/producto/agregar");
+            webserver.addServlet(ProductosServlet.class, "/producto/listar");
+            webserver.addServlet(VarianteProductoServlet.class, "/variante/producto");
 
             webserver.start();
             System.out.println("Servidor iniciado en http://localhost:8081");

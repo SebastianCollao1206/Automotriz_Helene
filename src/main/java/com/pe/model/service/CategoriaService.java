@@ -86,6 +86,15 @@ public class CategoriaService {
         return valido;
     }
 
+    // Metodo para obtener nombres de categorías
+    public TreeSet<String> getNombresCategorias() {
+        TreeSet<String> nombresCategorias = new TreeSet<>();
+        for (Categoria categoria : categorias) {
+            nombresCategorias.add(categoria.getNombre());
+        }
+        return nombresCategorias;
+    }
+
     public TreeSet<Categoria> getCategorias() {
         return categorias;
     }

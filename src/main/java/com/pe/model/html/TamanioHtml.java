@@ -27,6 +27,15 @@ public class TamanioHtml {
         """;
     }
 
+    public static String generarOpcionesTamanios(TreeSet<Tamanio> tamanios) {
+        StringBuilder options = new StringBuilder();
+        options.append("<option value='' style='display: none;'>Selecciona un tamaño</option>");
+        for (Tamanio tamanio : tamanios) {
+            options.append("<option value=\"").append(tamanio.getIdTamanio()).append("\">").append(tamanio.getUnidadMedida()).append("</option>");
+        }
+        return options.toString();
+    }
+
     /**
      * Generar filas de la tabla de tamaños
      * @param tamanios

@@ -1,0 +1,93 @@
+<!--SECCIONES-->
+<div class="col p-lg-5 p-4">
+    <h2 class="text-center">Productos</h2>
+    <!--BOTONES PARA AGREGAR-->
+    <div class="row d-flex justify-content-center p-4 gap-4">
+        <div class="col-md-3 d-flex justify-content-center">
+            <a href="/producto/agregar"><button
+                    class="btn border-0 text-white btn-diseño">Agregar
+                Producto</button></a>
+        </div>
+        <div class="col-md-3 d-flex justify-content-center">
+            <a href="/variante/agregar"><button class="btn border-0 text-white btn-diseño">Agregar
+                variante</button></a>
+        </div>
+        <div class="col-md-3 d-flex justify-content-center">
+            <a href="/tamanio/agregar"><button class="btn border-0 text-white btn-diseño">Agregar
+                tamaño</button></a>
+        </div>
+    </div>
+    <!--Filtros-->
+    <form method="GET" action="/producto/listar" class="row d-flex justify-content-center align-items-center gap-4 gap-lg-0 mt-5">
+        <div class="col-md-2 d-flex justify-content-center">
+            <label>Filtrar por:</label>
+        </div>
+        <div class="col-md-2 d-flex justify-content-center">
+            <input type="text" name="nombre" class="form-control" placeholder="Nombre"
+                   onfocus="this.placeholder=''" onblur="this.placeholder='Nombre'">
+        </div>
+        <div class="col-md-2 d-flex justify-content-center">
+            <select name="categoria" class="form-select">
+                ${categoriasOptions} <!-- Aquí se insertan dinámicamente las opciones de categorías -->
+            </select>
+        </div>
+        <div class="col-md-2 d-flex justify-content-center">
+            <button type="submit" class="btn border-0 text-white btn-primary btn-filtrar">Filtrar<i
+                    class="bi bi-chevron-right ms-2"></i></button>
+        </div>
+    </form>
+    <!--Tabla-->
+    <div class="table-responsive mt-5">
+        <table class="table table-bordered text-center">
+            <thead class="table-dark">
+            <tr>
+                <th>Nombre</th>
+                <th>Categoría</th>
+                <th>Descripción</th>
+                <th>Variantes</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            ${tableRows} <!-- Aquí se insertarán las filas dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+    <!-- Modal Estático en el HTML -->
+    <div class="modal fade" id="descripcionModal" tabindex="-1" aria-labelledby="descripcionModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="descripcionModalLabel">Nombre del Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Descripción del producto.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+</section>
+
+</article>
+</main>
+<!--CONTENIDO-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script>
+    function setModalContent(nombre, descripcion) {
+        document.getElementById('descripcionModalLabel').textContent = nombre;
+        document.querySelector('#descripcionModal .modal-body').innerHTML = `<p>${descripcion}</p>`;
+    }
+</script>
+</body>
+
+</html>

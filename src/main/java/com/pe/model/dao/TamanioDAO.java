@@ -1,6 +1,7 @@
 package com.pe.model.dao;
 
 import com.pe.model.entidad.Tamanio;
+import com.pe.model.service.TamanioService;
 import com.pe.util.DBConnection;
 
 import java.sql.Connection;

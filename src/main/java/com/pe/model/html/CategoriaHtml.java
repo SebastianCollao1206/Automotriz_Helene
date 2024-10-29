@@ -28,6 +28,15 @@ public class CategoriaHtml {
         """;
     }
 
+    public static String generarOpcionesCategorias(TreeSet<Categoria> categorias) {
+        StringBuilder options = new StringBuilder();
+        options.append("<option value='' style='display: none;'>Selecciona una categoría</option>");
+        for (Categoria categoria : categorias) {
+            options.append("<option value=\"").append(categoria.getIdCategoria()).append("\">").append(categoria.getNombre()).append("</option>");
+        }
+        return options.toString();
+    }
+
     /**
      * Generar filas de la tabla de categorías
      * @param categorias

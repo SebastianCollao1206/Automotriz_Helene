@@ -2,6 +2,7 @@ package com.pe.model.service;
 
 import com.pe.model.dao.TamanioDAO;
 import com.pe.model.entidad.Tamanio;
+import com.pe.model.entidad.Usuario;
 
 import java.sql.SQLException;
 import java.util.TreeSet;
@@ -84,6 +85,15 @@ public class TamanioService {
             valido = false;
         }
         return valido;
+    }
+
+    // Metodo para obtener nombres de tamaños
+    public TreeSet<String> getNombresTamanios() {
+        TreeSet<String> nombresTamanios = new TreeSet<>();
+        for (Tamanio tamanio : tamanios) {
+            nombresTamanios.add(tamanio.getUnidadMedida());
+        }
+        return nombresTamanios;
     }
 
     public TreeSet<Tamanio> getTamanios() {
