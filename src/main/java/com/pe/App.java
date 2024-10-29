@@ -20,12 +20,19 @@ public class App {
 
             //agregar los servlets
 
-            webserver.addServlet(AgregarUsuarioServlet.class, "/usuario/agregar");
+
             webserver.addServlet(LoginServlet.class, "/login");
             webserver.addServlet(LogoutServlet.class, "/logout");
+
+            webserver.addServlet(AgregarUsuarioServlet.class, "/usuario/agregar");
             webserver.addServlet(UsuariosServlet.class, "/usuario/listar");
             webserver.addServlet(EliminarUsuarioServlet.class, "/usuario/eliminar");
             webserver.addServlet(EditarUsuarioServlet.class, "/usuario/editar");
+
+            webserver.addServlet(AgregarCategoriaServlet.class, "/categoria/agregar");
+            webserver.addServlet(CategoriasServlet.class, "/categoria/listar");
+            webserver.addServlet(EliminarCategoriaServlet.class, "/categoria/eliminar");
+            webserver.addServlet(EditarCategoriaServlet.class, "/categoria/editar");
 
             webserver.start();
             System.out.println("Servidor iniciado en http://localhost:8081");

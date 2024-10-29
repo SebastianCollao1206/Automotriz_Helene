@@ -17,15 +17,15 @@ public class UsuarioHtml {
 
     public static String generarScriptConfirmacionEliminacion() {
         return """
-            <script>
-            function confirmarEliminacion(button) {
-                if (confirm('¿Estás seguro de que deseas eliminar este usuario?')) {
-                    var form = button.closest('form');
-                    form.submit();
-                }
+        <script>
+        function confirmarEliminacion(button) {
+            if (confirm('¿Estás seguro de que deseas cambiar el estado de este usuario a inactivo?')) {
+                var form = button.closest('form');
+                form.submit();
             }
-            </script>
-            """;
+        }
+        </script>
+        """;
     }
 
 

@@ -29,8 +29,14 @@ public class UsuarioService {
     }
 
     public void eliminarUsuario(int id) throws SQLException {
-        usuarioDAO.eliminarUsuario(id);
-        cargarUsuarios();
+        Usuario usuario = obtenerUsuarioPorId(id);
+        if (usuario != null && usuario.getEstado() == Usuario.EstadoUsuario.Activo) {
+            usuario.setEstado(Usuario.EstadoUsuario.Inactivo);
+            usuarioDAO.actualizarUsuario(usuario);
+            cargarUsuarios();
+        } else {
+            throw new SQLException("El usuario no se puede cambiar a inactivo o no existe.");
+        }
     }
 
     public void agregarUsuario(String nombre, String correo, String dni, String tipo, String estado, String contrasena) throws Exception {

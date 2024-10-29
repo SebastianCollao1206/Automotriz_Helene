@@ -1,10 +1,8 @@
 package com.pe.controller;
 
-import com.pe.model.html.UsuarioHtml;
 import com.pe.model.service.UsuarioService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
@@ -32,18 +30,14 @@ public class EliminarUsuarioServlet extends BaseServlet {
 
         try {
             usuarioService.eliminarUsuario(Integer.parseInt(id));
-            mensaje = "Usuario eliminado exitosamente!";
-
+            mensaje = "Usuario cambiado a inactivo exitosamente!";
         } catch (Exception e) {
-            mensaje = "Error al eliminar el usuario: " + e.getMessage();
+            mensaje = "Error al cambiar el estado del usuario: " + e.getMessage();
         }
 
-        // Establecer atributos para el mensaje y la redirección
         request.setAttribute("mensaje", mensaje);
         request.setAttribute("redirigirUrl", redirigirUrl);
 
-
-        // Redireccionar usando sendRedirect en lugar de JavaScript
         response.sendRedirect(redirigirUrl);
     }
 }
