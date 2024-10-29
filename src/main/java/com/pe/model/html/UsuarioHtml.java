@@ -28,6 +28,7 @@ public class UsuarioHtml {
             """;
     }
 
+
     /**
      * Generar opciones para el filtro de tipo de usuario
      * @param tiposUsuario
@@ -72,9 +73,12 @@ public class UsuarioHtml {
             tableRows.append("<td>").append(usuario.getTipoUsuario().name()).append("</td>");
             tableRows.append("<td>").append(usuario.getEstado().name()).append("</td>");
             tableRows.append("<td>");
-            tableRows.append("<button class='btn btn-warning btn-sm m-1'>");
+
+            // Botón de editar
+            tableRows.append("<a href='/usuario/editar?id=").append(usuario.getIdUsuario())
+                    .append("' class='btn btn-warning btn-sm m-1'>");
             tableRows.append("<i class='bi bi-pencil'></i>");
-            tableRows.append("</button>");
+            tableRows.append("</a>");
 
             // Botón de eliminar
             tableRows.append("<form action='/usuario/eliminar' method='POST' style='display:inline;'>");

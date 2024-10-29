@@ -25,6 +25,7 @@ public class App {
             webserver.addServlet(LogoutServlet.class, "/logout");
             webserver.addServlet(UsuariosServlet.class, "/usuario/listar");
             webserver.addServlet(EliminarUsuarioServlet.class, "/usuario/eliminar");
+            webserver.addServlet(EditarUsuarioServlet.class, "/usuario/editar");
 
             webserver.start();
             System.out.println("Servidor iniciado en http://localhost:8081");

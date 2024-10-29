@@ -17,6 +17,7 @@ public class UsuarioService {
     public UsuarioService() throws SQLException {
         this.usuarioDAO = new UsuarioDAO();
         this.usuarios = new TreeSet<>(Usuario.USUARIO_COMPARATOR_NATURAL_ORDER);
+        usuarioDAO.cargarUsuarios(this.usuarios);
     }
 
     public void agregarUsuario(Usuario usuario) {
@@ -34,7 +35,6 @@ public class UsuarioService {
 
     public void agregarUsuario(String nombre, String correo, String dni, String tipo, String estado, String contrasena) throws Exception {
         byte[] contrasenaEncriptada = encryptPassword(contrasena);
-
         Usuario usuario = new Usuario();
         usuario.setNombre(nombre);
         usuario.setCorreo(correo);
@@ -97,6 +97,29 @@ public class UsuarioService {
             valido = false;
         }
         return valido;
+    }
+
+    public Usuario obtenerUsuarioPorId(int id) throws SQLException {
+        return usuarioDAO.obtenerUsuarioPorId(id);
+    }
+
+
+    //actualizar usuario
+    public void actualizarUsuario(int id, String nombre, String correo, String dni,
+                                  String tipo, String estado) throws SQLException {
+        Usuario usuario = obtenerUsuarioPorId(id);
+        if (usuario != null) {
+            usuario.setNombre(nombre);
+            usuario.setCorreo(correo);
+            usuario.setDni(dni);
+            usuario.setTipoUsuario(Usuario.TipoUsuario.valueOf(tipo));
+            usuario.setEstado(Usuario.EstadoUsuario.valueOf(estado));
+
+            usuarioDAO.actualizarUsuario(usuario);
+            cargarUsuarios();
+        } else {
+            throw new SQLException("Usuario no encontrado");
+        }
     }
 
     public TreeSet<String> getTiposUsuarioSet() {

@@ -52,7 +52,7 @@ public abstract class BaseServlet extends HttpServlet {
 
             // Si no hay contenido establecido, cargar el HTML del archivo
             if (content == null) {
-                content = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin" + contentPage)));
+                content = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin" + getContentPage())));
             }
 
             // Escribir el contenido específico de la página

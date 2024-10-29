@@ -90,6 +90,49 @@ public class UsuarioDAO {
         }
     }
 
+    //Modificar usuario
+    public void actualizarUsuario(Usuario usuario) throws SQLException {
+        String sql = "UPDATE usuario SET nombre = ?, correo = ?, dni = ?, " +
+                "tipo_usuario = ?, estado = ? WHERE id_usuario = ?";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, usuario.getNombre());
+            stmt.setString(2, usuario.getCorreo());
+            stmt.setString(3, usuario.getDni());
+            stmt.setString(4, usuario.getTipoUsuario().name());
+            stmt.setString(5, usuario.getEstado().name());
+            stmt.setInt(6, usuario.getIdUsuario());
+
+            int filasAfectadas = stmt.executeUpdate();
+            if (filasAfectadas == 0) {
+                throw new SQLException("No se pudo actualizar el usuario, ID no encontrado");
+            }
+        }
+    }
+
+    public Usuario obtenerUsuarioPorId(int id) throws SQLException {
+        String query = "SELECT * FROM usuario WHERE id_usuario = ?";
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setInt(1, id);
+            try (ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return new Usuario(
+                            rs.getInt("id_usuario"),
+                            rs.getString("nombre"),
+                            rs.getString("correo"),
+                            rs.getBytes("contrasena"),
+                            Usuario.TipoUsuario.valueOf(rs.getString("tipo_usuario")),
+                            Usuario.EstadoUsuario.valueOf(rs.getString("estado")),
+                            rs.getTimestamp("fecha_registro").toLocalDateTime().toLocalDate(),
+                            rs.getString("dni")
+                    );
+                } else {
+                    return null;
+                }
+            }
+        }
+    }
+
     // Metodo para cerrar la conexión
     public void cerrarConexion() throws SQLException {
         if (connection != null && !connection.isClosed()) {
