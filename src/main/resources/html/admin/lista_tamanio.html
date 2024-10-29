@@ -1,0 +1,75 @@
+<!--SECCIONES-->
+<div class="col p-lg-5 p-4">
+    <div class="container">
+        <div class="row gap-4 d-flex container-fluid">
+            <div class="col-md-7 d-flex justify-content-center">
+                <h2 class="text-center">Tamaños</h2>
+            </div>
+            <div class="col-md-4 text-center justify-content-end">
+                <a class="text-decoration-none" href="/tamanio/agregar">
+                    <button type="button"
+                            class="btn text-white btn-primary btn-usuario border-0">Agregar tamaños<i
+                            class="bi bi-person-plus-fill mx-3"></i></button>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-11">
+                <!--filtros-->
+                <form method="GET" action="/tamanio/listar"
+                      class="row d-flex justify-content-center align-items-center gap-4 gap-lg-0 mt-5">
+                    <div class="col-md-2 d-flex justify-content-center">
+                        <label class="form-label">Filtrar por:</label>
+                    </div>
+                    <div class="col-md-5 justify-content-center">
+                        <input type="text" name="nombre" class="form-control"
+                               placeholder="Nombre" onfocus="this.placeholder=''"
+                               onblur="this.placeholder='Nombre'">
+                    </div>
+                    <div class="col-md-3 d-flex justify-content-center">
+                        <select name="estado" class="form-select">
+                            <option value="" style="display: none;">Estado</option>
+                            <option value="Activo">Activo</option>
+                            <option value="Inactivo">Inactivo</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-center">
+                        <button type="submit"
+                                class="btn border-0 text-white btn-primary btn-filtrar">Filtrar<i
+                                class="bi bi-chevron-right ms-2"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="table-responsive mt-5">
+            <table class="table table-bordered text-center">
+                <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                ${tableRows} <!-- Aquí se insertan dinámicamente las filas de la tabla -->
+                </tbody>
+            </table>
+            ${scriptConfirmacionEliminacion}
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+</article>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script src="../js/script.js"></script>
+</body>
+
+</html>

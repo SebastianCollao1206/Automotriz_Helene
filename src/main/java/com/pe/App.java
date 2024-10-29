@@ -34,6 +34,11 @@ public class App {
             webserver.addServlet(EliminarCategoriaServlet.class, "/categoria/eliminar");
             webserver.addServlet(EditarCategoriaServlet.class, "/categoria/editar");
 
+            webserver.addServlet(AgregarTamanioServlet.class, "/tamanio/agregar");
+            webserver.addServlet(TamaniosServlet.class, "/tamanio/listar");
+            webserver.addServlet(EliminarTamanioServlet.class, "/tamanio/eliminar");
+            webserver.addServlet(EditarTamanioServlet.class, "/tamanio/editar");
+
             webserver.start();
             System.out.println("Servidor iniciado en http://localhost:8081");
 

@@ -17,6 +17,7 @@
     height: 86vh;
     overflow-y: scroll; /* Permitir el scroll vertical */
     scrollbar-width: none;
+    overflow-x: hidden;
 }
 .sidebar-menu{
     position: sticky;
