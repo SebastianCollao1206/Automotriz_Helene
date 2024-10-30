@@ -1,6 +1,27 @@
 package com.pe;
 
-import com.pe.controller.*;
+import com.pe.controller.administrador.LoginServlet;
+import com.pe.controller.administrador.LogoutServlet;
+import com.pe.controller.administrador.productos.ProductosServlet;
+import com.pe.controller.administrador.categorias.AgregarCategoriaServlet;
+import com.pe.controller.administrador.categorias.CategoriasServlet;
+import com.pe.controller.administrador.categorias.EditarCategoriaServlet;
+import com.pe.controller.administrador.categorias.EliminarCategoriaServlet;
+import com.pe.controller.administrador.productos.AgregarProductoServlet;
+import com.pe.controller.administrador.productos.BuscarProductoServlet;
+import com.pe.controller.administrador.productos.EditarProductoServlet;
+import com.pe.controller.administrador.tamanios.AgregarTamanioServlet;
+import com.pe.controller.administrador.tamanios.EditarTamanioServlet;
+import com.pe.controller.administrador.tamanios.EliminarTamanioServlet;
+import com.pe.controller.administrador.tamanios.TamaniosServlet;
+import com.pe.controller.administrador.usuarios.AgregarUsuarioServlet;
+import com.pe.controller.administrador.usuarios.EditarUsuarioServlet;
+import com.pe.controller.administrador.usuarios.EliminarUsuarioServlet;
+import com.pe.controller.administrador.usuarios.UsuariosServlet;
+import com.pe.controller.administrador.variantes.ActualizarStockServlet;
+import com.pe.controller.administrador.variantes.AgregarVarianteServlet;
+import com.pe.controller.administrador.variantes.EditarVarianteServlet;
+import com.pe.controller.administrador.variantes.VarianteProductoServlet;
 import com.pe.util.DBConnection;
 import com.pe.util.JettyUTP;
 

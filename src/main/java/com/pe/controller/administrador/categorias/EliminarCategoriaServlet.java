@@ -1,16 +1,20 @@
-package com.pe.controller;
+package com.pe.controller.administrador.categorias;
 
+import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.service.CategoriaService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet("/categoria/eliminar")
-public class EliminarCategoriaServlet extends BaseServlet{
+public class EliminarCategoriaServlet extends BaseServlet {
+    private static final Logger logger = LoggerFactory.getLogger(EliminarCategoriaServlet.class);
     private final CategoriaService categoriaService;
 
     public EliminarCategoriaServlet() throws SQLException {
@@ -19,7 +23,7 @@ public class EliminarCategoriaServlet extends BaseServlet{
 
     @Override
     protected String getContentPage() {
-        return "/lista_categoria.html"; // Cambia a la ruta de tu HTML
+        return "/lista_categoria.html";
     }
 
     @Override
@@ -29,13 +33,14 @@ public class EliminarCategoriaServlet extends BaseServlet{
         String redirigirUrl = "/categoria/listar";
 
         try {
-            categoriaService.eliminarCategoria(Integer.parseInt(id)); // Cambia el estado a inactivo
+            categoriaService.eliminarCategoria(Integer.parseInt(id));
             mensaje = "Categoría cambiada a inactiva exitosamente!";
+            logger.info("Categoría eliminada: ID = {}", id);
         } catch (Exception e) {
             mensaje = "Error al cambiar el estado de la categoría: " + e.getMessage();
+            logger.error("Error al eliminar categoría: ID inválido: {}", id, e);
         }
 
-        // Si deseas mostrar un mensaje de alerta después de la redirección
         request.setAttribute("mensaje", mensaje);
         request.setAttribute("redirigirUrl", redirigirUrl);
 

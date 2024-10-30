@@ -1,17 +1,21 @@
-package com.pe.controller;
+package com.pe.controller.administrador.usuarios;
 
+import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.service.UsuarioService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet("/usuario/agregar")
-public class AgregarUsuarioServlet extends BaseServlet{
+public class AgregarUsuarioServlet extends BaseServlet {
 
+    private static final Logger logger = LoggerFactory.getLogger(AgregarUsuarioServlet.class);
     private final UsuarioService usuarioService;
 
     public AgregarUsuarioServlet() throws SQLException {
@@ -38,8 +42,10 @@ public class AgregarUsuarioServlet extends BaseServlet{
         try {
             usuarioService.agregarUsuario(nombre, correo, dni, tipo, estado, contrasena);
             mensaje = "Usuario agregado exitosamente!";
+            logger.info("Usuario agregado: Nombre = {}, Correo = {}", nombre, correo);
         } catch (Exception e) {
             mensaje = "Error al agregar el usuario";
+            logger.error("Error al agregar el usuario: {}", e.getMessage(), e);
         }
 
         // Establecer el mensaje en el request

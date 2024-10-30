@@ -1,13 +1,12 @@
-package com.pe.controller;
+package com.pe.controller.administrador.productos;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.entidad.Categoria;
 import com.pe.model.entidad.Producto;
 import com.pe.model.entidad.Tamanio;
 import com.pe.model.entidad.Variante;
 import com.pe.model.html.CategoriaHtml;
 import com.pe.model.html.ProductoHtml;
-import com.pe.model.html.TamanioHtml;
 import com.pe.model.service.CategoriaService;
 import com.pe.model.service.ProductoService;
 import com.pe.model.service.TamanioService;
@@ -16,6 +15,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -25,8 +26,9 @@ import java.sql.SQLException;
 import java.util.TreeSet;
 
 @WebServlet("/producto/agregar")
-public class AgregarProductoServlet extends BaseServlet{
+public class AgregarProductoServlet extends BaseServlet {
 
+    private static final Logger logger = LoggerFactory.getLogger(AgregarProductoServlet.class);
     private final CategoriaService categoriaService;
     private final TamanioService tamanioService;
     private final ProductoService productoService;
@@ -73,6 +75,7 @@ public class AgregarProductoServlet extends BaseServlet{
                 super.doGet(request, response);
             }
         } catch (SQLException e) {
+            logger.error("Error al cargar datos: {}", e.getMessage(), e);
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             response.getWriter().write("Error al cargar datos: " + e.getMessage());
         }
@@ -97,13 +100,11 @@ public class AgregarProductoServlet extends BaseServlet{
             int idCategoria = Integer.parseInt(categoriaStr);
             int numVariantes = Integer.parseInt(numVariantesStr);
 
-            // Crear el objeto Producto
             Producto producto = new Producto();
             producto.setNombre(nombre);
             producto.setDescripcion(descripcion);
             producto.setIdCategoria(idCategoria);
 
-            // Crear el TreeSet para las variantes
             TreeSet<Variante> variantes = new TreeSet<>();
 
             for (int i = 1; i <= numVariantes; i++) {
@@ -139,9 +140,11 @@ public class AgregarProductoServlet extends BaseServlet{
             // Agregar el producto y sus variantes
             productoService.agregarProducto(producto, variantes);
             mensaje = "Producto agregado exitosamente!";
+            logger.info("Producto agregado: {}", producto.getNombre());
 
         } catch (SQLException e) {
             mensaje = "Error al agregar el producto";
+            logger.warn(mensaje);
         }
         // Generar el script de alerta y redirección
         String alertScript = ProductoHtml.generarMensajeAlerta(mensaje, redirigirUrl);

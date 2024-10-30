@@ -1,9 +1,8 @@
-package com.pe.controller;
+package com.pe.controller.administrador.variantes;
 
-import com.pe.model.entidad.Producto;
+import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.entidad.Tamanio;
 import com.pe.model.entidad.Variante;
-import com.pe.model.html.ProductoHtml;
 import com.pe.model.html.TamanioHtml;
 import com.pe.model.html.VarianteHtml;
 import com.pe.model.service.ProductoService;
@@ -13,6 +12,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -22,8 +23,9 @@ import java.sql.SQLException;
 import java.util.TreeSet;
 
 @WebServlet("/variante/agregar")
-public class AgregarVarianteServlet extends BaseServlet{
+public class AgregarVarianteServlet extends BaseServlet {
 
+    private static final Logger logger = LoggerFactory.getLogger(AgregarVarianteServlet.class);
     private final VarianteService varianteService;
     private final ProductoService productoService;
     private final TamanioService tamanioService;
@@ -42,20 +44,15 @@ public class AgregarVarianteServlet extends BaseServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
-            // Cargar tamaños
             tamanioService.cargarTamanios();
             TreeSet<Tamanio> tamanios = tamanioService.getTamanios();
 
-            // Generar opciones de tamaños
             String opcionesTamanios = TamanioHtml.generarOpcionesTamanios(tamanios);
 
-            // Leer el HTML del contenido específico
             String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/agregar_variante.html")));
 
-            // Reemplazar las opciones de tamaños
             html = html.replace("${tamaniosOptions}", opcionesTamanios);
 
-            // Reemplazar el nombre del producto seleccionado si existe
             String productoNombre = (String) request.getAttribute("productoNombre");
             String mensajeError = (String) request.getAttribute("mensajeError");
             if (productoNombre != null) {
@@ -64,13 +61,14 @@ public class AgregarVarianteServlet extends BaseServlet{
             } else if (mensajeError != null) {
                 html = html.replace("${selectedProduct}", mensajeError);
             } else {
-                html = html.replace("${selectedProduct}", ""); // Si no hay producto ni error
+                html = html.replace("${selectedProduct}", "");
             }
 
             request.setAttribute("content", html);
             super.doGet(request, response);
 
         } catch (SQLException e) {
+            logger.error("Error al cargar tamaños: {}", e.getMessage(), e);
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             response.getWriter().write("Error al cargar tamaños: " + e.getMessage());
         }
@@ -79,19 +77,17 @@ public class AgregarVarianteServlet extends BaseServlet{
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String mensaje;
-        String redirigirUrl = "/variante/agregar"; // URL para redirigir después de mostrar la alerta
+        String redirigirUrl = "/variante/agregar";
 
         try {
-            // Recoger los datos del formulario
             String codigo = request.getParameter("codigo");
-            String tamanioId = request.getParameter("tamanio"); // Suponiendo que el valor del tamaño es el ID
+            String tamanioId = request.getParameter("tamanio");
             BigDecimal precio = new BigDecimal(request.getParameter("precio"));
             String imagen = request.getParameter("imagen");
             int stock = Integer.parseInt(request.getParameter("stock"));
             int cantidad = Integer.parseInt(request.getParameter("cantidad"));
-            String productoId = request.getParameter("productoId"); // ID del producto seleccionado
+            String productoId = request.getParameter("productoId");
 
-            // Crear una nueva variante
             Variante nuevaVariante = new Variante();
             nuevaVariante.setCodigo(codigo);
             nuevaVariante.setIdTamanio(Integer.parseInt(tamanioId));
@@ -101,16 +97,15 @@ public class AgregarVarianteServlet extends BaseServlet{
             nuevaVariante.setCantidad(cantidad);
             nuevaVariante.setIdProducto(Integer.parseInt(productoId));
 
-            // Insertar la nueva variante en la base de datos
             varianteService.agregarVariante(nuevaVariante);
             mensaje = "Variante agregada exitosamente!";
-
+            logger.info("Variante agregada: {}", nuevaVariante);
         } catch (SQLException e) {
-            // Manejo de errores
             mensaje = "Error al agregar la variante: " + e.getMessage();
+            logger.error("Error al agregar la variante: {}", e.getMessage(), e);
         } catch (NumberFormatException e) {
-            // Manejo de errores si hay un problema con la conversión de números
             mensaje = "Error en los datos proporcionados: " + e.getMessage();
+            logger.error("Error en el formato de los datos: {}", e.getMessage(), e);
         }
 
         // Generar el script de alerta

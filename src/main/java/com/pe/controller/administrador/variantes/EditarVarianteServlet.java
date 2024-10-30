@@ -1,5 +1,6 @@
-package com.pe.controller;
+package com.pe.controller.administrador.variantes;
 
+import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.entidad.Tamanio;
 import com.pe.model.entidad.Variante;
 import com.pe.model.html.TamanioHtml;
@@ -10,6 +11,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -19,7 +22,8 @@ import java.sql.SQLException;
 import java.util.TreeSet;
 
 @WebServlet("/variante/editar")
-public class EditarVarianteServlet extends BaseServlet{
+public class EditarVarianteServlet extends BaseServlet {
+    private static final Logger logger = LoggerFactory.getLogger(EditarVarianteServlet.class);
     private final VarianteService varianteService;
     private final ProductoService productoService;
     private final TamanioService tamanioService;
@@ -48,11 +52,9 @@ public class EditarVarianteServlet extends BaseServlet{
                     String nombreProducto = productoService.obtenerNombreProductoPorId(variante.getIdProducto());
                     String nombreTamanio = tamanioService.obtenerNombreTamanioPorId(variante.getIdTamanio());
 
-                    // Cargar tamaños
                     tamanioService.cargarTamanios();
                     TreeSet<Tamanio> tamanios = tamanioService.getTamanios();
 
-                    // Generar opciones de tamaños
                     String opcionesTamanios = TamanioHtml.generarOpcionesTamanios2(tamanios, variante.getIdTamanio());
 
                     // Cargar el HTML y reemplazar los valores
@@ -70,14 +72,18 @@ public class EditarVarianteServlet extends BaseServlet{
                     request.setAttribute("content", html);
                     super.doGet(request, response);
                 } else {
+                    logger.warn("Variante no encontrada: ID {}", id);
                     response.sendError(HttpServletResponse.SC_NOT_FOUND, "Variante no encontrada");
                 }
             } catch (NumberFormatException e) {
+                logger.error("ID de variante inválido: {}", idParam, e);
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "ID de variante inválido");
             } catch (SQLException e) {
+                logger.error("Error al acceder a la base de datos: {}", e.getMessage(), e);
                 response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error al acceder a la base de datos: " + e.getMessage());
             }
         } else {
+            logger.warn("ID de variante no proporcionado");
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "ID de variante no proporcionado");
         }
     }
@@ -94,7 +100,7 @@ public class EditarVarianteServlet extends BaseServlet{
         String cantidadParam = request.getParameter("cantidad");
 
         String mensaje;
-        String redirigirUrl; // Cambiamos esto para construir la URL después
+        String redirigirUrl;
 
         try {
             int id = Integer.parseInt(idParam);
@@ -106,11 +112,13 @@ public class EditarVarianteServlet extends BaseServlet{
 
             varianteService.actualizarVariante(id, codigo, idTamanio, idProducto, precio, imagen, stock, cantidad);
             mensaje = "Variante actualizada exitosamente!";
+            logger.info("Variante actualizada: ID = {}, Código = {}, Tamaño ID = {}, Producto ID = {}, Precio = {}, Stock = {}, Cantidad = {}",
+                    id, codigo, idTamanio, idProducto, precio, stock, cantidad);
 
-            // Construir la URL de redirección usando el ID del producto
             redirigirUrl = String.format("http://localhost:8081/variante/producto?id=%d", idProducto);
         } catch (Exception e) {
             mensaje = "Error al actualizar la variante: " + e.getMessage();
+            logger.error("Error inesperado: {}", e.getMessage(), e);
             redirigirUrl = "/variante/listar"; // Redirigir a la lista en caso de error
         }
 

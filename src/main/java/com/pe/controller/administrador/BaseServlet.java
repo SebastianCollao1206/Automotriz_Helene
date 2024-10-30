@@ -1,4 +1,4 @@
-package com.pe.controller;
+package com.pe.controller.administrador;
 
 import com.pe.model.entidad.Usuario;
 import com.pe.model.html.UsuarioHtml;
@@ -8,6 +8,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,6 +19,7 @@ import java.nio.file.Paths;
 
 @WebServlet("/base")
 public abstract class BaseServlet extends HttpServlet {
+    private static final Logger logger = LoggerFactory.getLogger(BaseServlet.class);
     protected abstract String getContentPage();
 
     @Override
@@ -64,6 +67,7 @@ public abstract class BaseServlet extends HttpServlet {
                 out.println(UsuarioHtml.generarMensajeAlerta(mensaje, (String) request.getAttribute("redirigirUrl")));
             }
         } catch (IOException e) {
+            logger.error("Error al cargar el contenido: ", e);
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             response.getWriter().write("Error al cargar el contenido: " + e.getMessage());
         }

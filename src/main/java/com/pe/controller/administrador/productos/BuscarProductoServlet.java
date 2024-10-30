@@ -1,17 +1,21 @@
-package com.pe.controller;
+package com.pe.controller.administrador.productos;
 
+import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.entidad.Producto;
 import com.pe.model.service.ProductoService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet("/buscarProducto")
 public class BuscarProductoServlet extends BaseServlet {
+    private static final Logger logger = LoggerFactory.getLogger(BuscarProductoServlet.class);
     private final ProductoService productoService;
 
     public BuscarProductoServlet() throws SQLException {
@@ -34,18 +38,21 @@ public class BuscarProductoServlet extends BaseServlet {
                     // Si se encuentra el producto, redirigir a agregar variante
                     request.setAttribute("productoNombre", producto.getNombre());
                     request.setAttribute("productoId", producto.getIdProducto());
+                    logger.info("Producto encontrado: {}", producto.getNombre());
                 } else {
                     // Si no se encuentra, establecer un mensaje de error
                     request.setAttribute("mensajeError", "Producto no encontrado");
+                    logger.warn("Producto no encontrado: {}", nombreProducto);
                 }
             } catch (SQLException e) {
                 request.setAttribute("mensajeError", "Error al buscar el producto: " + e.getMessage());
+                logger.error("Error al buscar el producto: {}", e.getMessage(), e);
             }
         } else {
             request.setAttribute("mensajeError", "Por favor, ingresa un nombre de producto.");
+            logger.warn("Nombre de producto no proporcionado.");
         }
 
-        // Redirigir de vuelta al formulario de agregar variante
         request.getRequestDispatcher("/variante/agregar").forward(request, response);
     }
 }

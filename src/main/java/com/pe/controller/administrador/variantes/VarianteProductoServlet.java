@@ -1,11 +1,7 @@
-package com.pe.controller;
+package com.pe.controller.administrador.variantes;
 
-import com.pe.model.entidad.Categoria;
-import com.pe.model.entidad.Producto;
-import com.pe.model.entidad.Tamanio;
+import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.entidad.Variante;
-import com.pe.model.html.CategoriaHtml;
-import com.pe.model.html.UsuarioHtml;
 import com.pe.model.html.VarianteHtml;
 import com.pe.model.service.ProductoService;
 import com.pe.model.service.TamanioService;
@@ -14,6 +10,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -22,7 +20,8 @@ import java.sql.SQLException;
 import java.util.TreeSet;
 
 @WebServlet("/variante/producto")
-public class VarianteProductoServlet extends BaseServlet{
+public class VarianteProductoServlet extends BaseServlet {
+    private static final Logger logger = LoggerFactory.getLogger(VarianteProductoServlet.class);
     private final VarianteService variantesService;
     private final ProductoService productoService;
     private final TamanioService tamanioService;
@@ -58,8 +57,10 @@ public class VarianteProductoServlet extends BaseServlet{
             // Reemplazar la parte dinámica de la tabla
             if (variantes.isEmpty()) {
                 html = html.replace("${tableRows}", "<tr><td colspan='6'>No se encontraron variantes para este producto.</td></tr>");
+                logger.info("No se encontraron variantes para el producto ID: {}", idProducto);
             } else {
                 html = html.replace("${tableRows}", VarianteHtml.generarFilasTablaVariantes(variantes, variantesService));
+                logger.info("Se encontraron {} variantes para el producto ID: {}", variantes.size(), idProducto);
             }
 
             // Reemplazar el marcador ${nombreProducto} con el nombre del producto
@@ -70,6 +71,7 @@ public class VarianteProductoServlet extends BaseServlet{
             super.doGet(request, response);
 
         } catch (SQLException e) {
+            logger.error("Error al cargar variantes: {}", e.getMessage(), e);
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             response.getWriter().write("Error al cargar variantes: " + e.getMessage());
         }

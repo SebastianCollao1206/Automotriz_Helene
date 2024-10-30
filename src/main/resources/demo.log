@@ -1,0 +1,144 @@
+2024-10-30 07:51:12,626 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-10-30 07:51:12,782 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-10-30 07:51:12,887 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@7c137fd5{/,null,AVAILABLE}
+2024-10-30 07:51:13,068 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@942a29c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-10-30 07:51:13,120 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@2a265ea9{HTTP/1.1, (http/1.1)}{0.0.0.0:64633}
+2024-10-30 07:51:13,121 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@56cdfb3b{STARTING}[11.0.7,sto=0] @3141ms
+2024-10-30 07:51:49,241 WARN [qtp1771667101-35] c.p.c.administrador.LoginServlet [LoginServlet.java : 40] -- Intento de inicio de sesión fallido para el correo: sebastian1234@gmail.com
+2024-10-30 07:52:22,670 INFO [qtp1771667101-38] c.p.c.administrador.LoginServlet [LoginServlet.java : 37] -- Usuario autenticado exitosamente: sebastian@gmail.com
+2024-10-30 08:54:50,940 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-10-30 08:54:51,036 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-10-30 08:54:51,096 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@626abbd0{/,null,AVAILABLE}
+2024-10-30 08:54:51,216 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@5b247367{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-10-30 08:54:51,254 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@4d1bf319{HTTP/1.1, (http/1.1)}{0.0.0.0:49241}
+2024-10-30 08:54:51,255 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@1a942c18{STARTING}[11.0.7,sto=0] @2221ms
+2024-10-30 08:55:02,812 INFO [qtp1116094714-47] c.p.c.administrador.LoginServlet [LoginServlet.java : 37] -- Usuario autenticado exitosamente: sebastian@gmail.com
+2024-10-30 08:55:06,760 INFO [qtp1116094714-47] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 63] -- Se encontraron 3 variantes para el producto ID: 1
+2024-10-30 08:55:12,643 INFO [qtp1116094714-38] c.p.c.a.v.ActualizarStockServlet [ActualizarStockServlet.java : 48] -- Stock actualizado: ID Variante = 1, Nuevo Stock = 38
+2024-10-30 08:55:12,679 INFO [qtp1116094714-47] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 63] -- Se encontraron 3 variantes para el producto ID: 1
+2024-10-30 08:55:25,575 INFO [qtp1116094714-47] c.p.c.a.v.EditarVarianteServlet [EditarVarianteServlet.java : 115] -- Variante actualizada: ID = 1, Código = DJK, Tamaño ID = 2, Producto ID = 1, Precio = 40.00, Stock = 38, Cantidad = 6
+2024-10-30 08:55:25,596 INFO [qtp1116094714-37] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 63] -- Se encontraron 3 variantes para el producto ID: 1
+2024-10-30 08:55:36,520 INFO [qtp1116094714-47] c.p.c.a.v.EditarVarianteServlet [EditarVarianteServlet.java : 115] -- Variante actualizada: ID = 2, Código = JDKKD, Tamaño ID = 3, Producto ID = 1, Precio = 23.00, Stock = 20, Cantidad = 1
+2024-10-30 08:55:36,539 INFO [qtp1116094714-50] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 63] -- Se encontraron 3 variantes para el producto ID: 1
+2024-10-30 08:56:14,348 INFO [qtp1116094714-38] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 58] -- Se encontraron 2 categorías que coinciden con los criterios de búsqueda.
+2024-10-30 08:56:14,351 INFO [qtp1116094714-38] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 61] -- HTML de lista de categorías cargado correctamente.
+2024-10-30 08:56:19,832 INFO [qtp1116094714-47] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 58] -- Se encontraron 2 categorías que coinciden con los criterios de búsqueda.
+2024-10-30 08:56:19,835 INFO [qtp1116094714-47] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 61] -- HTML de lista de categorías cargado correctamente.
+2024-10-30 08:56:26,475 INFO [qtp1116094714-47] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 58] -- Se encontraron 2 categorías que coinciden con los criterios de búsqueda.
+2024-10-30 08:56:26,477 INFO [qtp1116094714-47] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 61] -- HTML de lista de categorías cargado correctamente.
+2024-10-30 08:56:32,317 INFO [qtp1116094714-49] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 58] -- Se encontraron 1 categorías que coinciden con los criterios de búsqueda.
+2024-10-30 08:56:32,317 INFO [qtp1116094714-49] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 61] -- HTML de lista de categorías cargado correctamente.
+2024-10-30 08:56:38,167 INFO [qtp1116094714-37] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 58] -- Se encontraron 2 categorías que coinciden con los criterios de búsqueda.
+2024-10-30 08:56:38,168 INFO [qtp1116094714-37] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 61] -- HTML de lista de categorías cargado correctamente.
+2024-10-30 08:56:41,745 INFO [qtp1116094714-49] c.p.c.a.c.EliminarCategoriaServlet [EliminarCategoriaServlet.java : 38] -- Categoría eliminada: ID = 1
+2024-10-30 08:56:41,764 INFO [qtp1116094714-37] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 58] -- Se encontraron 2 categorías que coinciden con los criterios de búsqueda.
+2024-10-30 08:56:41,765 INFO [qtp1116094714-37] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 61] -- HTML de lista de categorías cargado correctamente.
+2024-10-30 08:56:45,404 ERROR [qtp1116094714-49] c.p.c.a.c.EliminarCategoriaServlet [EliminarCategoriaServlet.java : 41] -- Error al eliminar categoría: ID inválido: 1
+java.sql.SQLException: La categoría no se puede cambiar a inactiva o no existe.
+	at com.pe.model.service.CategoriaService.eliminarCategoria(CategoriaService.java:35)
+	at com.pe.controller.administrador.categorias.EliminarCategoriaServlet.doPost(EliminarCategoriaServlet.java:36)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-30 08:56:45,418 INFO [qtp1116094714-37] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 58] -- Se encontraron 2 categorías que coinciden con los criterios de búsqueda.
+2024-10-30 08:56:45,419 INFO [qtp1116094714-37] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 61] -- HTML de lista de categorías cargado correctamente.
+2024-10-30 08:56:49,819 INFO [qtp1116094714-38] c.p.c.a.c.EditarCategoriaServlet [EditarCategoriaServlet.java : 81] -- Categoría actualizada: ID = 1, Nombre = Aceite para carros
+2024-10-30 08:56:49,828 INFO [qtp1116094714-37] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 58] -- Se encontraron 2 categorías que coinciden con los criterios de búsqueda.
+2024-10-30 08:56:49,829 INFO [qtp1116094714-37] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 61] -- HTML de lista de categorías cargado correctamente.
+2024-10-30 08:57:02,084 INFO [qtp1116094714-38] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 58] -- Se encontraron 2 categorías que coinciden con los criterios de búsqueda.
+2024-10-30 08:57:02,086 INFO [qtp1116094714-38] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 61] -- HTML de lista de categorías cargado correctamente.
+2024-10-30 08:57:12,995 INFO [qtp1116094714-50] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 41] -- Producto encontrado: prueba
+2024-10-30 08:57:26,915 INFO [qtp1116094714-49] c.p.c.a.v.AgregarVarianteServlet [AgregarVarianteServlet.java : 102] -- Variante agregada: Variante{idVariante=0, codigo='ghj', precio=34, imagen='https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaPE/120222646_01/w=800,h=800,fit=pad', stock=21, cantidad=5, idProducto=2, idTamanio=1}
+2024-10-30 08:57:34,718 INFO [qtp1116094714-37] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 63] -- Se encontraron 5 variantes para el producto ID: 2
+2024-10-30 08:57:49,144 INFO [qtp1116094714-50] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 63] -- Se encontraron 3 variantes para el producto ID: 1
+2024-10-30 08:57:54,430 INFO [qtp1116094714-47] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 58] -- Se han encontrado 3 tamaños que coinciden con los criterios de búsqueda.
+2024-10-30 08:57:55,624 INFO [qtp1116094714-50] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 58] -- Se han encontrado 3 tamaños que coinciden con los criterios de búsqueda.
+2024-10-30 08:57:57,634 INFO [qtp1116094714-47] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 55] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=3
+2024-10-30 08:57:57,639 INFO [qtp1116094714-47] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 66] -- Se encontraron 3 usuarios que coinciden con los criterios de búsqueda.
+2024-10-30 08:58:01,943 INFO [qtp1116094714-49] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 55] -- Usuarios filtrados: nombre=, dni=, tipo=Jefe, estado=, total=1
+2024-10-30 08:58:01,945 INFO [qtp1116094714-49] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 66] -- Se encontraron 1 usuarios que coinciden con los criterios de búsqueda.
+2024-10-30 08:58:03,657 INFO [qtp1116094714-50] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 55] -- Usuarios filtrados: nombre=, dni=, tipo=, estado=, total=3
+2024-10-30 08:58:03,657 INFO [qtp1116094714-50] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 66] -- Se encontraron 3 usuarios que coinciden con los criterios de búsqueda.
+2024-10-30 08:58:10,522 INFO [qtp1116094714-37] c.p.c.a.u.EditarUsuarioServlet [EditarUsuarioServlet.java : 88] -- Usuario actualizado: ID = 1
+2024-10-30 08:58:10,532 INFO [qtp1116094714-50] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 55] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=3
+2024-10-30 08:58:10,532 INFO [qtp1116094714-50] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 66] -- Se encontraron 3 usuarios que coinciden con los criterios de búsqueda.
+2024-10-30 08:58:17,095 INFO [qtp1116094714-37] c.p.c.a.u.EliminarUsuarioServlet [EliminarUsuarioServlet.java : 38] -- Usuario cambiado a inactivo: ID = 1
+2024-10-30 08:58:17,106 INFO [qtp1116094714-50] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 55] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=3
+2024-10-30 08:58:17,107 INFO [qtp1116094714-50] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 66] -- Se encontraron 3 usuarios que coinciden con los criterios de búsqueda.
+2024-10-30 08:58:23,811 INFO [qtp1116094714-37] c.p.c.a.u.EditarUsuarioServlet [EditarUsuarioServlet.java : 88] -- Usuario actualizado: ID = 1
+2024-10-30 08:58:23,823 INFO [qtp1116094714-38] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 55] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=3
+2024-10-30 08:58:23,824 INFO [qtp1116094714-38] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 66] -- Se encontraron 3 usuarios que coinciden con los criterios de búsqueda.
+2024-10-30 08:58:30,167 INFO [qtp1116094714-47] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 55] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=3
+2024-10-30 08:58:30,168 INFO [qtp1116094714-47] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 66] -- Se encontraron 3 usuarios que coinciden con los criterios de búsqueda.
+2024-10-30 08:58:33,585 INFO [qtp1116094714-38] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 58] -- Se han encontrado 3 tamaños que coinciden con los criterios de búsqueda.
+2024-10-30 08:58:34,342 INFO [qtp1116094714-47] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 58] -- Se encontraron 2 categorías que coinciden con los criterios de búsqueda.
+2024-10-30 08:58:34,344 INFO [qtp1116094714-47] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 61] -- HTML de lista de categorías cargado correctamente.
+2024-10-30 08:59:25,133 INFO [qtp1116094714-49] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 58] -- Se encontraron 2 categorías que coinciden con los criterios de búsqueda.
+2024-10-30 08:59:25,134 INFO [qtp1116094714-49] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 61] -- HTML de lista de categorías cargado correctamente.
+2024-10-30 08:59:30,168 INFO [qtp1116094714-50] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 58] -- Se encontraron 2 categorías que coinciden con los criterios de búsqueda.
+2024-10-30 08:59:30,169 INFO [qtp1116094714-50] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 61] -- HTML de lista de categorías cargado correctamente.
+2024-10-30 08:59:33,539 ERROR [qtp1116094714-49] c.p.c.a.c.EliminarCategoriaServlet [EliminarCategoriaServlet.java : 41] -- Error al eliminar categoría: ID inválido: 2
+java.sql.SQLException: La categoría no se puede cambiar a inactiva o no existe.
+	at com.pe.model.service.CategoriaService.eliminarCategoria(CategoriaService.java:35)
+	at com.pe.controller.administrador.categorias.EliminarCategoriaServlet.doPost(EliminarCategoriaServlet.java:36)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-10-30 08:59:33,557 INFO [qtp1116094714-50] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 58] -- Se encontraron 2 categorías que coinciden con los criterios de búsqueda.
+2024-10-30 08:59:33,558 INFO [qtp1116094714-50] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 61] -- HTML de lista de categorías cargado correctamente.

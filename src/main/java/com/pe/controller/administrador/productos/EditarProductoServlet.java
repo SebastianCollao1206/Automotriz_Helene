@@ -1,5 +1,6 @@
-package com.pe.controller;
+package com.pe.controller.administrador.productos;
 
+import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.entidad.Categoria;
 import com.pe.model.entidad.Producto;
 import com.pe.model.html.CategoriaHtml;
@@ -9,6 +10,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,7 +20,8 @@ import java.sql.SQLException;
 import java.util.TreeSet;
 
 @WebServlet("/producto/editar")
-public class EditarProductoServlet extends BaseServlet{
+public class EditarProductoServlet extends BaseServlet {
+    private static final Logger logger = LoggerFactory.getLogger(EditarProductoServlet.class);
     private final ProductoService productoService;
     private final CategoriaService categoriaService;
 
@@ -57,14 +61,18 @@ public class EditarProductoServlet extends BaseServlet{
                     request.setAttribute("content", html);
                     super.doGet(request, response);
                 } else {
+                    logger.warn("Producto no encontrado con ID: {}", id);
                     response.sendError(HttpServletResponse.SC_NOT_FOUND, "Producto no encontrado");
                 }
             } catch (NumberFormatException e) {
+                logger.error("ID de producto inválido: {}", idParam, e);
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "ID de producto inválido");
             } catch (SQLException e) {
+                logger.error("Error al acceder a la base de datos: {}", e.getMessage(), e);
                 response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error al acceder a la base de datos: " + e.getMessage());
             }
         } else {
+            logger.warn("ID de producto no proporcionado");
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "ID de producto no proporcionado");
         }
     }
@@ -85,8 +93,8 @@ public class EditarProductoServlet extends BaseServlet{
 
             productoService.actualizarProducto(id, nombre, descripcion, idCategoria);
             mensaje = "Producto actualizado exitosamente!";
-
         } catch (Exception e) {
+            logger.error("Error de formato en los parámetros: {}", e.getMessage(), e);
             mensaje = "Error al actualizar el producto: " + e.getMessage();
         }
 

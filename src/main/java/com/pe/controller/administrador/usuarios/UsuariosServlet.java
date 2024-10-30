@@ -1,5 +1,6 @@
-package com.pe.controller;
+package com.pe.controller.administrador.usuarios;
 
+import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.entidad.Usuario;
 import com.pe.model.html.UsuarioHtml;
 import com.pe.model.service.UsuarioService;
@@ -7,6 +8,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,6 +20,7 @@ import java.util.TreeSet;
 @WebServlet("/usuario/listar")
 public class UsuariosServlet extends BaseServlet {
 
+    private static final Logger logger = LoggerFactory.getLogger(UsuariosServlet.class);
     private final UsuarioService usuarioService;
 
     public UsuariosServlet() throws SQLException {
@@ -48,6 +52,7 @@ public class UsuariosServlet extends BaseServlet {
 
             // Filtrar los datos de los usuarios según los parámetros de búsqueda
             TreeSet<Usuario> usuariosFiltrados = usuarioService.buscarUsuarios(nombre, dni, tipo, estado);
+            logger.info("Usuarios filtrados: nombre={}, dni={}, tipo={}, estado={}, total={}", nombre, dni, tipo, estado, usuariosFiltrados.size());
 
             // Leer el HTML del contenido específico
             String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/lista_usuario.html")));
@@ -55,8 +60,10 @@ public class UsuariosServlet extends BaseServlet {
             // Reemplazar la parte dinámica de la tabla
             if (usuariosFiltrados.isEmpty()) {
                 html = html.replace("${tableRows}", "<tr><td colspan='7'>No se encontraron usuarios que coincidan.</td></tr>");
+                logger.info("No se encontraron usuarios que coincidan con los criterios de búsqueda.");
             } else {
                 html = html.replace("${tableRows}", UsuarioHtml.generarFilasTablaUsuarios(usuariosFiltrados));
+                logger.info("Se encontraron {} usuarios que coinciden con los criterios de búsqueda.", usuariosFiltrados.size());
             }
 
             // Reemplazar las opciones de los filtros
@@ -68,6 +75,7 @@ public class UsuariosServlet extends BaseServlet {
             super.doGet(request, response);
 
         } catch (SQLException e) {
+            logger.error("Error al cargar usuarios: {}", e.getMessage(), e);
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             response.getWriter().write("Error al cargar usuarios: " + e.getMessage());
         }
