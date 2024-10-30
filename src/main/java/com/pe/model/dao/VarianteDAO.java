@@ -65,11 +65,14 @@ public class VarianteDAO {
     public void actualizarStock(int idVariante, int nuevoStock) throws SQLException {
         String query = "UPDATE variante SET stock = ? WHERE id_variante = ?";
         try (PreparedStatement stm = connection.prepareStatement(query)) {
-
             stm.setInt(1, nuevoStock);
             stm.setInt(2, idVariante);
 
+            System.out.println("Ejecutando consulta: " + query + " con valores: " + nuevoStock + ", " + idVariante);
+
             int filasActualizadas = stm.executeUpdate();
+            System.out.println("Filas actualizadas: " + filasActualizadas);
+
             if (filasActualizadas == 0) {
                 throw new SQLException("No se encontró la variante con ID: " + idVariante);
             }
@@ -77,6 +80,21 @@ public class VarianteDAO {
             // Manejo de excepciones
             throw new SQLException("Error al actualizar el stock: " + e.getMessage(), e);
         }
+    }
+
+    public int obtenerIdProductoPorVariante(int idVariante) throws SQLException {
+        int idProducto = 0;
+        String query = "SELECT id_producto FROM variante WHERE id_variante = ?"; // Ajusta la consulta según tu esquema
+        try (PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setInt(1, idVariante);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                idProducto = rs.getInt("id_producto");
+            }
+        } catch (SQLException e) {
+            throw new SQLException("Error al obtener el ID del producto: " + e.getMessage(), e);
+        }
+        return idProducto;
     }
 
     // Metodo para cerrar la conexión

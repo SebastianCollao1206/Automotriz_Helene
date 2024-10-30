@@ -56,7 +56,7 @@ public class ProductoService {
         return categoria != null ? categoria.getNombre() : "Sin categoría";
     }
 
-    // Metodo en ProductoService
+    // Metodo
     public String obtenerNombreProductoPorId(int idProducto) throws SQLException {
         Producto producto = productoDAO.obtenerProductoPorId(idProducto);
         return (producto != null) ? producto.getNombre() : null;

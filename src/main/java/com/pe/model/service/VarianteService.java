@@ -1,6 +1,8 @@
 package com.pe.model.service;
 
+import com.google.errorprone.annotations.Var;
 import com.pe.model.dao.VarianteDAO;
+import com.pe.model.entidad.Producto;
 import com.pe.model.entidad.Tamanio;
 import com.pe.model.entidad.Variante;
 
@@ -17,13 +19,7 @@ public class VarianteService {
         this.varianteDAO = new VarianteDAO();
         this.variantes = new TreeSet<>(Variante.VARIANTE_COMPARATOR_NATURAL_ORDER);
         this.tamanioService = new TamanioService();
-        cargarVariantes();
-    }
 
-    // Cargar todas las variantes
-    public void cargarVariantes() throws SQLException {
-        // Aquí puedes cargar todas las variantes si es necesario
-        // varianteDAO.cargarVariantes(variantes); // Descomentar si tienes un método para cargar variantes
     }
 
     // Agregar una nueva variante
@@ -44,18 +40,9 @@ public class VarianteService {
         return tamanioService.obtenerTamanioPorId(idTamanio);
     }
 
-    // Metodo para buscar variantes por filtros (puedes agregar más filtros según sea necesario)
-    public TreeSet<Variante> filtrarVariantes(String codigo, String tamaño, BigDecimal precioMin, BigDecimal precioMax) {
-        TreeSet<Variante> variantesFiltradas = new TreeSet<>(Variante.VARIANTE_COMPARATOR_NATURAL_ORDER);
-        for (Variante variante : variantes) {
-            if (verificarVariante(variante, codigo, tamaño, precioMin, precioMax)) {
-                variantesFiltradas.add(variante);
-            }
-        }
-        return variantesFiltradas;
-    }
 
     public void actualizarStock(int idVariante, int nuevoStock) throws SQLException {
+        System.out.println("Llamando a actualizarStock con ID: " + idVariante + " y nuevo stock: " + nuevoStock);
         try {
             varianteDAO.actualizarStock(idVariante, nuevoStock);
         } catch (SQLException e) {
@@ -63,29 +50,7 @@ public class VarianteService {
             throw new SQLException("Error en el servicio al actualizar el stock: " + e.getMessage(), e);
         }
     }
-
-    // Verificar si la variante cumple con los filtros
-    private boolean verificarVariante(Variante variante, String codigo, String tamaño, BigDecimal precioMin, BigDecimal precioMax) {
-        boolean valido = true;
-
-        // Filtrar por código
-        if (codigo != null && !codigo.isEmpty() && !variante.getCodigo().toLowerCase().contains(codigo.toLowerCase())) {
-            valido = false;
-        }
-
-        // Filtrar por tamaño
-        if (tamaño != null && !tamaño.isEmpty() && variante.getIdTamanio() != Integer.parseInt(tamaño)) {
-            valido = false;
-        }
-
-        // Filtrar por rango de precios
-        if (precioMin != null && variante.getPrecio().compareTo(precioMin) < 0) {
-            valido = false;
-        }
-        if (precioMax != null && variante.getPrecio().compareTo(precioMax) > 0) {
-            valido = false;
-        }
-
-        return valido;
+    public int obtenerIdProductoPorVariante(int idVariante) throws SQLException {
+        return varianteDAO.obtenerIdProductoPorVariante(idVariante);
     }
 }

@@ -5,6 +5,7 @@ import com.pe.model.entidad.Tamanio;
 import java.util.TreeSet;
 
 public class TamanioHtml {
+
     public static String generarMensajeAlerta(String mensaje, String redireccion) {
         StringBuilder html = new StringBuilder();
         html.append("<script type='text/javascript'>");

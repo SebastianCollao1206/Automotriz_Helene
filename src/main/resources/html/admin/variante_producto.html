@@ -13,32 +13,6 @@
         </div>
     </div>
 
-
-    <!--Filtros-->
-    <div class="row d-flex justify-content-center align-items-center gap-4 gap-lg-0 mt-5">
-        <div class="col-md-2 d-flex justify-content-center">
-            <label>Filtrar por:</label>
-        </div>
-
-        <div class="col-md-2 d-flex justify-content-center">
-            <select class="form-select">
-                <option value="" style="display: none;" selected>Tamaño</option>
-                <option value="pequeño">Pequeño</option>
-                <option value="mediano">Mediano</option>
-            </select>
-        </div>
-
-
-        <div class="col-md-2 d-flex justify-content-center">
-            <input type="number" class="form-control" placeholder="Digite precio"
-                   onfocus="this.placeholder=''" onblur="this.placeholder='Digite precio'">
-        </div>
-        <div class="col-md-2 d-flex justify-content-center">
-            <a href="#"><button
-                    class="btn border-0 text-white btn-primary btn-filtrar">Filtrar<i
-                    class="bi bi-chevron-right ms-2"></i></button></a>
-        </div>
-    </div>
     <!--Tabla-->
     <div class="table-responsive mt-5">
         <table class="table table-bordered text-center">
@@ -56,6 +30,7 @@
             ${tableRows} <!-- Marcador para las filas de la tabla -->
             </tbody>
         </table>
+        ${scriptConfirmacionActualizacion}
     </div>
 </div>
 </div>

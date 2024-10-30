@@ -46,7 +46,7 @@ public class TamanioService {
         cargarTamanios();
     }
 
-    // Método para obtener un tamaño por ID
+    // Metodo para obtener un tamaño por ID
     public Tamanio obtenerTamanioPorId(int id) throws SQLException {
         return tamanioDAO.obtenerTamanioPorId(id);
     }
