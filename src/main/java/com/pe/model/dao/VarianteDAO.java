@@ -3,6 +3,7 @@ package com.pe.model.dao;
 import com.pe.model.entidad.Variante;
 import com.pe.util.DBConnection;
 
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -60,6 +61,44 @@ public class VarianteDAO {
             }
         }
         return variantes;
+    }
+
+    // Metodo para obtener una variante por su ID
+    public Variante obtenerVariantePorId(int id) throws SQLException {
+        Variante variante = null;
+        String sql = "SELECT * FROM variante WHERE id_variante = ?"; // Asegúrate de que sea id_variante
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                variante = new Variante();
+                variante.setIdVariante(rs.getInt("id_variante")); // Asegúrate de que sea id_variante
+                variante.setCodigo(rs.getString("codigo"));
+                variante.setIdTamanio(rs.getInt("id_tamanio"));
+                variante.setPrecio(rs.getBigDecimal("precio"));
+                variante.setImagen(rs.getString("imagen"));
+                variante.setStock(rs.getInt("stock"));
+                variante.setCantidad(rs.getInt("cantidad"));
+                variante.setIdProducto(rs.getInt("id_producto"));
+            }
+        }
+        return variante;
+    }
+
+    public void actualizarVariante(int id, String codigo, int idTamanio, int idProducto, BigDecimal precio, String imagen, int stock, int cantidad) throws SQLException {
+        String sql = "UPDATE variante SET codigo = ?, id_tamanio = ?, id_producto = ?, precio = ?, imagen = ?, stock = ?, cantidad = ? WHERE id_variante = ?"; // Cambiado a id_variante
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setString(1, codigo);
+            stmt.setInt(2, idTamanio);
+            stmt.setInt(3, idProducto);
+            stmt.setBigDecimal(4, precio);
+            stmt.setString(5, imagen);
+            stmt.setInt(6, stock);
+            stmt.setInt(7, cantidad);
+            stmt.setInt(8, id);
+            stmt.executeUpdate();
+        }
     }
 
     public void actualizarStock(int idVariante, int nuevoStock) throws SQLException {

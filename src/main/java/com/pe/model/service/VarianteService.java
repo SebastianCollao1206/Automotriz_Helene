@@ -19,12 +19,17 @@ public class VarianteService {
         this.varianteDAO = new VarianteDAO();
         this.variantes = new TreeSet<>(Variante.VARIANTE_COMPARATOR_NATURAL_ORDER);
         this.tamanioService = new TamanioService();
-
     }
 
     // Agregar una nueva variante
     public void agregarVariantes(TreeSet<Variante> variantes, int productoId) throws SQLException {
         varianteDAO.agregarVariantes(variantes, productoId);
+    }
+    // Cambiar la firma del metodo en VarianteService
+    public void agregarVariante(Variante variante) throws SQLException {
+        TreeSet<Variante> variantes = new TreeSet<>();
+        variantes.add(variante);
+        varianteDAO.agregarVariantes(variantes, variante.getIdProducto()); // Asegúrate de que la variante tenga el ID del producto
     }
 
     public TreeSet<Variante> obtenerVariantesPorProducto(int idProducto) throws SQLException {
@@ -50,6 +55,15 @@ public class VarianteService {
             throw new SQLException("Error en el servicio al actualizar el stock: " + e.getMessage(), e);
         }
     }
+
+    public void actualizarVariante(int id, String codigo, int idTamanio, int idProducto, BigDecimal precio, String imagen, int stock, int cantidad) throws SQLException {
+        varianteDAO.actualizarVariante(id, codigo, idTamanio, idProducto, precio, imagen, stock, cantidad);
+    }
+
+    public Variante obtenerVariantePorId(int id) throws SQLException {
+        return varianteDAO.obtenerVariantePorId(id);
+    }
+
     public int obtenerIdProductoPorVariante(int idVariante) throws SQLException {
         return varianteDAO.obtenerIdProductoPorVariante(idVariante);
     }

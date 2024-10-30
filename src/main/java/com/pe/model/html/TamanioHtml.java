@@ -37,6 +37,16 @@ public class TamanioHtml {
         return options.toString();
     }
 
+    public static String generarOpcionesTamanios2(TreeSet<Tamanio> tamanios, int tamanioSeleccionado) {
+        StringBuilder opciones = new StringBuilder();
+        for (Tamanio tamanio : tamanios) {
+            String selected = (tamanio.getIdTamanio() == tamanioSeleccionado) ? "selected" : "";
+            opciones.append(String.format("<option value=\"%d\" %s>%s</option>",
+                    tamanio.getIdTamanio(), selected, tamanio.getUnidadMedida()));
+        }
+        return opciones.toString();
+    }
+
     /**
      * Generar filas de la tabla de tamaños
      * @param tamanios

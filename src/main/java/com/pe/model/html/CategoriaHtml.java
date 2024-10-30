@@ -1,6 +1,7 @@
 package com.pe.model.html;
 
 import com.pe.model.entidad.Categoria;
+import com.pe.model.entidad.Tamanio;
 
 import java.util.TreeSet;
 
@@ -35,6 +36,16 @@ public class CategoriaHtml {
             options.append("<option value=\"").append(categoria.getIdCategoria()).append("\">").append(categoria.getNombre()).append("</option>");
         }
         return options.toString();
+    }
+
+    public static String generarOpcionesCategorias2(TreeSet<Categoria> categorias, int categoriaSeleccionada) {
+        StringBuilder opciones = new StringBuilder();
+        for (Categoria categoria : categorias) {
+            String selected = (categoria.getIdCategoria() == categoriaSeleccionada) ? "selected" : "";
+            opciones.append(String.format("<option value=\"%d\" %s>%s</option>",
+                    categoria.getIdCategoria(), selected, categoria.getNombre()));
+        }
+        return opciones.toString();
     }
 
     /**

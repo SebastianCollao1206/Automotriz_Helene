@@ -26,6 +26,10 @@ public class TamanioService {
         tamanioDAO.cargarTamanios(tamanios);
     }
 
+    public String obtenerNombreTamanioPorId(int id) throws SQLException {
+        return tamanioDAO.obtenerNombreTamanioPorId(id);
+    }
+
     public void eliminarTamanio(int id) throws SQLException {
         Tamanio tamanio = obtenerTamanioPorId(id);
         if (tamanio != null && tamanio.getEstado() == Tamanio.EstadoTamanio.Activo) {

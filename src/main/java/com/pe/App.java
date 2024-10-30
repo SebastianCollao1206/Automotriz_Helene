@@ -41,6 +41,10 @@ public class App {
             webserver.addServlet(ProductosServlet.class, "/producto/listar");
             webserver.addServlet(VarianteProductoServlet.class, "/variante/producto");
             webserver.addServlet(ActualizarStockServlet.class, "/variante/actualizarStock");
+            webserver.addServlet(AgregarVarianteServlet.class, "/variante/agregar");
+            webserver.addServlet(BuscarProductoServlet.class, "/buscarProducto");
+            webserver.addServlet(EditarVarianteServlet.class, "/variante/editar");
+            webserver.addServlet(EditarProductoServlet.class, "/producto/editar");
 
             webserver.start();
             System.out.println("Servidor iniciado en http://localhost:8081");

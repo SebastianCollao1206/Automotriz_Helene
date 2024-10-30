@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
             if (usuario != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("usuario", usuario);
-                response.sendRedirect("/categoria/agregar");//esto se cambia
+                response.sendRedirect("/producto/listar");//esto se cambia
             } else {
                 // Si la autenticación falla, redirigir con un mensaje de alerta
                 response.setContentType("text/html;charset=UTF-8");

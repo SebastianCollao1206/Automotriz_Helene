@@ -41,6 +41,7 @@ public class ProductoService {
         }
     }
 
+
     public TreeSet<Producto> buscarProductos(String nombre, String categoriaId) {
         TreeSet<Producto> productosFiltrados = new TreeSet<>(Producto.PRODUCTO_COMPARATOR_NATURAL_ORDER);
         for (Producto producto : productos) {
@@ -62,6 +63,16 @@ public class ProductoService {
         return (producto != null) ? producto.getNombre() : null;
     }
 
+    // Metodo para obtener un producto por su ID
+    public Producto obtenerProductoPorId(int id) throws SQLException {
+        return productoDAO.obtenerProductoPorId(id);
+    }
+
+    // Metodo para actualizar un producto
+    public void actualizarProducto(int id, String nombre, String descripcion, int idCategoria) throws SQLException {
+        productoDAO.actualizarProducto(id, nombre, descripcion, idCategoria);
+    }
+
     private boolean verificarProducto(Producto producto, String nombre, String categoriaId) {
         boolean valido = true;
 
@@ -74,6 +85,11 @@ public class ProductoService {
         }
 
         return valido;
+    }
+
+    // Metodo para buscar un producto por nombre
+    public Producto buscarProductoPorNombre(String nombre) throws SQLException {
+        return productoDAO.buscarProductoPorNombre(nombre);
     }
 
     public TreeSet<Producto> getProductos() {

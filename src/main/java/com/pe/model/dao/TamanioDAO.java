@@ -84,6 +84,22 @@ public class TamanioDAO {
         }
     }
 
+    // Metodo para obtener el nombre del tamaño por su ID
+    public String obtenerNombreTamanioPorId(int id) throws SQLException {
+        String nombre = null;
+        String sql = "SELECT unidad_medida FROM tamanio WHERE id_tamanio = ?";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                nombre = rs.getString("unidad_medida");
+            }
+        }
+        return nombre;
+    }
+
+
     // Metodo para cerrar la conexión
     public void cerrarConexion() throws SQLException {
         if (connection != null && !connection.isClosed()) {

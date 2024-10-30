@@ -9,6 +9,15 @@ import java.util.TreeSet;
 
 public class VarianteHtml {
 
+    public static String generarMensajeAlerta(String mensaje, String redireccion) {
+        StringBuilder html = new StringBuilder();
+        html.append("<script type='text/javascript'>");
+        html.append("    alert('").append(mensaje).append("');");
+        html.append("    window.location='").append(redireccion).append("';");
+        html.append("</script>");
+        return html.toString();
+    }
+
     public static String generarScriptConfirmacion() {
         return """
         <script>
@@ -53,7 +62,10 @@ public class VarianteHtml {
                         .append("</td>")
                         .append("<td>").append(variante.getCantidad()).append(" ").append(tamanioTexto).append("</td>")
                         .append("<td>")
-                        .append("<button class='btn btn-warning btn-sm m-1 m-lg-1'><i class='bi bi-pencil'></i></button>")
+                        .append("<form action='/variante/editar' method='GET' style='display:inline;'>") // Cambia a 'GET' para redirigir
+                        .append("<input type='hidden' name='id' value='").append(variante.getIdVariante()).append("'>") // Agrega el ID de la variante
+                        .append("<button class='btn btn-warning btn-sm m-1 m-lg-1' type='submit'><i class='bi bi-pencil'></i></button>")
+                        .append("</form>")
                         .append("</td>")
                         .append("</tr>");
             } catch (SQLException e) {
