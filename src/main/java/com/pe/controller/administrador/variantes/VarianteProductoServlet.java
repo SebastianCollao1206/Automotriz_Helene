@@ -45,16 +45,10 @@ public class VarianteProductoServlet extends BaseServlet {
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "ID de producto no especificado");
                 return;
             }
-
             int idProducto = Integer.parseInt(idProductoStr);
             String nombreProducto = productoService.obtenerNombreProductoPorId(idProducto);
-
             TreeSet<Variante> variantes = variantesService.obtenerVariantesPorProducto(idProducto);
-
-            // Leer el HTML del contenido específico
             String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/variante_producto.html")));
-
-            // Reemplazar la parte dinámica de la tabla
             if (variantes.isEmpty()) {
                 html = html.replace("${tableRows}", "<tr><td colspan='6'>No se encontraron variantes para este producto.</td></tr>");
                 logger.info("No se encontraron variantes para el producto ID: {}", idProducto);
@@ -62,14 +56,10 @@ public class VarianteProductoServlet extends BaseServlet {
                 html = html.replace("${tableRows}", VarianteHtml.generarFilasTablaVariantes(variantes, variantesService));
                 logger.info("Se encontraron {} variantes para el producto ID: {}", variantes.size(), idProducto);
             }
-
-            // Reemplazar el marcador ${nombreProducto} con el nombre del producto
             html = html.replace("${nombreProducto}", nombreProducto != null ? nombreProducto : "Producto no encontrado");
             html = html.replace("${scriptConfirmacionActualizacion}", VarianteHtml.generarScriptConfirmacion());
-
             request.setAttribute("content", html);
             super.doGet(request, response);
-
         } catch (SQLException e) {
             logger.error("Error al cargar variantes: {}", e.getMessage(), e);
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);

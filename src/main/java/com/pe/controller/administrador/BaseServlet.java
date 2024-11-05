@@ -37,31 +37,24 @@ public abstract class BaseServlet extends HttpServlet {
         }
 
         try (PrintWriter out = response.getWriter()) {
-            // Leer el HTML del header desde el archivo
             String headerHtml = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/estatic/header.html")));
 
-            // Reemplazar los marcadores con la información del usuario
             headerHtml = headerHtml.replace("${usuarioNombre}", usuario.getNombre());
             headerHtml = headerHtml.replace("${usuarioTipo}", usuario.getTipoUsuario().name());
 
-            // Escribir el HTML del header modificado en la respuesta
             out.println(headerHtml);
 
-            // Incluir el sidebar
-            request.getRequestDispatcher("/estatic/sidebar.html").include(request, response);
+            request.getRequestDispatcher("/admin/estatic/sidebar.html").include(request, response);
 
             String contentPage = getContentPage();
             String content = (String) request.getAttribute("content");
 
-            // Si no hay contenido establecido, cargar el HTML del archivo
             if (content == null) {
                 content = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin" + getContentPage())));
             }
 
-            // Escribir el contenido específico de la página
             out.println(content);
 
-            // Mostrar mensaje si existe
             String mensaje = (String) request.getAttribute("mensaje");
             if (mensaje != null) {
                 out.println(UsuarioHtml.generarMensajeAlerta(mensaje, (String) request.getAttribute("redirigirUrl")));

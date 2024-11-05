@@ -2,7 +2,6 @@ package com.pe.model.service;
 
 import com.pe.model.dao.CategoriaDAO;
 import com.pe.model.entidad.Categoria;
-import com.pe.model.entidad.Usuario;
 
 import java.sql.SQLException;
 import java.util.TreeSet;
@@ -15,6 +14,11 @@ public class CategoriaService {
         this.categoriaDAO = new CategoriaDAO();
         this.categorias = new TreeSet<>(Categoria.CATEGORIA_COMPARATOR_NATURAL_ORDER);
         categoriaDAO.cargarCategorias(this.categorias);
+    }
+    // Constructor para pruebas
+    public CategoriaService(CategoriaDAO categoriaDAO) {
+        this.categoriaDAO = categoriaDAO;
+        this.categorias = new TreeSet<>(Categoria.CATEGORIA_COMPARATOR_NATURAL_ORDER);
     }
 
     public void agregarCategoria(Categoria categoria) {

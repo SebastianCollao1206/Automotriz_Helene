@@ -23,6 +23,6 @@ public class LogoutServlet extends HttpServlet {
             logger.info("Usuario ha cerrado sesión: {}", session.getAttribute("usuario"));
             session.invalidate();
         }
-        response.sendRedirect("/index.html");
+        response.sendRedirect("/admin/index.html");
     }
 }

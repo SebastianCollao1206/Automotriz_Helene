@@ -1,7 +1,9 @@
 package com.pe.model.service;
 
+import com.google.common.base.Preconditions;
 import com.pe.model.dao.UsuarioDAO;
 import com.pe.model.entidad.Usuario;
+import com.pe.util.Validaciones;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -28,7 +30,12 @@ public class UsuarioService {
         usuarioDAO.cargarUsuarios(usuarios);
     }
 
+    public TreeSet<Usuario> getUsuarios() {
+        return usuarios;
+    }
+
     public void eliminarUsuario(int id) throws SQLException {
+        cargarUsuarios();
         Usuario usuario = obtenerUsuarioPorId(id);
         if (usuario != null && usuario.getEstado() == Usuario.EstadoUsuario.Activo) {
             usuario.setEstado(Usuario.EstadoUsuario.Inactivo);
@@ -40,6 +47,19 @@ public class UsuarioService {
     }
 
     public void agregarUsuario(String nombre, String correo, String dni, String tipo, String estado, String contrasena) throws Exception {
+        Validaciones.validarNombre(nombre);
+        Validaciones.validarCorreo(correo);
+        Validaciones.validarDNI(dni);
+        Validaciones.validarPassword(contrasena);
+        if (existeCorreo(correo)) {
+            throw new IllegalArgumentException("El correo ya está registrado en el sistema");
+        }
+        if (existeDNI(dni)) {
+            throw new IllegalArgumentException("El DNI ya está registrado en el sistema");
+        }
+        nombre = Validaciones.sanitizarEntrada(nombre);
+        correo = Validaciones.sanitizarEntrada(correo);
+
         byte[] contrasenaEncriptada = encryptPassword(contrasena);
         Usuario usuario = new Usuario();
         usuario.setNombre(nombre);
@@ -49,9 +69,16 @@ public class UsuarioService {
         usuario.setTipoUsuario(Usuario.TipoUsuario.valueOf(tipo));
         usuario.setEstado(Usuario.EstadoUsuario.valueOf(estado));
         usuario.setFechaRegistro(LocalDate.now());
-
         usuarioDAO.agregarUsuario(usuario);
         cargarUsuarios();
+    }
+    private boolean existeCorreo(String correo) {
+        return usuarios.stream()
+                .anyMatch(u -> u.getCorreo().equalsIgnoreCase(correo));
+    }
+    private boolean existeDNI(String dni) {
+        return usuarios.stream()
+                .anyMatch(u -> u.getDni().equals(dni));
     }
 
     //Encriptacion SHA-256
@@ -62,21 +89,24 @@ public class UsuarioService {
 
     // Autenticacion
     public Usuario autenticarUsuario(String correo, String password) throws Exception {
-        Usuario usuario = usuarioDAO.obtenerUsuarioPorCorreo(correo);
-        if (usuario != null) {
-            byte[] contrasenaEncriptada = encryptPassword(password);
-            if (Arrays.equals(usuario.getContrasena(), contrasenaEncriptada)) {
-                return usuario;
+        Validaciones.validarCorreo(correo);
+        Validaciones.validarPassword(password);
+        correo = Validaciones.sanitizarEntrada(correo);
+        usuarioDAO.cargarUsuarios(usuarios);
+        for (Usuario usuario : usuarios) {
+            if (usuario.getCorreo().equals(correo)) {
+                // Verificar si el usuario está activo
+                Preconditions.checkArgument(usuario.getEstado() == Usuario.EstadoUsuario.Activo, "El usuario debe estar activo");
+                byte[] contrasenaEncriptada = encryptPassword(password);
+                if (Arrays.equals(usuario.getContrasena(), contrasenaEncriptada)) {
+                    return usuario;
+                }
             }
         }
         return null;
     }
 
-    public TreeSet<Usuario> getUsuarios() {
-        return usuarios;
-    }
-
-    // Métodos para buscar usuarios
+    // Metodo para buscar usuarios
     public TreeSet<Usuario> buscarUsuarios(String nombre, String dni, String tipo, String estado) {
         TreeSet<Usuario> usuariosFiltrados = new TreeSet<>(Usuario.USUARIO_COMPARATOR_NATURAL_ORDER);
         for (Usuario usuario : usuarios) {
@@ -105,10 +135,12 @@ public class UsuarioService {
         return valido;
     }
 
-    public Usuario obtenerUsuarioPorId(int id) throws SQLException {
-        return usuarioDAO.obtenerUsuarioPorId(id);
+    public Usuario obtenerUsuarioPorId(int id) {
+        return usuarios.stream()
+                .filter(usuario -> usuario.getIdUsuario() == id)
+                .findFirst()
+                .orElse(null);
     }
-
 
     //actualizar usuario
     public void actualizarUsuario(int id, String nombre, String correo, String dni,
@@ -120,7 +152,6 @@ public class UsuarioService {
             usuario.setDni(dni);
             usuario.setTipoUsuario(Usuario.TipoUsuario.valueOf(tipo));
             usuario.setEstado(Usuario.EstadoUsuario.valueOf(estado));
-
             usuarioDAO.actualizarUsuario(usuario);
             cargarUsuarios();
         } else {

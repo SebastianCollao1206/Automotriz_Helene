@@ -31,8 +31,8 @@ public class EliminarUsuarioServlet extends BaseServlet {
         String id = request.getParameter("id");
         String mensaje;
         String redirigirUrl = "/usuario/listar";
-
         try {
+            usuarioService.cargarUsuarios();
             usuarioService.eliminarUsuario(Integer.parseInt(id));
             mensaje = "Usuario cambiado a inactivo exitosamente!";
             logger.info("Usuario cambiado a inactivo: ID = {}", id);
@@ -40,10 +40,8 @@ public class EliminarUsuarioServlet extends BaseServlet {
             mensaje = "Error al cambiar el estado del usuario: " + e.getMessage();
             logger.error("Error al cambiar el estado del usuario: {}", e.getMessage(), e);
         }
-
         request.setAttribute("mensaje", mensaje);
         request.setAttribute("redirigirUrl", redirigirUrl);
-
         response.sendRedirect(redirigirUrl);
     }
 }

@@ -2,6 +2,7 @@ package com.pe.controller.administrador.usuarios;
 
 import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.entidad.Usuario;
+import com.pe.model.html.UsuarioHtml;
 import com.pe.model.service.UsuarioService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -34,22 +35,11 @@ public class EditarUsuarioServlet extends BaseServlet {
         String idParam = request.getParameter("id");
         if (idParam != null) {
             try {
+                usuarioService.cargarUsuarios();
                 int id = Integer.parseInt(idParam);
                 Usuario usuario = usuarioService.obtenerUsuarioPorId(id);
                 if (usuario != null) {
-                    String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/editar_usuario.html")));
-                    html = html.replace("${usuario.idUsuario}", String.valueOf(usuario.getIdUsuario()));
-                    html = html.replace("${usuario.nombre}", usuario.getNombre());
-                    html = html.replace("${usuario.correo}", usuario.getCorreo());
-                    html = html.replace("${usuario.dni}", usuario.getDni());
-                    html = html.replace("${usuario.tipoUsuario}", usuario.getTipoUsuario().name());
-                    html = html.replace("${usuario.estado}", usuario.getEstado().name());
-
-                    html = html.replace("${tipo.jefeSelected}", usuario.getTipoUsuario().name().equals("Jefe") ? "selected" : "");
-                    html = html.replace("${tipo.trabajadorSelected}", usuario.getTipoUsuario().name().equals("Trabajador") ? "selected" : "");
-                    html = html.replace("${estado.activoSelected}", usuario.getEstado().name().equals("Activo") ? "selected" : "");
-                    html = html.replace("${estado.inactivoSelected}", usuario.getEstado().name().equals("Inactivo") ? "selected" : "");
-
+                    String html = UsuarioHtml.generarHtmlEdicionUsuario(usuario);
                     request.setAttribute("content", html);
                     super.doGet(request, response);
                 } else {
@@ -77,25 +67,21 @@ public class EditarUsuarioServlet extends BaseServlet {
         String dni = request.getParameter("dni");
         String tipo = request.getParameter("tipo");
         String estado = request.getParameter("estado");
-
         String mensaje;
         String redirigirUrl = "/usuario/listar";
 
         try {
             int id = Integer.parseInt(idParam);
             usuarioService.actualizarUsuario(id, nombre, correo, dni, tipo, estado);
+            usuarioService.cargarUsuarios();
             mensaje = "Usuario actualizado exitosamente!";
             logger.info("Usuario actualizado: ID = {}", id);
         } catch (Exception e) {
             mensaje = "Error al actualizar el usuario: " + e.getMessage();
             logger.error("Error al actualizar el usuario: {}", e.getMessage(), e);
         }
-
-        // Establecer atributos para el mensaje y la redirección
         request.setAttribute("mensaje", mensaje);
         request.setAttribute("redirigirUrl", redirigirUrl);
-
-        // Redirigir a la lista de usuarios
         response.sendRedirect(redirigirUrl);
     }
 }

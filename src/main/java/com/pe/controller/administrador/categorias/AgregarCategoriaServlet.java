@@ -18,11 +18,8 @@ public class AgregarCategoriaServlet extends BaseServlet {
     private static final Logger logger = LoggerFactory.getLogger(AgregarCategoriaServlet.class);
     private final CategoriaService categoriaService;
 
-//    public AgregarCategoriaServlet() throws SQLException {
-//        this.categoriaService = new CategoriaService();
-//    }
-    public AgregarCategoriaServlet(CategoriaService categoriaService) {
-        this.categoriaService = categoriaService;
+    public AgregarCategoriaServlet() throws SQLException {
+        this.categoriaService = new CategoriaService();
     }
 
     @Override

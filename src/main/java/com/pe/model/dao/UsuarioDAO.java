@@ -10,13 +10,12 @@ public class UsuarioDAO {
 
     private Connection connection;
 
-    // Constructor para inicializar la conexión
     public UsuarioDAO() throws SQLException {
         DBConnection dbConnection = new DBConnection();
         this.connection = dbConnection.getConnection();
     }
 
-    //Traer los usuarios de la BD
+    //Cragar Usuarios
     public void cargarUsuarios(TreeSet<Usuario> usuarios) throws SQLException {
         String query = "SELECT * FROM usuario";
         try (PreparedStatement stmt = connection.prepareStatement(query);
@@ -33,7 +32,7 @@ public class UsuarioDAO {
                         rs.getTimestamp("fecha_registro").toLocalDateTime().toLocalDate(),
                         rs.getString("dni")
                 );
-                usuarios.add(usuario); // Aquí se agrega al TreeSet pasado como argumento
+                usuarios.add(usuario);
             }
         }
     }
@@ -57,31 +56,6 @@ public class UsuarioDAO {
         }
     }
 
-    // Metodo para obtener usuario por correo
-    public Usuario obtenerUsuarioPorCorreo(String correo) throws SQLException {
-        String sql = "SELECT * FROM usuario WHERE correo = ?";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, correo);
-            ResultSet resultSet = statement.executeQuery();
-
-            if (resultSet.next()) {
-                Usuario usuario = new Usuario();
-                usuario.setNombre(resultSet.getString("nombre"));
-                usuario.setCorreo(resultSet.getString("correo"));
-                usuario.setContrasena(resultSet.getBytes("contrasena"));
-                usuario.setTipoUsuario(Usuario.TipoUsuario.valueOf(resultSet.getString("tipo_usuario")));
-                usuario.setEstado(Usuario.EstadoUsuario.valueOf(resultSet.getString("estado")));
-                usuario.setFechaRegistro(resultSet.getDate("fecha_registro").toLocalDate());
-                usuario.setDni(resultSet.getString("dni"));
-                return usuario;
-            }
-            return null;
-        } catch (SQLException e) {
-            System.err.println("Error al obtener usuario por correo: " + e.getMessage());
-            throw e;
-        }
-    }
-
     //Modificar usuario
     public void actualizarUsuario(Usuario usuario) throws SQLException {
         String sql = "UPDATE usuario SET nombre = ?, correo = ?, dni = ?, " +
@@ -98,29 +72,6 @@ public class UsuarioDAO {
             int filasAfectadas = stmt.executeUpdate();
             if (filasAfectadas == 0) {
                 throw new SQLException("No se pudo actualizar el usuario, ID no encontrado");
-            }
-        }
-    }
-
-    public Usuario obtenerUsuarioPorId(int id) throws SQLException {
-        String query = "SELECT * FROM usuario WHERE id_usuario = ?";
-        try (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setInt(1, id);
-            try (ResultSet rs = stmt.executeQuery()) {
-                if (rs.next()) {
-                    return new Usuario(
-                            rs.getInt("id_usuario"),
-                            rs.getString("nombre"),
-                            rs.getString("correo"),
-                            rs.getBytes("contrasena"),
-                            Usuario.TipoUsuario.valueOf(rs.getString("tipo_usuario")),
-                            Usuario.EstadoUsuario.valueOf(rs.getString("estado")),
-                            rs.getTimestamp("fecha_registro").toLocalDateTime().toLocalDate(),
-                            rs.getString("dni")
-                    );
-                } else {
-                    return null;
-                }
             }
         }
     }

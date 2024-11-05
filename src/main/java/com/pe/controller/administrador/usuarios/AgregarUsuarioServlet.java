@@ -35,24 +35,38 @@ public class AgregarUsuarioServlet extends BaseServlet {
         String tipo = request.getParameter("tipo");
         String estado = request.getParameter("estado");
         String contrasena = request.getParameter("contrasena");
-
         String mensaje;
+        String tipoMensaje;
         String redirigirUrl = "/usuario/agregar";
-
         try {
             usuarioService.agregarUsuario(nombre, correo, dni, tipo, estado, contrasena);
             mensaje = "Usuario agregado exitosamente!";
+            tipoMensaje = "success";
             logger.info("Usuario agregado: Nombre = {}, Correo = {}", nombre, correo);
+        } catch (IllegalArgumentException e) {
+            mensaje = e.getMessage();
+            tipoMensaje = "error";
+            logger.warn("Error de validación al agregar usuario: {}", e.getMessage());
+        } catch (SecurityException e) {
+            mensaje = "Error de seguridad: " + e.getMessage();
+            tipoMensaje = "error";
+            logger.error("Error de seguridad al agregar usuario: {}", e.getMessage());
         } catch (Exception e) {
-            mensaje = "Error al agregar el usuario";
-            logger.error("Error al agregar el usuario: {}", e.getMessage(), e);
+            mensaje = "Error interno del servidor al procesar la solicitud.";
+            tipoMensaje = "error";
+            logger.error("Error inesperado al agregar usuario: {}", e.getMessage(), e);
         }
-
-        // Establecer el mensaje en el request
+        if ("error".equals(tipoMensaje)) {
+            request.setAttribute("nombrePrevio", nombre);
+            request.setAttribute("correoPrevio", correo);
+            request.setAttribute("dniPrevio", dni);
+            request.setAttribute("tipoPrevio", tipo);
+            request.setAttribute("estadoPrevio", estado);
+            request.setAttribute("contrasenaPrevio", contrasena);
+        }
         request.setAttribute("mensaje", mensaje);
+        request.setAttribute("tipoMensaje", tipoMensaje);
         request.setAttribute("redirigirUrl", redirigirUrl);
-
-        // Llamar al metodo
         super.doGet(request, response);
     }
 }

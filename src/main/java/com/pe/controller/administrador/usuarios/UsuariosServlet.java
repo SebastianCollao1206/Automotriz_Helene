@@ -34,30 +34,15 @@ public class UsuariosServlet extends BaseServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         try {
-            // Recargar usuarios desde la base de datos en cada petición
             usuarioService.cargarUsuarios();
-
-            // Evitar que el navegador almacene en caché la respuesta
-            response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-            response.setHeader("Pragma", "no-cache");
-            response.setDateHeader("Expires", 0);
-
-            // Obtener los parámetros de búsqueda
             String nombre = request.getParameter("nombre");
             String dni = request.getParameter("dni");
             String tipo = request.getParameter("tipo");
             String estado = request.getParameter("estado");
-
-            // Filtrar los datos de los usuarios según los parámetros de búsqueda
             TreeSet<Usuario> usuariosFiltrados = usuarioService.buscarUsuarios(nombre, dni, tipo, estado);
             logger.info("Usuarios filtrados: nombre={}, dni={}, tipo={}, estado={}, total={}", nombre, dni, tipo, estado, usuariosFiltrados.size());
-
-            // Leer el HTML del contenido específico
             String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/lista_usuario.html")));
-
-            // Reemplazar la parte dinámica de la tabla
             if (usuariosFiltrados.isEmpty()) {
                 html = html.replace("${tableRows}", "<tr><td colspan='7'>No se encontraron usuarios que coincidan.</td></tr>");
                 logger.info("No se encontraron usuarios que coincidan con los criterios de búsqueda.");
@@ -65,20 +50,15 @@ public class UsuariosServlet extends BaseServlet {
                 html = html.replace("${tableRows}", UsuarioHtml.generarFilasTablaUsuarios(usuariosFiltrados));
                 logger.info("Se encontraron {} usuarios que coinciden con los criterios de búsqueda.", usuariosFiltrados.size());
             }
-
-            // Reemplazar las opciones de los filtros
             html = html.replace("${tiposUsuarioOptions}", UsuarioHtml.generarOpcionesTipoUsuario(usuarioService.getTiposUsuarioSet()));
             html = html.replace("${estadosOptions}", UsuarioHtml.generarOpcionesEstadoUsuario(usuarioService.getEstadosUsuarioSet()));
             html = html.replace("${scriptConfirmacionEliminacion}", UsuarioHtml.generarScriptConfirmacionEliminacion());
-
             request.setAttribute("content", html);
             super.doGet(request, response);
-
         } catch (SQLException e) {
             logger.error("Error al cargar usuarios: {}", e.getMessage(), e);
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             response.getWriter().write("Error al cargar usuarios: " + e.getMessage());
         }
-
     }
 }

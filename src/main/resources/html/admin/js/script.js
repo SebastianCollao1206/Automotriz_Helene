@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
 
-            // Si todo esta correcto, enviar el formulario
+            //Si todo esta correcto enviar el formulario
             this.submit();
         });
     }
