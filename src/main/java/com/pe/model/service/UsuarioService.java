@@ -95,7 +95,6 @@ public class UsuarioService {
         usuarioDAO.cargarUsuarios(usuarios);
         for (Usuario usuario : usuarios) {
             if (usuario.getCorreo().equals(correo)) {
-                // Verificar si el usuario está activo
                 Preconditions.checkArgument(usuario.getEstado() == Usuario.EstadoUsuario.Activo, "El usuario debe estar activo");
                 byte[] contrasenaEncriptada = encryptPassword(password);
                 if (Arrays.equals(usuario.getContrasena(), contrasenaEncriptada)) {
@@ -145,6 +144,18 @@ public class UsuarioService {
     //actualizar usuario
     public void actualizarUsuario(int id, String nombre, String correo, String dni,
                                   String tipo, String estado) throws SQLException {
+        Validaciones.validarNombre(nombre);
+        Validaciones.validarCorreo(correo);
+        Validaciones.validarDNI(dni);
+        if (existeCorreo(correo) && !correo.equals(obtenerUsuarioPorId(id).getCorreo())) {
+            throw new IllegalArgumentException("El correo ya está registrado en el sistema");
+        }
+        if (existeDNI(dni) && !dni.equals(obtenerUsuarioPorId(id).getDni())) {
+            throw new IllegalArgumentException("El DNI ya está registrado en el sistema");
+        }
+        nombre = Validaciones.sanitizarEntrada(nombre);
+        correo = Validaciones.sanitizarEntrada(correo);
+
         Usuario usuario = obtenerUsuarioPorId(id);
         if (usuario != null) {
             usuario.setNombre(nombre);

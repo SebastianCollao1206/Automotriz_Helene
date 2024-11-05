@@ -1,11 +1,8 @@
 package com.pe.model.service;
 
-import com.google.errorprone.annotations.Var;
 import com.pe.model.dao.VarianteDAO;
-import com.pe.model.entidad.Producto;
 import com.pe.model.entidad.Tamanio;
 import com.pe.model.entidad.Variante;
-
 import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.TreeSet;
@@ -51,7 +48,6 @@ public class VarianteService {
         try {
             varianteDAO.actualizarStock(idVariante, nuevoStock);
         } catch (SQLException e) {
-            // Manejo de excepciones
             throw new SQLException("Error en el servicio al actualizar el stock: " + e.getMessage(), e);
         }
     }

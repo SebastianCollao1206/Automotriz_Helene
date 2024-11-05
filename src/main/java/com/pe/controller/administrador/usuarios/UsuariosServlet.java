@@ -12,8 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.TreeSet;
 
@@ -42,17 +40,7 @@ public class UsuariosServlet extends BaseServlet {
             String estado = request.getParameter("estado");
             TreeSet<Usuario> usuariosFiltrados = usuarioService.buscarUsuarios(nombre, dni, tipo, estado);
             logger.info("Usuarios filtrados: nombre={}, dni={}, tipo={}, estado={}, total={}", nombre, dni, tipo, estado, usuariosFiltrados.size());
-            String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/lista_usuario.html")));
-            if (usuariosFiltrados.isEmpty()) {
-                html = html.replace("${tableRows}", "<tr><td colspan='7'>No se encontraron usuarios que coincidan.</td></tr>");
-                logger.info("No se encontraron usuarios que coincidan con los criterios de búsqueda.");
-            } else {
-                html = html.replace("${tableRows}", UsuarioHtml.generarFilasTablaUsuarios(usuariosFiltrados));
-                logger.info("Se encontraron {} usuarios que coinciden con los criterios de búsqueda.", usuariosFiltrados.size());
-            }
-            html = html.replace("${tiposUsuarioOptions}", UsuarioHtml.generarOpcionesTipoUsuario(usuarioService.getTiposUsuarioSet()));
-            html = html.replace("${estadosOptions}", UsuarioHtml.generarOpcionesEstadoUsuario(usuarioService.getEstadosUsuarioSet()));
-            html = html.replace("${scriptConfirmacionEliminacion}", UsuarioHtml.generarScriptConfirmacionEliminacion());
+            String html = UsuarioHtml.generarHtmlUsuarios(usuariosFiltrados, usuarioService);
             request.setAttribute("content", html);
             super.doGet(request, response);
         } catch (SQLException e) {

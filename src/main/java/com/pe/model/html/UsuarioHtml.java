@@ -1,6 +1,7 @@
 package com.pe.model.html;
 
 import com.pe.model.entidad.Usuario;
+import com.pe.model.service.UsuarioService;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -29,6 +30,27 @@ public class UsuarioHtml {
         }
         </script>
         """;
+    }
+
+    public static String generarHtmlUsuarios(TreeSet<Usuario> usuariosFiltrados, UsuarioService usuarioService) {
+        StringBuilder html = new StringBuilder();
+        try {
+            String baseHtml = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/lista_usuario.html")));
+            String tableRows;
+            if (usuariosFiltrados.isEmpty()) {
+                tableRows = "<tr><td colspan='7'>No se encontraron usuarios que coincidan.</td></tr>";
+            } else {
+                tableRows = generarFilasTablaUsuarios(usuariosFiltrados);
+            }
+            baseHtml = baseHtml.replace("${tableRows}", tableRows);
+            baseHtml = baseHtml.replace("${tiposUsuarioOptions}", generarOpcionesTipoUsuario(usuarioService.getTiposUsuarioSet()));
+            baseHtml = baseHtml.replace("${estadosOptions}", generarOpcionesEstadoUsuario(usuarioService.getEstadosUsuarioSet()));
+            baseHtml = baseHtml.replace("${scriptConfirmacionEliminacion}", generarScriptConfirmacionEliminacion());
+            html.append(baseHtml);
+        } catch (IOException e) {
+            throw new RuntimeException("Error al cargar el HTML base", e);
+        }
+        return html.toString();
     }
 
     public static String generarOpcionesTipoUsuario(TreeSet<String> tiposUsuario) {

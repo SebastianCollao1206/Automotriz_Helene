@@ -14,10 +14,7 @@ import com.pe.controller.administrador.tamanios.AgregarTamanioServlet;
 import com.pe.controller.administrador.tamanios.EditarTamanioServlet;
 import com.pe.controller.administrador.tamanios.EliminarTamanioServlet;
 import com.pe.controller.administrador.tamanios.TamaniosServlet;
-import com.pe.controller.administrador.usuarios.AgregarUsuarioServlet;
-import com.pe.controller.administrador.usuarios.EditarUsuarioServlet;
-import com.pe.controller.administrador.usuarios.EliminarUsuarioServlet;
-import com.pe.controller.administrador.usuarios.UsuariosServlet;
+import com.pe.controller.administrador.usuarios.*;
 import com.pe.controller.administrador.variantes.ActualizarStockServlet;
 import com.pe.controller.administrador.variantes.AgregarVarianteServlet;
 import com.pe.controller.administrador.variantes.EditarVarianteServlet;
@@ -59,6 +56,7 @@ public class App {
             webserver.addServlet(BuscarProductoServlet.class, "/buscarProducto");
             webserver.addServlet(EditarVarianteServlet.class, "/variante/editar");
             webserver.addServlet(EditarProductoServlet.class, "/producto/editar");
+            webserver.addServlet(ExportarUsuarioExcelServlet.class, "/usuario/exportar-excel");
 
             webserver.start();
             System.out.println("Servidor iniciado en http://localhost:8081");

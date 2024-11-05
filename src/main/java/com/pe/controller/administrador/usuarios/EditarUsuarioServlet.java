@@ -10,10 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.SQLException;
 
 @WebServlet("/usuario/editar")
@@ -76,6 +73,9 @@ public class EditarUsuarioServlet extends BaseServlet {
             usuarioService.cargarUsuarios();
             mensaje = "Usuario actualizado exitosamente!";
             logger.info("Usuario actualizado: ID = {}", id);
+        } catch (IllegalArgumentException e) {
+            mensaje = e.getMessage();
+            logger.warn("Error de validación al actualizar usuario: {}", e.getMessage());
         } catch (Exception e) {
             mensaje = "Error al actualizar el usuario: " + e.getMessage();
             logger.error("Error al actualizar el usuario: {}", e.getMessage(), e);
