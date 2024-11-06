@@ -3,6 +3,7 @@ package com.pe.model.service;
 import com.pe.model.dao.TamanioDAO;
 import com.pe.model.entidad.Tamanio;
 import com.pe.model.entidad.Usuario;
+import com.pe.util.Validaciones;
 
 import java.sql.SQLException;
 import java.util.TreeSet;
@@ -17,6 +18,10 @@ public class TamanioService {
         tamanioDAO.cargarTamanios(this.tamanios);
     }
 
+    public TreeSet<Tamanio> getTamanios() {
+        return tamanios;
+    }
+
     public void agregarTamanio(Tamanio tamanio) throws SQLException {
         tamanioDAO.agregarTamanio(tamanio);
         cargarTamanios();
@@ -26,11 +31,13 @@ public class TamanioService {
         tamanioDAO.cargarTamanios(tamanios);
     }
 
-    public String obtenerNombreTamanioPorId(int id) throws SQLException {
-        return tamanioDAO.obtenerNombreTamanioPorId(id);
+    public String obtenerNombreTamanioPorId(int id) {
+        Tamanio tamanio = obtenerTamanioPorId(id);
+        return tamanio != null ? tamanio.getUnidadMedida() : null;
     }
 
     public void eliminarTamanio(int id) throws SQLException {
+        cargarTamanios();
         Tamanio tamanio = obtenerTamanioPorId(id);
         if (tamanio != null && tamanio.getEstado() == Tamanio.EstadoTamanio.Activo) {
             tamanio.setEstado(Tamanio.EstadoTamanio.Inactivo);
@@ -42,23 +49,32 @@ public class TamanioService {
     }
 
     public void agregarTamanio(String unidadMedida, Tamanio.EstadoTamanio estado) throws SQLException {
+        Validaciones.validarSoloLetras(unidadMedida);
+        if (existeUnidadMedida(unidadMedida)) {
+            throw new IllegalArgumentException("La unidad de medida ya está registrada en el sistema");
+        }
         Tamanio tamanio = new Tamanio();
-        tamanio.setUnidadMedida(unidadMedida);
+        tamanio.setUnidadMedida(unidadMedida.trim().toLowerCase());
         tamanio.setEstado(estado);
-
         tamanioDAO.agregarTamanio(tamanio);
         cargarTamanios();
     }
 
-    // Metodo para obtener un tamaño por ID
-    public Tamanio obtenerTamanioPorId(int id) throws SQLException {
-        return tamanioDAO.obtenerTamanioPorId(id);
+    public Tamanio obtenerTamanioPorId(int id) {
+        return tamanios.stream()
+                .filter(t -> t.getIdTamanio() == id)
+                .findFirst()
+                .orElse(null);
     }
 
     public void actualizarTamanio(int id, String unidadMedida, String estado) throws SQLException {
+        Validaciones.validarSoloLetras(unidadMedida);
+        if (existeUnidadMedida(unidadMedida) && !unidadMedida.equals(obtenerTamanioPorId(id).getUnidadMedida())) {
+            throw new IllegalArgumentException("La unidad de medida ya está registrada en el sistema");
+        }
         Tamanio tamanio = obtenerTamanioPorId(id);
         if (tamanio != null) {
-            tamanio.setUnidadMedida(unidadMedida);
+            tamanio.setUnidadMedida(unidadMedida.trim().toLowerCase());
             tamanio.setEstado(Tamanio.EstadoTamanio.valueOf(estado));
 
             tamanioDAO.actualizarTamanio(tamanio);
@@ -68,7 +84,17 @@ public class TamanioService {
         }
     }
 
-    // Métodos para buscar tamaños
+    public Tamanio.EstadoTamanio obtenerEstadoTamanio(String estadoStr) {
+        if (estadoStr != null && !estadoStr.isEmpty()) {
+            try {
+                return Tamanio.EstadoTamanio.valueOf(estadoStr);
+            } catch (IllegalArgumentException e) {
+                throw new IllegalArgumentException("Estado de tamaño no válido: " + estadoStr);
+            }
+        }
+        return null;
+    }
+
     public TreeSet<Tamanio> buscarTamanios(String unidadMedida, Tamanio.EstadoTamanio estado) {
         TreeSet<Tamanio> tamaniosFiltrados = new TreeSet<>(Tamanio.TAMANIO_COMPARATOR_NATURAL_ORDER);
         for (Tamanio tamanio : tamanios) {
@@ -79,7 +105,6 @@ public class TamanioService {
         return tamaniosFiltrados;
     }
 
-    // Verificar si el tamaño cumple con los filtros
     private boolean verificarTamanio(Tamanio tamanio, String unidadMedida, Tamanio.EstadoTamanio estado) {
         boolean valido = true;
         if (unidadMedida != null && !unidadMedida.isEmpty() && !tamanio.getUnidadMedida().toLowerCase().contains(unidadMedida.toLowerCase())) {
@@ -91,7 +116,6 @@ public class TamanioService {
         return valido;
     }
 
-    // Metodo para obtener nombres de tamaños
     public TreeSet<String> getNombresTamanios() {
         TreeSet<String> nombresTamanios = new TreeSet<>();
         for (Tamanio tamanio : tamanios) {
@@ -100,7 +124,8 @@ public class TamanioService {
         return nombresTamanios;
     }
 
-    public TreeSet<Tamanio> getTamanios() {
-        return tamanios;
+    private boolean existeUnidadMedida(String unidadMedida) {
+        return tamanios.stream()
+                .anyMatch(t -> t.getUnidadMedida().equalsIgnoreCase(unidadMedida.trim().toLowerCase()));
     }
 }

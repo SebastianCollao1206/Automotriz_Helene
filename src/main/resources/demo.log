@@ -1,102 +1,16 @@
-2024-11-05 09:59:36,328 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-05 09:59:36,577 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-05 09:59:36,745 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@5b799640{/,null,AVAILABLE}
-2024-11-05 09:59:36,945 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@6892b3b6{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-05 09:59:36,997 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@2d901eb0{HTTP/1.1, (http/1.1)}{0.0.0.0:49785}
-2024-11-05 09:59:37,004 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@3e11f9e9{STARTING}[11.0.7,sto=0] @4130ms
-2024-11-05 10:00:36,266 INFO [qtp800281454-44] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-05 10:01:55,628 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-05 10:01:55,931 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-05 10:01:56,047 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@51891008{/,null,AVAILABLE}
-2024-11-05 10:01:56,340 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@221a3fa4{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-05 10:01:56,387 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@6cb107fd{HTTP/1.1, (http/1.1)}{0.0.0.0:56930}
-2024-11-05 10:01:56,389 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@3e27aa33{STARTING}[11.0.7,sto=0] @3234ms
-2024-11-05 10:02:08,644 INFO [qtp1349182676-33] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-05 10:04:19,995 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-05 10:04:20,322 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-05 10:04:20,428 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@51891008{/,null,AVAILABLE}
-2024-11-05 10:04:20,784 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@221a3fa4{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-05 10:04:20,824 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@6cb107fd{HTTP/1.1, (http/1.1)}{0.0.0.0:57124}
-2024-11-05 10:04:20,825 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@3e27aa33{STARTING}[11.0.7,sto=0] @3548ms
-2024-11-05 10:04:34,498 INFO [qtp1349182676-32] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-05 10:04:41,530 INFO [qtp1349182676-31] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:05:05,446 INFO [qtp1349182676-32] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 58] -- Se han encontrado 3 tamaños que coinciden con los criterios de búsqueda.
-2024-11-05 10:06:00,168 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-05 10:06:00,514 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-05 10:06:00,629 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@5dafbe45{/,null,AVAILABLE}
-2024-11-05 10:06:00,865 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@183ec003{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-05 10:06:00,916 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@4201c465{HTTP/1.1, (http/1.1)}{0.0.0.0:57279}
-2024-11-05 10:06:00,917 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@3646a422{STARTING}[11.0.7,sto=0] @3206ms
-2024-11-05 10:06:10,339 INFO [qtp335359181-44] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 58] -- Se han encontrado 3 tamaños que coinciden con los criterios de búsqueda.
-2024-11-05 10:06:18,702 INFO [qtp335359181-32] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-05 10:06:26,957 INFO [qtp335359181-34] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:07:41,443 INFO [qtp335359181-42] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 41] -- Producto encontrado: LIMPIADOR DE CAMBIOS AUTOMÁTICOS
-2024-11-05 10:07:49,974 INFO [qtp335359181-44] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 57] -- Se encontraron 1 variantes para el producto ID: 1
-2024-11-05 10:07:54,465 INFO [qtp335359181-30] c.p.c.a.v.ActualizarStockServlet [ActualizarStockServlet.java : 48] -- Stock actualizado: ID Variante = 1, Nuevo Stock = 20
-2024-11-05 10:07:54,486 INFO [qtp335359181-45] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 57] -- Se encontraron 1 variantes para el producto ID: 1
-2024-11-05 10:07:59,877 INFO [qtp335359181-30] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 58] -- Se han encontrado 3 tamaños que coinciden con los criterios de búsqueda.
-2024-11-05 10:08:01,091 INFO [qtp335359181-45] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 58] -- Se encontraron 9 categorías que coinciden con los criterios de búsqueda.
-2024-11-05 10:08:01,094 INFO [qtp335359181-45] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 61] -- HTML de lista de categorías cargado correctamente.
-2024-11-05 10:08:07,168 INFO [qtp335359181-30] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 58] -- Se han encontrado 3 tamaños que coinciden con los criterios de búsqueda.
-2024-11-05 10:08:11,000 INFO [qtp335359181-30] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 58] -- Se han encontrado 3 tamaños que coinciden con los criterios de búsqueda.
-2024-11-05 10:08:15,144 INFO [qtp335359181-42] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 38] -- Tamaño eliminado con ID: 2
-2024-11-05 10:08:15,161 INFO [qtp335359181-32] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 58] -- Se han encontrado 3 tamaños que coinciden con los criterios de búsqueda.
-2024-11-05 10:08:16,981 INFO [qtp335359181-42] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 2
-2024-11-05 10:08:23,742 INFO [qtp335359181-44] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 79] -- Tamaño actualizado: ID = 2, Nombre = Mililitros, Estado = Activo
-2024-11-05 10:08:23,760 INFO [qtp335359181-32] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 58] -- Se han encontrado 3 tamaños que coinciden con los criterios de búsqueda.
-2024-11-05 10:08:27,020 INFO [qtp335359181-44] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 38] -- Tamaño eliminado con ID: 2
-2024-11-05 10:08:27,031 INFO [qtp335359181-32] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 58] -- Se han encontrado 3 tamaños que coinciden con los criterios de búsqueda.
-2024-11-05 10:08:29,094 INFO [qtp335359181-44] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:09:16,176 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-05 10:09:16,455 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-05 10:09:16,560 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@51891008{/,null,AVAILABLE}
-2024-11-05 10:09:16,816 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@221a3fa4{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-05 10:09:16,859 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@6cb107fd{HTTP/1.1, (http/1.1)}{0.0.0.0:57539}
-2024-11-05 10:09:16,860 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@3e27aa33{STARTING}[11.0.7,sto=0] @2941ms
-2024-11-05 10:09:19,964 INFO [qtp1349182676-44] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:09:19,969 INFO [qtp1349182676-44] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 52] -- Se encontraron 8 usuarios que coinciden con los criterios de búsqueda.
-2024-11-05 10:09:27,775 INFO [qtp1349182676-32] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-05 10:09:31,896 INFO [qtp1349182676-31] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:09:31,899 INFO [qtp1349182676-31] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 52] -- Se encontraron 8 usuarios que coinciden con los criterios de búsqueda.
-2024-11-05 10:13:52,773 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-05 10:13:53,088 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-05 10:13:53,165 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@51891008{/,null,AVAILABLE}
-2024-11-05 10:13:53,454 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@221a3fa4{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-05 10:13:53,508 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@6cb107fd{HTTP/1.1, (http/1.1)}{0.0.0.0:57844}
-2024-11-05 10:13:53,509 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@3e27aa33{STARTING}[11.0.7,sto=0] @3113ms
-2024-11-05 10:13:56,446 INFO [qtp1349182676-44] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:14:08,744 INFO [qtp1349182676-32] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-05 10:14:12,263 INFO [qtp1349182676-45] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:14:18,937 INFO [qtp1349182676-33] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=, dni=, tipo=Jefe, estado=, total=6
-2024-11-05 10:14:23,434 INFO [qtp1349182676-44] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=, dni=, tipo=Trabajador, estado=, total=2
-2024-11-05 10:14:26,409 INFO [qtp1349182676-31] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=, dni=, tipo=, estado=Activo, total=3
-2024-11-05 10:14:29,642 INFO [qtp1349182676-30] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=, dni=, tipo=, estado=Inactivo, total=5
-2024-11-05 10:14:37,097 INFO [qtp1349182676-44] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=, dni=61110122, tipo=, estado=, total=1
-2024-11-05 10:14:42,826 INFO [qtp1349182676-42] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=Sebas, dni=, tipo=, estado=, total=3
-2024-11-05 10:14:47,125 INFO [qtp1349182676-32] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=, dni=, tipo=, estado=, total=8
-2024-11-05 10:15:40,106 WARN [qtp1349182676-31] c.p.c.a.u.AgregarUsuarioServlet [AgregarUsuarioServlet.java : 49] -- Error de validación al agregar usuario: La contraseña debe tener al menos 8 caracteres
-2024-11-05 10:16:13,242 WARN [qtp1349182676-44] c.p.c.a.u.AgregarUsuarioServlet [AgregarUsuarioServlet.java : 49] -- Error de validación al agregar usuario: El correo ya está registrado en el sistema
-2024-11-05 10:16:20,890 INFO [qtp1349182676-32] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:30:18,743 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-05 10:30:19,166 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-05 10:30:19,375 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@7d9d0818{/,null,AVAILABLE}
-2024-11-05 10:30:19,591 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@5a45133e{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-05 10:30:19,638 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@6892b3b6{HTTP/1.1, (http/1.1)}{0.0.0.0:58930}
-2024-11-05 10:30:19,639 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@20ccf40b{STARTING}[11.0.7,sto=0] @3966ms
-2024-11-05 10:30:22,344 INFO [qtp48208774-49] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:30:35,007 INFO [qtp48208774-40] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-05 10:30:37,831 INFO [qtp48208774-37] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:30:45,026 INFO [qtp48208774-41] c.p.c.a.u.EliminarUsuarioServlet [EliminarUsuarioServlet.java : 38] -- Usuario cambiado a inactivo: ID = 1
-2024-11-05 10:30:45,052 INFO [qtp48208774-49] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:30:51,576 WARN [qtp48208774-36] o.eclipse.jetty.server.HttpChannel [HttpChannel.java : 719] -- /usuario/editar
-java.lang.IllegalStateException: Committed
-	at org.eclipse.jetty.server.HttpChannel.resetBuffer(HttpChannel.java:1054)
-	at org.eclipse.jetty.server.HttpOutput.resetBuffer(HttpOutput.java:1419)
-	at org.eclipse.jetty.server.Response.resetBuffer(Response.java:1253)
-	at org.eclipse.jetty.server.Response.sendRedirect(Response.java:590)
-	at org.eclipse.jetty.server.Response.sendRedirect(Response.java:524)
-	at org.eclipse.jetty.server.Response.sendRedirect(Response.java:599)
-	at com.pe.controller.administrador.usuarios.EditarUsuarioServlet.doPost(EditarUsuarioServlet.java:102)
+2024-11-06 11:10:30,239 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-06 11:10:30,463 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-06 11:10:30,597 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@5a59ca5e{/,null,AVAILABLE}
+2024-11-06 11:10:30,809 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@750e2b97{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-06 11:10:30,875 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@7bba5817{HTTP/1.1, (http/1.1)}{0.0.0.0:63961}
+2024-11-06 11:10:30,876 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@57cf54e1{STARTING}[11.0.7,sto=0] @4289ms
+2024-11-06 11:10:39,331 INFO [qtp943454742-51] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 4 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:10:51,469 INFO [qtp943454742-42] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-06 11:10:54,498 INFO [qtp943454742-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 4 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:11:08,848 ERROR [qtp943454742-38] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 42] -- Error al eliminar tamaño: ID = 4, Error = El tamaño no se puede cambiar a inactivo o no existe.
+java.sql.SQLException: El tamaño no se puede cambiar a inactivo o no existe.
+	at com.pe.model.service.TamanioService.eliminarTamanio(TamanioService.java:47)
+	at com.pe.controller.administrador.tamanios.EliminarTamanioServlet.doPost(EliminarTamanioServlet.java:37)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
@@ -123,46 +37,253 @@ java.lang.IllegalStateException: Committed
 	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
 	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
 	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
-	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2024-11-05 10:30:58,453 INFO [qtp48208774-47] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 44] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:40:50,123 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-05 10:40:50,319 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-05 10:40:50,404 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@19932c16{/,null,AVAILABLE}
-2024-11-05 10:40:50,617 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@4686afc2{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-05 10:40:50,701 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@3e8c3cb{HTTP/1.1, (http/1.1)}{0.0.0.0:59684}
-2024-11-05 10:40:50,704 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@4fb3ee4e{STARTING}[11.0.7,sto=0] @3961ms
-2024-11-05 10:40:54,814 INFO [qtp1048855692-49] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 42] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:41:07,731 INFO [qtp1048855692-36] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-05 10:41:11,020 INFO [qtp1048855692-37] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 42] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:41:31,610 WARN [qtp1048855692-35] c.p.c.a.u.EditarUsuarioServlet [EditarUsuarioServlet.java : 78] -- Error de validación al actualizar usuario: El nombre solo debe contener letras y espacios
-2024-11-05 10:41:31,632 INFO [qtp1048855692-50] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 42] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:41:54,516 INFO [qtp1048855692-36] c.p.c.a.u.EditarUsuarioServlet [EditarUsuarioServlet.java : 75] -- Usuario actualizado: ID = 1
-2024-11-05 10:41:54,543 INFO [qtp1048855692-49] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 42] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:42:06,638 WARN [qtp1048855692-47] c.p.c.a.u.EditarUsuarioServlet [EditarUsuarioServlet.java : 78] -- Error de validación al actualizar usuario: El nombre solo debe contener letras y espacios
-2024-11-05 10:42:06,658 INFO [qtp1048855692-49] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 42] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:42:41,125 INFO [qtp1048855692-40] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 42] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:42:52,052 INFO [qtp1048855692-50] c.p.c.a.u.EditarUsuarioServlet [EditarUsuarioServlet.java : 75] -- Usuario actualizado: ID = 1
-2024-11-05 10:42:52,086 INFO [qtp1048855692-40] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 42] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:42:59,660 INFO [qtp1048855692-40] c.p.c.a.u.EditarUsuarioServlet [EditarUsuarioServlet.java : 75] -- Usuario actualizado: ID = 1
-2024-11-05 10:42:59,677 INFO [qtp1048855692-50] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 42] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 10:43:05,555 INFO [qtp1048855692-36] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 42] -- Usuarios filtrados: nombre=, dni=, tipo=, estado=Activo, total=3
-2024-11-05 10:43:25,090 WARN [qtp1048855692-40] c.p.c.a.u.EditarUsuarioServlet [EditarUsuarioServlet.java : 78] -- Error de validación al actualizar usuario: El correo ya está registrado en el sistema
-2024-11-05 10:43:25,110 INFO [qtp1048855692-47] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 42] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 11:36:51,062 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-05 11:36:51,161 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-05 11:36:51,235 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@5c80cf32{/,null,AVAILABLE}
-2024-11-05 11:36:51,404 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@26d9b808{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-05 11:36:51,438 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@15043a2f{HTTP/1.1, (http/1.1)}{0.0.0.0:61523}
-2024-11-05 11:36:51,439 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@3c7f66c4{STARTING}[11.0.7,sto=0] @2456ms
-2024-11-05 11:38:04,544 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-05 11:38:04,665 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-05 11:38:04,721 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@6b695b06{/,null,AVAILABLE}
-2024-11-05 11:38:04,865 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@46cdf8bd{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-05 11:38:04,905 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@79e4c792{HTTP/1.1, (http/1.1)}{0.0.0.0:61620}
-2024-11-05 11:38:04,906 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@3ee37e5a{STARTING}[11.0.7,sto=0] @2176ms
-2024-11-05 11:38:14,033 INFO [qtp1899223686-49] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 42] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
-2024-11-05 11:38:43,393 INFO [qtp1899223686-40] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-05 11:38:46,331 INFO [qtp1899223686-36] c.p.c.a.usuarios.UsuariosServlet [UsuariosServlet.java : 42] -- Usuarios filtrados: nombre=null, dni=null, tipo=null, estado=null, total=8
+2024-11-06 11:11:08,875 INFO [qtp943454742-39] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 4 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:11:15,441 INFO [qtp943454742-38] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 1 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:11:18,275 INFO [qtp943454742-39] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 3 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:11:27,839 INFO [qtp943454742-38] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 4 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:11:33,607 WARN [qtp943454742-38] c.p.c.a.t.AgregarTamanioServlet [AgregarTamanioServlet.java : 45] -- Intento de agregar tamaño con estado no válido: Activo
+2024-11-06 11:11:41,389 INFO [qtp943454742-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 4 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:11:47,531 WARN [qtp943454742-49] c.p.c.a.t.AgregarTamanioServlet [AgregarTamanioServlet.java : 45] -- Intento de agregar tamaño con estado no válido: Activo
+2024-11-06 11:11:53,349 WARN [qtp943454742-39] c.p.c.a.t.AgregarTamanioServlet [AgregarTamanioServlet.java : 45] -- Intento de agregar tamaño con estado no válido: Activo
+2024-11-06 11:11:57,620 INFO [qtp943454742-42] c.p.c.a.t.AgregarTamanioServlet [AgregarTamanioServlet.java : 42] -- Tamaño agregado: kskf skdkd
+2024-11-06 11:12:00,352 INFO [qtp943454742-43] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 5 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:12:23,456 INFO [qtp943454742-49] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 5
+2024-11-06 11:12:23,475 INFO [qtp943454742-43] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 5 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:12:24,832 INFO [qtp943454742-39] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 5
+2024-11-06 11:12:32,702 INFO [qtp943454742-49] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 80] -- Tamaño actualizado: ID = 5, Nombre = kskfskdkd, Estado = Activo
+2024-11-06 11:12:32,718 INFO [qtp943454742-39] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 5 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:12:39,088 INFO [qtp943454742-42] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 5
+2024-11-06 11:12:39,109 INFO [qtp943454742-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 5 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:12:45,058 INFO [qtp943454742-49] c.p.c.a.t.AgregarTamanioServlet [AgregarTamanioServlet.java : 42] -- Tamaño agregado: JDJFKGKKG
+2024-11-06 11:12:47,872 INFO [qtp943454742-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:24:30,569 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-06 11:24:30,743 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-06 11:24:30,827 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@305ffe9e{/,null,AVAILABLE}
+2024-11-06 11:24:31,060 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@38cee291{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-06 11:24:31,116 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@54422e18{HTTP/1.1, (http/1.1)}{0.0.0.0:65201}
+2024-11-06 11:24:31,118 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@7c24b813{STARTING}[11.0.7,sto=0] @3539ms
+2024-11-06 11:24:35,886 INFO [qtp1409545055-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:24:51,015 INFO [qtp1409545055-38] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-06 11:24:54,640 INFO [qtp1409545055-35] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:25:00,441 INFO [qtp1409545055-39] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 1
+2024-11-06 11:25:00,472 INFO [qtp1409545055-47] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:25:01,818 INFO [qtp1409545055-50] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:25:04,444 INFO [qtp1409545055-47] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 80] -- Tamaño actualizado: ID = 1, Nombre = Litros, Estado = Activo
+2024-11-06 11:25:04,463 INFO [qtp1409545055-50] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:25:08,273 INFO [qtp1409545055-36] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 2
+2024-11-06 11:25:11,856 INFO [qtp1409545055-49] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 80] -- Tamaño actualizado: ID = 2, Nombre = Mililitros, Estado = Activo
+2024-11-06 11:25:11,881 INFO [qtp1409545055-47] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:25:15,709 INFO [qtp1409545055-49] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 3
+2024-11-06 11:25:18,421 INFO [qtp1409545055-47] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 80] -- Tamaño actualizado: ID = 3, Nombre = Kg, Estado = Activo
+2024-11-06 11:25:18,441 INFO [qtp1409545055-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:25:21,442 INFO [qtp1409545055-35] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 4
+2024-11-06 11:25:25,725 WARN [qtp1409545055-50] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 83] -- Intento de actualizar tamaño con estado no válido: Activo
+2024-11-06 11:25:25,774 INFO [qtp1409545055-47] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:25:30,045 INFO [qtp1409545055-38] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 4
+2024-11-06 11:25:32,588 WARN [qtp1409545055-50] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 83] -- Intento de actualizar tamaño con estado no válido: Activo
+2024-11-06 11:25:32,614 INFO [qtp1409545055-38] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:25:36,038 INFO [qtp1409545055-49] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 5
+2024-11-06 11:25:39,078 INFO [qtp1409545055-50] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 80] -- Tamaño actualizado: ID = 5, Nombre = kskfskdkd, Estado = Activo
+2024-11-06 11:25:39,093 INFO [qtp1409545055-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:25:43,221 INFO [qtp1409545055-35] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 2
+2024-11-06 11:25:43,240 INFO [qtp1409545055-50] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:25:44,772 INFO [qtp1409545055-35] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 2
+2024-11-06 11:25:48,227 INFO [qtp1409545055-47] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:25:51,428 INFO [qtp1409545055-38] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 2
+2024-11-06 11:25:54,954 INFO [qtp1409545055-49] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 80] -- Tamaño actualizado: ID = 2, Nombre = mililitros, Estado = Activo
+2024-11-06 11:25:54,972 INFO [qtp1409545055-50] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:26:00,440 INFO [qtp1409545055-35] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 2
+2024-11-06 11:26:00,459 INFO [qtp1409545055-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:26:05,659 INFO [qtp1409545055-47] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 2
+2024-11-06 11:26:10,787 INFO [qtp1409545055-38] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 2
+2024-11-06 11:26:14,373 INFO [qtp1409545055-35] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:26:17,423 INFO [qtp1409545055-50] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 1
+2024-11-06 11:26:17,443 INFO [qtp1409545055-38] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:26:18,795 INFO [qtp1409545055-50] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:26:20,216 INFO [qtp1409545055-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:26:23,655 ERROR [qtp1409545055-38] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 42] -- Error al eliminar tamaño: ID = 4, Error = El tamaño no se puede cambiar a inactivo o no existe.
+java.sql.SQLException: El tamaño no se puede cambiar a inactivo o no existe.
+	at com.pe.model.service.TamanioService.eliminarTamanio(TamanioService.java:47)
+	at com.pe.controller.administrador.tamanios.EliminarTamanioServlet.doPost(EliminarTamanioServlet.java:37)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-06 11:26:23,680 INFO [qtp1409545055-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:26:25,392 INFO [qtp1409545055-47] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 4
+2024-11-06 11:26:28,362 WARN [qtp1409545055-38] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 83] -- Intento de actualizar tamaño con estado no válido: Activo
+2024-11-06 11:26:28,381 INFO [qtp1409545055-47] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:26:33,989 INFO [qtp1409545055-35] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 3
+2024-11-06 11:26:34,011 INFO [qtp1409545055-38] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:26:35,832 INFO [qtp1409545055-50] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 2
+2024-11-06 11:26:45,052 INFO [qtp1409545055-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:27:02,236 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-06 11:27:02,616 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-06 11:27:02,721 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@45385f75{/,null,AVAILABLE}
+2024-11-06 11:27:02,999 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@792b749c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-06 11:27:03,047 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@480d3575{HTTP/1.1, (http/1.1)}{0.0.0.0:65459}
+2024-11-06 11:27:03,048 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e9175d8{STARTING}[11.0.7,sto=0] @4154ms
+2024-11-06 11:27:06,649 INFO [qtp1565740893-44] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:27:18,912 INFO [qtp1565740893-32] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-06 11:27:21,552 INFO [qtp1565740893-36] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:27:26,331 INFO [qtp1565740893-44] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 5
+2024-11-06 11:27:26,352 INFO [qtp1565740893-44] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:27:27,839 INFO [qtp1565740893-36] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 5
+2024-11-06 11:27:30,727 INFO [qtp1565740893-37] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 80] -- Tamaño actualizado: ID = 5, Nombre = kskfskdkd, Estado = Activo
+2024-11-06 11:27:30,749 INFO [qtp1565740893-44] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:27:35,394 INFO [qtp1565740893-45] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:27:38,265 INFO [qtp1565740893-44] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 80] -- Tamaño actualizado: ID = 1, Nombre = litros, Estado = Activo
+2024-11-06 11:27:38,284 INFO [qtp1565740893-45] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:27:40,349 INFO [qtp1565740893-33] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:27:42,931 INFO [qtp1565740893-44] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 80] -- Tamaño actualizado: ID = 1, Nombre = litros, Estado = Inactivo
+2024-11-06 11:27:42,952 INFO [qtp1565740893-32] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:27:44,529 INFO [qtp1565740893-44] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:27:46,977 INFO [qtp1565740893-32] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 80] -- Tamaño actualizado: ID = 1, Nombre = litros, Estado = Activo
+2024-11-06 11:27:46,992 INFO [qtp1565740893-44] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:27:49,631 INFO [qtp1565740893-32] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 1
+2024-11-06 11:27:49,651 INFO [qtp1565740893-44] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:27:50,934 INFO [qtp1565740893-42] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 48] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:30:01,545 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-06 11:30:01,952 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-06 11:30:02,091 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@45385f75{/,null,AVAILABLE}
+2024-11-06 11:30:02,341 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@792b749c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-06 11:30:02,419 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@480d3575{HTTP/1.1, (http/1.1)}{0.0.0.0:49336}
+2024-11-06 11:30:02,420 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e9175d8{STARTING}[11.0.7,sto=0] @4545ms
+2024-11-06 11:30:07,076 INFO [qtp1565740893-44] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 49] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:31:05,384 WARN [qtp1565740893-31] c.p.c.administrador.LoginServlet [LoginServlet.java : 48] -- Error de validación en el inicio de sesión: La contraseña debe tener al menos 8 caracteres
+2024-11-06 11:31:16,469 INFO [qtp1565740893-36] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-06 11:31:19,044 INFO [qtp1565740893-35] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:31:25,508 INFO [qtp1565740893-32] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 5
+2024-11-06 11:31:25,542 INFO [qtp1565740893-45] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:31:27,023 INFO [qtp1565740893-36] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 49] -- Se ha cargado el formulario de edición para el tamaño con ID: 5
+2024-11-06 11:31:29,711 INFO [qtp1565740893-45] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 82] -- Tamaño actualizado: ID = 5, Nombre = kskfskdkd, Estado = Activo
+2024-11-06 11:31:29,727 INFO [qtp1565740893-36] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:31:32,567 INFO [qtp1565740893-45] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 5
+2024-11-06 11:31:32,589 INFO [qtp1565740893-36] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:31:33,778 INFO [qtp1565740893-45] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 49] -- Se ha cargado el formulario de edición para el tamaño con ID: 5
+2024-11-06 11:31:36,327 INFO [qtp1565740893-42] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 82] -- Tamaño actualizado: ID = 5, Nombre = kskfskdkd, Estado = Activo
+2024-11-06 11:31:36,345 INFO [qtp1565740893-36] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:31:39,217 INFO [qtp1565740893-42] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 49] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:31:41,853 INFO [qtp1565740893-36] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 82] -- Tamaño actualizado: ID = 1, Nombre = litros, Estado = Activo
+2024-11-06 11:31:41,868 INFO [qtp1565740893-42] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:31:44,284 INFO [qtp1565740893-36] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 1
+2024-11-06 11:31:44,300 INFO [qtp1565740893-42] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:31:45,632 INFO [qtp1565740893-44] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 49] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:31:47,839 INFO [qtp1565740893-36] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 82] -- Tamaño actualizado: ID = 1, Nombre = litros, Estado = Activo
+2024-11-06 11:31:47,862 INFO [qtp1565740893-44] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:31:50,600 INFO [qtp1565740893-36] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 49] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:31:54,269 WARN [qtp1565740893-44] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 85] -- Intento de actualizar tamaño con estado no válido: Activo
+2024-11-06 11:31:54,285 INFO [qtp1565740893-36] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:32:07,041 WARN [qtp1565740893-45] c.p.c.a.t.AgregarTamanioServlet [AgregarTamanioServlet.java : 45] -- Intento de agregar tamaño con estado no válido: Activo
+2024-11-06 11:32:10,407 INFO [qtp1565740893-45] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:32:16,918 INFO [qtp1565740893-42] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 49] -- Se ha cargado el formulario de edición para el tamaño con ID: 2
+2024-11-06 11:32:20,518 INFO [qtp1565740893-44] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 82] -- Tamaño actualizado: ID = 2, Nombre = mililitros, Estado = Activo
+2024-11-06 11:32:20,535 INFO [qtp1565740893-42] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:32:24,382 INFO [qtp1565740893-44] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 49] -- Se ha cargado el formulario de edición para el tamaño con ID: 2
+2024-11-06 11:32:25,980 INFO [qtp1565740893-36] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 52] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:40:35,247 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-06 11:40:35,503 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-06 11:40:35,660 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@6d60fe40{/,null,AVAILABLE}
+2024-11-06 11:40:35,956 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@65c7a252{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-06 11:40:35,997 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@248e319b{HTTP/1.1, (http/1.1)}{0.0.0.0:62024}
+2024-11-06 11:40:35,998 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@58695725{STARTING}[11.0.7,sto=0] @4594ms
+2024-11-06 11:40:41,481 INFO [qtp1237825806-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 56] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:40:56,650 INFO [qtp1237825806-39] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-06 11:40:59,999 INFO [qtp1237825806-50] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 56] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:41:05,458 INFO [qtp1237825806-42] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 49] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:41:07,778 INFO [qtp1237825806-35] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 56] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:41:10,227 INFO [qtp1237825806-49] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 1
+2024-11-06 11:41:10,249 INFO [qtp1237825806-39] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 56] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:41:11,515 INFO [qtp1237825806-49] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 49] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:41:13,908 INFO [qtp1237825806-39] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 82] -- Tamaño actualizado: ID = 1, Nombre = litros, Estado = Activo
+2024-11-06 11:41:13,927 INFO [qtp1237825806-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 56] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:41:16,354 INFO [qtp1237825806-47] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 1
+2024-11-06 11:41:16,375 INFO [qtp1237825806-39] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 56] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:41:17,719 INFO [qtp1237825806-47] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 49] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:41:23,447 INFO [qtp1237825806-39] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 82] -- Tamaño actualizado: ID = 1, Nombre = litros, Estado = Activo
+2024-11-06 11:41:23,663 INFO [qtp1237825806-47] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 56] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:41:29,925 INFO [qtp1237825806-39] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 56] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:48:30,944 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-06 11:48:31,145 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-06 11:48:31,250 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@514646ef{/,null,AVAILABLE}
+2024-11-06 11:48:31,613 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@791f145a{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-06 11:48:31,650 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@543295b0{HTTP/1.1, (http/1.1)}{0.0.0.0:62749}
+2024-11-06 11:48:31,652 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@25fb8912{STARTING}[11.0.7,sto=0] @3910ms
+2024-11-06 11:48:36,183 INFO [qtp1117519786-50] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:48:46,665 INFO [qtp1117519786-40] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-06 11:48:49,697 INFO [qtp1117519786-41] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:48:54,683 INFO [qtp1117519786-36] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 1
+2024-11-06 11:48:54,703 INFO [qtp1117519786-37] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:48:56,036 INFO [qtp1117519786-51] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 51] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:48:58,846 INFO [qtp1117519786-37] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 83] -- Tamaño actualizado: ID = 1, Nombre = litros, Estado = Activo
+2024-11-06 11:48:58,866 INFO [qtp1117519786-51] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:49:01,084 INFO [qtp1117519786-37] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 1
+2024-11-06 11:49:01,104 INFO [qtp1117519786-51] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:49:02,482 INFO [qtp1117519786-48] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 51] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:49:05,601 INFO [qtp1117519786-37] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 83] -- Tamaño actualizado: ID = 1, Nombre = litros, Estado = Activo
+2024-11-06 11:49:05,618 INFO [qtp1117519786-48] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:49:10,216 INFO [qtp1117519786-37] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 51] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:49:12,838 INFO [qtp1117519786-50] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 83] -- Tamaño actualizado: ID = 1, Nombre = litross, Estado = Activo
+2024-11-06 11:49:12,859 INFO [qtp1117519786-48] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:49:15,057 INFO [qtp1117519786-50] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 51] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:49:22,508 INFO [qtp1117519786-40] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 83] -- Tamaño actualizado: ID = 1, Nombre = LITROS, Estado = Activo
+2024-11-06 11:49:22,525 INFO [qtp1117519786-48] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:49:28,223 WARN [qtp1117519786-51] c.p.c.a.t.AgregarTamanioServlet [AgregarTamanioServlet.java : 45] -- Intento de agregar tamaño con estado no válido: Activo
+2024-11-06 11:49:31,400 INFO [qtp1117519786-51] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:58:05,193 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-06 11:58:05,378 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-06 11:58:05,482 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@4d1c005e{/,null,AVAILABLE}
+2024-11-06 11:58:05,682 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@130c12b7{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-06 11:58:05,722 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@449a4f23{HTTP/1.1, (http/1.1)}{0.0.0.0:63594}
+2024-11-06 11:58:05,723 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@47987356{STARTING}[11.0.7,sto=0] @4096ms
+2024-11-06 11:58:10,255 INFO [qtp1354083458-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:58:22,707 INFO [qtp1354083458-37] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-06 11:58:25,891 INFO [qtp1354083458-36] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:58:29,950 INFO [qtp1354083458-38] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 45] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:58:33,603 INFO [qtp1354083458-36] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 77] -- Tamaño actualizado: ID = 1, Nombre = litros, Estado = Inactivo
+2024-11-06 11:58:33,647 INFO [qtp1354083458-50] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:58:35,912 INFO [qtp1354083458-36] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 45] -- Se ha cargado el formulario de edición para el tamaño con ID: 1
+2024-11-06 11:58:38,658 INFO [qtp1354083458-35] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 77] -- Tamaño actualizado: ID = 1, Nombre = litros, Estado = Activo
+2024-11-06 11:58:38,732 INFO [qtp1354083458-50] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:58:44,929 INFO [qtp1354083458-37] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 2
+2024-11-06 11:58:44,956 INFO [qtp1354083458-50] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:58:46,502 INFO [qtp1354083458-37] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 45] -- Se ha cargado el formulario de edición para el tamaño con ID: 2
+2024-11-06 11:58:48,923 INFO [qtp1354083458-49] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 77] -- Tamaño actualizado: ID = 2, Nombre = mililitros, Estado = Activo
+2024-11-06 11:58:48,940 INFO [qtp1354083458-50] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:58:53,922 INFO [qtp1354083458-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 4 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:58:57,592 INFO [qtp1354083458-50] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 2 tamaños que coinciden con los criterios de búsqueda.
+2024-11-06 11:59:00,144 INFO [qtp1354083458-47] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 45] -- Se ha cargado el formulario de edición para el tamaño con ID: 4
+2024-11-06 11:59:02,315 WARN [qtp1354083458-49] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 80] -- Intento de actualizar tamaño con estado no válido: Activo
+2024-11-06 11:59:02,334 INFO [qtp1354083458-47] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 6 tamaños que coinciden con los criterios de búsqueda.

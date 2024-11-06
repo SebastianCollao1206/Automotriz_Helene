@@ -1,7 +1,11 @@
 package com.pe.model.html;
 
 import com.pe.model.entidad.Tamanio;
+import com.pe.model.service.TamanioService;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.TreeSet;
 
 public class TamanioHtml {
@@ -28,6 +32,35 @@ public class TamanioHtml {
         """;
     }
 
+    public static String generarHtmlTamanios(TreeSet<Tamanio> tamaniosFiltrados, TamanioService tamanioService) {
+        StringBuilder html = new StringBuilder();
+        try {
+            String baseHtml = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/lista_tamanio.html")));
+            String tableRows;
+
+            if (tamaniosFiltrados.isEmpty()) {
+                tableRows = "<tr><td colspan='4'>No se encontraron tamaños que coincidan.</td></tr>";
+            } else {
+                tableRows = generarFilasTablaTamanios(tamaniosFiltrados);
+            }
+            baseHtml = baseHtml.replace("${tableRows}", tableRows);
+            baseHtml = baseHtml.replace("${scriptConfirmacionEliminacion}", generarScriptConfirmacionEliminacion());
+            html.append(baseHtml);
+        } catch (IOException e) {
+            throw new RuntimeException("Error al cargar el HTML base", e);
+        }
+        return html.toString();
+    }
+
+    public static String generarHtmlEdicionTamanio(Tamanio tamanio) throws IOException {
+        String htmlTemplate = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/editar_tamanio.html")));
+        htmlTemplate = htmlTemplate.replace("${tamanio.idtamanio}", String.valueOf(tamanio.getIdTamanio()));
+        htmlTemplate = htmlTemplate.replace("${tamanio.nombre}", tamanio.getUnidadMedida());
+        htmlTemplate = htmlTemplate.replace("${estado.activoSelected}", tamanio.getEstado().name().equals("Activo") ? "selected" : "");
+        htmlTemplate = htmlTemplate.replace("${estado.inactivoSelected}", tamanio.getEstado().name().equals("Inactivo") ? "selected" : "");
+        return htmlTemplate;
+    }
+
     public static String generarOpcionesTamanios(TreeSet<Tamanio> tamanios) {
         StringBuilder options = new StringBuilder();
         options.append("<option value='' style='display: none;'>Selecciona un tamaño</option>");
@@ -47,11 +80,6 @@ public class TamanioHtml {
         return opciones.toString();
     }
 
-    /**
-     * Generar filas de la tabla de tamaños
-     * @param tamanios
-     * @return
-     */
     public static String generarFilasTablaTamanios(TreeSet<Tamanio> tamanios) {
         StringBuilder tableRows = new StringBuilder();
         for (Tamanio tamanio : tamanios) {

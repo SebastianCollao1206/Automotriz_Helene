@@ -95,6 +95,14 @@ public class Validaciones {
                 .replace("'", "&#x27;");
     }
 
+    //Solo letras
+    public static void validarSoloLetras(String texto) {
+        Preconditions.checkNotNull(texto, "El texto no puede ser nulo");
+        String textoSanitizado = sanitizarEntrada(texto).replaceAll("\\s+", "").toLowerCase();
+        Preconditions.checkArgument(PATRON_SOLO_LETRAS.matcher(textoSanitizado).matches(),
+                "El texto solo debe contener letras");
+    }
+
     private static boolean contieneEspacios(String texto) {
         return texto.contains(" ");
     }

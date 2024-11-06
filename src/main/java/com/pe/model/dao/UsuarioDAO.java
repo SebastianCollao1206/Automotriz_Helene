@@ -52,7 +52,7 @@ public class UsuarioDAO {
             statement.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Error al agregar usuario: " + e.getMessage());
-            throw e; // Propagar la excepción
+            throw e;
         }
     }
 

@@ -33,6 +33,7 @@ public class EliminarTamanioServlet extends BaseServlet {
         String redirigirUrl = "/tamanio/listar";
 
         try {
+            tamanioService.cargarTamanios();
             tamanioService.eliminarTamanio(Integer.parseInt(id));
             mensaje = "Tamaño cambiado a inactivo exitosamente!";
             logger.info("Tamaño eliminado con ID: {}", id);
@@ -44,6 +45,6 @@ public class EliminarTamanioServlet extends BaseServlet {
         request.setAttribute("mensaje", mensaje);
         request.setAttribute("redirigirUrl", redirigirUrl);
 
-        response.sendRedirect(redirigirUrl); // Redirigir a la lista de tamaños
+        response.sendRedirect(redirigirUrl);
     }
 }

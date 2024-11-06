@@ -36,7 +36,6 @@ public class AgregarTamanioServlet extends BaseServlet {
         String redirigirUrl = "/tamanio/agregar";
 
         try {
-            // Agregar el tamaño
             tamanioService.agregarTamanio(unidadMedida, Tamanio.EstadoTamanio.valueOf(estado));
             mensaje = "Tamaño agregado exitosamente!";
             logger.info("Tamaño agregado: {}", unidadMedida);
@@ -45,11 +44,8 @@ public class AgregarTamanioServlet extends BaseServlet {
             logger.warn("Intento de agregar tamaño con estado no válido: {}", estado);
         }
 
-        // Establecer el mensaje en el request
         request.setAttribute("mensaje", mensaje);
         request.setAttribute("redirigirUrl", redirigirUrl);
-
-        // Llamar al metodo doGet para redirigir al usuario
         super.doGet(request, response);
     }
 }

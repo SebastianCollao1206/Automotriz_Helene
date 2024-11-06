@@ -42,10 +42,6 @@ public class ProductosServlet extends BaseServlet {
             productoService.cargarProductos();
             categoriaService.cargarCategorias();
 
-            response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-            response.setHeader("Pragma", "no-cache");
-            response.setDateHeader("Expires", 0);
-
             String nombre = request.getParameter("nombre");
             String categoriaId = request.getParameter("categoria");
             String idProducto = request.getParameter("id");

@@ -40,7 +40,9 @@ public class UsuariosServlet extends BaseServlet {
             String estado = request.getParameter("estado");
             TreeSet<Usuario> usuariosFiltrados = usuarioService.buscarUsuarios(nombre, dni, tipo, estado);
             logger.info("Usuarios filtrados: nombre={}, dni={}, tipo={}, estado={}, total={}", nombre, dni, tipo, estado, usuariosFiltrados.size());
+
             String html = UsuarioHtml.generarHtmlUsuarios(usuariosFiltrados, usuarioService);
+
             request.setAttribute("content", html);
             super.doGet(request, response);
         } catch (SQLException e) {

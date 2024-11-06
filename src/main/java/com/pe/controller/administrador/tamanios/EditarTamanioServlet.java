@@ -2,6 +2,7 @@ package com.pe.controller.administrador.tamanios;
 
 import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.entidad.Tamanio;
+import com.pe.model.html.TamanioHtml;
 import com.pe.model.service.TamanioService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -34,15 +35,11 @@ public class EditarTamanioServlet extends BaseServlet {
         String idParam = request.getParameter("id");
         if (idParam != null) {
             try {
+                tamanioService.cargarTamanios();
                 int id = Integer.parseInt(idParam);
                 Tamanio tamanio = tamanioService.obtenerTamanioPorId(id);
                 if (tamanio != null) {
-                    String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/editar_tamanio.html")));
-                    html = html.replace("${tamanio.idtamanio}", String.valueOf(tamanio.getIdTamanio()));
-                    html = html.replace("${tamanio.nombre}", tamanio.getUnidadMedida());
-                    html = html.replace("${estado.activoSelected}", tamanio.getEstado().name().equals("Activo") ? "selected" : "");
-                    html = html.replace("${estado.inactivoSelected}", tamanio.getEstado().name().equals("Inactivo") ? "selected" : "");
-
+                    String html = TamanioHtml.generarHtmlEdicionTamanio(tamanio);
                     request.setAttribute("content", html);
                     super.doGet(request, response);
                     logger.info("Se ha cargado el formulario de edición para el tamaño con ID: {}", id);
@@ -53,10 +50,11 @@ public class EditarTamanioServlet extends BaseServlet {
             } catch (NumberFormatException e) {
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "ID de tamaño inválido");
                 logger.error("ID de tamaño inválido: {}", idParam, e);
-            } catch (SQLException e) {
+            }
+            catch (SQLException e) {
                 response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error al acceder a la base de datos: " + e.getMessage());
                 logger.error("Error al acceder a la base de datos: {}", e.getMessage(), e);
-            }
+        }
         } else {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "ID de tamaño no proporcionado");
             logger.warn("ID de tamaño no proporcionado en la solicitud");
@@ -68,13 +66,13 @@ public class EditarTamanioServlet extends BaseServlet {
         String idParam = request.getParameter("id");
         String nombre = request.getParameter("nombre");
         String estado = request.getParameter("estado");
-
         String mensaje;
         String redirigirUrl = "/tamanio/listar";
 
         try {
             int id = Integer.parseInt(idParam);
             tamanioService.actualizarTamanio(id, nombre, estado);
+            tamanioService.cargarTamanios();
             mensaje = "Tamaño actualizado exitosamente!";
             logger.info("Tamaño actualizado: ID = {}, Nombre = {}, Estado = {}", id, nombre, estado);
         } catch (IllegalArgumentException e) {
@@ -85,11 +83,8 @@ public class EditarTamanioServlet extends BaseServlet {
             logger.error("Error al actualizar el tamaño: {}", e.getMessage(), e);
         }
 
-        // Establecer atributos para el mensaje y la redirección
         request.setAttribute("mensaje", mensaje);
         request.setAttribute("redirigirUrl", redirigirUrl);
-
-        // Redirigir a la lista de tamaños
         response.sendRedirect(redirigirUrl);
     }
 }
