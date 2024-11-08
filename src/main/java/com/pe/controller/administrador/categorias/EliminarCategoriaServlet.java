@@ -33,6 +33,7 @@ public class EliminarCategoriaServlet extends BaseServlet {
         String redirigirUrl = "/categoria/listar";
 
         try {
+            categoriaService.cargarCategorias();
             categoriaService.eliminarCategoria(Integer.parseInt(id));
             mensaje = "Categoría cambiada a inactiva exitosamente!";
             logger.info("Categoría eliminada: ID = {}", id);
@@ -43,7 +44,6 @@ public class EliminarCategoriaServlet extends BaseServlet {
 
         request.setAttribute("mensaje", mensaje);
         request.setAttribute("redirigirUrl", redirigirUrl);
-
-        response.sendRedirect(redirigirUrl); // Redirigir a la lista de categorías
+        response.sendRedirect(redirigirUrl);
     }
 }

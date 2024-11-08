@@ -15,7 +15,6 @@ public class UsuarioDAO {
         this.connection = dbConnection.getConnection();
     }
 
-    //Cragar Usuarios
     public void cargarUsuarios(TreeSet<Usuario> usuarios) throws SQLException {
         String query = "SELECT * FROM usuario";
         try (PreparedStatement stmt = connection.prepareStatement(query);
@@ -37,7 +36,6 @@ public class UsuarioDAO {
         }
     }
 
-    // Metodo para agregar usuario
     public void agregarUsuario(Usuario usuario) throws SQLException {
         String sql = "INSERT INTO usuario (nombre, correo, contrasena, tipo_usuario, estado, fecha_registro, dni) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -56,7 +54,6 @@ public class UsuarioDAO {
         }
     }
 
-    //Modificar usuario
     public void actualizarUsuario(Usuario usuario) throws SQLException {
         String sql = "UPDATE usuario SET nombre = ?, correo = ?, dni = ?, " +
                 "tipo_usuario = ?, estado = ? WHERE id_usuario = ?";

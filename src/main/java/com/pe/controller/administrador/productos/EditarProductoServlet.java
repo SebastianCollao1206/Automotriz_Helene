@@ -1,9 +1,12 @@
 package com.pe.controller.administrador.productos;
 
+import com.google.common.collect.ImmutableSet;
+import com.google.common.collect.Streams;
 import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.entidad.Categoria;
 import com.pe.model.entidad.Producto;
 import com.pe.model.html.CategoriaHtml;
+import com.pe.model.html.ProductoHtml;
 import com.pe.model.service.CategoriaService;
 import com.pe.model.service.ProductoService;
 import jakarta.servlet.ServletException;
@@ -41,22 +44,15 @@ public class EditarProductoServlet extends BaseServlet {
 
         if (idParam != null) {
             try {
+                productoService.cargarProductos();
                 int id = Integer.parseInt(idParam);
                 Producto producto = productoService.obtenerProductoPorId(id);
 
                 if (producto != null) {
-                    // Cargar categorías
                     categoriaService.cargarCategorias();
-                    TreeSet<Categoria> categorias = categoriaService.getCategorias();
+                    TreeSet<Categoria> categoriasActivas = categoriaService.cargarCategoriasActivas();
 
-                    String opcionesCategorias = CategoriaHtml.generarOpcionesCategorias2(categorias, producto.getIdCategoria());
-
-                    // Cargar el HTML y reemplazar los valores
-                    String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/editar_producto.html")));
-                    html = html.replace("${producto.id}", String.valueOf(producto.getIdProducto()));
-                    html = html.replace("${producto.nombre}", producto.getNombre());
-                    html = html.replace("${producto.descripcion}", producto.getDescripcion());
-                    html = html.replace("${selectedCategoria}", opcionesCategorias); // Reemplazar con las opciones generadas
+                    String html = ProductoHtml.generarHtmlEdicionProducto(producto, categoriasActivas);
 
                     request.setAttribute("content", html);
                     super.doGet(request, response);
@@ -92,17 +88,27 @@ public class EditarProductoServlet extends BaseServlet {
             int idCategoria = Integer.parseInt(categoriaIdParam);
 
             productoService.actualizarProducto(id, nombre, descripcion, idCategoria);
+            productoService.cargarProductos();
             mensaje = "Producto actualizado exitosamente!";
+            logger.info("Producto actualizado: {}", nombre);
+
+            String alertScript = ProductoHtml.generarMensajeAlerta(mensaje, redirigirUrl);
+            response.setContentType("text/html");
+            response.getWriter().write(alertScript);
+            return;
+
+        } catch (SQLException e) {
+            mensaje = "Error al acceder a la base de datos: " + e.getMessage();
+            logger.error(mensaje, e);
+        } catch (IllegalArgumentException e) {
+            mensaje = "Error: " + e.getMessage();
+            logger.warn(mensaje);
         } catch (Exception e) {
-            logger.error("Error de formato en los parámetros: {}", e.getMessage(), e);
-            mensaje = "Error al actualizar el producto: " + e.getMessage();
+            mensaje = "Error inesperado: " + e.getMessage();
+            logger.error(mensaje, e);
         }
-
-        // Establecer atributos para el mensaje y la redirección
-        request.setAttribute("mensaje", mensaje);
-        request.setAttribute("redirigirUrl", redirigirUrl);
-
-        // Redirigir a la URL construida
-        response.sendRedirect(redirigirUrl);
+        String alertScript = ProductoHtml.generarMensajeAlerta(mensaje, "/producto/editar?id=" + idParam);
+        response.setContentType("text/html");
+        response.getWriter().write(alertScript);
     }
 }

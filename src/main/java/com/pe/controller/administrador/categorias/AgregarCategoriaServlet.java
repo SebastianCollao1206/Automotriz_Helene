@@ -31,12 +31,10 @@ public class AgregarCategoriaServlet extends BaseServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nombre = request.getParameter("nombre");
         String estado = request.getParameter("estado");
-
         String mensaje;
         String redirigirUrl = "/categoria/agregar";
 
         try {
-            // Agregar la categoría
             categoriaService.agregarCategoria(nombre, Categoria.EstadoCategoria.valueOf(estado));
             mensaje = "Categoría agregada exitosamente!";
             logger.info("Categoría agregada: {}", nombre);
@@ -45,11 +43,8 @@ public class AgregarCategoriaServlet extends BaseServlet {
             logger.warn("Intento de agregar categoría con estado no válido: {}", estado);
         }
 
-        // Establecer el mensaje en el request
         request.setAttribute("mensaje", mensaje);
         request.setAttribute("redirigirUrl", redirigirUrl);
-
-        // Llamar al metodo doGet para redirigir al usuario
         super.doGet(request, response);
     }
 }

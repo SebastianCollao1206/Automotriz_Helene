@@ -1,10 +1,13 @@
 package com.pe.model.service;
 
+import com.google.common.base.Preconditions;
 import com.pe.model.dao.ProductoDAO;
 import com.pe.model.dao.VarianteDAO;
 import com.pe.model.entidad.Categoria;
 import com.pe.model.entidad.Producto;
 import com.pe.model.entidad.Variante;
+import com.pe.util.Validaciones;
+import jakarta.servlet.http.HttpServletRequest;
 
 import java.math.BigDecimal;
 import java.sql.SQLException;
@@ -26,16 +29,45 @@ public class ProductoService {
         cargarProductos();
     }
 
-    // Cargar todos los productos
     public void cargarProductos() throws SQLException {
         productoDAO.cargarProductos(productos);
     }
 
-    public void agregarProducto(Producto producto, TreeSet<Variante> variantes) throws SQLException {
-        // Agregar el producto y obtener su ID
+    public void agregarProducto(String nombre, String descripcion, int idCategoria, int numVariantes, HttpServletRequest request) throws SQLException {
+        Validaciones.validarDescripcion(descripcion);
+        Validaciones.validarNombreCategoria(String.valueOf(idCategoria));
+
+        if (existeProducto(nombre)) {
+            throw new IllegalArgumentException("El nombre del producto ya está registrado en el sistema");
+        }
+
+        Producto producto = new Producto();
+        producto.setNombre(nombre);
+        producto.setDescripcion(descripcion);
+        producto.setIdCategoria(idCategoria);
+
+        TreeSet<Variante> variantes = new TreeSet<>();
+
+        for (int i = 1; i <= numVariantes; i++) {
+            String codigo = request.getParameter("codigo-" + i);
+            String precioStr = request.getParameter("precio-" + i);
+            String imagen = request.getParameter("imagen-" + i);
+            String stockStr = request.getParameter("stock-" + i);
+            String cantidadStr = request.getParameter("cantidad-" + i);
+            String idTamanioStr = request.getParameter("id-tamanio-" + i);
+
+            Variante variante = new Variante();
+            variante.setCodigo(codigo);
+            variante.setPrecio(new BigDecimal(precioStr));
+            variante.setImagen(imagen);
+            variante.setStock(Integer.parseInt(stockStr));
+            variante.setCantidad(Integer.parseInt(cantidadStr));
+            variante.setIdTamanio(Integer.parseInt(idTamanioStr));
+
+            variantes.add(variante);
+        }
         int productoId = productoDAO.agregarProducto(producto);
         if (productoId != -1) {
-            // Agregar las variantes asociadas al producto
             VarianteService varianteService = new VarianteService();
             varianteService.agregarVariantes(variantes, productoId);
         }
@@ -57,20 +89,39 @@ public class ProductoService {
         return categoria != null ? categoria.getNombre() : "Sin categoría";
     }
 
-    // Metodo
-    public String obtenerNombreProductoPorId(int idProducto) throws SQLException {
-        Producto producto = productoDAO.obtenerProductoPorId(idProducto);
+    public String obtenerNombreProductoPorId(int idProducto) {
+        Producto producto = obtenerProductoPorId(idProducto);
         return (producto != null) ? producto.getNombre() : null;
     }
 
-    // Metodo para obtener un producto por su ID
-    public Producto obtenerProductoPorId(int id) throws SQLException {
-        return productoDAO.obtenerProductoPorId(id);
+    public Producto obtenerProductoPorId(int id) {
+        return productos.stream()
+                .filter(producto -> producto.getIdProducto() == id)
+                .findFirst()
+                .orElse(null);
     }
 
-    // Metodo para actualizar un producto
     public void actualizarProducto(int id, String nombre, String descripcion, int idCategoria) throws SQLException {
-        productoDAO.actualizarProducto(id, nombre, descripcion, idCategoria);
+        Producto producto = obtenerProductoPorId(id);
+        if (producto != null) {
+            if (!producto.getNombre().equals(nombre)) {
+                Validaciones.validarNombreCategoria(nombre);
+                if (existeProducto(nombre)) {
+                    throw new IllegalArgumentException("El nombre del producto ya está registrado en el sistema");
+                }
+            }
+            if (!producto.getDescripcion().equals(descripcion)) {
+                Validaciones.validarDescripcion(descripcion);
+            }
+            productoDAO.actualizarProducto(id, nombre, descripcion, idCategoria);
+        } else {
+            throw new SQLException("Producto no encontrado");
+        }
+    }
+
+    private boolean existeProducto(String nombre) {
+        return productos.stream()
+                .anyMatch(p -> p.getNombre().equalsIgnoreCase(nombre.trim()));
     }
 
     private boolean verificarProducto(Producto producto, String nombre, String categoriaId) {
@@ -87,9 +138,12 @@ public class ProductoService {
         return valido;
     }
 
-    // Metodo para buscar un producto por nombre
-    public Producto buscarProductoPorNombre(String nombre) throws SQLException {
-        return productoDAO.buscarProductoPorNombre(nombre);
+    public Producto buscarProductoPorNombre(String nombre) {
+        String nombreBuscado = nombre.toLowerCase();
+        return productos.stream()
+                .filter(producto -> producto.getNombre().toLowerCase().contains(nombreBuscado))
+                .findFirst()
+                .orElse(null);
     }
 
     public TreeSet<Producto> getProductos() {

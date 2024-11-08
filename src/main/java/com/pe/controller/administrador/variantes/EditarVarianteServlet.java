@@ -67,7 +67,7 @@ public class EditarVarianteServlet extends BaseServlet {
                     html = html.replace("${variante.cantidad}", String.valueOf(variante.getCantidad()));
                     html = html.replace("${selectedProduct}", nombreProducto);
                     html = html.replace("${productoId}", String.valueOf(variante.getIdProducto()));
-                    html = html.replace("${selectedTamanio}", opcionesTamanios); // Reemplazar con las opciones generadas
+                    html = html.replace("${selectedTamanio}", opcionesTamanios);
 
                     request.setAttribute("content", html);
                     super.doGet(request, response);

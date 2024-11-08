@@ -1,9 +1,13 @@
 package com.pe.model.html;
 
+import com.pe.model.entidad.Categoria;
 import com.pe.model.entidad.Producto;
 import com.pe.model.entidad.Tamanio;
 import com.pe.model.service.ProductoService;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.TreeSet;
 
@@ -18,12 +22,6 @@ public class ProductoHtml {
         return html.toString();
     }
 
-    /**
-     * Genera los campos HTML para las variantes de producto
-     * @param numVariantes número de variantes a generar
-     * @param tamanios conjunto de tamaños disponibles para las variantes
-     * @return String con el HTML generado
-     */
     public static String generarCamposVariantes(int numVariantes, TreeSet<Tamanio> tamanios) {
         StringBuilder html = new StringBuilder();
 
@@ -31,7 +29,7 @@ public class ProductoHtml {
             html.append("<div class='variant mb-4 mt-5'>\n")
                     .append("    <h4 class='mb-3 text-center'>Variante ").append(i).append("</h4>\n")
                     .append(generarCampoCodigo(i))
-                    .append(generarCampoTamanio(i, tamanios)) // Ahora se pasa un TreeSet<Tamanio>
+                    .append(generarCampoTamanio(i, tamanios))
                     .append(generarCampoPrecio(i))
                     .append(generarCampoImagen(i))
                     .append(generarCampoStock(i))
@@ -40,6 +38,16 @@ public class ProductoHtml {
         }
 
         return html.toString();
+    }
+
+    public static String generarHtmlEdicionProducto(Producto producto, TreeSet<Categoria> categoriasActivas) throws IOException {
+        String htmlTemplate = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/editar_producto.html")));
+        htmlTemplate = htmlTemplate.replace("${producto.id}", String.valueOf(producto.getIdProducto()));
+        htmlTemplate = htmlTemplate.replace("${producto.nombre}", producto.getNombre());
+        htmlTemplate = htmlTemplate.replace("${producto.descripcion}", producto.getDescripcion());
+        String opcionesCategorias = CategoriaHtml.generarOpcionesCategorias2(categoriasActivas, producto.getIdCategoria());
+        htmlTemplate = htmlTemplate.replace("${selectedCategoria}", opcionesCategorias);
+        return htmlTemplate;
     }
 
     private static String generarCampoCodigo(int i) {

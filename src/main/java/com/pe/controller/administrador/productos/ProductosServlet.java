@@ -46,22 +46,18 @@ public class ProductosServlet extends BaseServlet {
             String categoriaId = request.getParameter("categoria");
             String idProducto = request.getParameter("id");
 
-            // Filtrar los datos de los productos según los parámetros de búsqueda
             TreeSet<Producto> productosFiltrados = productoService.buscarProductos(nombre, categoriaId);
 
-            // Leer el HTML del contenido específico
             String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/lista_producto.html")));
 
-            // Reemplazar la parte dinámica de la tabla
             if (productosFiltrados.isEmpty()) {
                 html = html.replace("${tableRows}", "<tr><td colspan='5'>No se encontraron productos que coincidan.</td></tr>");
             } else {
                 html = html.replace("${tableRows}", ProductoHtml.generarFilasTablaProductos(productosFiltrados, productoService));
             }
 
-            // Reemplazar las opciones de categorías
             TreeSet<Categoria> categorias = categoriaService.getCategorias();
-            html = html.replace("${categoriasOptions}", CategoriaHtml.generarOpcionesCategorias(categorias));
+           html = html.replace("${categoriasOptions}", CategoriaHtml.generarOpcionesCategorias(categorias));
 
             request.setAttribute("content", html);
             super.doGet(request, response);

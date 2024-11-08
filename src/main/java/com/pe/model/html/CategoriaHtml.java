@@ -3,6 +3,9 @@ package com.pe.model.html;
 import com.pe.model.entidad.Categoria;
 import com.pe.model.entidad.Tamanio;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.TreeSet;
 
 public class CategoriaHtml {
@@ -38,6 +41,36 @@ public class CategoriaHtml {
         return options.toString();
     }
 
+    public static String generarHtmlCategorias(TreeSet<Categoria> categoriasFiltradas) {
+        StringBuilder html = new StringBuilder();
+        try {
+            String baseHtml = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/lista_categoria.html")));
+            String tableRows;
+
+            if (categoriasFiltradas.isEmpty()) {
+                tableRows = "<tr><td colspan='4'>No se encontraron categorías que coincidan.</td></tr>";
+            } else {
+                tableRows = generarFilasTablaCategorias(categoriasFiltradas);
+            }
+            baseHtml = baseHtml.replace("${tableRows}", tableRows);
+            baseHtml = baseHtml.replace("${scriptConfirmacionEliminacion}", generarScriptConfirmacionEliminacion());
+            html.append(baseHtml);
+        } catch (IOException e) {
+            throw new RuntimeException("Error al cargar el HTML base", e);
+        }
+        return html.toString();
+    }
+
+    public static String generarHtmlEdicionCategoria(Categoria categoria) throws IOException {
+        String htmlTemplate = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/editar_categoria.html")));
+        htmlTemplate = htmlTemplate.replace("${categoria.idCategoria}", String.valueOf(categoria.getIdCategoria()));
+        htmlTemplate = htmlTemplate.replace("${categoria.nombre}", categoria.getNombre());
+        htmlTemplate = htmlTemplate.replace("${categoria.estado}", categoria.getEstado().name());
+        htmlTemplate = htmlTemplate.replace("${estado.activoSelected}", categoria.getEstado().name().equals("Activo") ? "selected" : "");
+        htmlTemplate = htmlTemplate.replace("${estado.inactivoSelected}", categoria.getEstado().name().equals("Inactivo") ? "selected" : "");
+        return htmlTemplate;
+    }
+
     public static String generarOpcionesCategorias2(TreeSet<Categoria> categorias, int categoriaSeleccionada) {
         StringBuilder opciones = new StringBuilder();
         for (Categoria categoria : categorias) {
@@ -48,11 +81,6 @@ public class CategoriaHtml {
         return opciones.toString();
     }
 
-    /**
-     * Generar filas de la tabla de categorías
-     * @param categorias
-     * @return
-     */
     public static String generarFilasTablaCategorias(TreeSet<Categoria> categorias) {
         StringBuilder tableRows = new StringBuilder();
         for (Categoria categoria : categorias) {

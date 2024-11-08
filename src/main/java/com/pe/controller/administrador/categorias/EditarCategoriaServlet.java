@@ -2,6 +2,7 @@ package com.pe.controller.administrador.categorias;
 
 import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.entidad.Categoria;
+import com.pe.model.html.CategoriaHtml;
 import com.pe.model.service.CategoriaService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -34,20 +35,14 @@ public class EditarCategoriaServlet extends BaseServlet {
         String idParam = request.getParameter("id");
         if (idParam != null) {
             try {
+                categoriaService.cargarCategorias();
                 int id = Integer.parseInt(idParam);
                 Categoria categoria = categoriaService.obtenerCategoriaPorId(id);
                 if (categoria != null) {
-                    String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/editar_categoria.html")));
-                    html = html.replace("${categoria.idCategoria}", String.valueOf(categoria.getIdCategoria()));
-                    html = html.replace("${categoria.nombre}", categoria.getNombre());
-                    html = html.replace("${categoria.estado}", categoria.getEstado().name());
-
-                    // Manejar la selección del estado
-                    html = html.replace("${estado.activoSelected}", categoria.getEstado().name().equals("Activo") ? "selected" : "");
-                    html = html.replace("${estado.inactivoSelected}", categoria.getEstado().name().equals("Inactivo") ? "selected" : "");
-
+                    String html = CategoriaHtml.generarHtmlEdicionCategoria(categoria);
                     request.setAttribute("content", html);
                     super.doGet(request, response);
+                    logger.info("Se ha cargado el formulario de edición para la categoría con ID: {}", id);
                 } else {
                     logger.warn("Categoría no encontrada para ID: {}", id);
                     response.sendError(HttpServletResponse.SC_NOT_FOUND, "Categoría no encontrada");
@@ -70,13 +65,13 @@ public class EditarCategoriaServlet extends BaseServlet {
         String idParam = request.getParameter("id");
         String nombre = request.getParameter("nombre");
         String estado = request.getParameter("estado");
-
         String mensaje;
         String redirigirUrl = "/categoria/listar";
 
         try {
             int id = Integer.parseInt(idParam);
             categoriaService.actualizarCategoria(id, nombre, estado);
+            categoriaService.cargarCategorias();
             mensaje = "Categoría actualizada exitosamente!";
             logger.info("Categoría actualizada: ID = {}, Nombre = {}", id, nombre);
         } catch (IllegalArgumentException e) {
@@ -87,11 +82,8 @@ public class EditarCategoriaServlet extends BaseServlet {
             logger.error("Error al actualizar la categoría ID = {}: {}", idParam, e.getMessage(), e);
         }
 
-        // Establecer atributos para el mensaje y la redirección
         request.setAttribute("mensaje", mensaje);
         request.setAttribute("redirigirUrl", redirigirUrl);
-
-        // Redirigir a la lista de categorías
         response.sendRedirect(redirigirUrl);
     }
 }

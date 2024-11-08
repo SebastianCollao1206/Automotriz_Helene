@@ -45,9 +45,10 @@ public class AgregarVarianteServlet extends BaseServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             tamanioService.cargarTamanios();
-            TreeSet<Tamanio> tamanios = tamanioService.getTamanios();
 
-            String opcionesTamanios = TamanioHtml.generarOpcionesTamanios(tamanios);
+            TreeSet<Tamanio> tamaniosActivos = tamanioService.cargarTamaniosActivos();
+
+            String opcionesTamanios = TamanioHtml.generarOpcionesTamanios(tamaniosActivos);
 
             String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/agregar_variante.html")));
 

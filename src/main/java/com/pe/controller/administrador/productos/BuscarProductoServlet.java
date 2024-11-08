@@ -35,7 +35,6 @@ public class BuscarProductoServlet extends BaseServlet {
             try {
                 Producto producto = productoService.buscarProductoPorNombre(nombreProducto);
                 if (producto != null) {
-                    // Si se encuentra el producto, redirigir a agregar variante
                     request.setAttribute("productoNombre", producto.getNombre());
                     request.setAttribute("productoId", producto.getIdProducto());
                     logger.info("Producto encontrado: {}", producto.getNombre());
@@ -44,9 +43,11 @@ public class BuscarProductoServlet extends BaseServlet {
                     request.setAttribute("mensajeError", "Producto no encontrado");
                     logger.warn("Producto no encontrado: {}", nombreProducto);
                 }
-            } catch (SQLException e) {
-                request.setAttribute("mensajeError", "Error al buscar el producto: " + e.getMessage());
-                logger.error("Error al buscar el producto: {}", e.getMessage(), e);
+//            } catch (SQLException e) {
+//                request.setAttribute("mensajeError", "Error al buscar el producto: " + e.getMessage());
+//                logger.error("Error al buscar el producto: {}", e.getMessage(), e);
+            } finally {
+
             }
         } else {
             request.setAttribute("mensajeError", "Por favor, ingresa un nombre de producto.");

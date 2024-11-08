@@ -54,7 +54,7 @@ public class TamanioService {
             throw new IllegalArgumentException("La unidad de medida ya está registrada en el sistema");
         }
         Tamanio tamanio = new Tamanio();
-        tamanio.setUnidadMedida(unidadMedida.trim().toLowerCase());
+        tamanio.setUnidadMedida(unidadMedida.trim().toLowerCase());//ACA SE QUITA EL LOWER SI NO SE MANEJA MINUSCULAS
         tamanio.setEstado(estado);
         tamanioDAO.agregarTamanio(tamanio);
         cargarTamanios();
@@ -126,6 +126,16 @@ public class TamanioService {
 
     private boolean existeUnidadMedida(String unidadMedida) {
         return tamanios.stream()
-                .anyMatch(t -> t.getUnidadMedida().equalsIgnoreCase(unidadMedida.trim().toLowerCase()));
+                .anyMatch(t -> t.getUnidadMedida().equalsIgnoreCase(unidadMedida.trim()));
+    }
+
+    public TreeSet<Tamanio> cargarTamaniosActivos() {
+        TreeSet<Tamanio> tamaniosActivos = new TreeSet<>(Tamanio.TAMANIO_COMPARATOR_NATURAL_ORDER);
+        for (Tamanio tamanio : tamanios) {
+            if (tamanio.getEstado() == Tamanio.EstadoTamanio.Activo) {
+                tamaniosActivos.add(tamanio);
+            }
+        }
+        return tamaniosActivos;
     }
 }

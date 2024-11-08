@@ -1,6 +1,10 @@
 package com.pe.util;
 
 import com.google.common.base.Preconditions;
+import com.pe.model.entidad.Variante;
+
+import java.math.BigDecimal;
+import java.util.TreeSet;
 import java.util.regex.Pattern;
 
 public class Validaciones {
@@ -101,6 +105,44 @@ public class Validaciones {
         String textoSanitizado = sanitizarEntrada(texto).replaceAll("\\s+", "").toLowerCase();
         Preconditions.checkArgument(PATRON_SOLO_LETRAS.matcher(textoSanitizado).matches(),
                 "El texto solo debe contener letras");
+    }
+
+    public static void validarDescripcion(String descripcion) {
+        Preconditions.checkNotNull(descripcion, "La descripción no puede ser nula");
+        Preconditions.checkArgument(!descripcion.isEmpty(), "La descripción no puede estar vacía");
+        Preconditions.checkArgument(!PATRON_INYECCION_SQL.matcher(descripcion).matches(), "Entrada no válida detectada en la descripción");
+        Preconditions.checkArgument(!PATRON_CARACTERES_ESPECIALES.matcher(descripcion).find(), "La descripción contiene caracteres no permitidos");
+    }
+
+    public static void validarNombreCategoria(String nombre) {
+        Preconditions.checkNotNull(nombre, "El nombre no puede ser nulo");
+        Preconditions.checkArgument(!nombre.isEmpty(), "El nombre no puede estar vacío");
+        Preconditions.checkArgument(!contieneEspaciosMultiples(nombre),
+                "El nombre no debe contener espacios múltiples");
+    }
+
+    public static void validarVariantes(TreeSet<Variante> variantes) {
+        for (Variante variante : variantes) {
+            validarCodigo(variante.getCodigo());
+            Preconditions.checkArgument(variante.getPrecio().compareTo(BigDecimal.ZERO) > 0, "El precio debe ser mayor a cero");
+            Preconditions.checkArgument(variante.getStock() >= 0, "El stock no puede ser negativo");
+            Preconditions.checkArgument(variante.getCantidad() > 0, "La cantidad debe ser mayor a cero");
+            Preconditions.checkArgument(validarRutaImagen(variante.getImagen()), "La imagen debe ser una ruta válida y no puede contener código malicioso");
+        }
+    }
+
+    private static boolean validarRutaImagen(String ruta) {
+        if (ruta == null || ruta.isEmpty()) {
+            return false;
+        }
+        if (!ruta.startsWith("http://") && !ruta.startsWith("https://")) {
+            return false;
+        }
+        return !PATRON_INYECCION_SQL.matcher(ruta).find();
+    }
+
+    public static void validarCodigo(String codigo) {
+        Preconditions.checkArgument(codigo != null && codigo.matches("^[a-zA-Z0-9]+$"), "El código solo puede contener letras y números");
     }
 
     private static boolean contieneEspacios(String texto) {

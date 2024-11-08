@@ -2,6 +2,7 @@ package com.pe.model.service;
 
 import com.pe.model.dao.CategoriaDAO;
 import com.pe.model.entidad.Categoria;
+import com.pe.util.Validaciones;
 
 import java.sql.SQLException;
 import java.util.TreeSet;
@@ -15,10 +16,9 @@ public class CategoriaService {
         this.categorias = new TreeSet<>(Categoria.CATEGORIA_COMPARATOR_NATURAL_ORDER);
         categoriaDAO.cargarCategorias(this.categorias);
     }
-    // Constructor para pruebas
-    public CategoriaService(CategoriaDAO categoriaDAO) {
-        this.categoriaDAO = categoriaDAO;
-        this.categorias = new TreeSet<>(Categoria.CATEGORIA_COMPARATOR_NATURAL_ORDER);
+
+    public TreeSet<Categoria> getCategorias() {
+        return categorias;
     }
 
     public void agregarCategoria(Categoria categoria) {
@@ -30,6 +30,7 @@ public class CategoriaService {
     }
 
     public void eliminarCategoria(int id) throws SQLException {
+        cargarCategorias();
         Categoria categoria = obtenerCategoriaPorId(id);
         if (categoria != null && categoria.getEstado() == Categoria.EstadoCategoria.Activo) {
             categoria.setEstado(Categoria.EstadoCategoria.Inactivo);
@@ -41,6 +42,10 @@ public class CategoriaService {
     }
 
     public void agregarCategoria(String nombre, Categoria.EstadoCategoria estado) throws Exception {
+        Validaciones.validarSoloLetras(nombre);
+        if (existeCategoria(nombre)) {
+            throw new IllegalArgumentException("La categoria ya está registrada en el sistema");
+        }
         Categoria categoria = new Categoria();
         categoria.setNombre(nombre);
         categoria.setEstado(estado);
@@ -49,17 +54,24 @@ public class CategoriaService {
         cargarCategorias();
     }
 
-    // Metodo para obtener una categoría por ID
-    public Categoria obtenerCategoriaPorId(int id) throws SQLException {
-        return categoriaDAO.obtenerCategoriaPorId(id);
+    public Categoria obtenerCategoriaPorId(int id) {
+        return categorias.stream()
+                .filter(categoria -> categoria.getIdCategoria() == id)
+                .findFirst()
+                .orElse(null);
     }
 
     public void actualizarCategoria(int id, String nombre, String estado) throws SQLException {
         Categoria categoria = obtenerCategoriaPorId(id);
         if (categoria != null) {
-            categoria.setNombre(nombre);
+            if (!categoria.getNombre().equals(nombre)) {
+                Validaciones.validarSoloLetras(nombre);
+                if (existeCategoria(nombre)) {
+                    throw new IllegalArgumentException("La categoria ya está registrada en el sistema");
+                }
+                categoria.setNombre(nombre);
+            }
             categoria.setEstado(Categoria.EstadoCategoria.valueOf(estado));
-
             categoriaDAO.actualizarCategoria(categoria);
             cargarCategorias();
         } else {
@@ -67,7 +79,6 @@ public class CategoriaService {
         }
     }
 
-    // Metodos para buscar categorías
     public TreeSet<Categoria> buscarCategorias(String nombre, Categoria.EstadoCategoria estado) {
         TreeSet<Categoria> categoriasFiltradas = new TreeSet<>(Categoria.CATEGORIA_COMPARATOR_NATURAL_ORDER);
         for (Categoria categoria : categorias) {
@@ -78,7 +89,6 @@ public class CategoriaService {
         return categoriasFiltradas;
     }
 
-    // Verificar si la categoría cumple con los filtros
     private boolean verificarCategoria(Categoria categoria, String nombre, Categoria.EstadoCategoria estado) {
         boolean valido = true;
         if (nombre != null && !nombre.isEmpty() && !categoria.getNombre().toLowerCase().contains(nombre.toLowerCase())) {
@@ -90,7 +100,16 @@ public class CategoriaService {
         return valido;
     }
 
-    // Metodo para obtener nombres de categorías
+    public TreeSet<Categoria> cargarCategoriasActivas() {
+        TreeSet<Categoria> categoriasActivas = new TreeSet<>(Categoria.CATEGORIA_COMPARATOR_NATURAL_ORDER);
+        for (Categoria categoria : categorias) {
+            if (categoria.getEstado() == Categoria.EstadoCategoria.Activo) {
+                categoriasActivas.add(categoria);
+            }
+        }
+        return categoriasActivas;
+    }
+
     public TreeSet<String> getNombresCategorias() {
         TreeSet<String> nombresCategorias = new TreeSet<>();
         for (Categoria categoria : categorias) {
@@ -99,7 +118,8 @@ public class CategoriaService {
         return nombresCategorias;
     }
 
-    public TreeSet<Categoria> getCategorias() {
-        return categorias;
+    private boolean existeCategoria(String nombre) {
+        return categorias.stream()
+                .anyMatch(c -> c.getNombre().equalsIgnoreCase(nombre.trim()));
     }
 }

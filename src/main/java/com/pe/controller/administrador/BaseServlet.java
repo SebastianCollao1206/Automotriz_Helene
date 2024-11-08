@@ -26,11 +26,9 @@ public abstract class BaseServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        // Obtener la sesión actual
         HttpSession session = request.getSession();
         Usuario usuario = (Usuario) session.getAttribute("usuario");
 
-        // Verificar si el usuario está autenticado
         if (usuario == null) {
             response.sendRedirect("/");
             return;

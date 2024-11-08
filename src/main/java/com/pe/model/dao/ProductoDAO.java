@@ -13,13 +13,11 @@ import java.util.TreeSet;
 public class ProductoDAO {
     private Connection connection;
 
-    // Constructor para inicializar la conexión
     public ProductoDAO() throws SQLException {
         DBConnection dbConnection = new DBConnection();
         this.connection = dbConnection.getConnection();
     }
 
-    // Metodo para cargar productos de la BD
     public void cargarProductos(TreeSet<Producto> productos) throws SQLException {
         String query = "SELECT * FROM producto";
         try (PreparedStatement stmt = connection.prepareStatement(query);
@@ -37,7 +35,6 @@ public class ProductoDAO {
         }
     }
 
-    // Metodo para agregar un producto
     public int agregarProducto(Producto producto) throws SQLException {
         String sql = "INSERT INTO producto (nombre, descripcion, id_categoria) VALUES (?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
@@ -53,30 +50,8 @@ public class ProductoDAO {
                     }
                 }
             }
-            return -1; // Indica que no se insertó el producto
+            return -1;
         }
-    }
-
-    // Metodo para obtener un producto por su ID
-    public Producto obtenerProductoPorId(int idProducto) throws SQLException {
-        Producto producto = null;
-        String sql = "SELECT * FROM producto WHERE id_producto = ?";
-
-        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            stmt.setInt(1, idProducto);
-            try (ResultSet rs = stmt.executeQuery()) {
-                if (rs.next()) {
-                    producto = new Producto(
-                            rs.getInt("id_producto"),
-                            rs.getString("nombre"),
-                            rs.getString("descripcion"),
-                            rs.getInt("id_categoria")
-                    );
-                }
-            }
-        }
-
-        return producto;
     }
 
     public void actualizarProducto(int id, String nombre, String descripcion, int idCategoria) throws SQLException {
@@ -90,40 +65,6 @@ public class ProductoDAO {
         }
     }
 
-    // Metodo para buscar un producto por nombre
-    public Producto buscarProductoPorNombre(String nombre) throws SQLException {
-        Producto producto = null;
-        String sql = "SELECT id_producto, nombre FROM producto WHERE nombre LIKE ?";
-
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, "%" + nombre + "%");
-            ResultSet resultSet = statement.executeQuery();
-
-            if (resultSet.next()) {
-                producto = new Producto();
-                producto.setIdProducto(resultSet.getInt("id_producto"));
-                producto.setNombre(resultSet.getString("nombre"));
-            }
-        }
-        return producto;
-    }
-
-    // Metodo para obtener el nombre del producto por su ID
-    public String obtenerNombreProductoPorId(int id) throws SQLException {
-        String nombre = null;
-        String sql = "SELECT nombre FROM producto WHERE id_producto = ?";
-
-        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
-            stmt.setInt(1, id);
-            ResultSet rs = stmt.executeQuery();
-            if (rs.next()) {
-                nombre = rs.getString("nombre");
-            }
-        }
-        return nombre;
-    }
-
-    // Metodo para cerrar la conexión
     public void cerrarConexion() throws SQLException {
         if (connection != null && !connection.isClosed()) {
             connection.close();

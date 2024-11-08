@@ -54,23 +54,20 @@ public class AgregarProductoServlet extends BaseServlet {
 
             if ("generarCamposVariantes".equals(action)) {
                 int numVariantes = Integer.parseInt(request.getParameter("numVariantes"));
-                TreeSet<Tamanio> tamanios = tamanioService.getTamanios();
-                String html = ProductoHtml.generarCamposVariantes(numVariantes, tamanios);
+                TreeSet<Tamanio> tamaniosActivos = tamanioService.cargarTamaniosActivos();
+                String html = ProductoHtml.generarCamposVariantes(numVariantes, tamaniosActivos);
                 response.setContentType("text/html");
                 response.getWriter().write(html);
             } else {
-                // Cargar categorías y tamaños
                 categoriaService.cargarCategorias();
                 tamanioService.cargarTamanios();
 
-                // Obtener nombres de categorías y tamaños
-                TreeSet<Categoria> categorias = categoriaService.getCategorias();
-                TreeSet<Tamanio> tamanios = tamanioService.getTamanios();
+                TreeSet<Categoria> categoriasActivas = categoriaService.cargarCategoriasActivas();
+                TreeSet<Tamanio> tamaniosActivos = tamanioService.cargarTamaniosActivos();
 
                 String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/agregar_producto.html")));
+                html = html.replace("${categoriasOptions}", CategoriaHtml.generarOpcionesCategorias(categoriasActivas));
 
-                // Reemplazar las opciones de categorías
-                html = html.replace("${categoriasOptions}", CategoriaHtml.generarOpcionesCategorias(categorias));
                 request.setAttribute("content", html);
                 super.doGet(request, response);
             }
@@ -87,66 +84,28 @@ public class AgregarProductoServlet extends BaseServlet {
         String redirigirUrl = "/producto/agregar";
 
         try {
-            // Obtener parámetros del formulario
             String nombre = request.getParameter("nombre");
             String descripcion = request.getParameter("descripcion");
             String categoriaStr = request.getParameter("categoria");
             String numVariantesStr = request.getParameter("num-variantes");
 
-            if (nombre == null || nombre.isEmpty() || descripcion == null || descripcion.isEmpty() || categoriaStr == null || categoriaStr.isEmpty()) {
-                throw new IllegalArgumentException("Nombre, descripción y categoría son obligatorios.");
-            }
-
             int idCategoria = Integer.parseInt(categoriaStr);
             int numVariantes = Integer.parseInt(numVariantesStr);
 
-            Producto producto = new Producto();
-            producto.setNombre(nombre);
-            producto.setDescripcion(descripcion);
-            producto.setIdCategoria(idCategoria);
-
-            TreeSet<Variante> variantes = new TreeSet<>();
-
-            for (int i = 1; i <= numVariantes; i++) {
-                String codigo = request.getParameter("codigo-" + i);
-                String precioStr = request.getParameter("precio-" + i);
-                String imagen = request.getParameter("imagen-" + i);
-                String stockStr = request.getParameter("stock-" + i);
-                String cantidadStr = request.getParameter("cantidad-" + i);
-                String idTamanioStr = request.getParameter("id-tamanio-" + i);
-
-                if (codigo == null || codigo.isEmpty() || precioStr == null || precioStr.isEmpty() ||
-                        imagen == null || imagen.isEmpty() || stockStr == null || stockStr.isEmpty() ||
-                        cantidadStr == null || cantidadStr.isEmpty() || idTamanioStr == null || idTamanioStr.isEmpty()) {
-                    throw new IllegalArgumentException("Todos los campos de variante son obligatorios.");
-                }
-
-                BigDecimal precio = new BigDecimal(precioStr);
-                int stock = Integer.parseInt(stockStr);
-                int cantidad = Integer.parseInt(cantidadStr);
-                int idTamanio = Integer.parseInt(idTamanioStr);
-
-                Variante variante = new Variante();
-                variante.setCodigo(codigo);
-                variante.setPrecio(precio);
-                variante.setImagen(imagen);
-                variante.setStock(stock);
-                variante.setCantidad(cantidad);
-                variante.setIdTamanio(idTamanio);
-
-                variantes.add(variante);
-            }
-
-            // Agregar el producto y sus variantes
-            productoService.agregarProducto(producto, variantes);
+            productoService.agregarProducto(nombre, descripcion, idCategoria, numVariantes, request);
             mensaje = "Producto agregado exitosamente!";
-            logger.info("Producto agregado: {}", producto.getNombre());
+            logger.info("Producto agregado: {}", nombre);
 
         } catch (SQLException e) {
             mensaje = "Error al agregar el producto";
             logger.warn(mensaje);
+        } catch (IllegalArgumentException e) {
+            mensaje = "Error: " + e.getMessage();
+            logger.warn(mensaje);
+        } catch (Exception e) {
+            mensaje = "Error inesperado: " + e.getMessage();
+            logger.error(mensaje, e);
         }
-        // Generar el script de alerta y redirección
         String alertScript = ProductoHtml.generarMensajeAlerta(mensaje, redirigirUrl);
         response.setContentType("text/html");
         response.getWriter().write(alertScript);

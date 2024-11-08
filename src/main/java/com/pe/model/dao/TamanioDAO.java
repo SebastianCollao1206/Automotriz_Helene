@@ -18,7 +18,6 @@ public class TamanioDAO {
         this.connection = dbConnection.getConnection();
     }
 
-    // Cargar Tamaños
     public void cargarTamanios(TreeSet<Tamanio> tamanios) throws SQLException {
         String query = "SELECT * FROM tamanio";
         try (PreparedStatement stmt = connection.prepareStatement(query);
@@ -35,7 +34,6 @@ public class TamanioDAO {
         }
     }
 
-    // Metodo para agregar un tamaño
     public void agregarTamanio(Tamanio tamanio) throws SQLException {
         String sql = "INSERT INTO tamanio (unidad_medida, estado) VALUES (?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
@@ -49,7 +47,6 @@ public class TamanioDAO {
         }
     }
 
-    // Metodo para actualizar un tamaño
     public void actualizarTamanio(Tamanio tamanio) throws SQLException {
         String sql = "UPDATE tamanio SET unidad_medida = ?, estado = ? WHERE id_tamanio = ?";
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
@@ -64,7 +61,6 @@ public class TamanioDAO {
         }
     }
 
-    // Metodo para cerrar la conexión
     public void cerrarConexion() throws SQLException {
         if (connection != null && !connection.isClosed()) {
             connection.close();

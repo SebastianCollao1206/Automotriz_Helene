@@ -3,6 +3,8 @@ package com.pe.model.service;
 import com.pe.model.dao.VarianteDAO;
 import com.pe.model.entidad.Tamanio;
 import com.pe.model.entidad.Variante;
+import com.pe.util.Validaciones;
+
 import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.TreeSet;
@@ -18,22 +20,22 @@ public class VarianteService {
         this.tamanioService = new TamanioService();
     }
 
-    // Agregar una nueva variante
     public void agregarVariantes(TreeSet<Variante> variantes, int productoId) throws SQLException {
+        Validaciones.validarVariantes(variantes);
         varianteDAO.agregarVariantes(variantes, productoId);
     }
-    // Cambiar la firma del metodo en VarianteService
+
     public void agregarVariante(Variante variante) throws SQLException {
         TreeSet<Variante> variantes = new TreeSet<>();
         variantes.add(variante);
-        varianteDAO.agregarVariantes(variantes, variante.getIdProducto()); // Asegúrate de que la variante tenga el ID del producto
+        Validaciones.validarVariantes(variantes);
+        varianteDAO.agregarVariantes(variantes, variante.getIdProducto());
     }
 
     public TreeSet<Variante> obtenerVariantesPorProducto(int idProducto) throws SQLException {
         return varianteDAO.obtenerVariantesPorProducto(idProducto);
     }
 
-    // Obtener todas las variantes
     public TreeSet<Variante> getVariantes() {
         return variantes;
     }

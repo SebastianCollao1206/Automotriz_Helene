@@ -35,11 +35,6 @@ public class CategoriasServlet extends BaseServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             categoriaService.cargarCategorias();
-
-            response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-            response.setHeader("Pragma", "no-cache");
-            response.setDateHeader("Expires", 0);
-
             String nombre = request.getParameter("nombre");
             String estadoStr = request.getParameter("estado");
 
@@ -53,22 +48,11 @@ public class CategoriasServlet extends BaseServlet {
                 }
             }
 
-            // Filtrar los datos
             TreeSet<Categoria> categoriasFiltradas = categoriaService.buscarCategorias(nombre, estado);
             logger.info("Se encontraron {} categorías que coinciden con los criterios de búsqueda.", categoriasFiltradas.size());
 
-            String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/lista_categoria.html")));
+            String html = CategoriaHtml.generarHtmlCategorias(categoriasFiltradas);
             logger.info("HTML de lista de categorías cargado correctamente.");
-
-            // Reemplazar la parte dinámica de la tabla
-            if (categoriasFiltradas.isEmpty()) {
-                html = html.replace("${tableRows}", "<tr><td colspan='4'>No se encontraron categorías que coincidan.</td></tr>");
-            } else {
-                html = html.replace("${tableRows}", CategoriaHtml.generarFilasTablaCategorias(categoriasFiltradas));
-            }
-
-            html = html.replace("${scriptConfirmacionEliminacion}", CategoriaHtml.generarScriptConfirmacionEliminacion());
-
             request.setAttribute("content", html);
             super.doGet(request, response);
 
