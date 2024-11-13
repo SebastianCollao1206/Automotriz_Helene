@@ -1,7 +1,7 @@
 package com.pe.util;
 
 import com.google.common.base.Preconditions;
-import com.pe.model.entidad.Variante;
+import com.pe.model.administrador.entidad.Variante;
 
 import java.math.BigDecimal;
 import java.util.TreeSet;

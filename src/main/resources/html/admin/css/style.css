@@ -48,6 +48,10 @@
 .texto-admin{
     width: 200px;
 }
+.form-check-input {
+    border: 2px solid #6c757d;
+    border-radius: 0.25rem;
+}
 .offcanvas-body{
     background-color: #004492;
 }

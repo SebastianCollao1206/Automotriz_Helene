@@ -2,6 +2,8 @@ package com.pe;
 
 import com.pe.controller.administrador.LoginServlet;
 import com.pe.controller.administrador.LogoutServlet;
+import com.pe.controller.administrador.comentarios.ComentariosServlet;
+import com.pe.controller.administrador.comentarios.EstadoComentarioServlet;
 import com.pe.controller.administrador.productos.ProductosServlet;
 import com.pe.controller.administrador.categorias.AgregarCategoriaServlet;
 import com.pe.controller.administrador.categorias.CategoriasServlet;
@@ -19,6 +21,10 @@ import com.pe.controller.administrador.variantes.ActualizarStockServlet;
 import com.pe.controller.administrador.variantes.AgregarVarianteServlet;
 import com.pe.controller.administrador.variantes.EditarVarianteServlet;
 import com.pe.controller.administrador.variantes.VarianteProductoServlet;
+import com.pe.controller.cliente.IndexClienteServlet;
+import com.pe.controller.cliente.LoginClienteServlet;
+import com.pe.controller.cliente.LogoutClienteServlet;
+import com.pe.controller.cliente.RegistroClienteServlet;
 import com.pe.util.DBConnection;
 import com.pe.util.JettyUTP;
 
@@ -57,6 +63,14 @@ public class App {
             webserver.addServlet(EditarVarianteServlet.class, "/variante/editar");
             webserver.addServlet(EditarProductoServlet.class, "/producto/editar");
             webserver.addServlet(ExportarUsuarioExcelServlet.class, "/usuario/exportar-excel");
+            webserver.addServlet(ComentariosServlet.class, "/comentario/listar");
+            webserver.addServlet(EstadoComentarioServlet.class, "/comentario/estado");
+
+            //servlets de cliente
+            webserver.addServlet(LoginClienteServlet.class, "/cliente/login");
+            webserver.addServlet(IndexClienteServlet.class, "/cliente/");
+            webserver.addServlet(RegistroClienteServlet.class, "/cliente/registro");
+            webserver.addServlet(LogoutClienteServlet.class, "/cliente/logout");
 
             webserver.start();
             System.out.println("Servidor iniciado en http://localhost:8081");

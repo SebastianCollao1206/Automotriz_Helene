@@ -44,6 +44,28 @@
     color: #fff;
 }
 
+.dropdown-toggle::after {
+    display: none;
+}
+.user-circle {
+    width: 30px;
+    height: 30px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #5d5e60;
+    color: #111;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.user-circle:hover{
+    background-color: #004492;
+    color: #fff;
+    border: none;
+}
+
 /*SLIDER*/
 .carousel-indicators [data-bs-target] {
     width: 12px;
@@ -53,7 +75,7 @@
 }
 
 .carousel-item{
-    background-image: url('../../IMG/fondo.png');
+    background-image: url('/IMG/fondo.png');
     background-size: cover;
     background-position: center;
 }
@@ -150,7 +172,7 @@
 
 /*COMENTARIOS*/
 .carrusel-comentarios{
-    background-image: url('../../IMG/fondo-borroso.png');
+    background-image: url('/IMG/fondo-borroso.png');
     background-size: cover;
     background-position: center;
     height: 350px;

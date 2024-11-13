@@ -16,11 +16,11 @@
         </div>
 
         <form class="mt-5" id="variant-form" action="/variante/editar" method="POST">
-            <input type="hidden" id="id" name="id" value="${variante.id}"> <!-- Campo oculto para el ID de la variante -->
+            <input type="hidden" id="id" name="id" value="${variante.id}">
             <div class="row mb-4 d-flex justify-content-center align-items-center gap-4">
                 <div class="col-md-5">
                     <input type="text" id="selected-product" name="selected-product" class="form-control" value="${selectedProduct}" readonly>
-                    <input type="hidden" id="productoId" name="productoId" value="${productoId}"> <!-- Campo oculto para el ID del producto -->
+                    <input type="hidden" id="productoId" name="productoId" value="${productoId}">
                 </div>
             </div>
 
@@ -36,7 +36,7 @@
                             ${selectedTamanio}
                         </select>
                         <div class="form-text">
-                            <a href="tamanio/agregar">¿No existe el tamaño?</a>
+                            <a href="/tamanio/agregar">¿No existe el tamaño?</a>
                         </div>
                     </div>
                 </div>

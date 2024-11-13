@@ -1,7 +1,7 @@
 package com.pe.controller.administrador.tamanios;
 
 import com.pe.controller.administrador.BaseServlet;
-import com.pe.model.service.TamanioService;
+import com.pe.model.administrador.service.TamanioService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,8 +1,8 @@
 package com.pe.controller.administrador.productos;
 
 import com.pe.controller.administrador.BaseServlet;
-import com.pe.model.entidad.Producto;
-import com.pe.model.service.ProductoService;
+import com.pe.model.administrador.entidad.Producto;
+import com.pe.model.administrador.service.ProductoService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;

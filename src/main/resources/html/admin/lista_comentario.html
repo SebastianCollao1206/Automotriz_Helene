@@ -1,0 +1,98 @@
+<div class="col p-lg-5 p-4">
+    <div class="container">
+        <h2 class="text-center">Gestión de comentarios</h2>
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 mt-5">
+
+                <form method="GET" action="/comentario/listar"
+                      class="row d-flex justify-content-center align-items-end gap-4 gap-lg-0">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small">
+                                    <i class="bi bi-calendar3 me-1"></i>Fecha inicio
+                                </label>
+                                <input type="date" name="fecha_inicio" class="form-control">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small">
+                                    <i class="bi bi-calendar3 me-1"></i>Fecha fin
+                                </label>
+                                <input type="date" name="fecha_fin" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label fw-bold">Estado</label>
+                        <select name="estado" class="form-select">
+                            ${estadosComentarioOptions} <!-- Aquí se insertan dinámicamente las opciones de estado -->
+                        </select>
+                    </div>
+                    <div class="col-md-2 d-flex justify-content-center">
+                        <button type="submit"
+                                class="btn border-0 text-white btn-primary btn-filtrar">Filtrar<i
+                                class="bi bi-chevron-right ms-2"></i></button>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+
+        <!--<div class="row mt-5">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-center gap-4">
+                    <button class="btn btn-success btn-sm">
+                        <i class="bi bi-check-circle me-1"></i> Activar seleccionados
+                    </button>
+                    <button class="btn btn-danger btn-sm">
+                        <i class="bi bi-x-circle me-1"></i> Desactivar seleccionados
+                    </button>
+                </div>
+            </div>
+        </div>-->
+        <!--<div class="row mt-5 d-flex justify-content-center">
+            <div class="col-md-11">
+                ${comentarios} Aquí se insertan dinámicamente las filas de comentarios
+            </div>
+        </div>-->
+
+        <form method="POST" action="/comentario/estado" class="confirm-form row d-flex justify-content-center align-items-end gap-4 gap-lg-0">
+
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <div class="d-flex justify-content-center gap-4">
+                        <button type="submit" class="btn btn-success btn-sm" name="accion" value="activar">
+                            <i class="bi bi-check-circle me-1"></i> Activar seleccionados
+                        </button>
+                        <button type="submit" class="btn btn-danger btn-sm" name="accion" value="desactivar">
+                            <i class="bi bi-x-circle me-1"></i> Desactivar seleccionados
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5 d-flex justify-content-center">
+                <div class="col-md-11">
+                    ${comentarios} <!-- Aquí se insertan dinámicamente las filas de comentarios -->
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+</article>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script src="/admin/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/cliente/js/script_cliente.js"></script>
+</body>
+
+</html>

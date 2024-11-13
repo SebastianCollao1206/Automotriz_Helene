@@ -1,9 +1,9 @@
 package com.pe.controller.administrador.usuarios;
 
 import com.pe.controller.administrador.BaseServlet;
-import com.pe.model.entidad.Usuario;
-import com.pe.model.html.UsuarioHtml;
-import com.pe.model.service.UsuarioService;
+import com.pe.model.administrador.entidad.Usuario;
+import com.pe.model.administrador.html.UsuarioHtml;
+import com.pe.model.administrador.service.UsuarioService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;

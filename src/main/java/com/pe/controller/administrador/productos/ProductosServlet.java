@@ -1,12 +1,12 @@
 package com.pe.controller.administrador.productos;
 
 import com.pe.controller.administrador.BaseServlet;
-import com.pe.model.entidad.Categoria;
-import com.pe.model.entidad.Producto;
-import com.pe.model.html.CategoriaHtml;
-import com.pe.model.html.ProductoHtml;
-import com.pe.model.service.CategoriaService;
-import com.pe.model.service.ProductoService;
+import com.pe.model.administrador.entidad.Categoria;
+import com.pe.model.administrador.entidad.Producto;
+import com.pe.model.administrador.html.CategoriaHtml;
+import com.pe.model.administrador.html.ProductoHtml;
+import com.pe.model.administrador.service.CategoriaService;
+import com.pe.model.administrador.service.ProductoService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;

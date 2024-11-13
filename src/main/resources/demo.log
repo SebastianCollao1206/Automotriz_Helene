@@ -1,78 +1,83 @@
-2024-11-08 08:35:56,215 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-08 08:35:56,416 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-08 08:35:56,561 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@70cf32e3{/,null,AVAILABLE}
-2024-11-08 08:35:56,756 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@3646a422{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-08 08:35:56,809 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@712625fd{HTTP/1.1, (http/1.1)}{0.0.0.0:64488}
-2024-11-08 08:35:56,811 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@7c711375{STARTING}[11.0.7,sto=0] @3874ms
-2024-11-08 08:36:28,165 INFO [qtp1910438136-40] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-08 08:37:38,831 INFO [qtp1910438136-39] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 54] -- No se encontraron variantes para el producto ID: 129
-2024-11-08 08:37:57,240 INFO [qtp1910438136-51] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 57] -- Se encontraron 1 variantes para el producto ID: 1
-2024-11-08 08:39:19,649 INFO [qtp1910438136-51] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 57] -- Se encontraron 1 variantes para el producto ID: 1
-2024-11-08 08:39:30,253 INFO [qtp1910438136-52] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 52] -- Se encontraron 13 categorías que coinciden con los criterios de búsqueda.
-2024-11-08 08:39:30,256 INFO [qtp1910438136-52] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 55] -- HTML de lista de categorías cargado correctamente.
-2024-11-08 08:39:32,663 INFO [qtp1910438136-51] c.p.c.a.c.EditarCategoriaServlet [EditarCategoriaServlet.java : 45] -- Se ha cargado el formulario de edición para la categoría con ID: 1
-2024-11-08 08:39:35,597 INFO [qtp1910438136-52] c.p.c.a.c.EditarCategoriaServlet [EditarCategoriaServlet.java : 76] -- Categoría actualizada: ID = 1, Nombre = Acticulos para Motos
-2024-11-08 08:39:35,617 INFO [qtp1910438136-51] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 52] -- Se encontraron 13 categorías que coinciden con los criterios de búsqueda.
-2024-11-08 08:39:35,619 INFO [qtp1910438136-51] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 55] -- HTML de lista de categorías cargado correctamente.
-2024-11-08 08:53:03,802 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-08 08:53:04,013 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-08 08:53:04,133 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@6f01b95f{/,null,AVAILABLE}
-2024-11-08 08:53:04,337 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@644baf4a{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-08 08:53:04,393 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@1349883{HTTP/1.1, (http/1.1)}{0.0.0.0:49336}
-2024-11-08 08:53:04,395 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@17497425{STARTING}[11.0.7,sto=0] @3415ms
-2024-11-08 08:54:25,949 INFO [qtp259219561-40] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-08 09:01:29,281 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-08 09:01:29,507 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-08 09:01:29,632 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@792b749c{/,null,AVAILABLE}
-2024-11-08 09:01:29,807 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@4d154ccd{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-08 09:01:29,854 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@5d0bf09b{HTTP/1.1, (http/1.1)}{0.0.0.0:58502}
-2024-11-08 09:01:29,856 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@543588e6{STARTING}[11.0.7,sto=0] @3392ms
-2024-11-08 09:01:48,222 INFO [qtp282265585-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 7 tamaños que coinciden con los criterios de búsqueda.
-2024-11-08 09:02:00,818 INFO [qtp282265585-36] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-08 09:08:42,638 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-08 09:08:42,803 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-08 09:08:42,903 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@23e84203{/,null,AVAILABLE}
-2024-11-08 09:08:43,070 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@229c6181{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-08 09:08:43,118 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@793f29ff{HTTP/1.1, (http/1.1)}{0.0.0.0:59072}
-2024-11-08 09:08:43,119 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@f5acb9d{STARTING}[11.0.7,sto=0] @2986ms
-2024-11-08 09:08:49,736 WARN [qtp1297836716-49] o.eclipse.jetty.server.HttpChannel [HttpChannel.java : 719] -- /producto/listar
-java.lang.NullPointerException: Cannot invoke "com.pe.model.service.ProductoService.obtenerNombreCategoria(int)" because "productoService" is null
-	at com.pe.model.html.ProductoHtml.generarFilasTablaProductos(ProductoHtml.java:135)
-	at com.pe.model.html.ProductoHtml.generarHtmlProductos(ProductoHtml.java:52)
-	at com.pe.controller.administrador.productos.ProductosServlet.doGet(ProductosServlet.java:62)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:500)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
-	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
-	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
-	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
-	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
-	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
-	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
-	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
-	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
-	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
-	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
-	at org.eclipse.jetty.server.Server.handle(Server.java:562)
-	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
-	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
-	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
-	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
-	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
-	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
-	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
-	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
-	at java.base/java.lang.Thread.run(Thread.java:1583)
-2024-11-08 09:09:18,329 INFO [qtp1297836716-36] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-08 09:09:18,363 WARN [qtp1297836716-36] o.eclipse.jetty.server.HttpChannel [HttpChannel.java : 719] -- /producto/listar
-java.lang.NullPointerException: Cannot invoke "com.pe.model.service.ProductoService.obtenerNombreCategoria(int)" because "productoService" is null
-	at com.pe.model.html.ProductoHtml.generarFilasTablaProductos(ProductoHtml.java:135)
-	at com.pe.model.html.ProductoHtml.generarHtmlProductos(ProductoHtml.java:52)
-	at com.pe.controller.administrador.productos.ProductosServlet.doGet(ProductosServlet.java:62)
-	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:500)
+2024-11-12 11:52:28,593 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 11:52:28,853 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 11:52:29,012 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@333d4a8c{/,null,AVAILABLE}
+2024-11-12 11:52:29,287 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@6bbe85a8{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 11:52:29,536 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@183ec003{HTTP/1.1, (http/1.1)}{0.0.0.0:57818}
+2024-11-12 11:52:29,560 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@b9b00e0{STARTING}[11.0.7,sto=0] @4635ms
+2024-11-12 11:52:41,356 INFO [qtp210281271-52] c.p.c.cliente.RegistroClienteServlet [RegistroClienteServlet.java : 34] -- Recibida solicitud GET para /cliente/registro
+2024-11-12 11:52:58,258 INFO [qtp210281271-38] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 11:53:06,770 INFO [qtp210281271-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=0
+2024-11-12 11:53:23,315 INFO [qtp210281271-52] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=Activo, fechaInicio=null, fechaFin=null, total=0
+2024-11-12 11:53:26,569 INFO [qtp210281271-41] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=Inactivo, fechaInicio=null, fechaFin=null, total=0
+2024-11-12 12:00:53,304 INFO [qtp210281271-56] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=Inactivo, fechaInicio=null, fechaFin=null, total=2
+2024-11-12 12:01:04,412 INFO [qtp210281271-53] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:01:35,473 INFO [qtp210281271-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=2024-11-01, fechaFin=null, total=7
+2024-11-12 12:01:47,182 INFO [qtp210281271-41] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=2024-11-01, fechaFin=2024-11-02, total=1
+2024-11-12 12:01:51,746 INFO [qtp210281271-55] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:02:05,429 INFO [qtp210281271-53] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=2024-11-01, fechaFin=2024-11-06, total=2
+2024-11-12 12:02:09,488 INFO [qtp210281271-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:02:12,482 INFO [qtp210281271-42] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=Activo, fechaInicio=null, fechaFin=null, total=5
+2024-11-12 12:03:42,964 INFO [qtp210281271-58] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=Activo, fechaInicio=null, fechaFin=null, total=5
+2024-11-12 12:03:58,354 INFO [qtp210281271-55] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=2024-11-12, fechaFin=2024-11-12, total=0
+2024-11-12 12:04:04,127 INFO [qtp210281271-53] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=2024-11-11, fechaFin=null, total=7
+2024-11-12 12:04:14,101 INFO [qtp210281271-42] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=2024-11-01, fechaFin=null, total=7
+2024-11-12 12:05:29,498 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 12:05:29,715 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 12:05:29,864 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@6d60fe40{/,null,AVAILABLE}
+2024-11-12 12:05:30,126 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@65c7a252{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 12:05:30,187 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@248e319b{HTTP/1.1, (http/1.1)}{0.0.0.0:58876}
+2024-11-12 12:05:30,191 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@58695725{STARTING}[11.0.7,sto=0] @4558ms
+2024-11-12 12:05:43,252 INFO [qtp1237825806-38] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 12:05:49,166 INFO [qtp1237825806-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:06:03,884 INFO [qtp1237825806-37] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=2024-11-01, fechaFin=null, total=7
+2024-11-12 12:13:07,079 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 12:13:07,182 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 12:13:07,236 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@359df09a{/,null,AVAILABLE}
+2024-11-12 12:13:07,348 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@5677323c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 12:13:07,380 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@27406a17{HTTP/1.1, (http/1.1)}{0.0.0.0:59919}
+2024-11-12 12:13:07,381 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@18d87d80{STARTING}[11.0.7,sto=0] @2019ms
+2024-11-12 12:13:13,181 INFO [qtp1866875501-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=2024-11-01, fechaFin=null, total=1
+2024-11-12 12:13:20,907 INFO [qtp1866875501-39] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 12:13:29,242 INFO [qtp1866875501-40] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:13:38,971 INFO [qtp1866875501-35] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=Activo, fechaInicio=null, fechaFin=null, total=5
+2024-11-12 12:13:42,862 INFO [qtp1866875501-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=Inactivo, fechaInicio=null, fechaFin=null, total=2
+2024-11-12 12:13:44,844 INFO [qtp1866875501-39] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:13:54,229 INFO [qtp1866875501-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=2024-11-01, fechaFin=null, total=1
+2024-11-12 12:14:00,198 INFO [qtp1866875501-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=2024-11-02, fechaFin=null, total=0
+2024-11-12 12:14:02,198 INFO [qtp1866875501-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:14:11,796 INFO [qtp1866875501-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=2024-11-05, fechaFin=2024-11-05, total=1
+2024-11-12 12:14:13,986 INFO [qtp1866875501-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:14:17,887 INFO [qtp1866875501-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=2024-11-05, total=1
+2024-11-12 12:14:26,122 INFO [qtp1866875501-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=2024-11-01, fechaFin=2024-11-08, total=2
+2024-11-12 12:14:29,051 INFO [qtp1866875501-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 53] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:27:35,256 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 12:27:35,361 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 12:27:35,440 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@55cb6996{/,null,AVAILABLE}
+2024-11-12 12:27:35,578 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@2af004b{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 12:27:35,639 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@5524cca1{HTTP/1.1, (http/1.1)}{0.0.0.0:60954}
+2024-11-12 12:27:35,640 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@659499f1{STARTING}[11.0.7,sto=0] @2553ms
+2024-11-12 12:27:42,618 INFO [qtp1483298597-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 52] -- Comentarios filtrados: estado=, fechaInicio=, fechaFin=, total=7
+2024-11-12 12:27:51,188 INFO [qtp1483298597-41] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 12:27:54,676 INFO [qtp1483298597-40] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 52] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:27:59,639 INFO [qtp1483298597-48] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 52] -- Comentarios filtrados: estado=Inactivo, fechaInicio=, fechaFin=, total=2
+2024-11-12 12:28:03,855 INFO [qtp1483298597-38] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 52] -- Comentarios filtrados: estado=, fechaInicio=, fechaFin=, total=7
+2024-11-12 12:28:11,075 INFO [qtp1483298597-37] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 52] -- Comentarios filtrados: estado=, fechaInicio=2024-11-01, fechaFin=2024-11-06, total=2
+2024-11-12 12:28:16,438 INFO [qtp1483298597-40] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 52] -- Comentarios filtrados: estado=, fechaInicio=2024-11-01, fechaFin=, total=1
+2024-11-12 12:28:18,223 INFO [qtp1483298597-41] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 52] -- Comentarios filtrados: estado=, fechaInicio=, fechaFin=, total=7
+2024-11-12 12:53:27,250 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 12:53:27,369 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 12:53:27,424 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@5c80cf32{/,null,AVAILABLE}
+2024-11-12 12:53:27,540 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@26d9b808{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 12:53:27,575 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@15043a2f{HTTP/1.1, (http/1.1)}{0.0.0.0:54008}
+2024-11-12 12:53:27,575 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@3c7f66c4{STARTING}[11.0.7,sto=0] @2078ms
+2024-11-12 12:53:31,707 INFO [qtp1207608476-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=, fechaInicio=, fechaFin=, total=7
+2024-11-12 12:53:42,465 INFO [qtp1207608476-35] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 12:53:45,767 INFO [qtp1207608476-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:53:52,287 ERROR [qtp1207608476-40] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 55] -- Error al actualizar comentarios: El comentario no se puede activar o no existe.
+java.sql.SQLException: El comentario no se puede activar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.activarComentario(ComentarioService.java:55)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:42)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
 	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
@@ -102,83 +107,14 @@ java.lang.NullPointerException: Cannot invoke "com.pe.model.service.ProductoServ
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2024-11-08 09:14:32,578 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-08 09:14:32,871 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-08 09:14:32,962 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@45385f75{/,null,AVAILABLE}
-2024-11-08 09:14:33,190 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@792b749c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-08 09:14:33,232 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@480d3575{HTTP/1.1, (http/1.1)}{0.0.0.0:59535}
-2024-11-08 09:14:33,234 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e9175d8{STARTING}[11.0.7,sto=0] @3187ms
-2024-11-08 09:14:56,782 INFO [qtp1565740893-33] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-08 11:49:22,877 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-08 11:49:23,013 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-08 11:49:23,123 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@37313c65{/,null,AVAILABLE}
-2024-11-08 11:49:23,233 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@1033576a{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-08 11:49:23,287 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@3ad83a66{HTTP/1.1, (http/1.1)}{0.0.0.0:57854}
-2024-11-08 11:49:23,287 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@2a265ea9{STARTING}[11.0.7,sto=0] @2305ms
-2024-11-08 11:49:55,917 INFO [qtp517355658-37] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-08 11:50:57,910 WARN [qtp517355658-47] c.p.c.a.p.AgregarProductoServlet [AgregarProductoServlet.java : 129] -- Error: El precio debe ser mayor a cero
-2024-11-08 12:07:12,093 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-08 12:07:12,182 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-08 12:07:12,243 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@1c742ed4{/,null,AVAILABLE}
-2024-11-08 12:07:12,350 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@5149d738{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-08 12:07:12,375 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@7c137fd5{HTTP/1.1, (http/1.1)}{0.0.0.0:59425}
-2024-11-08 12:07:12,376 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@13fd2ccd{STARTING}[11.0.7,sto=0] @2054ms
-2024-11-08 12:07:28,605 INFO [qtp875313400-37] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-08 12:07:49,962 INFO [qtp875313400-47] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 7 tamaños que coinciden con los criterios de búsqueda.
-2024-11-08 12:07:54,538 INFO [qtp875313400-49] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 45] -- Se ha cargado el formulario de edición para el tamaño con ID: 2
-2024-11-08 12:07:56,943 INFO [qtp875313400-37] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 77] -- Tamaño actualizado: ID = 2, Nombre = mililitros, Estado = Activo
-2024-11-08 12:07:56,953 INFO [qtp875313400-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 7 tamaños que coinciden con los criterios de búsqueda.
-2024-11-08 12:07:59,509 INFO [qtp875313400-37] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 45] -- Se ha cargado el formulario de edición para el tamaño con ID: 3
-2024-11-08 12:08:02,012 INFO [qtp875313400-49] c.p.c.a.t.EditarTamanioServlet [EditarTamanioServlet.java : 77] -- Tamaño actualizado: ID = 3, Nombre = kg, Estado = Activo
-2024-11-08 12:08:02,022 INFO [qtp875313400-37] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 7 tamaños que coinciden con los criterios de búsqueda.
-2024-11-08 12:08:07,060 INFO [qtp875313400-36] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 5
-2024-11-08 12:08:07,070 INFO [qtp875313400-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 7 tamaños que coinciden con los criterios de búsqueda.
-2024-11-08 12:08:10,053 INFO [qtp875313400-36] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 6
-2024-11-08 12:08:10,063 INFO [qtp875313400-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 7 tamaños que coinciden con los criterios de búsqueda.
-2024-11-08 12:08:14,460 INFO [qtp875313400-50] c.p.c.a.t.EliminarTamanioServlet [EliminarTamanioServlet.java : 39] -- Tamaño eliminado con ID: 7
-2024-11-08 12:08:14,470 INFO [qtp875313400-36] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 7 tamaños que coinciden con los criterios de búsqueda.
-2024-11-08 12:08:32,397 INFO [qtp875313400-47] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 7 tamaños que coinciden con los criterios de búsqueda.
-2024-11-08 12:12:35,378 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-08 12:12:35,489 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-08 12:12:35,546 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@2de56eb2{/,null,AVAILABLE}
-2024-11-08 12:12:35,670 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@2eae8e6e{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-08 12:12:35,694 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@7a35b0f5{HTTP/1.1, (http/1.1)}{0.0.0.0:59835}
-2024-11-08 12:12:35,695 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@437da279{STARTING}[11.0.7,sto=0] @2073ms
-2024-11-08 12:12:53,096 INFO [qtp173214986-40] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-08 12:13:23,495 WARN [qtp173214986-36] c.p.c.a.p.AgregarProductoServlet [AgregarProductoServlet.java : 129] -- Error: El nombre del producto ya está registrado en el sistema
-2024-11-08 12:13:47,250 WARN [qtp173214986-49] c.p.c.a.p.AgregarProductoServlet [AgregarProductoServlet.java : 129] -- Error: La imagen debe ser una ruta válida y no puede contener código malicioso
-2024-11-08 12:14:13,733 INFO [qtp173214986-47] c.p.c.a.p.AgregarProductoServlet [AgregarProductoServlet.java : 122] -- Producto agregado: hola
-2024-11-08 12:14:24,244 INFO [qtp173214986-40] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 57] -- Se encontraron 1 variantes para el producto ID: 135
-2024-11-08 12:14:29,348 INFO [qtp173214986-50] c.p.c.a.v.ActualizarStockServlet [ActualizarStockServlet.java : 48] -- Stock actualizado: ID Variante = 75, Nuevo Stock = 4
-2024-11-08 12:14:29,359 INFO [qtp173214986-49] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 57] -- Se encontraron 1 variantes para el producto ID: 135
-2024-11-08 12:14:33,228 INFO [qtp173214986-49] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 57] -- Se encontraron 1 variantes para el producto ID: 1
-2024-11-08 12:14:38,150 INFO [qtp173214986-50] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 57] -- Se encontraron 1 variantes para el producto ID: 135
-2024-11-08 12:14:45,746 INFO [qtp173214986-47] c.p.c.a.v.EditarVarianteServlet [EditarVarianteServlet.java : 115] -- Variante actualizada: ID = 75, Código = LBNSD, Tamaño ID = 2, Producto ID = 135, Precio = 2.00, Stock = 4, Cantidad = 21
-2024-11-08 12:14:45,756 INFO [qtp173214986-49] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 57] -- Se encontraron 1 variantes para el producto ID: 135
-2024-11-08 12:24:51,405 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-08 12:24:51,516 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-08 12:24:51,643 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@333d4a8c{/,null,AVAILABLE}
-2024-11-08 12:24:51,780 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@6bbe85a8{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-08 12:24:51,819 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@183ec003{HTTP/1.1, (http/1.1)}{0.0.0.0:60698}
-2024-11-08 12:24:51,820 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@b9b00e0{STARTING}[11.0.7,sto=0] @2366ms
-2024-11-08 12:25:07,647 INFO [qtp210281271-38] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-08 12:25:41,212 INFO [qtp210281271-36] c.p.c.a.p.AgregarProductoServlet [AgregarProductoServlet.java : 123] -- Producto agregado: prueba
-2024-11-08 12:25:53,266 INFO [qtp210281271-47] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 57] -- Se encontraron 1 variantes para el producto ID: 136
-2024-11-08 12:25:57,114 INFO [qtp210281271-35] c.p.c.a.v.ActualizarStockServlet [ActualizarStockServlet.java : 48] -- Stock actualizado: ID Variante = 76, Nuevo Stock = 9
-2024-11-08 12:25:57,123 INFO [qtp210281271-49] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 57] -- Se encontraron 1 variantes para el producto ID: 136
-2024-11-08 12:26:02,072 INFO [qtp210281271-49] c.p.c.a.v.EditarVarianteServlet [EditarVarianteServlet.java : 115] -- Variante actualizada: ID = 76, Código = LSHFJ, Tamaño ID = 2, Producto ID = 136, Precio = 12.00, Stock = 9, Cantidad = 12
-2024-11-08 12:26:02,083 INFO [qtp210281271-35] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 57] -- Se encontraron 1 variantes para el producto ID: 136
-2024-11-08 12:37:21,147 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-08 12:37:21,255 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-08 12:37:21,321 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@5e7cd6cc{/,null,AVAILABLE}
-2024-11-08 12:37:21,441 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@2034b64c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-08 12:37:21,466 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@1750fbeb{HTTP/1.1, (http/1.1)}{0.0.0.0:62150}
-2024-11-08 12:37:21,467 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@4b0d79fc{STARTING}[11.0.7,sto=0] @2120ms
-2024-11-08 12:37:35,299 INFO [qtp1876443073-37] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-08 12:37:55,851 ERROR [qtp1876443073-50] c.p.c.a.p.EditarProductoServlet [EditarProductoServlet.java : 94] -- Error de formato en los parámetros: El nombre del producto ya está registrado en el sistema
-java.lang.IllegalArgumentException: El nombre del producto ya está registrado en el sistema
-	at com.pe.model.service.ProductoService.actualizarProducto(ProductoService.java:110)
-	at com.pe.controller.administrador.productos.EditarProductoServlet.doPost(EditarProductoServlet.java:90)
+2024-11-12 12:53:52,305 INFO [qtp1207608476-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:54:08,780 INFO [qtp1207608476-37] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 43] -- Comentario activado: ID = 4
+2024-11-12 12:54:08,787 INFO [qtp1207608476-37] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 43] -- Comentario activado: ID = 7
+2024-11-12 12:54:08,798 INFO [qtp1207608476-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:54:19,037 ERROR [qtp1207608476-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 55] -- Error al actualizar comentarios: El comentario no se puede activar o no existe.
+java.sql.SQLException: El comentario no se puede activar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.activarComentario(ComentarioService.java:55)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:42)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
 	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
 	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
@@ -210,58 +146,1149 @@ java.lang.IllegalArgumentException: El nombre del producto ya está registrado e
 	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
-2024-11-08 12:46:01,119 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-08 12:46:01,221 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-08 12:46:01,276 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@2a8448fa{/,null,AVAILABLE}
-2024-11-08 12:46:01,387 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@15bb5034{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-08 12:46:01,413 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@48075da3{HTTP/1.1, (http/1.1)}{0.0.0.0:62757}
-2024-11-08 12:46:01,414 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@36916eb0{STARTING}[11.0.7,sto=0] @2472ms
-2024-11-08 12:46:14,647 INFO [qtp1223850219-37] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-08 12:46:26,581 WARN [qtp1223850219-36] c.p.c.a.p.EditarProductoServlet [EditarProductoServlet.java : 107] -- Error: El nombre del producto ya está registrado en el sistema
-2024-11-08 12:46:49,511 INFO [qtp1223850219-49] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-08 12:47:00,530 WARN [qtp1223850219-47] c.p.c.a.p.EditarProductoServlet [EditarProductoServlet.java : 107] -- Error: El nombre del producto ya está registrado en el sistema
-2024-11-08 12:47:09,030 WARN [qtp1223850219-36] c.p.c.a.p.EditarProductoServlet [EditarProductoServlet.java : 107] -- Error: El nombre del producto ya está registrado en el sistema
-2024-11-08 12:51:29,704 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-08 12:51:29,875 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-08 12:51:29,952 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@45385f75{/,null,AVAILABLE}
-2024-11-08 12:51:30,084 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@792b749c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-08 12:51:30,111 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@480d3575{HTTP/1.1, (http/1.1)}{0.0.0.0:63170}
-2024-11-08 12:51:30,111 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e9175d8{STARTING}[11.0.7,sto=0] @1996ms
-2024-11-08 12:51:48,513 INFO [qtp1565740893-32] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-08 12:52:05,917 WARN [qtp1565740893-45] c.p.c.a.p.EditarProductoServlet [EditarProductoServlet.java : 105] -- Error: El nombre del producto ya está registrado en el sistema
-2024-11-08 15:01:01,357 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-08 15:01:01,585 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-08 15:01:01,738 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@1807e3f6{/,null,AVAILABLE}
-2024-11-08 15:01:01,973 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@248e319b{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-08 15:01:02,045 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@5032714f{HTTP/1.1, (http/1.1)}{0.0.0.0:64460}
-2024-11-08 15:01:02,046 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@51e69659{STARTING}[11.0.7,sto=0] @4208ms
-2024-11-08 15:01:33,082 INFO [qtp1412794598-39] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-08 15:01:43,188 WARN [qtp1412794598-38] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 44] -- Producto no encontrado: Mo
-2024-11-08 15:01:49,318 WARN [qtp1412794598-35] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 44] -- Producto no encontrado: Motor
-2024-11-08 15:02:01,048 WARN [qtp1412794598-39] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 44] -- Producto no encontrado: MOTORBIKE 4T 10W-40 STREET
-2024-11-08 15:03:01,045 INFO [qtp1412794598-49] c.p.c.a.tamanios.TamaniosServlet [TamaniosServlet.java : 46] -- Se han encontrado 7 tamaños que coinciden con los criterios de búsqueda.
-2024-11-08 15:03:14,825 INFO [qtp1412794598-50] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 52] -- Se encontraron 13 categorías que coinciden con los criterios de búsqueda.
-2024-11-08 15:03:14,829 INFO [qtp1412794598-50] c.p.c.a.categorias.CategoriasServlet [CategoriasServlet.java : 55] -- HTML de lista de categorías cargado correctamente.
-2024-11-08 15:03:24,404 INFO [qtp1412794598-39] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 40] -- Producto encontrado: hola
-2024-11-08 15:03:29,769 WARN [qtp1412794598-47] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 44] -- Producto no encontrado: Mo
-2024-11-08 15:03:34,499 INFO [qtp1412794598-38] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 40] -- Producto encontrado: MOTORBIKE 4T 10W-30 STREET
-2024-11-08 15:03:40,726 WARN [qtp1412794598-49] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 44] -- Producto no encontrado: hs
-2024-11-08 15:03:49,883 INFO [qtp1412794598-50] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 40] -- Producto encontrado: ATV 4T 10W-40 MOTOROIL
-2024-11-08 15:03:53,799 WARN [qtp1412794598-39] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 44] -- Producto no encontrado: ATV
-2024-11-08 15:03:56,833 WARN [qtp1412794598-47] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 44] -- Producto no encontrado: MO
-2024-11-08 15:04:00,394 INFO [qtp1412794598-38] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 40] -- Producto encontrado: MOTORBIKE 4T 10W-30 STREET
-2024-11-08 15:04:12,086 WARN [qtp1412794598-38] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 44] -- Producto no encontrado: MOTORBIKE 4T SYNTH 10W-50
-2024-11-08 15:07:59,161 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
-2024-11-08 15:07:59,347 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
-2024-11-08 15:07:59,449 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@2dfaea86{/,null,AVAILABLE}
-2024-11-08 15:07:59,680 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@7161d8d1{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
-2024-11-08 15:07:59,737 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@6e9a5ed8{HTTP/1.1, (http/1.1)}{0.0.0.0:65176}
-2024-11-08 15:07:59,738 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@d9345cd{STARTING}[11.0.7,sto=0] @4021ms
-2024-11-08 15:08:03,454 INFO [qtp547201549-49] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 40] -- Producto encontrado: MOTORBIKE 4T SYNTH 10W-50
-2024-11-08 15:08:14,502 INFO [qtp547201549-36] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
-2024-11-08 15:08:21,873 INFO [qtp547201549-41] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 40] -- Producto encontrado: MOTORBIKE 4T 10W-30 STREET
-2024-11-08 15:08:30,215 INFO [qtp547201549-37] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 40] -- Producto encontrado: MOTORBIKE 4T 10W-40 STREET
-2024-11-08 15:08:39,065 INFO [qtp547201549-36] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 40] -- Producto encontrado: ATV 4T 10W-40 MOTOROIL
-2024-11-08 15:08:44,779 INFO [qtp547201549-49] c.p.c.a.p.BuscarProductoServlet [BuscarProductoServlet.java : 40] -- Producto encontrado: ATV 4T 10W-40 MOTOROIL
-2024-11-08 15:12:25,173 INFO [qtp547201549-36] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 57] -- Se encontraron 1 variantes para el producto ID: 1
-2024-11-08 15:12:31,393 INFO [qtp547201549-52] c.p.c.a.v.VarianteProductoServlet [VarianteProductoServlet.java : 57] -- Se encontraron 1 variantes para el producto ID: 2
+2024-11-12 12:54:19,048 INFO [qtp1207608476-35] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:54:27,298 ERROR [qtp1207608476-36] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 55] -- Error al actualizar comentarios: El comentario no se puede activar o no existe.
+java.sql.SQLException: El comentario no se puede activar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.activarComentario(ComentarioService.java:55)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:42)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 12:54:27,310 INFO [qtp1207608476-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:55:02,007 INFO [qtp1207608476-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:55:06,354 INFO [qtp1207608476-50] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 43] -- Comentario activado: ID = 1
+2024-11-12 12:55:06,365 INFO [qtp1207608476-50] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 43] -- Comentario activado: ID = 2
+2024-11-12 12:55:06,373 INFO [qtp1207608476-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 12:55:12,132 ERROR [qtp1207608476-50] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 55] -- Error al actualizar comentarios: El comentario no se puede activar o no existe.
+java.sql.SQLException: El comentario no se puede activar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.activarComentario(ComentarioService.java:55)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:42)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 12:55:12,141 INFO [qtp1207608476-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 13:47:49,685 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 13:47:49,825 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 13:47:49,882 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@5c7933ad{/,null,AVAILABLE}
+2024-11-12 13:47:50,028 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@202b0582{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 13:47:50,072 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@cecf639{HTTP/1.1, (http/1.1)}{0.0.0.0:50378}
+2024-11-12 13:47:50,073 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@1151e434{STARTING}[11.0.7,sto=0] @2502ms
+2024-11-12 13:48:12,893 INFO [qtp122114483-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 13:48:20,452 INFO [qtp122114483-39] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 13:48:23,211 INFO [qtp122114483-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 13:49:16,201 INFO [qtp122114483-40] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 13:49:41,538 INFO [qtp122114483-35] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=Inactivo, fechaInicio=, fechaFin=, total=3
+2024-11-12 13:49:54,814 INFO [qtp122114483-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 43] -- Comentario activado: ID = 1
+2024-11-12 13:49:54,829 INFO [qtp122114483-40] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 13:50:10,593 ERROR [qtp122114483-36] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 55] -- Error al actualizar comentarios: El comentario no se puede activar o no existe.
+java.sql.SQLException: El comentario no se puede activar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.activarComentario(ComentarioService.java:55)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:42)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 13:50:10,604 INFO [qtp122114483-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 13:55:34,056 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 13:55:34,220 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 13:55:34,310 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@c430e6c{/,null,AVAILABLE}
+2024-11-12 13:55:34,437 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@63376bed{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 13:55:34,479 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@548d708a{HTTP/1.1, (http/1.1)}{0.0.0.0:50956}
+2024-11-12 13:55:34,480 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@485966cc{STARTING}[11.0.7,sto=0] @2210ms
+2024-11-12 13:55:48,919 INFO [qtp198499365-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 13:55:56,921 INFO [qtp198499365-39] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 13:55:59,523 INFO [qtp198499365-38] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 13:56:04,013 ERROR [qtp198499365-42] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 55] -- Error al actualizar comentarios: El comentario no se puede activar o no existe.
+java.sql.SQLException: El comentario no se puede activar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.activarComentario(ComentarioService.java:66)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:42)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 13:56:04,025 INFO [qtp198499365-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 13:56:24,425 INFO [qtp198499365-35] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 43] -- Comentario activado: ID = 2
+2024-11-12 13:56:24,436 INFO [qtp198499365-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 13:56:34,865 ERROR [qtp198499365-47] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 55] -- Error al actualizar comentarios: El comentario no se puede activar o no existe.
+java.sql.SQLException: El comentario no se puede activar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.activarComentario(ComentarioService.java:66)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:42)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 13:56:34,876 INFO [qtp198499365-39] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 13:59:15,359 ERROR [qtp198499365-51] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 55] -- Error al actualizar comentarios: El comentario no se puede activar o no existe.
+java.sql.SQLException: El comentario no se puede activar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.activarComentario(ComentarioService.java:66)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:42)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 13:59:15,373 INFO [qtp198499365-38] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:00:21,956 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 14:00:22,070 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 14:00:22,143 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@792b749c{/,null,AVAILABLE}
+2024-11-12 14:00:22,278 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@4d154ccd{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 14:00:22,305 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@5d0bf09b{HTTP/1.1, (http/1.1)}{0.0.0.0:51344}
+2024-11-12 14:00:22,306 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@543588e6{STARTING}[11.0.7,sto=0] @1935ms
+2024-11-12 14:00:26,811 INFO [qtp282265585-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:00:33,642 INFO [qtp282265585-37] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 14:00:36,694 INFO [qtp282265585-35] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:00:41,008 INFO [qtp282265585-38] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 43] -- Comentario desactivado: ID = 1
+2024-11-12 14:00:41,024 INFO [qtp282265585-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:00:44,966 INFO [qtp282265585-50] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 43] -- Comentario desactivado: ID = 2
+2024-11-12 14:00:44,976 INFO [qtp282265585-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:00:52,123 ERROR [qtp282265585-36] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 55] -- Error al actualizar comentarios: El comentario no se puede cambiar a inactivo o no existe.
+java.sql.SQLException: El comentario no se puede cambiar a inactivo o no existe.
+	at com.pe.model.administrador.service.ComentarioService.desactivarComentario(ComentarioService.java:54)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:42)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 14:00:52,136 INFO [qtp282265585-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:03:55,574 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 14:03:55,755 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 14:03:55,825 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@45385f75{/,null,AVAILABLE}
+2024-11-12 14:03:55,987 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@792b749c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 14:03:56,009 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@480d3575{HTTP/1.1, (http/1.1)}{0.0.0.0:51606}
+2024-11-12 14:03:56,009 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e9175d8{STARTING}[11.0.7,sto=0] @1911ms
+2024-11-12 14:04:00,536 INFO [qtp1565740893-44] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:04:07,633 INFO [qtp1565740893-32] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 14:04:10,548 INFO [qtp1565740893-44] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:04:16,524 INFO [qtp1565740893-42] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 43] -- Comentario activado: ID = 1
+2024-11-12 14:04:16,537 INFO [qtp1565740893-32] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:04:22,307 ERROR [qtp1565740893-31] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 55] -- Error al actualizar comentarios: El comentario no se puede activar o no existe.
+java.sql.SQLException: El comentario no se puede activar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.activarComentario(ComentarioService.java:66)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:42)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 14:04:22,319 INFO [qtp1565740893-42] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:04:25,829 INFO [qtp1565740893-45] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 43] -- Comentario activado: ID = 2
+2024-11-12 14:04:25,842 INFO [qtp1565740893-42] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:04:29,798 ERROR [qtp1565740893-45] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 55] -- Error al actualizar comentarios: El comentario no se puede activar o no existe.
+java.sql.SQLException: El comentario no se puede activar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.activarComentario(ComentarioService.java:66)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:42)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 14:04:29,812 INFO [qtp1565740893-42] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:07:05,369 INFO [qtp1565740893-46] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:07:29,566 INFO [qtp1565740893-44] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:07:32,702 INFO [qtp1565740893-32] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 43] -- Comentario activado: ID = 1
+2024-11-12 14:07:32,714 INFO [qtp1565740893-46] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:10:54,730 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 14:10:54,907 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 14:10:54,987 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@45385f75{/,null,AVAILABLE}
+2024-11-12 14:10:55,122 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@792b749c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 14:10:55,148 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@480d3575{HTTP/1.1, (http/1.1)}{0.0.0.0:52139}
+2024-11-12 14:10:55,149 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e9175d8{STARTING}[11.0.7,sto=0] @1902ms
+2024-11-12 14:11:02,404 INFO [qtp1565740893-44] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:11:10,777 INFO [qtp1565740893-32] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 14:11:13,360 INFO [qtp1565740893-34] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:11:18,887 ERROR [qtp1565740893-30] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 52] -- Error al actualizar comentarios: El comentario no se puede cambiar o no existe.
+java.sql.SQLException: El comentario no se puede cambiar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.cambiarEstadoComentario(ComentarioService.java:80)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:43)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 14:11:18,904 INFO [qtp1565740893-45] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:11:23,269 INFO [qtp1565740893-42] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 44] -- Comentario activado: ID = 2
+2024-11-12 14:11:23,278 INFO [qtp1565740893-32] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:22:07,776 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 14:22:07,992 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 14:22:08,060 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@45385f75{/,null,AVAILABLE}
+2024-11-12 14:22:08,210 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@792b749c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 14:22:08,239 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@480d3575{HTTP/1.1, (http/1.1)}{0.0.0.0:52912}
+2024-11-12 14:22:08,240 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e9175d8{STARTING}[11.0.7,sto=0] @2230ms
+2024-11-12 14:22:12,310 INFO [qtp1565740893-44] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:22:19,109 INFO [qtp1565740893-32] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 14:22:21,905 INFO [qtp1565740893-31] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:22:26,333 INFO [qtp1565740893-33] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 44] -- Comentario desactivado: ID = 1
+2024-11-12 14:22:26,347 INFO [qtp1565740893-44] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:22:29,763 INFO [qtp1565740893-30] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 44] -- Comentario activado: ID = 1
+2024-11-12 14:22:29,778 INFO [qtp1565740893-45] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:22:35,481 INFO [qtp1565740893-42] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 44] -- Comentario desactivado: ID = 1
+2024-11-12 14:22:35,487 INFO [qtp1565740893-42] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 44] -- Comentario desactivado: ID = 2
+2024-11-12 14:22:35,502 INFO [qtp1565740893-32] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:22:42,050 INFO [qtp1565740893-31] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 44] -- Comentario activado: ID = 2
+2024-11-12 14:22:42,054 INFO [qtp1565740893-31] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 44] -- Comentario activado: ID = 3
+2024-11-12 14:22:42,063 INFO [qtp1565740893-42] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:54:26,814 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 14:54:26,961 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 14:54:27,040 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@6e2829c7{/,null,AVAILABLE}
+2024-11-12 14:54:27,184 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@19e4653c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 14:54:27,220 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@6440112d{HTTP/1.1, (http/1.1)}{0.0.0.0:55102}
+2024-11-12 14:54:27,221 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@4efac082{STARTING}[11.0.7,sto=0] @2432ms
+2024-11-12 14:54:32,813 INFO [qtp785570251-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:54:40,834 INFO [qtp785570251-39] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 14:54:43,952 INFO [qtp785570251-38] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:54:52,225 ERROR [qtp785570251-42] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 54] -- Error al actualizar comentarios: El comentario no se puede cambiar o no existe.
+java.sql.SQLException: El comentario no se puede cambiar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.cambiarEstadoComentario(ComentarioService.java:45)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:46)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 14:55:01,699 ERROR [qtp785570251-35] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 54] -- Error al actualizar comentarios: El comentario no se puede cambiar o no existe.
+java.sql.SQLException: El comentario no se puede cambiar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.cambiarEstadoComentario(ComentarioService.java:45)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:46)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 14:58:03,760 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 14:58:03,847 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 14:58:03,910 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@5a59ca5e{/,null,AVAILABLE}
+2024-11-12 14:58:04,005 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@750e2b97{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 14:58:04,031 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@7bba5817{HTTP/1.1, (http/1.1)}{0.0.0.0:55356}
+2024-11-12 14:58:04,031 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@57cf54e1{STARTING}[11.0.7,sto=0] @2276ms
+2024-11-12 14:58:08,346 INFO [qtp943454742-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:58:18,162 INFO [qtp943454742-47] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 14:58:22,730 INFO [qtp943454742-37] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:58:32,468 INFO [qtp943454742-35] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 2
+2024-11-12 14:58:33,918 INFO [qtp943454742-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:58:39,836 ERROR [qtp943454742-38] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 54] -- Error al actualizar comentarios: El comentario no se puede cambiar o no existe.
+java.sql.SQLException: El comentario no se puede cambiar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.cambiarEstadoComentario(ComentarioService.java:45)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:46)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 14:58:49,137 ERROR [qtp943454742-36] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 54] -- Error al actualizar comentarios: El comentario no se puede cambiar o no existe.
+java.sql.SQLException: El comentario no se puede cambiar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.cambiarEstadoComentario(ComentarioService.java:45)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:46)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 14:59:01,104 INFO [qtp943454742-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 3
+2024-11-12 14:59:01,115 INFO [qtp943454742-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 4
+2024-11-12 14:59:02,498 INFO [qtp943454742-35] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:59:17,474 INFO [qtp943454742-47] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 6
+2024-11-12 14:59:17,481 INFO [qtp943454742-47] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 7
+2024-11-12 14:59:19,124 INFO [qtp943454742-35] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 14:59:27,788 ERROR [qtp943454742-50] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 54] -- Error al actualizar comentarios: El comentario no se puede cambiar o no existe.
+java.sql.SQLException: El comentario no se puede cambiar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.cambiarEstadoComentario(ComentarioService.java:45)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:46)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 15:00:37,952 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 15:00:38,095 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 15:00:38,189 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@3feb2dda{/,null,AVAILABLE}
+2024-11-12 15:00:38,319 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@795509d9{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 15:00:38,352 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@31ea9581{HTTP/1.1, (http/1.1)}{0.0.0.0:55564}
+2024-11-12 15:00:38,353 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6bd61f98{STARTING}[11.0.7,sto=0] @2097ms
+2024-11-12 15:00:42,796 INFO [qtp224100622-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:00:50,037 INFO [qtp224100622-37] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 15:00:53,006 INFO [qtp224100622-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:00:58,948 ERROR [qtp224100622-37] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 52] -- Error al actualizar comentarios: El comentario no se puede cambiar o no existe.
+java.sql.SQLException: El comentario no se puede cambiar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.cambiarEstadoComentario(ComentarioService.java:45)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:43)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 15:00:58,965 INFO [qtp224100622-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:01:25,085 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 15:01:25,248 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 15:01:25,347 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@49c90a9c{/,null,AVAILABLE}
+2024-11-12 15:01:25,590 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@23e84203{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 15:01:25,630 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@f1da57d{HTTP/1.1, (http/1.1)}{0.0.0.0:55636}
+2024-11-12 15:01:25,630 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@7d0b7e3c{STARTING}[11.0.7,sto=0] @2057ms
+2024-11-12 15:01:29,155 INFO [qtp775514090-44] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:01:35,825 INFO [qtp775514090-32] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 15:01:38,275 INFO [qtp775514090-33] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:01:43,929 INFO [qtp775514090-30] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 44] -- Comentario activado: ID = 1
+2024-11-12 15:01:43,933 INFO [qtp775514090-30] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 44] -- Comentario activado: ID = 2
+2024-11-12 15:01:43,945 INFO [qtp775514090-31] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:01:58,048 INFO [qtp775514090-42] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 44] -- Comentario desactivado: ID = 1
+2024-11-12 15:01:58,059 INFO [qtp775514090-31] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:04:38,133 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 15:04:38,236 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 15:04:38,300 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@2b30a42c{/,null,AVAILABLE}
+2024-11-12 15:04:38,400 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@5824a83d{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 15:04:38,425 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@17f62e33{HTTP/1.1, (http/1.1)}{0.0.0.0:55906}
+2024-11-12 15:04:38,425 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@1e04fa0a{STARTING}[11.0.7,sto=0] @2281ms
+2024-11-12 15:04:41,936 INFO [qtp63387985-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:04:49,579 INFO [qtp63387985-37] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 15:04:52,430 INFO [qtp63387985-38] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:04:58,439 INFO [qtp63387985-36] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 2
+2024-11-12 15:04:59,794 INFO [qtp63387985-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:05:27,075 ERROR [qtp63387985-47] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 54] -- Error al actualizar comentarios: El comentario no se puede cambiar o no existe.
+java.sql.SQLException: El comentario no se puede cambiar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.cambiarEstadoComentario(ComentarioService.java:45)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:46)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 15:08:31,686 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 15:08:31,822 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 15:08:31,889 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@2de56eb2{/,null,AVAILABLE}
+2024-11-12 15:08:32,002 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@2eae8e6e{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 15:08:32,031 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@7a35b0f5{HTTP/1.1, (http/1.1)}{0.0.0.0:56208}
+2024-11-12 15:08:32,031 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@437da279{STARTING}[11.0.7,sto=0] @2176ms
+2024-11-12 15:08:36,807 INFO [qtp173214986-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:08:43,954 INFO [qtp173214986-39] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 15:08:46,477 INFO [qtp173214986-38] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:08:52,177 INFO [qtp173214986-42] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario activado: ID = 1
+2024-11-12 15:08:53,340 INFO [qtp173214986-38] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:08:58,551 INFO [qtp173214986-35] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 1
+2024-11-12 15:08:59,673 INFO [qtp173214986-38] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:09:19,951 INFO [qtp173214986-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario activado: ID = 2
+2024-11-12 15:09:19,958 INFO [qtp173214986-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario activado: ID = 3
+2024-11-12 15:09:19,963 INFO [qtp173214986-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario activado: ID = 4
+2024-11-12 15:09:21,122 INFO [qtp173214986-38] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:09:26,533 INFO [qtp173214986-38] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=Activo, fechaInicio=, fechaFin=, total=4
+2024-11-12 15:09:30,015 INFO [qtp173214986-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=Inactivo, fechaInicio=, fechaFin=, total=3
+2024-11-12 15:09:35,039 INFO [qtp173214986-47] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario activado: ID = 1
+2024-11-12 15:09:35,980 INFO [qtp173214986-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:09:43,133 INFO [qtp173214986-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=, fechaInicio=2024-11-01, fechaFin=, total=1
+2024-11-12 15:09:44,899 INFO [qtp173214986-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=, fechaInicio=, fechaFin=, total=7
+2024-11-12 15:46:46,074 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 15:46:46,181 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 15:46:46,270 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@7d900ecf{/,null,AVAILABLE}
+2024-11-12 15:46:46,445 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@f78a47e{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 15:46:46,497 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@4a83a74a{HTTP/1.1, (http/1.1)}{0.0.0.0:63477}
+2024-11-12 15:46:46,498 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@194bcebf{STARTING}[11.0.7,sto=0] @2663ms
+2024-11-12 15:46:52,308 INFO [qtp686989583-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=, fechaInicio=, fechaFin=, total=7
+2024-11-12 15:47:00,547 INFO [qtp686989583-47] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 15:47:03,473 INFO [qtp686989583-37] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:50:49,509 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 15:50:49,641 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 15:50:49,707 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@5a59ca5e{/,null,AVAILABLE}
+2024-11-12 15:50:49,836 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@750e2b97{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 15:50:49,887 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@7bba5817{HTTP/1.1, (http/1.1)}{0.0.0.0:63780}
+2024-11-12 15:50:49,888 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@57cf54e1{STARTING}[11.0.7,sto=0] @3011ms
+2024-11-12 15:50:53,610 INFO [qtp943454742-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:51:00,378 INFO [qtp943454742-39] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 15:51:04,032 INFO [qtp943454742-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:51:08,925 INFO [qtp943454742-40] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 1
+2024-11-12 15:51:10,240 INFO [qtp943454742-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:51:47,509 INFO [qtp943454742-35] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario activado: ID = 1
+2024-11-12 15:51:47,514 ERROR [qtp943454742-35] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 54] -- Error al actualizar comentarios: El comentario no se puede cambiar o no existe.
+java.sql.SQLException: El comentario no se puede cambiar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.cambiarEstadoComentario(ComentarioService.java:45)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:46)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.produce(AdaptiveExecutionStrategy.java:190)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 15:51:55,507 ERROR [qtp943454742-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 54] -- Error al actualizar comentarios: El comentario no se puede cambiar o no existe.
+java.sql.SQLException: El comentario no se puede cambiar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.cambiarEstadoComentario(ComentarioService.java:45)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:46)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 15:52:00,069 ERROR [qtp943454742-36] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 54] -- Error al actualizar comentarios: El comentario no se puede cambiar o no existe.
+java.sql.SQLException: El comentario no se puede cambiar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.cambiarEstadoComentario(ComentarioService.java:45)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:46)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 15:52:14,144 INFO [qtp943454742-47] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario activado: ID = 6
+2024-11-12 15:52:15,341 INFO [qtp943454742-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:52:21,468 INFO [qtp943454742-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario activado: ID = 7
+2024-11-12 15:52:22,436 INFO [qtp943454742-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:52:26,678 INFO [qtp943454742-50] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 1
+2024-11-12 15:52:27,661 INFO [qtp943454742-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:52:32,824 INFO [qtp943454742-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 2
+2024-11-12 15:52:33,734 INFO [qtp943454742-39] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:52:37,028 INFO [qtp943454742-50] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario activado: ID = 1
+2024-11-12 15:52:37,982 INFO [qtp943454742-39] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:52:44,853 INFO [qtp943454742-36] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 3
+2024-11-12 15:52:44,858 INFO [qtp943454742-36] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 4
+2024-11-12 15:52:46,160 INFO [qtp943454742-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:52:51,771 INFO [qtp943454742-47] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario activado: ID = 2
+2024-11-12 15:52:51,778 INFO [qtp943454742-47] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario activado: ID = 3
+2024-11-12 15:52:52,774 INFO [qtp943454742-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:52:59,935 INFO [qtp943454742-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario activado: ID = 4
+2024-11-12 15:52:59,936 ERROR [qtp943454742-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 54] -- Error al actualizar comentarios: El comentario no se puede cambiar o no existe.
+java.sql.SQLException: El comentario no se puede cambiar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.cambiarEstadoComentario(ComentarioService.java:45)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:46)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 15:53:05,847 ERROR [qtp943454742-39] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 54] -- Error al actualizar comentarios: El comentario no se puede cambiar o no existe.
+java.sql.SQLException: El comentario no se puede cambiar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.cambiarEstadoComentario(ComentarioService.java:45)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:46)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 15:53:15,595 INFO [qtp943454742-36] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 1
+2024-11-12 15:53:16,811 INFO [qtp943454742-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:53:23,238 INFO [qtp943454742-50] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 2
+2024-11-12 15:53:24,176 INFO [qtp943454742-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:53:44,051 INFO [qtp943454742-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=Inactivo, fechaInicio=, fechaFin=, total=2
+2024-11-12 15:53:47,825 INFO [qtp943454742-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=Activo, fechaInicio=, fechaFin=, total=5
+2024-11-12 15:53:55,894 INFO [qtp943454742-39] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 3
+2024-11-12 15:53:55,898 INFO [qtp943454742-39] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario desactivado: ID = 4
+2024-11-12 15:53:57,075 INFO [qtp943454742-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:53:58,954 INFO [qtp943454742-39] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=, fechaInicio=, fechaFin=, total=7
+2024-11-12 15:54:06,791 INFO [qtp943454742-36] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario activado: ID = 1
+2024-11-12 15:54:06,795 INFO [qtp943454742-36] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario activado: ID = 2
+2024-11-12 15:54:07,689 INFO [qtp943454742-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 15:54:53,327 ERROR [qtp943454742-47] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 54] -- Error al actualizar comentarios: El comentario no se puede cambiar o no existe.
+java.sql.SQLException: El comentario no se puede cambiar o no existe.
+	at com.pe.model.administrador.service.ComentarioService.cambiarEstadoComentario(ComentarioService.java:45)
+	at com.pe.controller.administrador.comentarios.EstadoComentarioServlet.doPost(EstadoComentarioServlet.java:46)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-12 15:55:00,594 INFO [qtp943454742-50] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 47] -- Comentario activado: ID = 3
+2024-11-12 15:55:01,604 INFO [qtp943454742-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:13:21,555 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 16:13:21,814 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 16:13:21,895 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@359df09a{/,null,AVAILABLE}
+2024-11-12 16:13:22,225 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@5677323c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 16:13:22,742 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@27406a17{HTTP/1.1, (http/1.1)}{0.0.0.0:51030}
+2024-11-12 16:13:22,743 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@18d87d80{STARTING}[11.0.7,sto=0] @4078ms
+2024-11-12 16:13:26,818 INFO [qtp1866875501-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:13:36,315 INFO [qtp1866875501-40] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 16:13:39,406 INFO [qtp1866875501-37] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:20:17,298 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 16:20:17,402 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 16:20:17,485 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@333d4a8c{/,null,AVAILABLE}
+2024-11-12 16:20:17,586 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@6bbe85a8{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 16:20:17,618 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@183ec003{HTTP/1.1, (http/1.1)}{0.0.0.0:56703}
+2024-11-12 16:20:17,619 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@b9b00e0{STARTING}[11.0.7,sto=0] @2138ms
+2024-11-12 16:20:22,507 INFO [qtp210281271-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:20:31,142 INFO [qtp210281271-39] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 16:20:33,788 INFO [qtp210281271-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:20:38,538 INFO [qtp210281271-36] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 1
+2024-11-12 16:20:39,562 INFO [qtp210281271-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:20:43,611 INFO [qtp210281271-50] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 2
+2024-11-12 16:20:44,685 INFO [qtp210281271-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:27:50,742 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 16:27:50,840 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 16:27:50,903 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@4d1bf319{/,null,AVAILABLE}
+2024-11-12 16:27:51,026 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@f0c8a99{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 16:27:51,052 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@196a42c3{HTTP/1.1, (http/1.1)}{0.0.0.0:57202}
+2024-11-12 16:27:51,053 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@2ea41516{STARTING}[11.0.7,sto=0] @2150ms
+2024-11-12 16:27:56,971 INFO [qtp842179210-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:28:04,372 INFO [qtp842179210-37] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 16:28:06,776 INFO [qtp842179210-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:28:13,740 INFO [qtp842179210-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 50] -- Comentario activado: ID = 1
+2024-11-12 16:28:15,021 INFO [qtp842179210-37] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:31:31,562 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 16:31:31,665 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 16:31:31,739 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@5c80cf32{/,null,AVAILABLE}
+2024-11-12 16:31:31,865 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@26d9b808{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 16:31:31,892 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@15043a2f{HTTP/1.1, (http/1.1)}{0.0.0.0:57457}
+2024-11-12 16:31:31,893 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@3c7f66c4{STARTING}[11.0.7,sto=0] @2174ms
+2024-11-12 16:31:35,424 INFO [qtp1207608476-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:31:42,318 INFO [qtp1207608476-47] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 16:31:45,240 INFO [qtp1207608476-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:31:51,270 INFO [qtp1207608476-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 50] -- Comentario activado: ID = 2
+2024-11-12 16:31:52,393 INFO [qtp1207608476-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:31:58,824 INFO [qtp1207608476-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 50] -- Comentario desactivado: ID = 3
+2024-11-12 16:31:58,824 INFO [qtp1207608476-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 50] -- Comentario desactivado: ID = 4
+2024-11-12 16:31:59,867 INFO [qtp1207608476-38] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:32:07,719 INFO [qtp1207608476-42] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 50] -- Comentario activado: ID = 2
+2024-11-12 16:32:07,726 INFO [qtp1207608476-42] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 50] -- Comentario activado: ID = 3
+2024-11-12 16:32:08,750 INFO [qtp1207608476-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:38:17,070 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 16:38:17,336 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 16:38:17,468 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@c430e6c{/,null,AVAILABLE}
+2024-11-12 16:38:17,831 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@63376bed{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 16:38:17,937 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@548d708a{HTTP/1.1, (http/1.1)}{0.0.0.0:57922}
+2024-11-12 16:38:17,938 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@485966cc{STARTING}[11.0.7,sto=0] @4213ms
+2024-11-12 16:38:21,757 INFO [qtp198499365-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:38:30,015 INFO [qtp198499365-35] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 16:38:32,856 INFO [qtp198499365-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:39:09,156 INFO [qtp198499365-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=, fechaInicio=, fechaFin=, total=7
+2024-11-12 16:39:12,434 INFO [qtp198499365-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=Activo, fechaInicio=, fechaFin=, total=6
+2024-11-12 16:39:15,555 INFO [qtp198499365-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=Inactivo, fechaInicio=, fechaFin=, total=1
+2024-11-12 16:39:27,456 INFO [qtp198499365-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=, fechaInicio=, fechaFin=, total=7
+2024-11-12 16:39:41,629 INFO [qtp198499365-47] c.p.c.administrador.LogoutServlet [LogoutServlet.java : 23] -- Usuario ha cerrado sesión: Usuario{idUsuario=8, nombre='Sebastian Collao', correo='sebastian1206@gmail.com', contrasena=[113, 110, -105, -64, 65, 70, -15, 94, -59, -82, 47, -19, 70, 100, -90, 38, 49, -69, 111, 100, -16, 115, -37, 13, -88, 67, 70, 0, -66, -52, 8, -53], tipoUsuario=Jefe, estado=Activo, fechaRegistro=2024-11-04, dni='65478943'}
+2024-11-12 16:39:50,617 WARN [qtp198499365-36] c.p.c.cliente.BaseClientServlet [BaseClientServlet.java : 34] -- No hay cliente en la sesión.
+2024-11-12 16:40:01,126 INFO [qtp198499365-47] c.p.c.cliente.LoginClienteServlet [LoginClienteServlet.java : 40] -- Intento de inicio de sesión para el correo: juan@gmail.com
+2024-11-12 16:40:01,129 WARN [qtp198499365-47] c.p.c.cliente.LoginClienteServlet [LoginClienteServlet.java : 54] -- Error de validación en el inicio de sesión: La contraseña debe tener al menos 8 caracteres
+2024-11-12 16:40:10,027 INFO [qtp198499365-49] c.p.c.cliente.LoginClienteServlet [LoginClienteServlet.java : 40] -- Intento de inicio de sesión para el correo: juan@gmail.com
+2024-11-12 16:40:10,033 INFO [qtp198499365-49] c.p.c.cliente.LoginClienteServlet [LoginClienteServlet.java : 47] -- Cliente autenticado exitosamente: juan@gmail.com
+2024-11-12 16:40:11,201 INFO [qtp198499365-47] c.p.c.cliente.BaseClientServlet [BaseClientServlet.java : 32] -- Cliente encontrado en la sesión: juan@gmail.com
+2024-11-12 16:40:14,065 INFO [qtp198499365-51] c.p.c.cliente.LogoutClienteServlet [LogoutClienteServlet.java : 23] -- Cliente ha cerrado sesión: Cliente{idCliente=2, correo='juan@gmail.com', contrasena=[122, 111, 100, 21, 118, 95, 18, 18, 127, -82, -2, 84, -100, 49, 104, -113, 117, 86, -5, 12, 39, -101, 117, -71, -75, -77, -85, -92, 86, 72, -75, -73], fechaRegistro=2024-11-10, dni='null', nombre='Juan Rojas'}
+2024-11-12 16:40:15,736 WARN [qtp198499365-51] c.p.c.cliente.BaseClientServlet [BaseClientServlet.java : 34] -- No hay cliente en la sesión.
+2024-11-12 16:40:21,482 WARN [qtp198499365-36] c.p.c.cliente.BaseClientServlet [BaseClientServlet.java : 34] -- No hay cliente en la sesión.
+2024-11-12 16:40:24,468 INFO [qtp198499365-47] c.p.c.cliente.RegistroClienteServlet [RegistroClienteServlet.java : 34] -- Recibida solicitud GET para /cliente/registro
+2024-11-12 16:40:32,794 WARN [qtp198499365-47] c.p.c.cliente.RegistroClienteServlet [RegistroClienteServlet.java : 53] -- Error de validación al agregar cliente: Las contraseñas no coinciden
+2024-11-12 16:40:38,009 WARN [qtp198499365-40] c.p.c.cliente.RegistroClienteServlet [RegistroClienteServlet.java : 53] -- Error de validación al agregar cliente: El correo ya está registrado en el sistema
+2024-11-12 16:40:41,495 WARN [qtp198499365-47] c.p.c.cliente.BaseClientServlet [BaseClientServlet.java : 34] -- No hay cliente en la sesión.
+2024-11-12 16:40:44,796 WARN [qtp198499365-37] c.p.c.cliente.BaseClientServlet [BaseClientServlet.java : 34] -- No hay cliente en la sesión.
+2024-11-12 16:40:55,258 INFO [qtp198499365-51] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 16:40:57,701 INFO [qtp198499365-51] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:44:12,034 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 16:44:12,231 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 16:44:12,353 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@4f32a3ad{/,null,AVAILABLE}
+2024-11-12 16:44:12,605 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@2a7f1f10{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 16:44:12,687 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@17f9d882{HTTP/1.1, (http/1.1)}{0.0.0.0:50036}
+2024-11-12 16:44:12,688 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@2805d709{STARTING}[11.0.7,sto=0] @3834ms
+2024-11-12 16:44:16,131 INFO [qtp1292838001-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:44:23,198 INFO [qtp1292838001-37] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 16:44:26,273 INFO [qtp1292838001-35] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:46:52,894 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 16:46:53,096 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 16:46:53,231 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@359df09a{/,null,AVAILABLE}
+2024-11-12 16:46:53,547 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@5677323c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 16:46:53,593 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@27406a17{HTTP/1.1, (http/1.1)}{0.0.0.0:50247}
+2024-11-12 16:46:53,594 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@18d87d80{STARTING}[11.0.7,sto=0] @4352ms
+2024-11-12 16:46:57,161 INFO [qtp1866875501-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:47:05,593 INFO [qtp1866875501-41] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 16:47:08,790 INFO [qtp1866875501-42] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:50:49,707 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 16:50:49,896 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 16:50:50,004 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@4bdeaabb{/,null,AVAILABLE}
+2024-11-12 16:50:50,329 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@3e27aa33{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 16:50:50,568 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@742ff096{HTTP/1.1, (http/1.1)}{0.0.0.0:50544}
+2024-11-12 16:50:50,579 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@5b03b9fe{STARTING}[11.0.7,sto=0] @4655ms
+2024-11-12 16:50:54,156 INFO [qtp1296456465-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:51:10,996 WARN [qtp1296456465-39] c.p.c.administrador.LoginServlet [LoginServlet.java : 41] -- Intento de inicio de sesión fallido para el correo: sebastian1206@gmail.com
+2024-11-12 16:51:18,186 INFO [qtp1296456465-40] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 16:51:20,763 INFO [qtp1296456465-35] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:53:34,903 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-12 16:53:35,111 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-12 16:53:35,194 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@19932c16{/,null,AVAILABLE}
+2024-11-12 16:53:35,510 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@4686afc2{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-12 16:53:35,568 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@3e8c3cb{HTTP/1.1, (http/1.1)}{0.0.0.0:50749}
+2024-11-12 16:53:35,571 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@4fb3ee4e{STARTING}[11.0.7,sto=0] @4191ms
+2024-11-12 16:53:39,457 INFO [qtp1048855692-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:53:47,899 INFO [qtp1048855692-35] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-12 16:53:50,765 INFO [qtp1048855692-36] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-12 16:53:55,421 INFO [qtp1048855692-38] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 50] -- Comentario desactivado: ID = 1
+2024-11-12 16:53:56,428 INFO [qtp1048855692-35] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7

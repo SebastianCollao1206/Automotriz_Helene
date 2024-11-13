@@ -1,13 +1,12 @@
 package com.pe.controller.administrador.variantes;
 
 import com.pe.controller.administrador.BaseServlet;
-import com.pe.model.entidad.Tamanio;
-import com.pe.model.entidad.Variante;
-import com.pe.model.html.TamanioHtml;
-import com.pe.model.html.VarianteHtml;
-import com.pe.model.service.ProductoService;
-import com.pe.model.service.TamanioService;
-import com.pe.model.service.VarianteService;
+import com.pe.model.administrador.entidad.Tamanio;
+import com.pe.model.administrador.entidad.Variante;
+import com.pe.model.administrador.html.VarianteHtml;
+import com.pe.model.administrador.service.ProductoService;
+import com.pe.model.administrador.service.TamanioService;
+import com.pe.model.administrador.service.VarianteService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -17,8 +16,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.TreeSet;
 
@@ -45,25 +42,13 @@ public class AgregarVarianteServlet extends BaseServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             tamanioService.cargarTamanios();
-
             TreeSet<Tamanio> tamaniosActivos = tamanioService.cargarTamaniosActivos();
-
-            String opcionesTamanios = TamanioHtml.generarOpcionesTamanios(tamaniosActivos);
-
-            String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/agregar_variante.html")));
-
-            html = html.replace("${tamaniosOptions}", opcionesTamanios);
 
             String productoNombre = (String) request.getAttribute("productoNombre");
             String mensajeError = (String) request.getAttribute("mensajeError");
-            if (productoNombre != null) {
-                html = html.replace("${selectedProduct}", productoNombre);
-                html = html.replace("${productoId}", request.getAttribute("productoId").toString());
-            } else if (mensajeError != null) {
-                html = html.replace("${selectedProduct}", mensajeError);
-            } else {
-                html = html.replace("${selectedProduct}", "");
-            }
+            String productoId = request.getAttribute("productoId") != null ? request.getAttribute("productoId").toString() : null;
+
+            String html = VarianteHtml.generarHtmlAgregarVariante(tamaniosActivos, productoNombre, productoId, mensajeError);
 
             request.setAttribute("content", html);
             super.doGet(request, response);
@@ -107,12 +92,13 @@ public class AgregarVarianteServlet extends BaseServlet {
         } catch (NumberFormatException e) {
             mensaje = "Error en los datos proporcionados: " + e.getMessage();
             logger.error("Error en el formato de los datos: {}", e.getMessage(), e);
+        } catch (IllegalArgumentException e) {
+            mensaje = "Error: " + e.getMessage();
+            logger.warn(mensaje);
         }
 
-        // Generar el script de alerta
         String scriptAlerta = VarianteHtml.generarMensajeAlerta(mensaje, redirigirUrl);
 
-        // Enviar el script de alerta como respuesta
         response.setContentType("text/html");
         response.getWriter().write(scriptAlerta);
     }

@@ -1,8 +1,8 @@
 package com.pe.controller.administrador.categorias;
 
 import com.pe.controller.administrador.BaseServlet;
-import com.pe.model.entidad.Categoria;
-import com.pe.model.service.CategoriaService;
+import com.pe.model.administrador.entidad.Categoria;
+import com.pe.model.administrador.service.CategoriaService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;

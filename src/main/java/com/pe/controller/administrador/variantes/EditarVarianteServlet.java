@@ -1,12 +1,12 @@
 package com.pe.controller.administrador.variantes;
 
 import com.pe.controller.administrador.BaseServlet;
-import com.pe.model.entidad.Tamanio;
-import com.pe.model.entidad.Variante;
-import com.pe.model.html.TamanioHtml;
-import com.pe.model.service.ProductoService;
-import com.pe.model.service.TamanioService;
-import com.pe.model.service.VarianteService;
+import com.pe.model.administrador.entidad.Tamanio;
+import com.pe.model.administrador.entidad.Variante;
+import com.pe.model.administrador.html.VarianteHtml;
+import com.pe.model.administrador.service.ProductoService;
+import com.pe.model.administrador.service.TamanioService;
+import com.pe.model.administrador.service.VarianteService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,8 +16,6 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.TreeSet;
 
@@ -45,29 +43,17 @@ public class EditarVarianteServlet extends BaseServlet {
 
         if (idParam != null) {
             try {
+                varianteService.cargarVariantes();
                 int id = Integer.parseInt(idParam);
-
                 Variante variante = varianteService.obtenerVariantePorId(id);
                 if (variante != null) {
                     String nombreProducto = productoService.obtenerNombreProductoPorId(variante.getIdProducto());
                     String nombreTamanio = tamanioService.obtenerNombreTamanioPorId(variante.getIdTamanio());
 
                     tamanioService.cargarTamanios();
-                    TreeSet<Tamanio> tamanios = tamanioService.getTamanios();
+                    TreeSet<Tamanio> tamaniosActivos = tamanioService.cargarTamaniosActivos();
 
-                    String opcionesTamanios = TamanioHtml.generarOpcionesTamanios2(tamanios, variante.getIdTamanio());
-
-                    // Cargar el HTML y reemplazar los valores
-                    String html = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/editar_variante.html")));
-                    html = html.replace("${variante.id}", String.valueOf(variante.getIdVariante()));
-                    html = html.replace("${variante.codigo}", variante.getCodigo());
-                    html = html.replace("${variante.precio}", String.valueOf(variante.getPrecio()));
-                    html = html.replace("${variante.imagen}", variante.getImagen());
-                    html = html.replace("${variante.stock}", String.valueOf(variante.getStock()));
-                    html = html.replace("${variante.cantidad}", String.valueOf(variante.getCantidad()));
-                    html = html.replace("${selectedProduct}", nombreProducto);
-                    html = html.replace("${productoId}", String.valueOf(variante.getIdProducto()));
-                    html = html.replace("${selectedTamanio}", opcionesTamanios);
+                    String html = VarianteHtml.generarHtmlEdicionVariante(variante, nombreProducto, tamaniosActivos);
 
                     request.setAttribute("content", html);
                     super.doGet(request, response);
@@ -100,7 +86,7 @@ public class EditarVarianteServlet extends BaseServlet {
         String cantidadParam = request.getParameter("cantidad");
 
         String mensaje;
-        String redirigirUrl;
+        String redirigirUrl = String.format("http://localhost:8081/variante/producto?id=%s", productoIdParam);
 
         try {
             int id = Integer.parseInt(idParam);
@@ -111,22 +97,18 @@ public class EditarVarianteServlet extends BaseServlet {
             int cantidad = Integer.parseInt(cantidadParam);
 
             varianteService.actualizarVariante(id, codigo, idTamanio, idProducto, precio, imagen, stock, cantidad);
+            varianteService.cargarVariantes();
             mensaje = "Variante actualizada exitosamente!";
             logger.info("Variante actualizada: ID = {}, Código = {}, Tamaño ID = {}, Producto ID = {}, Precio = {}, Stock = {}, Cantidad = {}",
                     id, codigo, idTamanio, idProducto, precio, stock, cantidad);
-
-            redirigirUrl = String.format("http://localhost:8081/variante/producto?id=%d", idProducto);
         } catch (Exception e) {
             mensaje = "Error al actualizar la variante: " + e.getMessage();
             logger.error("Error inesperado: {}", e.getMessage(), e);
-            redirigirUrl = "/variante/listar"; // Redirigir a la lista en caso de error
+            String scriptAlerta = VarianteHtml.generarMensajeAlerta(mensaje, "/variante/editar?id=" + idParam);
+            response.setContentType("text/html");
+            response.getWriter().write(scriptAlerta);
+            return;
         }
-
-        // Establecer atributos para el mensaje y la redirección
-        request.setAttribute("mensaje", mensaje);
-        request.setAttribute("redirigirUrl", redirigirUrl);
-
-        // Redirigir a la URL construida
         response.sendRedirect(redirigirUrl);
     }
 }

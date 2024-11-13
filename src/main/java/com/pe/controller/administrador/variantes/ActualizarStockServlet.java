@@ -1,7 +1,7 @@
 package com.pe.controller.administrador.variantes;
 
 import com.pe.controller.administrador.BaseServlet;
-import com.pe.model.service.VarianteService;
+import com.pe.model.administrador.service.VarianteService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -60,7 +60,6 @@ public class ActualizarStockServlet extends BaseServlet {
             e.printStackTrace();
         }
 
-        // Imprimir el mensaje final
         System.out.println("Mensaje: " + mensaje);
         request.setAttribute("mensaje", mensaje);
         response.sendRedirect(redirigirUrl);

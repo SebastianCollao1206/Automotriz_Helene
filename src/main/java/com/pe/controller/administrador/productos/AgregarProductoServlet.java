@@ -1,16 +1,14 @@
 package com.pe.controller.administrador.productos;
 
 import com.pe.controller.administrador.BaseServlet;
-import com.pe.model.entidad.Categoria;
-import com.pe.model.entidad.Producto;
-import com.pe.model.entidad.Tamanio;
-import com.pe.model.entidad.Variante;
-import com.pe.model.html.CategoriaHtml;
-import com.pe.model.html.ProductoHtml;
-import com.pe.model.service.CategoriaService;
-import com.pe.model.service.ProductoService;
-import com.pe.model.service.TamanioService;
-import com.pe.model.service.VarianteService;
+import com.pe.model.administrador.entidad.Categoria;
+import com.pe.model.administrador.entidad.Tamanio;
+import com.pe.model.administrador.html.CategoriaHtml;
+import com.pe.model.administrador.html.ProductoHtml;
+import com.pe.model.administrador.service.CategoriaService;
+import com.pe.model.administrador.service.ProductoService;
+import com.pe.model.administrador.service.TamanioService;
+import com.pe.model.administrador.service.VarianteService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -19,7 +17,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.sql.SQLException;
