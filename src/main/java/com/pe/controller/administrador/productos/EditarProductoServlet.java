@@ -2,6 +2,7 @@ package com.pe.controller.administrador.productos;
 
 import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.administrador.entidad.Categoria;
+import com.pe.model.administrador.entidad.PermisoUsuario;
 import com.pe.model.administrador.entidad.Producto;
 import com.pe.model.administrador.html.ProductoHtml;
 import com.pe.model.administrador.service.CategoriaService;
@@ -31,6 +32,11 @@ public class EditarProductoServlet extends BaseServlet {
     @Override
     protected String getContentPage() {
         return "/editar_producto.html";
+    }
+
+    @Override
+    protected PermisoUsuario getPermiso() {
+        return PermisoUsuario.SOLO_TRABAJADOR;
     }
 
     @Override

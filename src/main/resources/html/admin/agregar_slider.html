@@ -1,0 +1,136 @@
+<div class="col p-lg-5 p-4">
+    <div class="container">
+        <div class="d-flex container-fluid">
+            <div class="d-flex justify-content-center w-100">
+                <h2 class="text-center">Agregar Nuevo Slider</h2>
+            </div>
+            <div class="text-center justify-content-end">
+                <a class="text-decoration-none" href="/slider/listar">
+                    <button type="button" class="btn text-white btn-volver border-0">
+                        <i class="bi bi-arrow-bar-left mx-3"></i>Volver
+                    </button>
+                </a>
+            </div>
+        </div>
+
+        <!--ajax-form -->
+        <form class="ajax-form mt-5" id="slider-form" method="POST" action="/slider/agregar" enctype="multipart/form-data">
+            <div class="row mb-5 d-flex justify-content-center align-items-center gap-4">
+
+                <div class="col-md-2">
+                    <label >Relacionar con:</label>
+                </div>
+
+                <div class="col-md-2">
+                    <select class="form-select" id="relacionar-con" name="relacionarCon">
+                        <option value="" style="display: none;">Selecciona una opción</option>
+                        <option value="variante">Variante</option>
+                        <option value="producto">Producto</option>
+                        <option value="categoria">Categoría</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <input type="text" id="search-field" class="form-control" placeholder="Buscar...">
+                        <button type="button" class="btn btn-outline-secondary" onclick="buscar()">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <input type="text" id="selected-option" class="form-control" value="${selectedOption}" readonly required>
+                    <input type="hidden" id="selectedOptionId" name="selectedOptionId" value="${selectedOptionId}"> <!-- Campo oculto para el ID -->
+                </div>
+            </div>
+
+            <div class="row mb-5 d-flex justify-content-center align-items-center gap-4">
+                <div class="col-md-2">
+                    <label for="titulo">Título</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="titulo" name="titulo" required>
+                </div>
+            </div>
+
+            <div class="row mb-5 d-flex justify-content-center align-items-center gap-4">
+                <div class="col-md-2">
+                    <label for="slogan">Slogan</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="text" class="form-control" id="slogan" name="eslogan" required>
+                </div>
+            </div>
+
+            <div class="row mb-5 d-flex justify-content-center align-items-center gap-4">
+                <div class="col-md-2">
+                    <label for="imagen">Imagen</label>
+                </div>
+                <div class="col-md-8">
+                    <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
+                </div>
+            </div>
+
+            <div class="row mb-5 d-flex justify-content-center align-items-center gap-4">
+                <div class="col-md-2">
+                    <label for="fecha-inicio">Fecha de Inicio</label>
+                </div>
+                <div class="col-md-3">
+                    <input type="date" class="form-control" id="fecha-inicio" name="fechaInicio" required>
+                </div>
+                <div class="col-md-2">
+                    <label for="fecha-fin">Fecha de Fin</label>
+                </div>
+                <div class="col-md-3">
+                    <input type="date" class="form-control" id="fecha-fin" name="fechaFin" required>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <button type="submit" class="btn text-white btn-agregar border-0 px-3">Agregar Slider</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+</section>
+
+</article>
+</main>
+<script>
+    function buscar() {
+        const buscarInput = document.getElementById("search-field").value;
+        const tipo = document.getElementById("relacionar-con").value;
+
+        if (!buscarInput) {
+            alert("Por favor, ingresa un término de búsqueda.");
+            return;
+        }
+
+        const relacionarConParam = '&relacionarCon=' + encodeURIComponent(tipo);
+
+        switch (tipo) {
+            case "producto":
+                window.location.href = '/buscarProduct?nombre=' + encodeURIComponent(buscarInput)+ relacionarConParam;
+                break;
+            case "categoria":
+                window.location.href = '/buscarCategoria?nombre=' + encodeURIComponent(buscarInput)+ relacionarConParam;
+                break;
+            case "variante":
+                window.location.href = '/buscarVariante?nombre=' + encodeURIComponent(buscarInput)+ relacionarConParam;
+                break;
+            default:
+                alert("Por favor, selecciona un tipo válido.");
+        }
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+<script src="/admin/js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/cliente/js/script_cliente.js"></script>
+</body>
+
+</html>

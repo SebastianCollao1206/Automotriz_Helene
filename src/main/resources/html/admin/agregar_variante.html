@@ -89,18 +89,18 @@
 
 </article>
 </main>
+
 <script>
     function buscarProducto() {
         const nombreProducto = document.getElementById('product-search').value;
         if (nombreProducto) {
-            // Redirigir a la servlet de búsqueda
             window.location.href = '/buscarProducto?nombre=' + encodeURIComponent(nombreProducto);
         } else {
             alert('Por favor, ingresa un nombre de producto para buscar.');
         }
     }
 </script>
-<!--CONTENIDO-->
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>

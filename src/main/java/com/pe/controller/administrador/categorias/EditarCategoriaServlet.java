@@ -2,6 +2,7 @@ package com.pe.controller.administrador.categorias;
 
 import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.administrador.entidad.Categoria;
+import com.pe.model.administrador.entidad.PermisoUsuario;
 import com.pe.model.administrador.html.CategoriaHtml;
 import com.pe.model.administrador.service.CategoriaService;
 import jakarta.servlet.ServletException;
@@ -26,6 +27,11 @@ public class EditarCategoriaServlet extends BaseServlet {
     @Override
     protected String getContentPage() {
         return "/editar_categoria.html";
+    }
+
+    @Override
+    protected PermisoUsuario getPermiso() {
+        return PermisoUsuario.TODOS;
     }
 
     @Override

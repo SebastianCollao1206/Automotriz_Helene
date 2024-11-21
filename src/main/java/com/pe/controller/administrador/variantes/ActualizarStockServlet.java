@@ -1,6 +1,7 @@
 package com.pe.controller.administrador.variantes;
 
 import com.pe.controller.administrador.BaseServlet;
+import com.pe.model.administrador.entidad.PermisoUsuario;
 import com.pe.model.administrador.service.VarianteService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -25,6 +26,11 @@ public class ActualizarStockServlet extends BaseServlet {
     @Override
     protected String getContentPage() {
         return "/variante_producto.html";
+    }
+
+    @Override
+    protected PermisoUsuario getPermiso() {
+        return PermisoUsuario.TODOS;
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.pe.controller.administrador.comentarios;
 
 import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.administrador.entidad.Comentario;
+import com.pe.model.administrador.entidad.PermisoUsuario;
 import com.pe.model.administrador.html.ComentarioHtml;
 import com.pe.model.administrador.service.ComentarioService;
 import com.pe.model.cliente.service.ClienteService;
@@ -31,6 +32,12 @@ public class ComentariosServlet extends BaseServlet {
     protected String getContentPage() {
         return "/lista_comentario.html";
     }
+
+    @Override
+    protected PermisoUsuario getPermiso() {
+        return PermisoUsuario.TODOS;
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {

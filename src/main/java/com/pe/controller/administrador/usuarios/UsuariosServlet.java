@@ -1,6 +1,7 @@
 package com.pe.controller.administrador.usuarios;
 
 import com.pe.controller.administrador.BaseServlet;
+import com.pe.model.administrador.entidad.PermisoUsuario;
 import com.pe.model.administrador.entidad.Usuario;
 import com.pe.model.administrador.html.UsuarioHtml;
 import com.pe.model.administrador.service.UsuarioService;
@@ -28,6 +29,11 @@ public class UsuariosServlet extends BaseServlet {
     @Override
     protected String getContentPage() {
         return "/lista_usuario.html";
+    }
+
+    @Override
+    protected PermisoUsuario getPermiso() {
+        return PermisoUsuario.SOLO_JEFE;
     }
 
     @Override

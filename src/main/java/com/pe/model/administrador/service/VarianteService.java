@@ -1,6 +1,7 @@
 package com.pe.model.administrador.service;
 
 import com.pe.model.administrador.dao.VarianteDAO;
+import com.pe.model.administrador.entidad.Producto;
 import com.pe.model.administrador.entidad.Tamanio;
 import com.pe.model.administrador.entidad.Variante;
 import com.pe.util.Validaciones;
@@ -61,6 +62,28 @@ public class VarianteService {
         return variantesPorProducto;
     }
 
+    public Variante obtenerVarianteAleatoriaPorProducto(int idProducto) {
+        TreeSet<Variante> variantesPorProducto = obtenerVariantesPorProducto(idProducto);
+        if (variantesPorProducto.isEmpty()) {
+            return null;
+        }
+        return variantesPorProducto.first();
+    }
+    public Variante obtenerVariantePorCategoria(int idCategoria) throws SQLException {
+        ProductoService productoService = new ProductoService();
+
+        Producto producto = productoService.obtenerProductoPorCategoria(idCategoria);
+
+        if (producto == null) {
+            throw new IllegalArgumentException("No se encontró un producto asociado a la categoría con ID: " + idCategoria);
+        }
+        Variante variante = obtenerVarianteAleatoriaPorProducto(producto.getIdProducto());
+        if (variante == null) {
+            throw new IllegalArgumentException("No se encontraron variantes para el producto con ID: " + producto.getIdProducto());
+        }
+        return variante;
+    }
+
     public Tamanio obtenerTamanioPorId(int idTamanio) throws SQLException {
         return tamanioService.obtenerTamanioPorId(idTamanio);
     }
@@ -107,6 +130,14 @@ public class VarianteService {
                 .findFirst()
                 .orElse(null);
         return variante != null ? variante.getIdProducto() : 0;
+    }
+
+    public Variante buscarVariantePorNombre(String nombre) throws SQLException{
+        String nombreBuscado = nombre.toLowerCase();
+        return variantes.stream()
+                .filter(variante -> variante.getCodigo().toLowerCase().contains(nombreBuscado))
+                .findFirst()
+                .orElse(null);
     }
 
     private boolean existeVariante(Variante variante) {

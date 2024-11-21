@@ -137,7 +137,7 @@ public class ProductoService {
         return valido;
     }
 
-    public Producto buscarProductoPorNombre(String nombre) {
+    public Producto buscarProductoPorNombre(String nombre) throws SQLException{
         String nombreBuscado = nombre.toLowerCase();
         return productos.stream()
                 .filter(producto -> producto.getNombre().toLowerCase().contains(nombreBuscado))
@@ -147,5 +147,22 @@ public class ProductoService {
 
     public TreeSet<Producto> getProductos() {
         return productos;
+    }
+
+    public Producto obtenerProductoPorCategoria(int idCategoria) {
+        return productos.stream()
+                .filter(producto -> producto.getIdCategoria() == idCategoria)
+                .findFirst()
+                .orElse(null);
+    }
+
+    public TreeSet<Producto> obtenerProductosPorCategoria(int idCategoria) {
+        TreeSet<Producto> productosPorCategoria = new TreeSet<>(Producto.PRODUCTO_COMPARATOR_NATURAL_ORDER);
+        for (Producto producto : productos) {
+            if (producto.getIdCategoria() == idCategoria) {
+                productosPorCategoria.add(producto);
+            }
+        }
+        return productosPorCategoria;
     }
 }

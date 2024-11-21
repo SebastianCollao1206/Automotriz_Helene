@@ -2,15 +2,17 @@ package com.pe.model.administrador.service;
 
 import com.google.common.base.Preconditions;
 import com.pe.model.administrador.dao.UsuarioDAO;
+import com.pe.model.administrador.entidad.PermisoUsuario;
 import com.pe.model.administrador.entidad.Usuario;
 import com.pe.util.Validaciones;
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.SimpleEmail;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.Arrays;
-import java.util.TreeSet;
+import java.util.*;
 
 public class UsuarioService {
     private final UsuarioDAO usuarioDAO;
@@ -92,6 +94,7 @@ public class UsuarioService {
         Validaciones.validarCorreo(correo);
         Validaciones.validarPassword(password);
         correo = Validaciones.sanitizarEntrada(correo);
+
         usuarioDAO.cargarUsuarios(usuarios);
         for (Usuario usuario : usuarios) {
             if (usuario.getCorreo().equals(correo)) {
@@ -105,7 +108,6 @@ public class UsuarioService {
         return null;
     }
 
-    // Metodo para buscar usuarios
     public TreeSet<Usuario> buscarUsuarios(String nombre, String dni, String tipo, String estado) {
         TreeSet<Usuario> usuariosFiltrados = new TreeSet<>(Usuario.USUARIO_COMPARATOR_NATURAL_ORDER);
         for (Usuario usuario : usuarios) {
@@ -183,4 +185,62 @@ public class UsuarioService {
         }
         return estadosUsuario;
     }
+
+    public boolean tienePermiso(Usuario usuario, PermisoUsuario permisoRequerido) {
+        switch (permisoRequerido) {
+            case TODOS:
+                return true;
+            case SOLO_JEFE:
+                return usuario.getTipoUsuario() == Usuario.TipoUsuario.Jefe;
+            case SOLO_TRABAJADOR:
+                return usuario.getTipoUsuario() == Usuario.TipoUsuario.Trabajador;
+            default:
+                return false;
+        }
+    }
+
+    public Usuario obtenerUsuarioPorCorreo(String correo) {
+        return usuarios.stream()
+                .filter(usuario -> usuario.getCorreo().equalsIgnoreCase(correo) &&
+                        usuario.getEstado() == Usuario.EstadoUsuario.Activo)
+                .findFirst()
+                .orElse(null);
+    }
+
+    //recuperacion de contras
+    private static final String SENDER_EMAIL = "tallerhelene@gmail.com";
+    private static final String SENDER_PASSWORD = "zlfz xnci qesh imqo";
+
+    public String generarCodigoVerificacion() {
+        Random random = new Random();
+        int codigo = 100000 + random.nextInt(900000);
+        return String.valueOf(codigo);
+    }
+
+    public void enviarCodigoVerificacion(String destinatario, String codigo) throws Exception {
+        SimpleEmail email = new SimpleEmail();
+        email.setHostName("smtp.gmail.com");
+        email.setSmtpPort(587);
+        email.setAuthenticator(new DefaultAuthenticator(SENDER_EMAIL, SENDER_PASSWORD));
+        email.setStartTLSEnabled(true);
+        email.setFrom(SENDER_EMAIL);
+        email.setSubject("Código de verificación - Recuperación de contraseña");
+        email.setMsg("Tu código de verificación es: " + codigo);
+        email.addTo(destinatario);
+        email.send();
+    }
+
+    public void actualizarContrasena(String correo, String nuevaContrasena) throws Exception {
+        Usuario usuario = obtenerUsuarioPorCorreo(correo);
+        if (usuario != null) {
+            Validaciones.validarPassword(nuevaContrasena);
+            byte[] contrasenaEncriptada = encryptPassword(nuevaContrasena);
+            usuario.setContrasena(contrasenaEncriptada);
+            usuarioDAO.actualizarContrasenaUsuario(usuario, nuevaContrasena);
+            cargarUsuarios();
+        } else {
+            throw new IllegalArgumentException("Usuario no encontrado");
+        }
+    }
+
 }

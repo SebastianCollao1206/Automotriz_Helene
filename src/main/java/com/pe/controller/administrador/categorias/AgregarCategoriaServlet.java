@@ -2,6 +2,7 @@ package com.pe.controller.administrador.categorias;
 
 import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.administrador.entidad.Categoria;
+import com.pe.model.administrador.entidad.PermisoUsuario;
 import com.pe.model.administrador.service.CategoriaService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -25,6 +26,11 @@ public class AgregarCategoriaServlet extends BaseServlet {
     @Override
     protected String getContentPage() {
         return "/agregar_categoria.html";
+    }
+
+    @Override
+    protected PermisoUsuario getPermiso() {
+        return PermisoUsuario.TODOS;
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.pe.controller.administrador.variantes;
 
 import com.pe.controller.administrador.BaseServlet;
+import com.pe.model.administrador.entidad.PermisoUsuario;
 import com.pe.model.administrador.entidad.Variante;
 import com.pe.model.administrador.html.VarianteHtml;
 import com.pe.model.administrador.service.ProductoService;
@@ -33,6 +34,11 @@ public class VarianteProductoServlet extends BaseServlet {
     @Override
     protected String getContentPage() {
         return "/variante_producto.html";
+    }
+
+    @Override
+    protected PermisoUsuario getPermiso() {
+        return PermisoUsuario.TODOS;
     }
 
     @Override

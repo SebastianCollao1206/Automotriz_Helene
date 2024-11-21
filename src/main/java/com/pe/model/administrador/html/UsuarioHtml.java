@@ -86,6 +86,18 @@ public class UsuarioHtml {
         return htmlTemplate;
     }
 
+    public static String generarHtmlVerificarCodigo(String correo) throws IOException {
+        String htmlTemplate = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/verificar_codigo.html")));
+        htmlTemplate = htmlTemplate.replace("${usuario.correo}", correo);
+        return htmlTemplate;
+    }
+
+    public static String generarHtmlCambiarContrasena(String correo) throws IOException {
+        String htmlTemplate = new String(Files.readAllBytes(Paths.get("src/main/resources/html/admin/cambiar_contrasena.html")));
+        htmlTemplate = htmlTemplate.replace("${usuario.correo}", correo);
+        return htmlTemplate;
+    }
+
     public static String generarFilasTablaUsuarios(TreeSet<Usuario> usuarios) {
         StringBuilder tableRows = new StringBuilder();
         for (Usuario usuario : usuarios) {

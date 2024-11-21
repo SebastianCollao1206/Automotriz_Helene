@@ -1,6 +1,7 @@
 package com.pe.controller.administrador.variantes;
 
 import com.pe.controller.administrador.BaseServlet;
+import com.pe.model.administrador.entidad.PermisoUsuario;
 import com.pe.model.administrador.entidad.Tamanio;
 import com.pe.model.administrador.entidad.Variante;
 import com.pe.model.administrador.html.VarianteHtml;
@@ -35,6 +36,11 @@ public class EditarVarianteServlet extends BaseServlet {
     @Override
     protected String getContentPage() {
         return "/editar_variante.html";
+    }
+
+    @Override
+    protected PermisoUsuario getPermiso() {
+        return PermisoUsuario.TODOS;
     }
 
     @Override

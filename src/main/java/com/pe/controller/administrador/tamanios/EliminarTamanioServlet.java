@@ -1,6 +1,7 @@
 package com.pe.controller.administrador.tamanios;
 
 import com.pe.controller.administrador.BaseServlet;
+import com.pe.model.administrador.entidad.PermisoUsuario;
 import com.pe.model.administrador.service.TamanioService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -24,6 +25,11 @@ public class EliminarTamanioServlet extends BaseServlet {
     @Override
     protected String getContentPage() {
         return "/lista_tamanio.html";
+    }
+
+    @Override
+    protected PermisoUsuario getPermiso() {
+        return PermisoUsuario.TODOS;
     }
 
     @Override

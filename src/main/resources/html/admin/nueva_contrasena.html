@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <link rel="stylesheet" href="/admin/css/login.css">
+  <link rel="icon" href="/IMG/logo_pequeño.png" type="image/x-icon">
+  <title>Recuperar Contraseña - Automotriz-HELENE</title>
+</head>
+
+<body>
+  <div class="container d-flex justify-content-center align-items-center min-vh-100 no-min-vh-100">
+    <div class="row border rounded-5 p-3 bg-white shadow box-area">
+      <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box d-lg-flex d-md-flex d-none">
+        <div class="featured-image p-3">
+          <img src="/IMG/inicio_sesion.png" class="img-fluid">
+        </div>
+      </div>
+      <div class="col-md-6 right-box d-flex align-items-center">
+        <div class="row align-items-center">
+          <div class="header-text mb-4 text-center">
+            <h2>Paso 3</h2>
+            <p class="text-muted text-center mt-4">Ingrese su nueva contraseña.</p>
+          </div>
+
+          <form action="/recuperar/cambiar" method="post" class="ajax-form">
+            <div class="input-group mb-4">
+              <input type="hidden" name="correo" value="${correo}">
+              <span class="input-group-text bg-light"><i class="bi bi-lock"></i></span>
+              <input type="password" name="nuevaContrasena"
+                     class="form-control form-control-lg bg-light fs-6" placeholder="Nueva Contraseña"
+                     required>
+            </div>
+
+            <div class="input-group mb-4">
+              <span class="input-group-text bg-light"><i class="bi bi-check-circle"></i></span>
+              <input type="password" name="confirmarContrasena"
+                     class="form-control form-control-lg bg-light fs-6" placeholder="Confirmar Contraseña"
+                     required>
+            </div>
+
+            <div class="d-grid gap-3">
+              <button class="btn btn-primary" type="submit">Cambiar contraseña</button>
+              <a href="/recuperar/solicitar" class="btn btn-secondary">Volver</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/cliente/js/script_cliente.js"></script>
+</body>
+</html>

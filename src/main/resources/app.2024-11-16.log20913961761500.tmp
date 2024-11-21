@@ -1,0 +1,498 @@
+2024-11-19 10:46:05,767 ERROR [qtp257608605-47] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 51] -- Error al cargar sliders: The last packet successfully received from the server was 259,280,042 milliseconds ago. The last packet sent successfully to the server was 259,280,044 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: The last packet successfully received from the server was 259,280,042 milliseconds ago. The last packet sent successfully to the server was 259,280,044 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeQuery(ClientPreparedStatement.java:972)
+	at com.pe.model.administrador.dao.SliderDAO.cargarSliders(SliderDAO.java:24)
+	at com.pe.model.administrador.service.SliderService.cargarSliders(SliderService.java:51)
+	at com.pe.controller.administrador.Slider.SlidersServlet.doGet(SlidersServlet.java:36)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:500)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: The last packet successfully received from the server was 259,280,042 milliseconds ago. The last packet sent successfully to the server was 259,280,044 milliseconds ago. is longer than the server configured value of 'wait_timeout'. You should consider either expiring and/or testing connection validity before use in your application, increasing the server configured values for client timeouts, or using the Connector/J connection property 'autoReconnect=true' to avoid this problem.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105)
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150)
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:582)
+	at com.mysql.cj.protocol.a.NativeProtocol.checkErrorMessage(NativeProtocol.java:762)
+	at com.mysql.cj.protocol.a.NativeProtocol.sendCommand(NativeProtocol.java:701)
+	at com.mysql.cj.protocol.a.NativeProtocol.sendQueryPacket(NativeProtocol.java:1052)
+	at com.mysql.cj.NativeSession.execSQL(NativeSession.java:657)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:893)
+	... 30 common frames omitted
+Caused by: java.net.SocketException: Se ha anulado una conexión establecida por el software en su equipo host.
+	at java.base/sun.nio.ch.SocketDispatcher.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(SocketDispatcher.java:46)
+	at java.base/sun.nio.ch.NioSocketImpl.tryRead(NioSocketImpl.java:256)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:307)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:346)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:796)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:1099)
+	at com.mysql.cj.protocol.ReadAheadInputStream.fill(ReadAheadInputStream.java:107)
+	at com.mysql.cj.protocol.ReadAheadInputStream.readFromUnderlyingStreamIfNecessary(ReadAheadInputStream.java:150)
+	at com.mysql.cj.protocol.ReadAheadInputStream.read(ReadAheadInputStream.java:180)
+	at java.base/java.io.FilterInputStream.read(FilterInputStream.java:119)
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:64)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:81)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63)
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45)
+	at com.mysql.cj.protocol.a.TimeTrackingPacketReader.readHeader(TimeTrackingPacketReader.java:52)
+	at com.mysql.cj.protocol.a.TimeTrackingPacketReader.readHeader(TimeTrackingPacketReader.java:41)
+	at com.mysql.cj.protocol.a.MultiPacketReader.readHeader(MultiPacketReader.java:54)
+	at com.mysql.cj.protocol.a.MultiPacketReader.readHeader(MultiPacketReader.java:44)
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:576)
+	... 35 common frames omitted
+2024-11-19 10:46:30,678 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-19 10:46:30,823 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-19 10:46:30,908 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@45385f75{/,null,AVAILABLE}
+2024-11-19 10:46:31,040 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@792b749c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-19 10:46:31,067 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@480d3575{HTTP/1.1, (http/1.1)}{0.0.0.0:63261}
+2024-11-19 10:46:31,068 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e9175d8{STARTING}[11.0.7,sto=0] @3089ms
+2024-11-19 10:46:31,878 INFO [qtp1565740893-49] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-19 10:46:39,062 INFO [qtp1565740893-35] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-19 10:46:41,399 INFO [qtp1565740893-51] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 10:47:38,522 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 10:47:39,061 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 10:47:39,400 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@49c90a9c{/,null,AVAILABLE}
+2024-11-16 10:47:39,671 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@23e84203{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 10:47:39,709 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@f1da57d{HTTP/1.1, (http/1.1)}{0.0.0.0:61142}
+2024-11-16 10:47:39,710 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@7d0b7e3c{STARTING}[11.0.7,sto=0] @3006ms
+2024-11-16 10:47:42,256 INFO [qtp775514090-44] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 10:47:49,209 INFO [qtp775514090-34] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 10:47:51,782 INFO [qtp775514090-31] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 10:47:58,285 INFO [qtp775514090-32] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=, estado=Activo, total=2
+2024-11-16 11:52:02,187 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 11:52:02,307 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 11:52:02,375 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@169bb4dd{/,null,AVAILABLE}
+2024-11-16 11:52:02,487 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@268f106e{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 11:52:02,524 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@6f53b8a{HTTP/1.1, (http/1.1)}{0.0.0.0:64803}
+2024-11-16 11:52:02,525 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@55a147cc{STARTING}[11.0.7,sto=0] @2238ms
+2024-11-16 11:52:07,850 INFO [qtp227755469-49] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=, estado=Activo, total=2
+2024-11-16 11:52:09,204 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 11:52:09,248 WARN [main] o.e.j.u.component.AbstractLifeCycle [AbstractLifeCycle.java : 294] -- FAILED Server@15bb5034{FAILED}[11.0.7,sto=0]: {}
+java.io.IOException: Failed to bind to 0.0.0.0/0.0.0.0:8081
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:345)
+	at org.eclipse.jetty.server.ServerConnector.open(ServerConnector.java:305)
+	at org.eclipse.jetty.server.Server.lambda$doStart$0(Server.java:401)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.eclipse.jetty.server.Server.doStart(Server.java:397)
+	at org.eclipse.jetty.util.component.AbstractLifeCycle.start(AbstractLifeCycle.java:93)
+	at com.pe.util.JettyUTP.start(JettyUTP.java:52)
+	at com.pe.App.main(App.java:81)
+Caused by: java.net.BindException: Address already in use: bind
+	at java.base/sun.nio.ch.Net.bind0(Native Method)
+	at java.base/sun.nio.ch.Net.bind(Net.java:565)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.netBind(ServerSocketChannelImpl.java:344)
+	at java.base/sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:301)
+	at org.eclipse.jetty.server.ServerConnector.openAcceptChannel(ServerConnector.java:340)
+	... 16 common frames omitted
+2024-11-16 11:52:15,974 INFO [qtp227755469-42] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 11:52:18,653 INFO [qtp227755469-37] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 11:53:05,546 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 11:53:05,731 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 11:53:05,781 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@45385f75{/,null,AVAILABLE}
+2024-11-16 11:53:05,925 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@792b749c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 11:53:05,949 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@480d3575{HTTP/1.1, (http/1.1)}{0.0.0.0:64894}
+2024-11-16 11:53:05,949 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e9175d8{STARTING}[11.0.7,sto=0] @1852ms
+2024-11-16 11:53:09,438 INFO [qtp1565740893-44] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 11:53:16,506 INFO [qtp1565740893-31] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 11:53:18,690 INFO [qtp1565740893-32] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 11:54:04,733 INFO [qtp1565740893-44] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 11:58:07,870 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 11:58:08,071 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 11:58:08,144 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@71075444{/,null,AVAILABLE}
+2024-11-16 11:58:08,304 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@298a5e20{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 11:58:08,328 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@1c5920df{HTTP/1.1, (http/1.1)}{0.0.0.0:65239}
+2024-11-16 11:58:08,329 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e0f5f7f{STARTING}[11.0.7,sto=0] @2898ms
+2024-11-16 11:58:20,286 INFO [qtp854487022-49] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 11:58:27,173 INFO [qtp854487022-35] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 11:58:29,875 INFO [qtp854487022-38] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 11:58:33,943 INFO [qtp854487022-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 11:58:54,390 INFO [qtp854487022-35] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario activado: ID = 3
+2024-11-16 11:58:54,411 INFO [qtp854487022-35] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario activado: ID = 4
+2024-11-16 11:58:56,429 INFO [qtp854487022-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 11:59:01,755 INFO [qtp854487022-35] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 1
+2024-11-16 11:59:03,004 INFO [qtp854487022-38] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 11:59:15,549 INFO [qtp854487022-35] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario activado: ID = 1
+2024-11-16 11:59:15,550 INFO [qtp854487022-35] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario activado: ID = 4
+2024-11-16 11:59:15,553 INFO [qtp854487022-35] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario activado: ID = 5
+2024-11-16 11:59:16,744 INFO [qtp854487022-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 11:59:28,903 INFO [qtp854487022-50] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 1
+2024-11-16 11:59:28,908 INFO [qtp854487022-50] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 2
+2024-11-16 11:59:28,911 INFO [qtp854487022-50] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 3
+2024-11-16 11:59:28,916 INFO [qtp854487022-50] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 4
+2024-11-16 11:59:30,061 INFO [qtp854487022-35] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 11:59:37,933 INFO [qtp854487022-35] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario activado: ID = 4
+2024-11-16 11:59:37,934 INFO [qtp854487022-35] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario activado: ID = 5
+2024-11-16 11:59:39,091 INFO [qtp854487022-50] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 11:59:42,663 INFO [qtp854487022-35] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=Activo, fechaInicio=, fechaFin=, total=4
+2024-11-16 11:59:47,970 INFO [qtp854487022-38] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 4
+2024-11-16 11:59:49,077 INFO [qtp854487022-35] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 11:59:57,379 INFO [qtp854487022-38] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=, fechaInicio=2024-11-01, fechaFin=, total=1
+2024-11-16 12:00:03,713 INFO [qtp854487022-35] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario activado: ID = 1
+2024-11-16 12:00:04,824 INFO [qtp854487022-47] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:00:08,315 INFO [qtp854487022-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=, fechaInicio=2024-11-01, fechaFin=, total=1
+2024-11-16 12:00:17,335 INFO [qtp854487022-47] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:00:59,224 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 12:00:59,433 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 12:00:59,557 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@45385f75{/,null,AVAILABLE}
+2024-11-16 12:00:59,774 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@792b749c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 12:00:59,840 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@480d3575{HTTP/1.1, (http/1.1)}{0.0.0.0:65450}
+2024-11-16 12:00:59,841 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e9175d8{STARTING}[11.0.7,sto=0] @2930ms
+2024-11-16 12:01:25,233 INFO [qtp1565740893-32] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 12:01:30,126 INFO [qtp1565740893-44] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:01:40,305 INFO [qtp1565740893-31] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:01:57,720 INFO [qtp1565740893-46] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:02:00,149 INFO [qtp1565740893-46] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:02:04,737 INFO [qtp1565740893-46] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 2
+2024-11-16 12:02:06,018 INFO [qtp1565740893-42] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:02:10,102 INFO [qtp1565740893-46] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:02:16,586 INFO [qtp1565740893-46] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 1
+2024-11-16 12:02:17,885 INFO [qtp1565740893-42] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:02:23,054 INFO [qtp1565740893-31] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 1
+2024-11-16 12:02:23,054 INFO [qtp1565740893-31] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 2
+2024-11-16 12:02:24,223 INFO [qtp1565740893-46] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:02:31,185 INFO [qtp1565740893-31] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 1
+2024-11-16 12:02:31,186 INFO [qtp1565740893-31] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 2
+2024-11-16 12:02:32,385 INFO [qtp1565740893-46] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:05:43,844 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 12:05:43,934 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 12:05:44,140 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@6e2829c7{/,null,AVAILABLE}
+2024-11-16 12:05:44,358 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@19e4653c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 12:05:44,391 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@6440112d{HTTP/1.1, (http/1.1)}{0.0.0.0:49688}
+2024-11-16 12:05:44,392 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@4efac082{STARTING}[11.0.7,sto=0] @2393ms
+2024-11-16 12:06:02,599 INFO [qtp785570251-38] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 12:06:05,499 INFO [qtp785570251-51] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:08:04,811 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 12:08:04,977 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 12:08:05,034 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@45385f75{/,null,AVAILABLE}
+2024-11-16 12:08:05,184 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@792b749c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 12:08:05,204 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@480d3575{HTTP/1.1, (http/1.1)}{0.0.0.0:49873}
+2024-11-16 12:08:05,205 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e9175d8{STARTING}[11.0.7,sto=0] @1845ms
+2024-11-16 12:08:09,299 INFO [qtp1565740893-44] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:08:17,324 INFO [qtp1565740893-32] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 12:08:20,047 INFO [qtp1565740893-30] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:08:23,359 INFO [qtp1565740893-44] c.p.c.a.Slider.EliminarSliderServlet [EliminarSliderServlet.java : 44] -- Slider desactivado: ID = 1
+2024-11-16 12:08:24,404 INFO [qtp1565740893-32] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:08:29,017 INFO [qtp1565740893-44] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:08:35,722 INFO [qtp1565740893-32] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 1
+2024-11-16 12:08:37,136 INFO [qtp1565740893-45] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:08:43,188 INFO [qtp1565740893-32] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 5
+2024-11-16 12:08:44,794 INFO [qtp1565740893-45] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:08:50,576 INFO [qtp1565740893-32] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=Activo, fechaInicio=, fechaFin=, total=2
+2024-11-16 12:08:54,509 INFO [qtp1565740893-31] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 6
+2024-11-16 12:08:55,631 INFO [qtp1565740893-32] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:09:04,371 INFO [qtp1565740893-42] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 1
+2024-11-16 12:09:04,373 INFO [qtp1565740893-42] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 6
+2024-11-16 12:09:05,398 INFO [qtp1565740893-30] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:14:36,352 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 12:14:36,450 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 12:14:36,520 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@4a8355dd{/,null,AVAILABLE}
+2024-11-16 12:14:36,639 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@738dc9b{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 12:14:36,666 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@3a7442c7{HTTP/1.1, (http/1.1)}{0.0.0.0:50326}
+2024-11-16 12:14:36,667 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@c88a337{STARTING}[11.0.7,sto=0] @2730ms
+2024-11-16 12:14:42,812 INFO [qtp1606286799-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:15:00,219 INFO [qtp1606286799-47] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 12:15:05,497 INFO [qtp1606286799-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:15:10,017 INFO [qtp1606286799-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario activado: ID = 1
+2024-11-16 12:15:11,220 INFO [qtp1606286799-52] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:15:16,085 INFO [qtp1606286799-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 1
+2024-11-16 12:15:17,079 INFO [qtp1606286799-52] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:15:22,339 INFO [qtp1606286799-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario activado: ID = 1
+2024-11-16 12:15:22,345 INFO [qtp1606286799-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario activado: ID = 2
+2024-11-16 12:15:23,539 INFO [qtp1606286799-52] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:15:28,820 INFO [qtp1606286799-52] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=Activo, fechaInicio=, fechaFin=, total=3
+2024-11-16 12:15:37,005 INFO [qtp1606286799-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 2
+2024-11-16 12:15:37,011 INFO [qtp1606286799-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario desactivado: ID = 7
+2024-11-16 12:15:38,313 INFO [qtp1606286799-52] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:15:41,116 INFO [qtp1606286799-52] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=Activo, fechaInicio=, fechaFin=, total=1
+2024-11-16 12:15:44,853 INFO [qtp1606286799-49] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=Inactivo, fechaInicio=, fechaFin=, total=6
+2024-11-16 12:15:55,836 INFO [qtp1606286799-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario activado: ID = 2
+2024-11-16 12:15:55,838 INFO [qtp1606286799-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario activado: ID = 3
+2024-11-16 12:15:55,843 INFO [qtp1606286799-49] c.p.c.a.c.EstadoComentarioServlet [EstadoComentarioServlet.java : 49] -- Comentario activado: ID = 4
+2024-11-16 12:15:56,834 INFO [qtp1606286799-38] c.p.c.a.c.ComentariosServlet [ComentariosServlet.java : 44] -- Comentarios filtrados: estado=null, fechaInicio=null, fechaFin=null, total=7
+2024-11-16 12:16:00,618 INFO [qtp1606286799-38] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:16:07,026 INFO [qtp1606286799-36] c.p.c.a.Slider.EliminarSliderServlet [EliminarSliderServlet.java : 44] -- Slider desactivado: ID = 6
+2024-11-16 12:16:07,927 INFO [qtp1606286799-47] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:51:38,205 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 12:51:38,350 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 12:51:38,409 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@2dfaea86{/,null,AVAILABLE}
+2024-11-16 12:51:38,514 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@7161d8d1{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 12:51:38,561 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@6e9a5ed8{HTTP/1.1, (http/1.1)}{0.0.0.0:52769}
+2024-11-16 12:51:38,561 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@d9345cd{STARTING}[11.0.7,sto=0] @2790ms
+2024-11-16 12:51:57,396 INFO [qtp547201549-47] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 12:52:02,006 INFO [qtp547201549-42] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:52:05,351 INFO [qtp547201549-42] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 43] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 12:52:29,941 WARN [qtp547201549-47] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 88] -- Intento de actualizar slider con datos inválidos: Cannot parse null string
+2024-11-16 12:52:29,953 INFO [qtp547201549-39] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:52:33,514 WARN [qtp547201549-47] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 88] -- Intento de actualizar slider con datos inválidos: Cannot parse null string
+2024-11-16 12:52:33,522 INFO [qtp547201549-39] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:55:16,967 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 12:55:17,065 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 12:55:17,125 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@6d60fe40{/,null,AVAILABLE}
+2024-11-16 12:55:17,227 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@65c7a252{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 12:55:17,253 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@248e319b{HTTP/1.1, (http/1.1)}{0.0.0.0:53042}
+2024-11-16 12:55:17,253 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@58695725{STARTING}[11.0.7,sto=0] @2337ms
+2024-11-16 12:55:35,508 INFO [qtp1237825806-38] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 12:55:38,390 INFO [qtp1237825806-37] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:55:41,215 INFO [qtp1237825806-38] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 43] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 12:57:00,603 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 12:57:00,783 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 12:57:00,854 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@45385f75{/,null,AVAILABLE}
+2024-11-16 12:57:01,002 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@792b749c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 12:57:01,027 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@480d3575{HTTP/1.1, (http/1.1)}{0.0.0.0:53187}
+2024-11-16 12:57:01,028 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e9175d8{STARTING}[11.0.7,sto=0] @2209ms
+2024-11-16 12:57:14,038 INFO [qtp1565740893-42] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 12:57:16,728 INFO [qtp1565740893-47] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:57:19,423 INFO [qtp1565740893-44] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 43] -- Se ha cargado el formulario de edición para el slider con ID: 3
+2024-11-16 12:57:28,330 WARN [qtp1565740893-47] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 88] -- Intento de actualizar slider con datos inválidos: Cannot parse null string
+2024-11-16 12:57:28,345 INFO [qtp1565740893-44] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:57:53,778 INFO [qtp1565740893-42] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 43] -- Se ha cargado el formulario de edición para el slider con ID: 3
+2024-11-16 12:57:59,667 WARN [qtp1565740893-31] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 88] -- Intento de actualizar slider con datos inválidos: Cannot parse null string
+2024-11-16 12:57:59,681 INFO [qtp1565740893-47] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:58:28,379 INFO [qtp1565740893-45] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 43] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 12:58:33,512 WARN [qtp1565740893-44] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 88] -- Intento de actualizar slider con datos inválidos: Cannot parse null string
+2024-11-16 12:58:33,525 INFO [qtp1565740893-31] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:58:36,930 INFO [qtp1565740893-44] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 43] -- Se ha cargado el formulario de edición para el slider con ID: 7
+2024-11-16 12:58:42,023 WARN [qtp1565740893-42] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 88] -- Intento de actualizar slider con datos inválidos: Cannot parse null string
+2024-11-16 12:58:42,039 INFO [qtp1565740893-31] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:59:11,437 INFO [qtp1565740893-47] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 43] -- Se ha cargado el formulario de edición para el slider con ID: 7
+2024-11-16 12:59:21,428 WARN [qtp1565740893-45] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 88] -- Intento de actualizar slider con datos inválidos: Cannot parse null string
+2024-11-16 12:59:21,440 INFO [qtp1565740893-42] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 12:59:31,630 INFO [qtp1565740893-44] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 43] -- Se ha cargado el formulario de edición para el slider con ID: 7
+2024-11-16 12:59:38,766 WARN [qtp1565740893-45] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 88] -- Intento de actualizar slider con datos inválidos: Cannot parse null string
+2024-11-16 12:59:38,776 INFO [qtp1565740893-44] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 13:07:00,761 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 13:07:00,865 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 13:07:00,929 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@3feb2dda{/,null,AVAILABLE}
+2024-11-16 13:07:01,120 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@795509d9{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 13:07:01,176 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@31ea9581{HTTP/1.1, (http/1.1)}{0.0.0.0:53944}
+2024-11-16 13:07:01,177 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6bd61f98{STARTING}[11.0.7,sto=0] @2105ms
+2024-11-16 13:07:19,188 INFO [qtp224100622-38] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 13:07:21,598 INFO [qtp224100622-37] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 13:07:23,662 INFO [qtp224100622-38] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 43] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 13:07:48,450 INFO [qtp224100622-49] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 72] -- Parámetros recibidos: id = null, titulo = null, eslogan = null, fechaInicio = null, fechaFin = null
+2024-11-16 13:07:48,450 WARN [qtp224100622-49] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 97] -- Intento de actualizar slider con datos inválidos: Faltan campos requeridos.
+2024-11-16 13:07:48,459 INFO [qtp224100622-50] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 13:10:44,828 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 13:10:44,988 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 13:10:45,046 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@45385f75{/,null,AVAILABLE}
+2024-11-16 13:10:45,174 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@792b749c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 13:10:45,193 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@480d3575{HTTP/1.1, (http/1.1)}{0.0.0.0:54217}
+2024-11-16 13:10:45,194 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e9175d8{STARTING}[11.0.7,sto=0] @1777ms
+2024-11-16 13:11:02,351 INFO [qtp1565740893-33] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 13:11:04,848 INFO [qtp1565740893-34] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 13:11:07,680 INFO [qtp1565740893-44] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 43] -- Se ha cargado el formulario de edición para el slider con ID: 3
+2024-11-16 13:11:11,505 INFO [qtp1565740893-34] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 71] -- Parámetros recibidos: id = null, titulo = null, eslogan = null, fechaInicio = null, fechaFin = null
+2024-11-16 13:11:11,505 WARN [qtp1565740893-34] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 76] -- Faltan campos requeridos: idParam=null, titulo=null, eslogan=null, fechaInicioStr=null, fechaFinStr=null
+2024-11-16 13:11:38,928 INFO [qtp1565740893-45] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 71] -- Parámetros recibidos: id = null, titulo = null, eslogan = null, fechaInicio = null, fechaFin = null
+2024-11-16 13:11:38,928 WARN [qtp1565740893-45] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 76] -- Faltan campos requeridos: idParam=null, titulo=null, eslogan=null, fechaInicioStr=null, fechaFinStr=null
+2024-11-16 14:17:09,663 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 14:17:09,833 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 14:17:09,942 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@2dfaea86{/,null,AVAILABLE}
+2024-11-16 14:17:10,133 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@7161d8d1{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 14:17:10,169 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@6e9a5ed8{HTTP/1.1, (http/1.1)}{0.0.0.0:58298}
+2024-11-16 14:17:10,170 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@d9345cd{STARTING}[11.0.7,sto=0] @3570ms
+2024-11-16 14:17:32,022 INFO [qtp547201549-49] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 14:17:36,159 INFO [qtp547201549-36] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 14:17:39,472 INFO [qtp547201549-39] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 14:17:43,614 INFO [qtp547201549-50] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 77] -- Parámetros recibidos: id = 1, titulo = Solo por , eslogan = Hasta un 50% de descuento en POLOS de hombre., fechaInicio = 2024-11-16, fechaFin = 2024-11-19
+2024-11-16 14:17:43,697 INFO [qtp547201549-50] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 98] -- Slider actualizado exitosamente: ID = 1
+2024-11-16 14:17:45,381 INFO [qtp547201549-39] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 14:17:57,092 INFO [qtp547201549-47] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 14:18:13,881 INFO [qtp547201549-52] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 77] -- Parámetros recibidos: id = 1, titulo = Solo por hoy hoy, eslogan = Hasta un 90% de descuento en ACITES de hombre., fechaInicio = 2024-11-16, fechaFin = 2024-11-19
+2024-11-16 14:18:13,895 INFO [qtp547201549-52] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 98] -- Slider actualizado exitosamente: ID = 1
+2024-11-16 14:18:15,317 INFO [qtp547201549-36] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 14:18:19,887 INFO [qtp547201549-39] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 14:18:31,453 INFO [qtp547201549-49] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 77] -- Parámetros recibidos: id = 1, titulo = Solo por hoy hoy, eslogan = Hasta un 90% de descuento en ACITES de hombre., fechaInicio = 2024-11-15, fechaFin = 2024-11-18
+2024-11-16 14:18:31,454 WARN [qtp547201549-49] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 102] -- Error de validación al actualizar slider: La nueva fecha de inicio debe ser posterior a la fecha actual registrada
+2024-11-16 14:18:41,844 INFO [qtp547201549-47] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 77] -- Parámetros recibidos: id = 1, titulo = Solo por hoy hoy, eslogan = Hasta un 90% de descuento en ACITES de hombre., fechaInicio = 2024-11-17, fechaFin = 2024-11-18
+2024-11-16 14:18:41,863 INFO [qtp547201549-47] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 98] -- Slider actualizado exitosamente: ID = 1
+2024-11-16 14:18:43,232 INFO [qtp547201549-50] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 14:18:48,294 INFO [qtp547201549-36] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 14:19:02,542 INFO [qtp547201549-39] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 77] -- Parámetros recibidos: id = 1, titulo = Solo por hoy hoy, eslogan = Hasta un 90% de descuento en ACITES de hombre., fechaInicio = 2024-11-17, fechaFin = 2024-11-18
+2024-11-16 14:19:02,565 INFO [qtp547201549-39] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 98] -- Slider actualizado exitosamente: ID = 1
+2024-11-16 14:19:03,778 INFO [qtp547201549-50] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 14:19:06,226 INFO [qtp547201549-50] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 14:19:13,922 INFO [qtp547201549-50] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 14:19:16,946 INFO [qtp547201549-49] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 4
+2024-11-16 14:19:18,623 INFO [qtp547201549-49] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 14:28:01,593 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 14:28:01,932 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 14:28:02,264 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@45385f75{/,null,AVAILABLE}
+2024-11-16 14:28:02,630 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@792b749c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 14:28:02,684 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@480d3575{HTTP/1.1, (http/1.1)}{0.0.0.0:59073}
+2024-11-16 14:28:02,685 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e9175d8{STARTING}[11.0.7,sto=0] @3449ms
+2024-11-16 14:28:20,000 INFO [qtp1565740893-32] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 14:28:24,804 INFO [qtp1565740893-44] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 14:28:27,067 INFO [qtp1565740893-33] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 14:28:30,693 INFO [qtp1565740893-30] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 14:28:42,177 INFO [qtp1565740893-42] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 14:28:44,546 INFO [qtp1565740893-33] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 14:29:27,523 INFO [qtp1565740893-45] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 14:29:29,662 INFO [qtp1565740893-45] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 3
+2024-11-16 14:29:31,713 INFO [qtp1565740893-44] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 14:29:33,884 INFO [qtp1565740893-42] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 4
+2024-11-16 14:56:08,913 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 14:56:09,071 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 14:56:09,156 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@65987993{/,null,AVAILABLE}
+2024-11-16 14:56:09,325 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@2ddc9a9f{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 14:56:09,362 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@350aac89{HTTP/1.1, (http/1.1)}{0.0.0.0:60895}
+2024-11-16 14:56:09,363 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@434a63ab{STARTING}[11.0.7,sto=0] @3342ms
+2024-11-16 14:56:25,952 INFO [qtp1432536094-36] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 14:56:29,595 INFO [qtp1432536094-40] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 14:56:33,804 INFO [qtp1432536094-37] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 14:56:56,927 INFO [qtp1432536094-51] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 14:57:09,586 INFO [qtp1432536094-50] c.p.c.a.Slider.EliminarSliderServlet [EliminarSliderServlet.java : 44] -- Slider desactivado: ID = 7
+2024-11-16 14:57:10,847 INFO [qtp1432536094-36] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 14:57:49,288 INFO [qtp1432536094-51] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=6
+2024-11-16 14:57:56,725 INFO [qtp1432536094-50] c.p.c.a.v.BuscarVarianteServlet [BuscarVarianteServlet.java : 43] -- Variante encontrada: LM236
+2024-11-16 14:58:26,706 INFO [qtp1432536094-49] c.p.c.a.Slider.AgregarSliderServlet [AgregarSliderServlet.java : 76] -- Tipo de relación seleccionado: variante
+2024-11-16 14:58:26,758 INFO [qtp1432536094-49] c.p.c.a.Slider.AgregarSliderServlet [AgregarSliderServlet.java : 84] -- Slider agregado: Título = Solo por hoy
+2024-11-16 14:58:29,208 INFO [qtp1432536094-49] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=7
+2024-11-16 14:59:02,570 INFO [qtp1432536094-51] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=, estado=Activo, total=4
+2024-11-16 14:59:04,711 INFO [qtp1432536094-49] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 3
+2024-11-16 14:59:10,163 INFO [qtp1432536094-36] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=7
+2024-11-16 14:59:12,209 INFO [qtp1432536094-36] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 14:59:15,290 WARN [qtp1432536094-50] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 94] -- Error de validación al actualizar slider: No se puede activar un slider con fecha de inicio futura
+2024-11-16 14:59:27,934 INFO [qtp1432536094-47] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 90] -- Slider actualizado exitosamente: ID = 1
+2024-11-16 14:59:29,224 INFO [qtp1432536094-36] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=7
+2024-11-16 15:04:32,933 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 15:04:33,096 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 15:04:33,176 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@61c4eee0{/,null,AVAILABLE}
+2024-11-16 15:04:33,366 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@2794eab6{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 15:04:33,454 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@202b0582{HTTP/1.1, (http/1.1)}{0.0.0.0:61528}
+2024-11-16 15:04:33,455 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@58d75e99{STARTING}[11.0.7,sto=0] @3336ms
+2024-11-16 15:04:50,884 INFO [qtp454305524-38] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 15:04:54,686 INFO [qtp454305524-51] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=7
+2024-11-16 15:05:10,857 INFO [qtp454305524-52] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=7
+2024-11-16 15:05:17,687 INFO [qtp454305524-52] c.p.c.a.v.BuscarVarianteServlet [BuscarVarianteServlet.java : 43] -- Variante encontrada: LM236
+2024-11-16 15:05:27,842 INFO [qtp454305524-36] c.p.c.a.Slider.AgregarSliderServlet [AgregarSliderServlet.java : 76] -- Tipo de relación seleccionado: variante
+2024-11-16 15:05:27,863 WARN [qtp454305524-36] c.p.c.a.Slider.AgregarSliderServlet [AgregarSliderServlet.java : 89] -- Error de validación al agregar slider: Ya existe un slider para esta variante.
+2024-11-16 15:05:35,402 INFO [qtp454305524-53] c.p.c.a.v.BuscarVarianteServlet [BuscarVarianteServlet.java : 43] -- Variante encontrada: LM2526
+2024-11-16 15:05:45,242 INFO [qtp454305524-37] c.p.c.a.Slider.AgregarSliderServlet [AgregarSliderServlet.java : 76] -- Tipo de relación seleccionado: variante
+2024-11-16 15:05:45,275 WARN [qtp454305524-37] c.p.c.a.Slider.AgregarSliderServlet [AgregarSliderServlet.java : 89] -- Error de validación al agregar slider: La fecha de inicio debe ser igual o posterior a la fecha actual
+2024-11-16 15:05:54,872 INFO [qtp454305524-52] c.p.c.a.Slider.AgregarSliderServlet [AgregarSliderServlet.java : 76] -- Tipo de relación seleccionado: variante
+2024-11-16 15:05:54,933 INFO [qtp454305524-52] c.p.c.a.Slider.AgregarSliderServlet [AgregarSliderServlet.java : 84] -- Slider agregado: Título = Solo por hoy
+2024-11-16 15:05:57,846 INFO [qtp454305524-52] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=8
+2024-11-16 15:06:04,710 INFO [qtp454305524-36] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 9
+2024-11-16 15:06:08,775 WARN [qtp454305524-36] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 94] -- Error de validación al actualizar slider: La fecha de inicio debe ser igual o posterior a la fecha actual
+2024-11-16 15:06:15,741 INFO [qtp454305524-53] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 90] -- Slider actualizado exitosamente: ID = 9
+2024-11-16 15:06:17,304 INFO [qtp454305524-52] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=8
+2024-11-16 15:06:28,171 INFO [qtp454305524-53] c.p.c.a.Slider.EliminarSliderServlet [EliminarSliderServlet.java : 44] -- Slider desactivado: ID = 9
+2024-11-16 15:06:29,247 INFO [qtp454305524-37] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=8
+2024-11-16 15:17:42,038 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 15:17:42,302 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 15:17:42,501 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@609e8838{/,null,AVAILABLE}
+2024-11-16 15:17:42,772 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@537f60bf{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 15:17:42,839 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@76b1e9b8{HTTP/1.1, (http/1.1)}{0.0.0.0:62433}
+2024-11-16 15:17:42,840 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@1af2d44a{STARTING}[11.0.7,sto=0] @8063ms
+2024-11-16 15:17:57,769 INFO [qtp1029472813-36] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 15:18:01,098 INFO [qtp1029472813-49] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=8
+2024-11-16 15:18:05,530 ERROR [qtp1029472813-47] c.p.c.a.Slider.EliminarSliderServlet [EliminarSliderServlet.java : 72] -- Error al desactivar slider: Cannot parse null string
+java.lang.NumberFormatException: Cannot parse null string
+	at java.base/java.lang.Integer.parseInt(Integer.java:624)
+	at java.base/java.lang.Integer.parseInt(Integer.java:778)
+	at com.pe.controller.administrador.Slider.EliminarSliderServlet.doPost(EliminarSliderServlet.java:67)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:520)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:587)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:764)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:508)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1571)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:221)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1375)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:176)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:463)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1544)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:174)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1297)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:129)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:122)
+	at org.eclipse.jetty.server.Server.handle(Server.java:562)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$0(HttpChannel.java:418)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:675)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:410)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:282)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:319)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:100)
+	at org.eclipse.jetty.io.SocketChannelEndPoint$1.run(SocketChannelEndPoint.java:101)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.runTask(AdaptiveExecutionStrategy.java:412)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.consumeTask(AdaptiveExecutionStrategy.java:381)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.tryProduce(AdaptiveExecutionStrategy.java:268)
+	at org.eclipse.jetty.util.thread.strategy.AdaptiveExecutionStrategy.lambda$new$0(AdaptiveExecutionStrategy.java:138)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:407)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:894)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1038)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-11-16 15:18:08,228 INFO [qtp1029472813-36] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=8
+2024-11-16 15:18:12,558 INFO [qtp1029472813-51] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 15:18:21,854 WARN [qtp1029472813-37] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 94] -- Error de validación al actualizar slider: La fecha de inicio debe ser igual o posterior a la fecha actual
+2024-11-16 15:18:57,985 INFO [qtp1029472813-47] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 90] -- Slider actualizado exitosamente: ID = 1
+2024-11-16 15:18:59,255 INFO [qtp1029472813-49] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=8
+2024-11-16 15:19:30,885 INFO [qtp1029472813-49] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=8
+2024-11-16 15:19:40,159 INFO [qtp1029472813-36] c.p.c.a.v.BuscarVarianteServlet [BuscarVarianteServlet.java : 43] -- Variante encontrada: LM3057
+2024-11-16 15:19:56,599 INFO [qtp1029472813-47] c.p.c.a.Slider.AgregarSliderServlet [AgregarSliderServlet.java : 76] -- Tipo de relación seleccionado: variante
+2024-11-16 15:19:56,640 INFO [qtp1029472813-47] c.p.c.a.Slider.AgregarSliderServlet [AgregarSliderServlet.java : 84] -- Slider agregado: Título = Solo por hoy
+2024-11-16 15:19:59,054 INFO [qtp1029472813-49] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=9
+2024-11-16 15:20:10,770 INFO [qtp1029472813-37] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 10
+2024-11-16 15:20:17,348 INFO [qtp1029472813-36] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 90] -- Slider actualizado exitosamente: ID = 10
+2024-11-16 15:20:18,545 INFO [qtp1029472813-49] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=9
+2024-11-16 15:20:34,536 INFO [qtp1029472813-47] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 10
+2024-11-16 15:20:37,436 INFO [qtp1029472813-51] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 90] -- Slider actualizado exitosamente: ID = 10
+2024-11-16 15:20:38,695 INFO [qtp1029472813-36] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=9
+2024-11-16 15:20:48,250 INFO [qtp1029472813-37] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 8
+2024-11-16 15:20:55,918 WARN [qtp1029472813-51] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 94] -- Error de validación al actualizar slider: La fecha de inicio debe ser igual o posterior a la fecha actual
+2024-11-16 15:21:00,432 INFO [qtp1029472813-49] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 90] -- Slider actualizado exitosamente: ID = 8
+2024-11-16 15:21:01,539 INFO [qtp1029472813-37] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=9
+2024-11-16 15:23:03,793 INFO [main] org.eclipse.jetty.server.Server [Server.java : 383] -- jetty-11.0.7; built: 2021-10-06T19:59:39.004Z; git: 389a3587725d94cc2470ed06aa184c6e57fe9ce8; jvm 21.0.2+13-LTS
+2024-11-16 15:23:04,094 INFO [main] o.e.j.s.s.DefaultSessionIdManager [DefaultSessionIdManager.java : 332] -- Session workerName=node0
+2024-11-16 15:23:04,215 INFO [main] o.e.j.server.handler.ContextHandler [ContextHandler.java : 901] -- Started o.e.j.s.ServletContextHandler@45385f75{/,null,AVAILABLE}
+2024-11-16 15:23:04,484 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@792b749c{HTTP/1.1, (http/1.1)}{0.0.0.0:8081}
+2024-11-16 15:23:04,539 INFO [main] o.e.jetty.server.AbstractConnector [AbstractConnector.java : 360] -- Started ServerConnector@480d3575{HTTP/1.1, (http/1.1)}{0.0.0.0:62852}
+2024-11-16 15:23:04,540 INFO [main] org.eclipse.jetty.server.Server [Server.java : 438] -- Started Server@6e9175d8{STARTING}[11.0.7,sto=0] @3850ms
+2024-11-16 15:23:20,602 INFO [qtp1565740893-30] c.p.c.administrador.LoginServlet [LoginServlet.java : 38] -- Usuario autenticado exitosamente: sebastian1206@gmail.com
+2024-11-16 15:23:25,170 INFO [qtp1565740893-47] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=9
+2024-11-16 15:23:29,632 INFO [qtp1565740893-42] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 47] -- Se ha cargado el formulario de edición para el slider con ID: 1
+2024-11-16 15:23:39,417 WARN [qtp1565740893-44] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 94] -- Error de validación al actualizar slider: No se puede activar un slider con fecha de inicio futura
+2024-11-16 15:23:44,406 WARN [qtp1565740893-47] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 94] -- Error de validación al actualizar slider: No se puede activar un slider con fecha de inicio futura
+2024-11-16 15:23:52,598 WARN [qtp1565740893-31] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 94] -- Error de validación al actualizar slider: No se puede activar un slider con fecha de inicio futura
+2024-11-16 15:25:22,906 INFO [qtp1565740893-48] c.p.c.a.Slider.EditarSliderServlet [EditarSliderServlet.java : 90] -- Slider actualizado exitosamente: ID = 1
+2024-11-16 15:25:24,069 INFO [qtp1565740893-30] c.p.c.a.Slider.SlidersServlet [SlidersServlet.java : 44] -- Sliders filtrados: relacionarCon=null, estado=null, total=9

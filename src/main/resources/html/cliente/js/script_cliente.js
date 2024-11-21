@@ -4,19 +4,51 @@ function handleFormSubmission(formSelector) {
         form.addEventListener("submit", function (event) {
             event.preventDefault();
 
+            // Disable the submit button to prevent multiple clicks
+            const submitButton = this.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+
+            // Show loading alert immediately
+            let loadingTimer = setTimeout(() => {
+                Swal.fire({
+                    title: 'Por favor, espere',
+                    text: 'Estamos procesando su solicitud...',
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+            }, 2000);
+
             const formData = new FormData(this);
-            const data = new URLSearchParams(formData).toString();
+            const isMultipart = Array.from(formData.values()).some(value => value instanceof File);
             const actionUrl = this.action;
 
-            fetch(actionUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: data
-            })
+            const fetchOptions = isMultipart
+                ? {
+                    method: 'POST',
+                    body: formData
+                }
+                : {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams(formData).toString()
+                };
+
+            fetch(actionUrl, fetchOptions)
                 .then(response => response.json())
                 .then(data => {
+
+                    //
+                    clearTimeout(loadingTimer);
+
+                    // Close any open Swal if it was shown
+                    if (Swal.isVisible()) {
+                        Swal.close();
+                    }
+
                     if (data.tipoMensaje === 'success') {
                         Swal.fire({
                             icon: 'success',
@@ -42,7 +74,15 @@ function handleFormSubmission(formSelector) {
                         title: 'Error',
                         text: 'Error al procesar la solicitud.',
                     });
+                })   //;
+
+
+                .finally(() => {
+                    // Re-enable the submit button
+                    submitButton.disabled = false;
                 });
+
+
         });
     });
 }
@@ -53,25 +93,25 @@ function handleFormConfirmation(formSelector) {
         form.addEventListener("submit", function (event) {
             event.preventDefault();
 
-            const selectedComments = form.querySelectorAll('input[name="ids"]:checked');
-            if (selectedComments.length === 0) {
-                Swal.fire({
-                    icon: 'warning',
-                    title: 'Atención',
-                    text: 'Por favor, seleccione al menos un comentario.',
-                });
-                return;
-            }
-
-            const submitButton = document.activeElement;
-            const accion = submitButton.value;
-
             const actionUrl = form.action;
             const formData = new FormData();
-            selectedComments.forEach(checkbox => {
-                formData.append('ids', checkbox.value);
-            });
-            formData.append('accion', accion);
+
+            const selectedComments = form.querySelectorAll('input[name="ids"]:checked');
+
+            if (selectedComments.length > 0) {
+                const submitButton = document.activeElement;
+                const accion = submitButton.value;
+
+                selectedComments.forEach(checkbox => {
+                    formData.append('ids', checkbox.value);
+                });
+                formData.append('accion', accion);
+            } else {
+                const formFields = new FormData(form);
+                for (let [key, value] of formFields.entries()) {
+                    formData.append(key, value);
+                }
+            }
 
             fetch(actionUrl, {
                 method: 'POST',
@@ -97,34 +137,34 @@ function handleFormConfirmation(formSelector) {
                                 },
                                 body: new URLSearchParams(formData).toString()
                             })
-                            .then(response => response.json())
-                            .then(data => {
-                                if (data.tipoMensaje === 'success') {
-                                    Swal.fire({
-                                        icon: 'success',
-                                        title: 'Éxito',
-                                        text: data.mensaje,
-                                    }).then(() => {
-                                        if (data.redirectUrl) {
-                                            window.location.href = data.redirectUrl;
-                                        }
-                                    });
-                                } else if (data.tipoMensaje === 'error') {
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.tipoMensaje === 'success') {
+                                        Swal.fire({
+                                            icon: 'success',
+                                            title: 'Éxito',
+                                            text: data.mensaje,
+                                        }).then(() => {
+                                            if (data.redirectUrl) {
+                                                window.location.href = data.redirectUrl;
+                                            }
+                                        });
+                                    } else if (data.tipoMensaje === 'error') {
+                                        Swal.fire({
+                                            icon: 'error',
+                                            title: 'Error',
+                                            text: data.mensaje,
+                                        });
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Error:', error);
                                     Swal.fire({
                                         icon: 'error',
                                         title: 'Error',
-                                        text: data.mensaje,
+                                        text: 'Error al procesar la solicitud.',
                                     });
-                                }
-                            })
-                            .catch(error => {
-                                console.error('Error:', error);
-                                Swal.fire({
-                                    icon: 'error',
-                                    title: 'Error',
-                                    text: 'Error al procesar la solicitud.',
                                 });
-                            });
                         }
                     });
                 })

@@ -57,7 +57,7 @@ public class ClienteDAO {
             statement.setString(1, cliente.getCorreo());
             statement.setBytes(2, cliente.getContrasena());
             statement.setString(3, cliente.getDni());
-            statement.setString(4, cliente.getNombre()); // Ahora esto coincide con la consulta SQL
+            statement.setString(4, cliente.getNombre());
             statement.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Error al agregar cliente: " + e.getMessage());

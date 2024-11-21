@@ -2,13 +2,11 @@ package com.pe;
 
 import com.pe.controller.administrador.LoginServlet;
 import com.pe.controller.administrador.LogoutServlet;
+import com.pe.controller.administrador.Slider.*;
+import com.pe.controller.administrador.categorias.*;
 import com.pe.controller.administrador.comentarios.ComentariosServlet;
 import com.pe.controller.administrador.comentarios.EstadoComentarioServlet;
 import com.pe.controller.administrador.productos.ProductosServlet;
-import com.pe.controller.administrador.categorias.AgregarCategoriaServlet;
-import com.pe.controller.administrador.categorias.CategoriasServlet;
-import com.pe.controller.administrador.categorias.EditarCategoriaServlet;
-import com.pe.controller.administrador.categorias.EliminarCategoriaServlet;
 import com.pe.controller.administrador.productos.AgregarProductoServlet;
 import com.pe.controller.administrador.productos.BuscarProductoServlet;
 import com.pe.controller.administrador.productos.EditarProductoServlet;
@@ -17,10 +15,10 @@ import com.pe.controller.administrador.tamanios.EditarTamanioServlet;
 import com.pe.controller.administrador.tamanios.EliminarTamanioServlet;
 import com.pe.controller.administrador.tamanios.TamaniosServlet;
 import com.pe.controller.administrador.usuarios.*;
-import com.pe.controller.administrador.variantes.ActualizarStockServlet;
-import com.pe.controller.administrador.variantes.AgregarVarianteServlet;
-import com.pe.controller.administrador.variantes.EditarVarianteServlet;
-import com.pe.controller.administrador.variantes.VarianteProductoServlet;
+import com.pe.controller.administrador.usuarios.recuperarContraseña.CambiarContrasenaServlet;
+import com.pe.controller.administrador.usuarios.recuperarContraseña.RecuperarContrasenaServlet;
+import com.pe.controller.administrador.usuarios.recuperarContraseña.VerificarCodigoServlet;
+import com.pe.controller.administrador.variantes.*;
 import com.pe.controller.cliente.IndexClienteServlet;
 import com.pe.controller.cliente.LoginClienteServlet;
 import com.pe.controller.cliente.LogoutClienteServlet;
@@ -65,12 +63,25 @@ public class App {
             webserver.addServlet(ExportarUsuarioExcelServlet.class, "/usuario/exportar-excel");
             webserver.addServlet(ComentariosServlet.class, "/comentario/listar");
             webserver.addServlet(EstadoComentarioServlet.class, "/comentario/estado");
+            webserver.addServlet(AgregarSliderServlet.class, "/slider/agregar");
+            webserver.addServlet(BuscarCategoriaServlet.class, "/buscarCategoria");
+            webserver.addServlet(BuscarVarianteServlet.class, "/buscarVariante");
+            webserver.addServlet(BuscarProductServlet.class, "/buscarProduct");
+            webserver.addServlet(SlidersServlet.class, "/slider/listar");
+            webserver.addServlet(EliminarSliderServlet.class, "/slider/eliminar");
+            webserver.addServlet(EditarSliderServlet.class, "/slider/editar");
+
+            //servlet de recuperacion de contraseña
+            webserver.addServlet(RecuperarContrasenaServlet.class, "/recuperar/solicitar");
+            webserver.addServlet(VerificarCodigoServlet.class, "/recuperar/verificar");
+            webserver.addServlet(CambiarContrasenaServlet.class, "/recuperar/cambiar");
 
             //servlets de cliente
             webserver.addServlet(LoginClienteServlet.class, "/cliente/login");
             webserver.addServlet(IndexClienteServlet.class, "/cliente/");
             webserver.addServlet(RegistroClienteServlet.class, "/cliente/registro");
             webserver.addServlet(LogoutClienteServlet.class, "/cliente/logout");
+
 
             webserver.start();
             System.out.println("Servidor iniciado en http://localhost:8081");

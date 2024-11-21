@@ -59,6 +59,5 @@ public class LoginClienteServlet extends HttpServlet {
         }
 
         MensajeService.mensajeJson(response, mensaje.getTipoMensaje(), mensaje.getMensaje(), mensaje.getRedirectUrl());
-
     }
 }

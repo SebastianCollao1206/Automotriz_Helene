@@ -1,6 +1,7 @@
 package com.pe.controller.administrador.usuarios;
 
 import com.pe.controller.administrador.BaseServlet;
+import com.pe.model.administrador.entidad.PermisoUsuario;
 import com.pe.model.administrador.service.UsuarioService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -23,6 +24,11 @@ public class EliminarUsuarioServlet extends BaseServlet {
     @Override
     protected String getContentPage() {
         return "/lista_usuario.html";
+    }
+
+    @Override
+    protected PermisoUsuario getPermiso() {
+        return PermisoUsuario.SOLO_JEFE;
     }
 
     @Override

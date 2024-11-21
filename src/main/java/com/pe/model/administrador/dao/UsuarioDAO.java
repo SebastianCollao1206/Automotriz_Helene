@@ -73,6 +73,20 @@ public class UsuarioDAO {
         }
     }
 
+    public void actualizarContrasenaUsuario(Usuario usuario, String nuevaContrasena) throws SQLException {
+        String sql = "UPDATE usuario SET contrasena = ? WHERE id_usuario = ?";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setBytes(1, usuario.getContrasena()); // Already encrypted password
+            stmt.setInt(2, usuario.getIdUsuario());
+
+            int filasAfectadas = stmt.executeUpdate();
+            if (filasAfectadas == 0) {
+                throw new SQLException("No se pudo actualizar la contraseña, ID no encontrado");
+            }
+        }
+    }
+
     public void cerrarConexion() throws SQLException {
         if (connection != null && !connection.isClosed()) {
             connection.close();

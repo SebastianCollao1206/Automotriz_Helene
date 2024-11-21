@@ -1,6 +1,7 @@
 package com.pe.controller.administrador.productos;
 
 import com.pe.controller.administrador.BaseServlet;
+import com.pe.model.administrador.entidad.PermisoUsuario;
 import com.pe.model.administrador.entidad.Producto;
 import com.pe.model.administrador.service.ProductoService;
 import jakarta.servlet.ServletException;
@@ -24,7 +25,12 @@ public class BuscarProductoServlet extends BaseServlet {
 
     @Override
     protected String getContentPage() {
-        return "/agregar_variante.html";
+       return "/agregar_variante.html";
+    }
+
+    @Override
+    protected PermisoUsuario getPermiso() {
+        return PermisoUsuario.SOLO_TRABAJADOR;
     }
 
     @Override
@@ -39,15 +45,12 @@ public class BuscarProductoServlet extends BaseServlet {
                     request.setAttribute("productoId", producto.getIdProducto());
                     logger.info("Producto encontrado: {}", producto.getNombre());
                 } else {
-                    // Si no se encuentra, establecer un mensaje de error
                     request.setAttribute("mensajeError", "Producto no encontrado");
                     logger.warn("Producto no encontrado: {}", nombreProducto);
                 }
-//            } catch (SQLException e) {
-//                request.setAttribute("mensajeError", "Error al buscar el producto: " + e.getMessage());
-//                logger.error("Error al buscar el producto: {}", e.getMessage(), e);
-            } finally {
-
+            } catch (SQLException e) {
+                request.setAttribute("mensajeError", "Error al buscar el producto: " + e.getMessage());
+                logger.error("Error al buscar el producto: {}", e.getMessage(), e);
             }
         } else {
             request.setAttribute("mensajeError", "Por favor, ingresa un nombre de producto.");

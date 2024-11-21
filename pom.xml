@@ -79,11 +79,11 @@
       <version>33.3.0-jre</version>
     </dependency>
 
-    <!--APACHE COMMONS COMPRES-->
+    <!--APACHE COMMONS EMAIL-->
     <dependency>
       <groupId>org.apache.commons</groupId>
-      <artifactId>commons-compress</artifactId>
-      <version>1.27.1</version>
+      <artifactId>commons-email</artifactId>
+      <version>1.6.0</version>
     </dependency>
 
     <!--APACHE POI EXCEL-->

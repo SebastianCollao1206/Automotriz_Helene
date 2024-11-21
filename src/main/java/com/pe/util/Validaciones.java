@@ -4,6 +4,7 @@ import com.google.common.base.Preconditions;
 import com.pe.model.administrador.entidad.Variante;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.TreeSet;
 import java.util.regex.Pattern;
 
@@ -22,6 +23,7 @@ public class Validaciones {
     private static final Pattern PATRON_SOLO_LETRAS = Pattern.compile("^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$");
     private static final Pattern PATRON_CORREO = Pattern.compile("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
     private static final Pattern PATRON_CARACTERES_ESPECIALES = Pattern.compile("[<>\"'%;()&+]");
+    private static final Pattern PATRON_CARACTERES_ESPECIALES_CON_PORCENTAJE = Pattern.compile("[<>\"'();&+]");
     private static final Pattern PATRON_INYECCION_SQL = Pattern.compile("(?i).*(SELECT|INSERT|UPDATE|DELETE|DROP|UNION|ALTER|EXEC|--).*");
     private static final Pattern PATRON_PASSWORD_SEGURO = Pattern.compile("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$");
 
@@ -111,7 +113,7 @@ public class Validaciones {
         Preconditions.checkNotNull(descripcion, "La descripción no puede ser nula");
         Preconditions.checkArgument(!descripcion.isEmpty(), "La descripción no puede estar vacía");
         Preconditions.checkArgument(!PATRON_INYECCION_SQL.matcher(descripcion).matches(), "Entrada no válida detectada en la descripción");
-        Preconditions.checkArgument(!PATRON_CARACTERES_ESPECIALES.matcher(descripcion).find(), "La descripción contiene caracteres no permitidos");
+        Preconditions.checkArgument(!PATRON_CARACTERES_ESPECIALES_CON_PORCENTAJE.matcher(descripcion).find(), "La descripción contiene caracteres no permitidos");
     }
 
     public static void validarNombreCategoria(String nombre) {
@@ -129,6 +131,18 @@ public class Validaciones {
             Preconditions.checkArgument(variante.getCantidad() > 0, "La cantidad debe ser mayor a cero");
             Preconditions.checkArgument(validarRutaImagen(variante.getImagen()), "La imagen debe ser una ruta válida y no puede contener código malicioso");
         }
+    }
+
+    public static void validarFechaInicio(LocalDate fechaInicio) {
+        Preconditions.checkNotNull(fechaInicio, "La fecha de inicio no puede ser nula");
+        LocalDate fechaActual = LocalDate.now();
+        Preconditions.checkArgument(!fechaInicio.isBefore(fechaActual), "La fecha de inicio debe ser igual o posterior a la fecha actual");
+    }
+
+    public static void validarFechas(LocalDate fechaInicio, LocalDate fechaFin) {
+        Preconditions.checkNotNull(fechaInicio, "La fecha de inicio no puede ser nula");
+        Preconditions.checkNotNull(fechaFin, "La fecha de fin no puede ser nula");
+        Preconditions.checkArgument(!fechaInicio.isAfter(fechaFin), "La fecha de inicio no puede ser posterior a la fecha de fin");
     }
 
     private static boolean validarRutaImagen(String ruta) {

@@ -45,7 +45,7 @@ public class ProductoDAO {
             if (filasAfectadas > 0) {
                 try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
                     if (generatedKeys.next()) {
-                        return generatedKeys.getInt(1); // Retorna el ID del producto insertado
+                        return generatedKeys.getInt(1);
                     }
                 }
             }

@@ -3,6 +3,7 @@ package com.pe.controller.administrador.comentarios;
 import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.administrador.entidad.Mensaje;
 import com.pe.model.administrador.entidad.MensajeConfirmacion;
+import com.pe.model.administrador.entidad.PermisoUsuario;
 import com.pe.model.administrador.html.ComentarioHtml;
 import com.pe.model.administrador.service.ComentarioService;
 import com.pe.model.administrador.service.MensajeService;
@@ -10,7 +11,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -30,6 +30,11 @@ public class EstadoComentarioServlet extends BaseServlet {
     @Override
     protected String getContentPage() {
         return "/lista_comentario.html";
+    }
+
+    @Override
+    protected PermisoUsuario getPermiso() {
+        return PermisoUsuario.TODOS;
     }
 
     @Override

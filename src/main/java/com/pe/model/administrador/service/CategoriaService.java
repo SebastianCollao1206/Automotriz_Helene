@@ -2,6 +2,8 @@ package com.pe.model.administrador.service;
 
 import com.pe.model.administrador.dao.CategoriaDAO;
 import com.pe.model.administrador.entidad.Categoria;
+import com.pe.model.administrador.entidad.Producto;
+import com.pe.model.administrador.entidad.Variante;
 import com.pe.util.Validaciones;
 
 import java.sql.SQLException;
@@ -116,6 +118,14 @@ public class CategoriaService {
             nombresCategorias.add(categoria.getNombre());
         }
         return nombresCategorias;
+    }
+
+    public Categoria buscarCategoriaPorNombre(String nombre) throws SQLException {
+        String nombreBuscado = nombre.toLowerCase();
+        return categorias.stream()
+                .filter(categoria -> categoria.getNombre().toLowerCase().contains(nombreBuscado))
+                .findFirst()
+                .orElse(null);
     }
 
     private boolean existeCategoria(String nombre) {
