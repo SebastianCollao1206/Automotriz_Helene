@@ -19,10 +19,7 @@ import com.pe.controller.administrador.usuarios.recuperarContraseña.CambiarCont
 import com.pe.controller.administrador.usuarios.recuperarContraseña.RecuperarContrasenaServlet;
 import com.pe.controller.administrador.usuarios.recuperarContraseña.VerificarCodigoServlet;
 import com.pe.controller.administrador.variantes.*;
-import com.pe.controller.cliente.IndexClienteServlet;
-import com.pe.controller.cliente.LoginClienteServlet;
-import com.pe.controller.cliente.LogoutClienteServlet;
-import com.pe.controller.cliente.RegistroClienteServlet;
+import com.pe.controller.cliente.*;
 import com.pe.util.DBConnection;
 import com.pe.util.JettyUTP;
 
@@ -81,7 +78,12 @@ public class App {
             webserver.addServlet(IndexClienteServlet.class, "/cliente/");
             webserver.addServlet(RegistroClienteServlet.class, "/cliente/registro");
             webserver.addServlet(LogoutClienteServlet.class, "/cliente/logout");
-
+            webserver.addServlet(ProductosClienteServlet.class, "/cliente/productos");
+            webserver.addServlet(DetalleProductoClienteServlet.class, "/cliente/detalle-producto");
+            webserver.addServlet(CarritoServlet.class, "/cliente/carrito");
+            webserver.addServlet(EliminarItemCarritoServlet.class, "/cliente/carrito/eliminar");
+            webserver.addServlet(CompraServlet.class, "/cliente/compra");
+            webserver.addServlet(VerificarCompraServlet.class, "/cliente/verificar-compra");
 
             webserver.start();
             System.out.println("Servidor iniciado en http://localhost:8081");

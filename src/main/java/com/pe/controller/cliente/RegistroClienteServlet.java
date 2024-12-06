@@ -40,8 +40,11 @@ public class RegistroClienteServlet extends HttpServlet {
         String correo = request.getParameter("correo");
         String contrasena = request.getParameter("contrasena");
         String confirmPassword = request.getParameter("confirmPassword");
-        String dni = null;
-        String nombre = null;
+//        String dni = null;
+//        String nombre = null;
+
+        String dni = request.getParameter("hiddenDni");
+        String nombre = request.getParameter("customerName");
 
         Mensaje mensaje;
 

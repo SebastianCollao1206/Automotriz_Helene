@@ -1,0 +1,51 @@
+<main class="container py-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-11 gap-5">
+            <h2 class="text-center mb-5">Completar Pago</h2>
+            <form id="compraForm" method="post" action="/cliente/compra" class="ajax-form">
+                <div class="container row d-flex justify-content-center">
+                    <div class="col-md-6 ">
+                        <div class="mb-4">
+                            <label for="paymentMethod" class="form-label">Método de Pago</label>
+                            <select class="form-select" id="paymentMethod" name="paymentMethod" required>
+                                <option value="" style="display: none;">Seleccionar método de pago</option>
+                                ${metodosPagoOptions}
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label for="pickupDate" class="form-label">Fecha de Recojo</label>
+                            <input type="date" class="form-control" id="pickupDate" name="pickupDate" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="totalAmount" class="form-label">Total a Pagar</label>
+                            <div class="input-group">
+                                <span class="input-group-text">S/</span>
+                                <input type="text" class="form-control total-compra" name="totalCarrito" id="totalAmount" value="${totalCarrito}" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 d-none d-md-block">
+                        <div class="d-flex justify-content-center">
+                            <img style="max-width: 430px;"
+                                 src="https://img.freepik.com/vector-premium/dos-personas-ayudan-tercera-persona-completar-pago-escaneando-codigo-qr-oficina-v-realizan-transaccion-pago-escaniando-codigo-qr_538213-140085.jpg"
+                                 alt="">
+                        </div>
+                    </div>
+                    <div class="row mt-4 mb-3 gap-5 d-flex justify-content-center">
+                        <div class="col-md-5 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-danger w-75 w-sm-100">
+                                Procesar Compra <i class="bi bi-cart-fill ms-3"></i>
+                            </button>
+                        </div>
+                        <div class="col-md-5 d-flex justify-content-center">
+                            <button type="button" class="btn btn-outline-secondary w-75" onclick="window.history.back();">
+                                <i class="bi bi-arrow-left me-3"></i>Volver
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>

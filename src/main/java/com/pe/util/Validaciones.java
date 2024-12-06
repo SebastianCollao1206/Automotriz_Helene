@@ -133,6 +133,15 @@ public class Validaciones {
         }
     }
 
+    public static void validarFechaRecojo(LocalDate fechaRecojo) {
+        Preconditions.checkNotNull(fechaRecojo, "La fecha de recojo no puede ser nula");
+        LocalDate fechaActual = LocalDate.now();
+        LocalDate fechaLimite = fechaActual.plusDays(7);
+
+        Preconditions.checkArgument(!fechaRecojo.isBefore(fechaActual), "La fecha de recojo debe ser igual o posterior a la fecha actual");
+        Preconditions.checkArgument(!fechaRecojo.isAfter(fechaLimite), "La fecha de recojo no puede ser posterior a 7 días a partir de la fecha actual");
+    }
+
     public static void validarFechaInicio(LocalDate fechaInicio) {
         Preconditions.checkNotNull(fechaInicio, "La fecha de inicio no puede ser nula");
         LocalDate fechaActual = LocalDate.now();

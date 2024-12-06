@@ -1,9 +1,12 @@
 package com.pe.controller.cliente;
 
 import com.pe.controller.administrador.BaseServlet;
+import com.pe.model.administrador.entidad.Comentario;
 import com.pe.model.administrador.entidad.Slider;
 import com.pe.model.administrador.html.IndexHtml;
+import com.pe.model.administrador.service.ComentarioService;
 import com.pe.model.administrador.service.SliderService;
+import com.pe.model.cliente.service.ClienteService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -30,19 +33,23 @@ public class IndexClienteServlet extends BaseClientServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         try {
             SliderService sliderService = new SliderService();
+            ComentarioService comentarioService = new ComentarioService();
+            ClienteService clienteService = new ClienteService();
+
             TreeSet<Slider> slidersActivos = sliderService.cargarSlidersActivos();
-            String htmlTemplate = new String(Files.readAllBytes(Paths.get("src/main/resources/html/cliente/index.html")));
-            String slidersHtml = IndexHtml.generarHtmlSliderCliente(slidersActivos);
-            htmlTemplate = htmlTemplate.replace("${sliders}", slidersHtml);
+            TreeSet<Comentario> comentariosActivos = comentarioService.cargarComentariosActivos();
+
+            String htmlTemplate = IndexHtml.generarHtmlCompleto(slidersActivos, comentariosActivos, clienteService);
+
             request.setAttribute("content", htmlTemplate);
 
             super.doGet(request, response);
 
-            logger.info("Generado HTML de index con {} sliders activos", slidersActivos.size());
+            logger.info("Generado HTML de index con {} sliders activos y {} comentarios activos",
+                    slidersActivos.size(), comentariosActivos.size());
         } catch (SQLException e) {
-            logger.error("Error al cargar sliders", e);
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error al cargar sliders");
+            logger.error("Error al cargar datos para index", e);
+            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error al cargar datos");
         }
     }
-
 }

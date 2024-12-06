@@ -1,0 +1,39 @@
+<main>
+    <article>
+        <section>
+            <div class="row mt-4 mx-0">
+                <div class="col-md-3 d-flex justify-content-center">
+                    <div class="accordion sticky-producto" id="accordion">
+                        <div class="accordion-item border-0">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed border-0" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                        aria-controls="collapseOne">
+                                    <span class="categorias fs-4">Categorías</span>
+                                </button>
+                            </h2>
+                            ${categorias}
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-12 col-md-8 text-center text-md-start">
+                            ${titulo}
+                        </div>
+                        ${ordenamiento}
+                    </div>
+
+                    ${productos}
+
+                    <!--PAGINACION-->
+                    ${paginacion}
+
+                </div>
+            </div>
+            </div>
+        </section>
+    </article>
+</main>

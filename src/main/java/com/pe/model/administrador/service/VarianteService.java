@@ -143,4 +143,61 @@ public class VarianteService {
     private boolean existeVariante(Variante variante) {
         return variantes.stream().anyMatch(v -> v.getCodigo().equalsIgnoreCase(variante.getCodigo()));
     }
+
+    public Variante encontrarVarianteConStock(Producto producto) {
+        TreeSet<Variante> variantes = obtenerVariantesPorProducto(producto.getIdProducto());
+        return variantes.stream()
+                .filter(v -> v.getStock() > 1)
+                .findFirst()
+                .orElse(null);
+    }
+
+    public TreeSet<Producto> ordenarProductosPorPrecio(TreeSet<Producto> productos, boolean mayorAMenor) {
+        TreeSet<Producto> productosOrdenados = new TreeSet<>((p1, p2) -> {
+            BigDecimal precio1 = encontrarVarianteConStock(p1).getPrecio();
+            BigDecimal precio2 = encontrarVarianteConStock(p2).getPrecio();
+            int comparacion = mayorAMenor ?
+                    precio2.compareTo(precio1) :
+                    precio1.compareTo(precio2);
+            if (comparacion == 0) {
+                return p1.getIdProducto() - p2.getIdProducto();
+            }
+            return comparacion;
+        });
+
+        productos.stream()
+                .filter(producto -> encontrarVarianteConStock(producto) != null)
+                .forEach(productosOrdenados::add);
+
+        return productosOrdenados;
+    }
+
+    //metodo nuevo
+    public void quitarStock(int idVariante, int cantidad) throws SQLException {
+        try {
+            // Obtener la variante correspondiente al idVariante
+            Variante variante = obtenerVariantePorId(idVariante);
+
+            // Verificar que la variante exista
+            if (variante == null) {
+                throw new IllegalArgumentException("No se encontró la variante con ID: " + idVariante);
+            }
+
+            // Calcular el nuevo stock después de quitar la cantidad
+            int nuevoStock = variante.getStock() - cantidad;
+
+            // Verificar que el nuevo stock no sea negativo
+            if (nuevoStock < 0) {
+                throw new IllegalArgumentException("No hay suficiente stock para realizar la compra.");
+            }
+
+            // Actualizar el stock en la variante
+            variante.setStock(nuevoStock);
+
+            // Actualizar el stock en la base de datos
+            varianteDAO.actualizarStock(idVariante, nuevoStock);
+        } catch (SQLException e) {
+            throw new SQLException("Error en el servicio al quitar el stock: " + e.getMessage(), e);
+        }
+    }
 }

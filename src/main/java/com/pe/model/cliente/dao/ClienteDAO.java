@@ -36,22 +36,7 @@ public class ClienteDAO {
         }
     }
 
-//    public void agregarCliente(Cliente cliente) throws SQLException {
-//        String sql = "INSERT INTO cliente (correo, contrasena, fecha_registro, dni, nombre) VALUES (?, ?, NOW(), ?)";
-//        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-//            statement.setString(1, cliente.getCorreo());
-//            statement.setBytes(2, cliente.getContrasena());
-//            statement.setString(3, cliente.getDni());
-//            statement.setString(4, cliente.getNombre());
-//            statement.executeUpdate();
-//        } catch (SQLException e) {
-//            System.err.println("Error al agregar cliente: " + e.getMessage());
-//            throw e;
-//        }
-//    }
-
     public void agregarCliente(Cliente cliente) throws SQLException {
-        // Asegúrate de que la consulta SQL tenga los cinco marcadores de posición
         String sql = "INSERT INTO cliente (correo, contrasena, fecha_registro, dni, nombre) VALUES (?, ?, NOW(), ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, cliente.getCorreo());
@@ -61,6 +46,19 @@ public class ClienteDAO {
             statement.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Error al agregar cliente: " + e.getMessage());
+            throw e;
+        }
+    }
+
+    public void actualizarCliente(Cliente cliente) throws SQLException {
+        String sql = "UPDATE cliente SET dni = ?, nombre = ? WHERE correo = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, cliente.getDni());
+            statement.setString(2, cliente.getNombre());
+            statement.setString(3, cliente.getCorreo());
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            System.err.println("Error al actualizar cliente: " + e.getMessage());
             throw e;
         }
     }

@@ -1,6 +1,8 @@
 package com.pe.model.cliente.html;
 
 import com.pe.model.cliente.entidad.Cliente;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -17,8 +19,17 @@ public class ClienteHtml {
         return html.toString();
     }
 
-    public static String generarHeader(Cliente cliente) throws IOException {
+    public static String generarHeader(Cliente cliente, HttpServletRequest request) throws IOException {
         String headerHtml = new String(Files.readAllBytes(Paths.get("src/main/resources/html/cliente/estatic/header.html")));
+
+        HttpSession session = request.getSession(true);
+        Integer cartCounter = (Integer) session.getAttribute("cartCounter");
+        int cantidad = cartCounter != null ? cartCounter : 0;
+
+        headerHtml = headerHtml.replace(
+                "${cartCounter}",
+                String.valueOf(cantidad)
+        );
 
         if (cliente != null) {
             String userCircleHtml = String.format(
@@ -43,6 +54,7 @@ public class ClienteHtml {
         }
         return headerHtml;
     }
+
     public static String generarFooter() throws IOException {
         return new String(Files.readAllBytes(Paths.get("src/main/resources/html/cliente/estatic/footer.html")));
     }

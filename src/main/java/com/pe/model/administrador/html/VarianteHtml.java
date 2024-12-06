@@ -98,7 +98,9 @@ public class VarianteHtml {
 
                 filas.append("<tr>")
                         .append("<td>").append(variante.getCodigo()).append("</td>")
+
                         .append("<td><img src='").append(variante.getImagen()).append("' alt='").append(variante.getCodigo()).append("' class='border-0 img-thumbnail' style='width: 50px;'></td>")
+
                         .append("<td>$").append(variante.getPrecio()).append("</td>")
                         .append("<td>")
                         .append("<div class='d-flex align-items-center justify-content-center'>")

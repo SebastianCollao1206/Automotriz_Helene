@@ -10,7 +10,9 @@ import jakarta.servlet.http.HttpServletRequest;
 
 import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 public class ProductoService {
     private final ProductoDAO productoDAO;
@@ -164,5 +166,31 @@ public class ProductoService {
             }
         }
         return productosPorCategoria;
+    }
+
+    public TreeSet<Producto> obtenerProductosPorCategoriaOTodos(String categoriaId) throws SQLException {
+        if (categoriaId != null && !categoriaId.isEmpty()) {
+            return obtenerProductosPorCategoria(Integer.parseInt(categoriaId));
+        } else {
+            return getProductos();
+        }
+    }
+
+    public static List<Producto> filtrarProductosDisponibles(TreeSet<Producto> productos, VarianteService varianteService) {
+        return productos.stream()
+                .filter(p -> tieneVariantesDisponibles(p, varianteService))
+                .collect(Collectors.toList());
+    }
+
+    public static boolean tieneVariantesDisponibles(Producto producto, VarianteService varianteService) {
+        TreeSet<Variante> variantes = varianteService.obtenerVariantesPorProducto(producto.getIdProducto());
+        return variantes.stream().anyMatch(v -> v.getStock() >= 1);
+    }
+
+    public static boolean tieneCategoriaProductosDisponibles(Categoria categoria,
+                                                              ProductoService productoService,
+                                                              VarianteService varianteService) throws SQLException {
+        TreeSet<Producto> productos = productoService.obtenerProductosPorCategoria(categoria.getIdCategoria());
+        return productos.stream().anyMatch(p -> tieneVariantesDisponibles(p, varianteService));
     }
 }

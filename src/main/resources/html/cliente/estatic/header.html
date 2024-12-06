@@ -36,7 +36,7 @@
                             <a class="nav-link" href="/cliente/">Inicio</a>
                         </li>
                         <li class="nav-item px-3">
-                            <a class="nav-link" href="productos.html">Productos</a>
+                            <a class="nav-link" href="/cliente/productos">Productos</a>
                         </li>
                         <li class="nav-item px-3">
                             <a class="nav-link" href="servicios.html">Servicios</a>
@@ -56,9 +56,14 @@
             <div>
                 <a class="nav-link px-lg-4" href="/cliente/login"><i class="bi bi-person-fill"></i></a>
             </div>
+
             <div>
-                <a class="nav-link px-lg-4" href="/cliente/carrito"><i class="bi bi-cart-fill"></i></a>
+                <a class="nav-link px-lg-4 cart-icon-container" href="/cliente/carrito">
+                    <i class="bi bi-cart-fill"></i>
+                    <span class="cart-counter" id="cartCounter">${cartCounter}</span>
+                </a>
             </div>
+
             <!--BOTON MENU HAMBUR-->
             <button class="navbar-toggler border-0 nav-link" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
@@ -83,8 +88,8 @@
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Hola, ¿qué buscas?">
                             <span class="input-group-text">
-                <i class="bi bi-search"></i>
-              </span>
+                                <i class="bi bi-search"></i>
+                            </span>
                         </div>
                     </div>
                 </div>

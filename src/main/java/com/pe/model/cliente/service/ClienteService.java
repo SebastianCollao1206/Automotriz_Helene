@@ -58,8 +58,34 @@ public class ClienteService {
         return null;
     }
 
-    public void agregarCliente(String correo, String contrasena, String confirmPassword, String dni, String nombre) throws Exception {
+//    public void agregarCliente(String correo, String contrasena, String confirmPassword, String dni, String nombre) throws Exception {
+//
+//        Validaciones.validarCorreo(correo);
+//        Validaciones.validarPassword(contrasena);
+//
+//        if (!contrasena.equals(confirmPassword)) {
+//            throw new IllegalArgumentException("Las contraseñas no coinciden");
+//        }
+//        if (existeCorreo(correo)) {
+//            throw new IllegalArgumentException("El correo ya está registrado en el sistema");
+//        }
+//
+//        correo = Validaciones.sanitizarEntrada(correo);
+//        dni = dni != null ? Validaciones.sanitizarEntrada(dni) : null;
+//
+//        byte[] contrasenaEncriptada = encryptPassword(contrasena);
+//
+//        Cliente cliente = new Cliente();
+//        cliente.setCorreo(correo);
+//        cliente.setContrasena(contrasenaEncriptada);
+//        cliente.setDni(dni);
+//        cliente.setNombre(nombre);
+//        cliente.setFechaRegistro(LocalDate.now());
+//        agregarCliente(cliente);
+//        clienteDAO.agregarCliente(cliente);
+//    }
 
+    public void agregarCliente(String correo, String contrasena, String confirmPassword, String dni, String nombre) throws Exception {
         Validaciones.validarCorreo(correo);
         Validaciones.validarPassword(contrasena);
 
@@ -69,9 +95,13 @@ public class ClienteService {
         if (existeCorreo(correo)) {
             throw new IllegalArgumentException("El correo ya está registrado en el sistema");
         }
+        if (dni != null && existeDni(dni)) {
+            throw new IllegalArgumentException("El DNI ya está registrado en el sistema");
+        }
 
         correo = Validaciones.sanitizarEntrada(correo);
         dni = dni != null ? Validaciones.sanitizarEntrada(dni) : null;
+        nombre = nombre != null ? Validaciones.sanitizarEntrada(nombre) : null;
 
         byte[] contrasenaEncriptada = encryptPassword(contrasena);
 
@@ -85,8 +115,94 @@ public class ClienteService {
         clienteDAO.agregarCliente(cliente);
     }
 
+    public boolean existeDni(String dni) {
+        return clientes.stream()
+                .anyMatch(cliente -> dni != null && dni.equals(cliente.getDni()));
+    }
+
     public boolean existeCorreo(String correo) {
         return clientes.stream()
                 .anyMatch(cliente -> cliente.getCorreo().equalsIgnoreCase(correo));
     }
+
+    public Cliente obtenerClientePorId(int idCliente) {
+        return clientes.stream()
+                .filter(cliente -> cliente.getIdCliente() == idCliente)
+                .findFirst()
+                .orElse(null);
+    }
+
+    //Nuevos metodos para la compra
+    public Cliente obtenerClientePorCorreo(String correo) {
+        if (correo == null || correo.isEmpty()) {
+            return null;
+        }
+
+        return clientes.stream()
+                .filter(cliente -> cliente.getCorreo().equalsIgnoreCase(correo))
+                .findFirst()
+                .orElse(null);
+    }
+
+    public Cliente agregarClienteSinContrasena(String correo, String dni, String nombre) throws Exception {
+        Validaciones.validarCorreo(correo);
+
+        if (existeCorreo(correo)) {
+            Cliente existingCliente = obtenerClientePorCorreo(correo);
+
+            if (existingCliente.getDni() != null && dni != null && !existingCliente.getDni().equals(dni)) {
+                throw new IllegalArgumentException("El correo ya está registrado con un DNI diferente.");
+            }
+            return existingCliente;
+        }
+
+        if (dni != null) {
+            final String finalDni = dni;
+            boolean dniExists = clientes.stream()
+                    .anyMatch(cliente -> finalDni.equals(cliente.getDni()));
+
+            if (dniExists) {
+                throw new IllegalArgumentException("El DNI ya está registrado en el sistema con otro correo.");
+            }
+        }
+
+        correo = Validaciones.sanitizarEntrada(correo);
+        dni = dni != null ? Validaciones.sanitizarEntrada(dni) : null;
+
+        Cliente cliente = new Cliente();
+        cliente.setCorreo(correo);
+        cliente.setDni(dni);
+        cliente.setNombre(nombre);
+        cliente.setFechaRegistro(LocalDate.now());
+
+        agregarCliente(cliente);
+        clienteDAO.agregarCliente(cliente);
+
+        return cliente;
+    }
+    public void actualizarCliente(String correo, String dni, String nombre) throws Exception {
+        Cliente cliente = obtenerClientePorCorreo(correo);
+
+        if (cliente == null) {
+            throw new IllegalArgumentException("El cliente no existe en el sistema.");
+        }
+
+        cliente.setDni(dni != null ? Validaciones.sanitizarEntrada(dni) : cliente.getDni());
+        cliente.setNombre(nombre != null ? Validaciones.sanitizarEntrada(nombre) : cliente.getNombre());
+
+        clienteDAO.actualizarCliente(cliente);
+    }
+
+//    public void validarCoherenciaClienteExistente(String correo, String dni, String nombre) throws Exception {
+//        Cliente clienteExistente = obtenerClientePorCorreo(correo);
+//
+//        if (clienteExistente != null) {
+//            if (dni != null && clienteExistente.getDni() != null && !dni.equals(clienteExistente.getDni())) {
+//                throw new IllegalArgumentException("El DNI proporcionado no coincide con el registro existente.");
+//            }
+//            if (nombre != null && !nombre.equals(clienteExistente.getNombre())) {
+//                throw new IllegalArgumentException("El nombre proporcionado no coincide con el registro existente.");
+//            }
+//        }
+//    }
 }

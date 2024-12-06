@@ -1,6 +1,5 @@
 package com.pe.model.administrador.entidad;
 
-
 import java.time.LocalDate;
 import java.util.Comparator;
 import java.util.Objects;

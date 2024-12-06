@@ -4,11 +4,9 @@ function handleFormSubmission(formSelector) {
         form.addEventListener("submit", function (event) {
             event.preventDefault();
 
-            // Disable the submit button to prevent multiple clicks
             const submitButton = this.querySelector('button[type="submit"]');
             submitButton.disabled = true;
 
-            // Show loading alert immediately
             let loadingTimer = setTimeout(() => {
                 Swal.fire({
                     title: 'Por favor, espere',
@@ -38,18 +36,26 @@ function handleFormSubmission(formSelector) {
                 };
 
             fetch(actionUrl, fetchOptions)
+
                 .then(response => response.json())
+
                 .then(data => {
 
-                    //
                     clearTimeout(loadingTimer);
-
-                    // Close any open Swal if it was shown
                     if (Swal.isVisible()) {
                         Swal.close();
                     }
 
                     if (data.tipoMensaje === 'success') {
+
+                        if (data.carritoHtml) {
+                            const carritoContainer = document.querySelector('.cart-container');
+                            if (carritoContainer) {
+                                carritoContainer.innerHTML = data.carritoHtml;
+                                handleFormSubmission(formSelector);
+                            }
+                        }
+
                         Swal.fire({
                             icon: 'success',
                             title: 'Éxito',
@@ -59,6 +65,14 @@ function handleFormSubmission(formSelector) {
                                 window.location.href = data.redirectUrl;
                             }
                         });
+
+                        if (data.cartCounter !== undefined) {
+                            const cartCounterElement = document.querySelector('.cart-counter');
+                            if (cartCounterElement) {
+                                cartCounterElement.textContent = data.cartCounter;
+                            }
+                        }
+
                     } else if (data.tipoMensaje === 'error') {
                         Swal.fire({
                             icon: 'error',
@@ -74,15 +88,10 @@ function handleFormSubmission(formSelector) {
                         title: 'Error',
                         text: 'Error al procesar la solicitud.',
                     });
-                })   //;
-
-
+                })
                 .finally(() => {
-                    // Re-enable the submit button
                     submitButton.disabled = false;
                 });
-
-
         });
     });
 }
@@ -187,16 +196,66 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //PARA LA CANTIDAD
-function increment(id) {
-    document.getElementById(id).value = parseInt(document.getElementById(id).value) + 1;
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const cantidadInput = document.getElementById('quantity2');
+    const hiddenCantidadInput = document.getElementById('cantidadInput');
+    const btnDecrement = document.querySelector('.btn-decrement');
+    const btnIncrement = document.querySelector('.btn-increment');
 
-function decrement(id) {
-    var value = parseInt(document.getElementById(id).value);
-    if (value > 1) {
-        document.getElementById(id).value = value - 1;
+    function updateHiddenInput() {
+        hiddenCantidadInput.value = cantidadInput.value;
     }
-}
+
+    btnDecrement.addEventListener('click', function() {
+        let currentValue = parseInt(cantidadInput.value);
+        if (currentValue > 1) {
+            cantidadInput.value = currentValue - 1;
+            updateHiddenInput();
+        }
+    });
+
+    btnIncrement.addEventListener('click', function() {
+        let currentValue = parseInt(cantidadInput.value);
+        if (currentValue < 10) {
+            cantidadInput.value = currentValue + 1;
+            updateHiddenInput();
+        }
+    });
+
+    cantidadInput.addEventListener('change', updateHiddenInput);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const carritoContainer = document.querySelector('.cart-container');
+
+    carritoContainer.addEventListener('click', function(event) {
+        if (event.target.classList.contains('btn-decrement')) {
+            const container = event.target.closest('.product-container');
+            const cantidadInput = container.querySelector('.cantidad');
+            let currentValue = parseInt(cantidadInput.value);
+            if (currentValue > 1) {
+                cantidadInput.value = currentValue - 1;
+            }
+        }
+
+        if (event.target.classList.contains('btn-increment')) {
+            const container = event.target.closest('.product-container');
+            const cantidadInput = container.querySelector('.cantidad');
+            let currentValue = parseInt(cantidadInput.value);
+            cantidadInput.value = currentValue + 1;
+        }
+    });
+
+    const cantidadInputs = document.querySelectorAll('.cantidad');
+    cantidadInputs.forEach(cantidadInput => {
+        cantidadInput.addEventListener('change', function() {
+            let currentValue = parseInt(cantidadInput.value);
+            if (currentValue < 1) {
+                cantidadInput.value = 1;
+            }
+        });
+    });
+});
 
 //carrusel
 const swiper = new Swiper('.productosSwiper', {
@@ -230,6 +289,9 @@ const swiper = new Swiper('.productosSwiper', {
         }
     }
 });
+
+//API DNI
+
 
 
 

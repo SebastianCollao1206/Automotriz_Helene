@@ -35,7 +35,7 @@ public abstract class BaseClientServlet extends HttpServlet {
         }
 
         try (PrintWriter out = response.getWriter()) {
-            String headerHtml = ClienteHtml.generarHeader(cliente);
+            String headerHtml = ClienteHtml.generarHeader(cliente, request);
             out.println(headerHtml);
 
             String contentPage = getContentPage();
