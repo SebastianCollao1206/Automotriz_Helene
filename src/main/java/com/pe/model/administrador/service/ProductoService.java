@@ -193,4 +193,8 @@ public class ProductoService {
         TreeSet<Producto> productos = productoService.obtenerProductosPorCategoria(categoria.getIdCategoria());
         return productos.stream().anyMatch(p -> tieneVariantesDisponibles(p, varianteService));
     }
+
+    public List<Producto> obtenerProductosMasVendidosDeMes() throws SQLException {
+        return productoDAO.obtenerProductosMasVendidosDeMes();
+    }
 }

@@ -334,26 +334,30 @@ public class SliderService {
     }
 
     public static String generarEnlaceVerMas(Slider slider, VarianteService varianteService, ProductoService productoService, CategoriaService categoriaService) throws SQLException {
-        int idDestino = -1;
         switch (slider.getRelacionarCon()) {
             case "variante":
-                idDestino = slider.getIdVariante();
-                return "/cliente/variante?id=" + idDestino;
-            case "producto":
-                idDestino = varianteService.obtenerIdProductoPorVariante(slider.getIdVariante());
-                return "/cliente/producto?id=" + idDestino;
-            case "categoria":
-                Producto producto = productoService.obtenerProductoPorCategoria(
-                        varianteService.obtenerVariantePorId(slider.getIdVariante()).getIdProducto()
-                );
+                int idVariante = slider.getIdVariante();
+                int idProducto = varianteService.obtenerIdProductoPorVariante(idVariante);
+                return "/cliente/detalle-producto?id=" + idProducto + "&variantId=" + idVariante;
 
-                if (producto != null) {
-                    idDestino = producto.getIdCategoria();
-                    return "/cliente/categoria?id=" + idDestino;
+            case "producto":
+                idProducto = varianteService.obtenerIdProductoPorVariante(slider.getIdVariante());
+                Variante primeraVariante = varianteService.obtenerVarianteAleatoriaPorProducto(idProducto);
+                return "/cliente/detalle-producto?id=" + idProducto + "&variantId=" + primeraVariante.getIdVariante();
+
+            case "categoria":
+                Variante variante = varianteService.obtenerVariantePorId(slider.getIdVariante());
+                if (variante != null) {
+                    int productoId = variante.getIdProducto();
+                    Producto producto = productoService.obtenerProductoPorId(productoId);
+                    if (producto != null) {
+                        return "/cliente/productos?categoria=" + producto.getIdCategoria();
+                    }
                 }
-                return "#";
+                return "/cliente/productos";
+
             default:
-                return "#";
+                return "/cliente/productos";
         }
     }
 }

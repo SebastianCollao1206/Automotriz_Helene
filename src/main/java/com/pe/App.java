@@ -6,10 +6,15 @@ import com.pe.controller.administrador.Slider.*;
 import com.pe.controller.administrador.categorias.*;
 import com.pe.controller.administrador.comentarios.ComentariosServlet;
 import com.pe.controller.administrador.comentarios.EstadoComentarioServlet;
+import com.pe.controller.administrador.notificaciones.MarcarNotificacionesServlet;
 import com.pe.controller.administrador.productos.ProductosServlet;
 import com.pe.controller.administrador.productos.AgregarProductoServlet;
 import com.pe.controller.administrador.productos.BuscarProductoServlet;
 import com.pe.controller.administrador.productos.EditarProductoServlet;
+import com.pe.controller.administrador.reportes.ReportesServlet;
+import com.pe.controller.administrador.reportes.TopCategoriasServlet;
+import com.pe.controller.administrador.reportes.TopProductosServlet;
+import com.pe.controller.administrador.reportes.VentaMesServlet;
 import com.pe.controller.administrador.tamanios.AgregarTamanioServlet;
 import com.pe.controller.administrador.tamanios.EditarTamanioServlet;
 import com.pe.controller.administrador.tamanios.EliminarTamanioServlet;
@@ -31,8 +36,9 @@ public class App {
             System.out.println("¡Conexión exitosa a la base de datos!");
 
             // Configurar Jetty
-            String path = "C:\\Users\\HP\\IdeaProjects\\Automotriz_Helene\\src\\main\\resources\\html";
-            JettyUTP webserver = new JettyUTP(8081, path);
+            //String path = System.getProperty("user.dir") + "\\src\\main\\resources\\html";
+            String path = "src/main/resources/html";
+            JettyUTP webserver = new JettyUTP(8080, path);
 
             //agregar los servlets del admin
             webserver.addServlet(LoginServlet.class, "/login");
@@ -67,6 +73,13 @@ public class App {
             webserver.addServlet(SlidersServlet.class, "/slider/listar");
             webserver.addServlet(EliminarSliderServlet.class, "/slider/eliminar");
             webserver.addServlet(EditarSliderServlet.class, "/slider/editar");
+            webserver.addServlet(ReportesServlet.class, "/reportes/pagina");
+            webserver.addServlet(MarcarNotificacionesServlet.class, "/marcar-notificaciones");
+
+            //graficos
+            webserver.addServlet(TopProductosServlet.class, "/productos-mas-vendidos");
+            webserver.addServlet(TopCategoriasServlet.class, "/top-categorias-vendidas");
+            webserver.addServlet(VentaMesServlet.class, "/ventas-por-mes");
 
             //servlet de recuperacion de contraseña
             webserver.addServlet(RecuperarContrasenaServlet.class, "/recuperar/solicitar");
@@ -84,9 +97,11 @@ public class App {
             webserver.addServlet(EliminarItemCarritoServlet.class, "/cliente/carrito/eliminar");
             webserver.addServlet(CompraServlet.class, "/cliente/compra");
             webserver.addServlet(VerificarCompraServlet.class, "/cliente/verificar-compra");
+            webserver.addServlet(ServicioServlet.class, "/cliente/servicio");
+            webserver.addServlet(ContactoServlet.class, "/cliente/contacto");
 
             webserver.start();
-            System.out.println("Servidor iniciado en http://localhost:8081");
+            System.out.println("Servidor iniciado en http://localhost:8080");
 
         } catch (Exception e) {
             System.err.println("Error de conexión: " + e.getMessage());

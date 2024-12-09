@@ -197,9 +197,9 @@ public class ProductosClienteHtml {
         StringBuilder tarjeta = new StringBuilder();
         tarjeta.append("<div class=\"col-6 col-md-4 col-lg-3 mb-5\">\n");
         tarjeta.append("    <div class=\"producto p-4 h-100\">\n");
-        tarjeta.append("        <div class=\"imagen-producto\">\n");
+        tarjeta.append("        <div class=\"imagen-producto d-flex justify-content-center align-items-center\">\n");
         tarjeta.append("            <a href=\"detalle-producto?id=").append(producto.getIdProducto())
-                .append("&variantId=").append(variante.getIdVariante()).append("\">\n"); // Agregar el ID de la variante
+                .append("&variantId=").append(variante.getIdVariante()).append("\">\n");
         tarjeta.append("                <img class=\"img-fluid\" src=\"").append(variante.getImagen()).append("\" alt=\"").append(producto.getNombre()).append("\">\n");
         tarjeta.append("            </a>\n");
         tarjeta.append("        </div>\n");
@@ -207,7 +207,7 @@ public class ProductosClienteHtml {
         tarjeta.append("        <p class=\"mt-4 text-danger producto-precio\">$").append(variante.getPrecio()).append("</p>\n");
         tarjeta.append("        <div class=\"d-flex justify-content-center\">\n");
         tarjeta.append("            <a href=\"detalle-producto?id=").append(producto.getIdProducto())
-                .append("&variantId=").append(variante.getIdVariante()).append("\"\n") // Agregar el ID de la variante
+                .append("&variantId=").append(variante.getIdVariante()).append("\"\n")
                 .append("               class=\"btn btn-productos text-decoration-none d-flex align-items-center justify-content-center\">\n");
         tarjeta.append("                Ver producto <i class=\"bi bi-chevron-right ms-2\"></i>\n");
         tarjeta.append("            </a>\n");

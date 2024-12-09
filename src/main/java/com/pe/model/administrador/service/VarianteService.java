@@ -4,10 +4,13 @@ import com.pe.model.administrador.dao.VarianteDAO;
 import com.pe.model.administrador.entidad.Producto;
 import com.pe.model.administrador.entidad.Tamanio;
 import com.pe.model.administrador.entidad.Variante;
+import com.pe.model.administrador.entidad.notificaciones.Notificacion;
 import com.pe.util.Validaciones;
 
 import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeSet;
 
 public class VarianteService {
@@ -91,7 +94,15 @@ public class VarianteService {
 
     public void actualizarStock(int idVariante, int nuevoStock) throws SQLException {
         try {
+
+            Variante variante = obtenerVariantePorId(idVariante);
+
+            if (variante == null) {
+                throw new IllegalArgumentException("No se encontró la variante con ID: " + idVariante);
+            }
             varianteDAO.actualizarStock(idVariante, nuevoStock);
+            variante.setStock(nuevoStock);
+            generarNotificacionSiStockBajo(idVariante);
         } catch (SQLException e) {
             throw new SQLException("Error en el servicio al actualizar el stock: " + e.getMessage(), e);
         }
@@ -172,32 +183,69 @@ public class VarianteService {
         return productosOrdenados;
     }
 
-    //metodo nuevo
     public void quitarStock(int idVariante, int cantidad) throws SQLException {
         try {
-            // Obtener la variante correspondiente al idVariante
             Variante variante = obtenerVariantePorId(idVariante);
 
-            // Verificar que la variante exista
             if (variante == null) {
                 throw new IllegalArgumentException("No se encontró la variante con ID: " + idVariante);
             }
 
-            // Calcular el nuevo stock después de quitar la cantidad
             int nuevoStock = variante.getStock() - cantidad;
 
-            // Verificar que el nuevo stock no sea negativo
             if (nuevoStock < 0) {
                 throw new IllegalArgumentException("No hay suficiente stock para realizar la compra.");
             }
 
-            // Actualizar el stock en la variante
             variante.setStock(nuevoStock);
-
-            // Actualizar el stock en la base de datos
             varianteDAO.actualizarStock(idVariante, nuevoStock);
+
+            generarNotificacionSiStockBajo(idVariante);
+
         } catch (SQLException e) {
             throw new SQLException("Error en el servicio al quitar el stock: " + e.getMessage(), e);
         }
+    }
+
+    public Notificacion verificarStockAlerta(int idVariante) throws SQLException {
+        Variante variante = obtenerVariantePorId(idVariante);
+
+        if (variante == null) {
+            throw new IllegalArgumentException("Variante no encontrada");
+        }
+
+        if (variante.getStock() <= 3) {
+            String mensaje = "La variante con código " + variante.getCodigo() + " tiene solo " + variante.getStock() + " unidades en stock.";
+
+            Notificacion notificacion = new Notificacion();
+            notificacion.setMensaje(mensaje);
+
+            return notificacion;
+        }
+        return null;
+    }
+    private void generarNotificacionSiStockBajo(int idVariante) throws SQLException {
+        Notificacion notificacion = verificarStockAlerta(idVariante);
+        if (notificacion != null) {
+            NotificacionService notificacionService = new NotificacionService();
+            notificacionService.generarNotificacionStock(notificacion);
+        }
+    }
+
+    public int obtenerIdVariantePorCodigo(String codigo) {
+        if (codigo == null || codigo.trim().isEmpty()) {
+            throw new IllegalArgumentException("El código no puede estar vacío.");
+        }
+
+        Variante variante = variantes.stream()
+                .filter(v -> v.getCodigo().equalsIgnoreCase(codigo))
+                .findFirst()
+                .orElse(null);
+
+        if (variante == null) {
+            throw new IllegalArgumentException("No se encontró una variante con el código: " + codigo);
+        }
+
+        return variante.getIdVariante();
     }
 }

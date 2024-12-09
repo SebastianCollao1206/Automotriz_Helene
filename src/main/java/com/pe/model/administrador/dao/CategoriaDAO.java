@@ -3,10 +3,9 @@ package com.pe.model.administrador.dao;
 import com.pe.model.administrador.entidad.Categoria;
 import com.pe.util.DBConnection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeSet;
 
 public class CategoriaDAO {
@@ -58,6 +57,25 @@ public class CategoriaDAO {
                 throw new SQLException("No se pudo actualizar la categoría, ID no encontrado");
             }
         }
+    }
+
+    public List<Categoria> obtenerTopCategoriasMasVendidasDelMes() throws SQLException {
+        List<Categoria> categoriasMasVendidas = new ArrayList<>();
+
+        String sql = "{call top_categorias_mas_vendidas_del_mes()}";
+
+        try (CallableStatement callableStatement = connection.prepareCall(sql);
+             ResultSet rs = callableStatement.executeQuery()) {
+            while (rs.next()) {
+                Categoria categoria = new Categoria(
+                        rs.getInt("id_categoria"),
+                        rs.getString("nombre_categoria"),
+                        null
+                );
+                categoriasMasVendidas.add(categoria);
+            }
+        }
+        return categoriasMasVendidas;
     }
 
     public void cerrarConexion() throws SQLException {

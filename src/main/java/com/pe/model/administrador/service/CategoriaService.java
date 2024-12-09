@@ -7,6 +7,7 @@ import com.pe.model.administrador.entidad.Variante;
 import com.pe.util.Validaciones;
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.TreeSet;
 
 public class CategoriaService {
@@ -131,5 +132,9 @@ public class CategoriaService {
     private boolean existeCategoria(String nombre) {
         return categorias.stream()
                 .anyMatch(c -> c.getNombre().equalsIgnoreCase(nombre.trim()));
+    }
+
+    public List<Categoria> obtenerTopCategoriasMasVendidasDelMes() throws SQLException {
+        return categoriaDAO.obtenerTopCategoriasMasVendidasDelMes();
     }
 }

@@ -1,11 +1,12 @@
 package com.pe.controller.cliente;
 
-import com.pe.controller.administrador.BaseServlet;
 import com.pe.model.administrador.entidad.Comentario;
 import com.pe.model.administrador.entidad.Slider;
 import com.pe.model.administrador.html.IndexHtml;
 import com.pe.model.administrador.service.ComentarioService;
+import com.pe.model.administrador.service.ProductoService;
 import com.pe.model.administrador.service.SliderService;
+import com.pe.model.administrador.service.VarianteService;
 import com.pe.model.cliente.service.ClienteService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -35,11 +36,14 @@ public class IndexClienteServlet extends BaseClientServlet {
             SliderService sliderService = new SliderService();
             ComentarioService comentarioService = new ComentarioService();
             ClienteService clienteService = new ClienteService();
+            ProductoService productoService = new ProductoService();
+            VarianteService varianteService = new VarianteService();
 
             TreeSet<Slider> slidersActivos = sliderService.cargarSlidersActivos();
             TreeSet<Comentario> comentariosActivos = comentarioService.cargarComentariosActivos();
 
-            String htmlTemplate = IndexHtml.generarHtmlCompleto(slidersActivos, comentariosActivos, clienteService);
+            String htmlTemplate = IndexHtml.generarHtmlCompleto(slidersActivos, comentariosActivos, clienteService
+            , productoService, varianteService);
 
             request.setAttribute("content", htmlTemplate);
 

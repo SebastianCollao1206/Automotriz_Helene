@@ -1,0 +1,174 @@
+<div class="col p-lg-5 p-4">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Reportes</h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h4 class="card-title">Productos Más Vendidos</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="mostSoldProductsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 ">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h4 class="card-title">Categorias Más Vendidas</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container">
+                            <canvas id="leastSoldProductsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 mb-4 mt-3">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h4 class="card-title">Ventas Mensuales</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="chart-container-meses">
+                            <canvas id="monthlyChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+</article>
+</main>
+<!--CONTENIDO-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('/productos-mas-vendidos')
+            .then(response => response.json())
+            .then(data => {
+                const mostSoldProductsCtx = document.getElementById('mostSoldProductsChart').getContext('2d');
+                new Chart(mostSoldProductsCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: data.labels,
+                        datasets: data.datasets
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    padding: 20
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Distribución de Productos Más Vendidos',
+                                padding: {
+                                    top: 10,
+                                    bottom: 25
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+
+        fetch('/top-categorias-vendidas')
+            .then(response => response.json())
+            .then(data => {
+                const leastSoldProductsCtx = document.getElementById('leastSoldProductsChart').getContext('2d');
+                new Chart(leastSoldProductsCtx, {
+                    type: 'pie',
+                    data: {
+                        labels: data.labels,
+                        datasets: data.datasets
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'bottom',
+                                labels: {
+                                    padding: 20
+                                }
+                            },
+                            title: {
+                                display: true,
+                                text: 'Distribución de Ventas por Categorías',
+                                padding: {
+                                    top: 10,
+                                    bottom: 25
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+        fetch('/ventas-por-mes')
+            .then(response => response.json())
+            .then(data => {
+                const monthlyChartContainer = document.getElementById('monthlyChart');
+                const monthlyChartCtx = monthlyChartContainer.getContext('2d');
+
+                new Chart(monthlyChartCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: data.labels,
+                        datasets: data.datasets
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Ventas ($)'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            title: {
+                                display: true,
+                                text: 'Ventas Mensuales',
+                                padding: {
+                                    top: 10,
+                                    bottom: 20
+                                }
+                            }
+                        }
+                    }
+                });
+            });
+    });
+
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/cliente/js/script_cliente.js"></script>
+</body>
+
+</html>

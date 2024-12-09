@@ -66,6 +66,13 @@ function handleFormSubmission(formSelector) {
                             }
                         });
 
+                        if (data.notiCounter !== undefined) {
+                            const notiCounterElement = document.querySelector('.contadorNotificaciones');
+                            if (notiCounterElement) {
+                                notiCounterElement.textContent = data.notiCounter;
+                            }
+                        }
+
                         if (data.cartCounter !== undefined) {
                             const cartCounterElement = document.querySelector('.cart-counter');
                             if (cartCounterElement) {

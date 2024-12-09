@@ -243,4 +243,14 @@ public class UsuarioService {
         }
     }
 
+    public List<Integer> obtenerTodosLosUsuarioIds() {
+        List<Integer> usuarioIdsActivos = new ArrayList<>();
+        for (Usuario usuario : usuarios) {
+            if (usuario.getEstado() == Usuario.EstadoUsuario.Activo) {
+                usuarioIdsActivos.add(usuario.getIdUsuario());
+            }
+        }
+        return usuarioIdsActivos;
+    }
+
 }

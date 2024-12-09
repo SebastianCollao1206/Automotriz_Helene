@@ -47,4 +47,16 @@ public class MensajeService {
         response.setCharacterEncoding("UTF-8");
         response.getWriter().write(jsonResponse.toString());
     }
+
+    public static void mensajeJsonNoti(HttpServletResponse response, String tipoMensaje, String mensaje, String redirectUrl, Integer notiCounter) throws IOException {
+        JSONObject jsonResponse = new JSONObject();
+        jsonResponse.put("tipoMensaje", tipoMensaje);
+        jsonResponse.put("mensaje", mensaje);
+        jsonResponse.put("redirectUrl", redirectUrl);
+        jsonResponse.put("notiCounter", notiCounter != null ? notiCounter : 0);
+
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write(jsonResponse.toString());
+    }
 }

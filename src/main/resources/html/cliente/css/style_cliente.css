@@ -66,6 +66,18 @@
     border: none;
 }
 
+/*contacto*/
+.redes i{
+    font-size: 27px;
+    background-color: crimson;
+    color: #fff;
+}
+
+.data i{
+    color: crimson;
+    font-size: 25px;
+}
+
 /*SLIDER*/
 .carousel-indicators [data-bs-target] {
     width: 12px;

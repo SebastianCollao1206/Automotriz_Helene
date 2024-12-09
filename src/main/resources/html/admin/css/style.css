@@ -7,6 +7,39 @@
     transform: scale(1.1);
 }
 
+.chart-container {
+    height: 390px;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+.product-item {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 0.9rem;
+}
+
+.notification {
+    display: block;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    color: #111;
+}
+
+.notification:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
 .profile-image {
     width: 40px;
     height: 40px;
@@ -15,7 +48,7 @@
 }
 .sidebar-menu{
     height: 86vh;
-    overflow-y: scroll; /* Permitir el scroll vertical */
+    overflow-y: scroll;
     scrollbar-width: none;
     overflow-x: hidden;
 }

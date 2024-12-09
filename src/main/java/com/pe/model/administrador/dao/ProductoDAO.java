@@ -3,10 +3,9 @@ package com.pe.model.administrador.dao;
 import com.pe.model.administrador.entidad.Producto;
 import com.pe.util.DBConnection;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.TreeSet;
 
 public class ProductoDAO {
@@ -62,6 +61,26 @@ public class ProductoDAO {
             stmt.setInt(4, id);
             stmt.executeUpdate();
         }
+    }
+
+    public List<Producto> obtenerProductosMasVendidosDeMes() throws SQLException {
+        List<Producto> productosMasVendidos = new ArrayList<>();
+
+        String sql = "{call productos_mas_vendidos_de_mes()}";
+
+        try (CallableStatement callableStatement = connection.prepareCall(sql);
+             ResultSet rs = callableStatement.executeQuery()) {
+            while (rs.next()) {
+                Producto producto = new Producto(
+                        rs.getInt("id_producto"),
+                        rs.getString("nombre"),
+                        null,
+                        0
+                );
+                productosMasVendidos.add(producto);
+            }
+        }
+        return productosMasVendidos;
     }
 
     public void cerrarConexion() throws SQLException {
